@@ -41,6 +41,11 @@ export interface GlossaryItem {
   difficultyExplanation?: string;
   affiliateTools?: { name: string; url: string }[];
   mediaPlaceholder?: ('image' | 'video')[];
+  // Equipment-specific fields
+  vendor?: string;
+  promoCode?: string;
+  subcategory?: string;
+  price?: string;
   // Resource Fields
   youtubeQuery?: string;
   bookRef?: string | boolean; // Can be string like "Sourdough for the Rest of Us" or boolean
