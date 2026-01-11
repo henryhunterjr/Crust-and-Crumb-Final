@@ -62,3 +62,40 @@ export interface LearningPath {
   description: string;
   termIds: string[];
 }
+
+// Cross-linking types for YouTube, Academy, and Recipe Pantry
+export interface YouTubeVideo {
+  title: string;
+  url: string;
+  description?: string;
+}
+
+export interface AcademyCourse {
+  title: string;
+  url: string;
+  description?: string;
+}
+
+export interface PantryRecipe {
+  title: string;
+  url: string;
+}
+
+export interface GlossaryTermLinks {
+  termId: string;
+  termName: string;
+  youtubeVideos?: YouTubeVideo[];
+  academyCourses?: AcademyCourse[];
+  pantryRecipes?: PantryRecipe[];
+}
+
+// Analytics tracking for cross-link clicks
+export interface CrossLinkClick {
+  id: string;
+  term_id: string;
+  term_name: string;
+  link_type: 'youtube' | 'academy' | 'pantry';
+  destination_url: string;
+  timestamp: string;
+  session_id?: string;
+}

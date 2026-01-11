@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { GLOSSARY_DATA } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Tag, BarChart, Volume2 } from 'lucide-react';
+import LearnMore from '../../../src/components/LearnMore';
 
 // Helper functions
 function getTermBySlug(slug: string): GlossaryItem | undefined {
@@ -167,6 +168,9 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             <p className="text-lg text-slate-700 leading-relaxed">
               {term.definition}
             </p>
+
+            {/* Go Deeper - Learning Links */}
+            <LearnMore termId={term.id} termName={term.term} />
           </div>
 
           {/* Henry's Tips */}

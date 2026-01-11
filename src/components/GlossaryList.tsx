@@ -7,6 +7,8 @@ import {
   Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info
 } from 'lucide-react';
 import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } from '../constants';
+import LearnMore from './LearnMore';
+import { hasTermLinks } from '../data/glossaryLinks';
 
 // Affiliate product mappings - keywords to products
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
@@ -653,6 +655,11 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                       )}
                     </div>
                   )}
+
+                  {/* Show learning links in collapsed view */}
+                  {!quickMode && expandedId !== item.id && hasTermLinks(item.id) && (
+                    <LearnMore termId={item.id} termName={item.term} compact={true} />
+                  )}
                 </div>
 
                 {/* Expanded Content */}
@@ -722,6 +729,9 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                               </a>
                             )}
                           </div>
+
+                          {/* Go Deeper - Learning Links */}
+                          <LearnMore termId={item.id} termName={item.term} />
 
                           {/* Affiliate Products in Overview */}
                           {allAffiliateTools.length > 0 && (
