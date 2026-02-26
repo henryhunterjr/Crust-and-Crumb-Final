@@ -43,6 +43,8 @@ export interface GlossaryItem {
   mediaPlaceholder?: ('image' | 'video')[];
   // Resource Fields
   youtubeQuery?: string;
+  youtubeVideoId?: string;
+  youtubeChannel?: string;
   bookRef?: string | boolean; // Can be string like "Sourdough for the Rest of Us" or boolean
   bookChapter?: string;
   // Starter-related flag

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } from '../constants';
 import LearnMore from './LearnMore';
+import YouTubeEmbed from './YouTubeEmbed';
 import { hasTermLinks } from '../data/glossaryLinks';
 
 // Affiliate product mappings - keywords to products
@@ -729,6 +730,21 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                               </a>
                             )}
                           </div>
+
+                          {/* Embedded YouTube Video */}
+                          {item.youtubeVideoId && (
+                            <div className="mb-2">
+                              <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-3">
+                                <Youtube size={18} className="text-red-600" />
+                                Watch the Technique
+                              </h4>
+                              <YouTubeEmbed
+                                videoId={item.youtubeVideoId}
+                                title={item.term}
+                                channel={item.youtubeChannel}
+                              />
+                            </div>
+                          )}
 
                           {/* Go Deeper - Learning Links */}
                           <LearnMore termId={item.id} termName={item.term} />

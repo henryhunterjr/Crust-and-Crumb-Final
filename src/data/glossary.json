@@ -12,7 +12,7 @@
       "blooming"
     ],
     "henrysTips": [
-      "If the water is too hot (over 110\u00b0F), you'll kill the yeast. Too cold, and it won't activate. Aim for 100-105\u00b0F."
+      "If the water is too hot (over 110°F), you'll kill the yeast. Too cold, and it won't activate. Aim for 100-105°F."
     ],
     "youtubeQuery": "active dry yeast vs instant yeast"
   },
@@ -79,7 +79,7 @@
   {
     "id": "autolyse",
     "term": "Autolyse",
-    "pronunciation": "/\u02c8\u0254\u02d0.t\u0259\u02ccla\u026az/",
+    "pronunciation": "/ˈɔː.təˌlaɪz/",
     "definition": "A resting period where flour and water are mixed and left to sit (typically 30 minutes to 2 hours) before adding salt and starter/yeast. During this time, enzymes naturally present in the flour begin breaking down proteins and starches, making the dough easier to work with and improving gluten development.",
     "shortDefinition": "Resting period for flour and water before adding other ingredients.",
     "category": "Technique",
@@ -92,7 +92,9 @@
     "henrysTips": [
       "This is one of the easiest ways to improve your bread without extra work. Just mix flour and water, walk away, come back later. The dough practically kneads itself."
     ],
-    "youtubeQuery": "autolyse technique sourdough bread"
+    "youtubeQuery": "autolyse technique sourdough bread",
+    "youtubeVideoId": "0JpxYq4Y8SM",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "babka",
@@ -167,7 +169,7 @@
   {
     "id": "bakers-percentage",
     "term": "Baker's Percentage",
-    "definition": "A system where all ingredients are expressed as a percentage of the flour weight. Flour is always 100%, and everything else is a ratio to that. For example: 500g flour, 350g water = 70% hydration (350\u00f7500). This makes recipes scalable.",
+    "definition": "A system where all ingredients are expressed as a percentage of the flour weight. Flour is always 100%, and everything else is a ratio to that. For example: 500g flour, 350g water = 70% hydration (350÷500). This makes recipes scalable.",
     "shortDefinition": "Recipe formula where flour is 100% and everything else is a ratio.",
     "category": "Scientific/Technical",
     "difficulty": "Advanced",
@@ -181,7 +183,9 @@
     "widgets": [
       "calculator"
     ],
-    "youtubeQuery": "bakers percentage explained"
+    "youtubeQuery": "bakers percentage explained",
+    "youtubeVideoId": "1tRn-PlXk-g",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "baking-steel",
@@ -219,7 +223,7 @@
   {
     "id": "banneton",
     "term": "Banneton",
-    "pronunciation": "/\u02c8b\u00e6n.\u026a.t\u0252n/",
+    "pronunciation": "/ˈbæn.ɪ.tɒn/",
     "definition": "A basket used for proofing shaped bread dough, traditionally made from cane or rattan. The basket provides structure and support during the final rise and creates distinctive circular ridges on the loaf's surface.",
     "shortDefinition": "A proofing basket that gives bread its shape and texture.",
     "category": "Tool",
@@ -270,7 +274,7 @@
   {
     "id": "batard",
     "term": "Batard",
-    "pronunciation": "/b\u0259\u02c8t\u0251\u02d0rd/",
+    "pronunciation": "/bəˈtɑːrd/",
     "definition": "An oval or football-shaped loaf. This shape is often preferred by bakers because it yields more uniform slices than a round boule.",
     "category": "Bread",
     "difficulty": "Intermediate",
@@ -352,7 +356,7 @@
   {
     "id": "biga",
     "term": "Biga",
-    "pronunciation": "/\u02c8bi\u02d0\u0261\u0259/",
+    "pronunciation": "/ˈbiːɡə/",
     "definition": "A stiff Italian pre-ferment made from flour, water, and a tiny amount of yeast. It is mixed into a firm dough and allowed to ferment for 12-16 hours before being added to the final dough to add complexity and strength.",
     "category": "Process",
     "difficulty": "Intermediate",
@@ -367,7 +371,9 @@
     "henrysTips": [
       "Think of biga as a 'strength booster.' Because it's stiff, it helps add structure to wet doughs like ciabatta."
     ],
-    "youtubeQuery": "how to make biga for bread"
+    "youtubeQuery": "how to make biga for bread",
+    "youtubeVideoId": "S7Vsh77cYMM",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "blisters",
@@ -387,7 +393,7 @@
   {
     "id": "boule",
     "term": "Boule",
-    "pronunciation": "/bu\u02d0l/",
+    "pronunciation": "/buːl/",
     "definition": "A traditional French bread shape resembling a round ball. It is the most common shape for sourdough baked in a Dutch oven.",
     "category": "Bread",
     "difficulty": "Beginner",
@@ -454,7 +460,7 @@
       "coil-fold"
     ],
     "henrysTips": [
-      "Watch the dough, not the clock. A 4-hour bulk fermentation at 78\u00b0F is not the same as 4 hours at 68\u00b0F."
+      "Watch the dough, not the clock. A 4-hour bulk fermentation at 78°F is not the same as 4 hours at 68°F."
     ],
     "troubleshooting": [
       {
@@ -462,7 +468,9 @@
         "solution": "Check your starter strength, room temperature, and dough temperature. Cold dough ferments slowly."
       }
     ],
-    "youtubeQuery": "bulk fermentation sourdough timing"
+    "youtubeQuery": "bulk fermentation sourdough timing",
+    "youtubeVideoId": "ubJWmOAN684",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "challah",
@@ -482,7 +490,7 @@
   {
     "id": "ciabatta",
     "term": "Ciabatta",
-    "pronunciation": "/t\u0283\u0259\u02c8b\u0251\u02d0t\u0259/",
+    "pronunciation": "/tʃəˈbɑːtə/",
     "definition": "An Italian white bread made from a very wet (high hydration) dough. It is known for its flat, slipper-like shape and extremely open, airy crumb.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -521,7 +529,7 @@
   {
     "id": "coil-fold",
     "term": "Coil Fold",
-    "definition": "A gentle folding technique where you lift the center of the dough and let the sides fall underneath, then rotate 90\u00b0 and repeat. It builds strength without degassing the dough.",
+    "definition": "A gentle folding technique where you lift the center of the dough and let the sides fall underneath, then rotate 90° and repeat. It builds strength without degassing the dough.",
     "shortDefinition": "A gentle folding technique that builds dough strength.",
     "category": "Technique",
     "difficulty": "Intermediate",
@@ -533,7 +541,9 @@
     "henrysTips": [
       "This is my go-to for high-hydration doughs. It's gentler than stretch-and-fold and perfect for preserving those bubbles."
     ],
-    "youtubeQuery": "coil fold technique sourdough"
+    "youtubeQuery": "coil fold technique sourdough",
+    "youtubeVideoId": "cQad8tu8KjY",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "cold-proof",
@@ -669,7 +679,7 @@
   {
     "id": "desired-dough-temperature",
     "term": "Desired Dough Temperature (DDT)",
-    "definition": "A formula used by bakers to calculate exactly how hot or cold their water needs to be to hit a specific dough temperature (usually 75-78\u00b0F) after mixing. Controlling this ensures consistent fermentation timing regardless of the season.",
+    "definition": "A formula used by bakers to calculate exactly how hot or cold their water needs to be to hit a specific dough temperature (usually 75-78°F) after mixing. Controlling this ensures consistent fermentation timing regardless of the season.",
     "category": "Technique",
     "difficulty": "Advanced",
     "sources": [
@@ -763,14 +773,14 @@
       "scoring"
     ],
     "henrysTips": [
-      "Preheat it empty at 500\u00b0F for at least 30 minutes. A cold Dutch oven won't give you that explosive spring."
+      "Preheat it empty at 500°F for at least 30 minutes. A cold Dutch oven won't give you that explosive spring."
     ],
     "youtubeQuery": "baking sourdough in dutch oven"
   },
   {
     "id": "ear",
     "term": "Ear",
-    "definition": "The dramatic flap of crust that rises up along a properly executed score line. It's created by scoring at a shallow angle (about 30\u00b0) with a sharp blade, allowing the bread to open sideways instead of straight up.",
+    "definition": "The dramatic flap of crust that rises up along a properly executed score line. It's created by scoring at a shallow angle (about 30°) with a sharp blade, allowing the bread to open sideways instead of straight up.",
     "shortDefinition": "The raised flap of crust along the score line.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -780,9 +790,11 @@
       "oven-spring"
     ],
     "henrysTips": [
-      "Angle is everything. Hold your lame at 30\u00b0 to the surface, not straight down. That's the secret to a good ear."
+      "Angle is everything. Hold your lame at 30° to the surface, not straight down. That's the secret to a good ear."
     ],
-    "youtubeQuery": "how to get an ear on sourdough"
+    "youtubeQuery": "how to get an ear on sourdough",
+    "youtubeVideoId": "SPizZQ5iAwA",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "elasticity",
@@ -894,7 +906,7 @@
       "yeast"
     ],
     "henrysTips": [
-      "Temperature is everything. 76-78\u00b0F is the sweet spot for most doughs."
+      "Temperature is everything. 76-78°F is the sweet spot for most doughs."
     ],
     "youtubeQuery": "bread fermentation explained"
   },
@@ -913,7 +925,9 @@
       "This is how I teach it in my book. It simplifies the process and you still get incredible gluten development."
     ],
     "bookRef": "Sourdough for the Rest of Us",
-    "youtubeQuery": "fermentolyse technique"
+    "youtubeQuery": "fermentolyse technique",
+    "youtubeVideoId": "ubJWmOAN684",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "float-test",
@@ -967,9 +981,11 @@
       "fermentation"
     ],
     "henrysTips": [
-      "The easiest bread to start with! No shaping required\u2014just dump it in a pan, dimple it with your fingers, and bake."
+      "The easiest bread to start with! No shaping required—just dump it in a pan, dimple it with your fingers, and bake."
     ],
-    "youtubeQuery": "easy sourdough focaccia recipe"
+    "youtubeQuery": "easy sourdough focaccia recipe",
+    "youtubeVideoId": "5BJg4LVpvu8",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "fresh-yeast",
@@ -1034,7 +1050,9 @@
     "henrysTips": [
       "You don't need to knead sourdough like traditional bread. Folds during bulk fermentation do most of the work."
     ],
-    "youtubeQuery": "gluten development bread"
+    "youtubeQuery": "gluten development bread",
+    "youtubeVideoId": "PpYVuuRsx5k",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "grain-mill",
@@ -1126,7 +1144,7 @@
   {
     "id": "hydration",
     "term": "Hydration",
-    "definition": "The ratio of water to flour in dough, expressed as a percentage using baker's math. A dough with 500g flour and 375g water has 75% hydration (375\u00f7500=0.75). Higher hydration typically means more open crumb but stickier dough.",
+    "definition": "The ratio of water to flour in dough, expressed as a percentage using baker's math. A dough with 500g flour and 375g water has 75% hydration (375÷500=0.75). Higher hydration typically means more open crumb but stickier dough.",
     "shortDefinition": "The percentage of water to flour in dough.",
     "category": "Scientific/Technical",
     "difficulty": "Intermediate",
@@ -1141,7 +1159,9 @@
     "widgets": [
       "calculator"
     ],
-    "youtubeQuery": "bread hydration percentage explained"
+    "youtubeQuery": "bread hydration percentage explained",
+    "youtubeVideoId": "1tRn-PlXk-g",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "inclusions",
@@ -1160,7 +1180,7 @@
   {
     "id": "infrared-thermometer",
     "term": "Infrared Thermometer",
-    "definition": "A 'point-and-shoot' laser thermometer that reads surface temperatures instantly. It is essential for checking if your baking stone or steel is hot enough (500\u00b0F+) before launching your bread.",
+    "definition": "A 'point-and-shoot' laser thermometer that reads surface temperatures instantly. It is essential for checking if your baking stone or steel is hot enough (500°F+) before launching your bread.",
     "category": "Tool",
     "difficulty": "Intermediate",
     "sources": [
@@ -1202,7 +1222,7 @@
       "lean-dough"
     ],
     "henrysTips": [
-      "I use this exclusively. You don't need to 'bloom' it in warm water\u2014just toss it in the bowl and go. It's foolproof."
+      "I use this exclusively. You don't need to 'bloom' it in warm water—just toss it in the bowl and go. It's foolproof."
     ],
     "alternateQuestions": [
       "Rapid rise yeast vs instant yeast"
@@ -1253,12 +1273,14 @@
     "henrysTips": [
       "With sourdough, you rarely need to knead. The long fermentation time develops gluten naturally with just a few folds."
     ],
-    "youtubeQuery": "how to knead bread dough"
+    "youtubeQuery": "how to knead bread dough",
+    "youtubeVideoId": "HZ9hvC0Zud8",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "lame",
     "term": "Lame",
-    "pronunciation": "/l\u0251\u02d0m/",
+    "pronunciation": "/lɑːm/",
     "definition": "A curved or straight blade used to score bread before baking. Professional lames typically use a double-edged razor blade attached to a handle, allowing for clean, precise cuts.",
     "shortDefinition": "A blade tool for scoring bread.",
     "category": "Tool",
@@ -1268,7 +1290,7 @@
       "ear"
     ],
     "henrysTips": [
-      "Hold it at a shallow angle (about 30\u00b0) for that dramatic ear. Straight down cuts give you a different look."
+      "Hold it at a shallow angle (about 30°) for that dramatic ear. Straight down cuts give you a different look."
     ],
     "youtubeQuery": "how to use bread lame"
   },
@@ -1347,7 +1369,9 @@
     "henrysTips": [
       "For most home bakers, you can use your fed starter directly. A separate levain is for fine-tuning timing and flavor."
     ],
-    "youtubeQuery": "levain vs sourdough starter"
+    "youtubeQuery": "levain vs sourdough starter",
+    "youtubeVideoId": "FFejafGeL1I",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "lievito-madre",
@@ -1486,7 +1510,9 @@
     ],
     "henrysTips": [
       "If your bread is flat, you missed the oven spring. Usually caused by weak starter or over-proofing."
-    ]
+    ],
+    "youtubeVideoId": "cXARBVs0Dsc",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "overproofed",
@@ -1531,7 +1557,7 @@
   {
     "id": "panettone",
     "term": "Panettone",
-    "pronunciation": "/\u02ccp\u00e6n.\u026a\u02c8to\u028a.ni/",
+    "pronunciation": "/ˌpæn.ɪˈtoʊ.ni/",
     "definition": "A tall, cylindrical Italian sweet bread traditionally eaten at Christmas. It is notorious for being the 'Mount Everest' of baking due to its complex multi-day sourdough process and the need to hang it upside down while cooling.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -1615,7 +1641,7 @@
   {
     "id": "poolish",
     "term": "Poolish",
-    "pronunciation": "/\u02c8pu\u02d0.l\u026a\u0283/",
+    "pronunciation": "/ˈpuː.lɪʃ/",
     "definition": "A wet preferment made with equal parts flour and water by weight (100% hydration) and a tiny amount of yeast. It ferments for 12-16 hours and adds flavor and structure to the final dough.",
     "shortDefinition": "A liquid preferment made with flour, water, and yeast.",
     "category": "Process",
@@ -1628,7 +1654,9 @@
     "henrysTips": [
       "Use only a tiny pinch of yeast - like 1/8 teaspoon for 300g flour. Too much and it'll bubble over."
     ],
-    "youtubeQuery": "how to make poolish"
+    "youtubeQuery": "how to make poolish",
+    "youtubeVideoId": "iBXM70XSs9c",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "pre-shape",
@@ -1651,7 +1679,7 @@
   {
     "id": "probe-thermometer",
     "term": "Probe Thermometer",
-    "definition": "A thermometer with a metal needle used to check the internal temperature of the loaf. It is the only accurate way to know if bread is fully baked (usually 190\u00b0F-210\u00b0F) without cutting it open.",
+    "definition": "A thermometer with a metal needle used to check the internal temperature of the loaf. It is the only accurate way to know if bread is fully baked (usually 190°F-210°F) without cutting it open.",
     "category": "Tool",
     "difficulty": "Beginner",
     "sources": [
@@ -1663,7 +1691,7 @@
       "gummy-crumb"
     ],
     "henrysTips": [
-      "Stop thumping the bottom of the bread! Just stick a thermometer in it. 205\u00b0F means it's done. No guessing."
+      "Stop thumping the bottom of the bread! Just stick a thermometer in it. 205°F means it's done. No guessing."
     ]
   },
   {
@@ -1729,7 +1757,7 @@
   },
   {
     "id": "pate-fermentee",
-    "term": "P\u00e2te Ferment\u00e9e",
+    "term": "Pâte Fermentée",
     "pronunciation": "/pat fer-mon-tay/",
     "definition": "French for 'fermented dough,' this is simply a piece of fully mixed dough saved from a previous batch. It contains flour, water, yeast, and salt, and is added to a new batch to jump-start fermentation and add flavor.",
     "shortDefinition": "Old dough saved from a previous batch to flavor the next one.",
@@ -1741,7 +1769,9 @@
     ],
     "henrysTips": [
       "This is the old-school baker's secret! Save a fist-sized ball of dough from your pizza night and throw it into your next loaf for instant flavor depth."
-    ]
+    ],
+    "youtubeVideoId": "EGP27E99z1Q",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "retarding",
@@ -1807,7 +1837,7 @@
       "King Arthur Baking"
     ],
     "henrysTips": [
-      "Rye dough is naturally sticky\u2014don't try to knead it like white bread! Think of it more like molding clay than stretching a rubber band."
+      "Rye dough is naturally sticky—don't try to knead it like white bread! Think of it more like molding clay than stretching a rubber band."
     ],
     "commonMistakes": [
       "Trying to knead rye dough until it passes the windowpane test (it never will)."
@@ -1831,7 +1861,7 @@
   {
     "id": "scalding",
     "term": "Scalding (Milk)",
-    "definition": "Heating milk to just below boiling (180\u00b0F) before adding it to bread dough. This denatures a specific protein in milk (serum whey protein) that would otherwise weaken the gluten and result in a gummy, dense loaf.",
+    "definition": "Heating milk to just below boiling (180°F) before adding it to bread dough. This denatures a specific protein in milk (serum whey protein) that would otherwise weaken the gluten and result in a gummy, dense loaf.",
     "category": "Technique",
     "difficulty": "Intermediate",
     "sources": [
@@ -1861,7 +1891,9 @@
     "henrysTips": [
       "Use a swift, confident motion. Hesitation gives you ragged cuts."
     ],
-    "youtubeQuery": "how to score sourdough bread"
+    "youtubeQuery": "how to score sourdough bread",
+    "youtubeVideoId": "WqlSP1Xl-ck",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "seam",
@@ -1926,7 +1958,9 @@
     "henrysTips": [
       "Don't manhandle it! Gentle hands preserve the bubbles you spent all day creating."
     ],
-    "youtubeQuery": "shaping sourdough bread"
+    "youtubeQuery": "shaping sourdough bread",
+    "youtubeVideoId": "xyjhFP4v_VY",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "sifter",
@@ -2006,7 +2040,9 @@
       "Name it! You're more likely to feed something called 'Herman' than 'that jar in the back of the fridge.'"
     ],
     "bookRef": "Sourdough for the Rest of Us",
-    "youtubeQuery": "sourdough starter guide"
+    "youtubeQuery": "sourdough starter guide",
+    "youtubeVideoId": "R-afifYhJTg",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "spelt-flour",
@@ -2051,12 +2087,14 @@
       "dutch-oven",
       "oven-spring",
       "lava-rocks"
-    ]
+    ],
+    "youtubeVideoId": "cXARBVs0Dsc",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "stretch-and-fold",
     "term": "Stretch and Fold",
-    "definition": "A gentle folding technique performed during bulk fermentation. Wet your hands, grab one side of the dough, stretch it up, and fold it over onto itself. Rotate the bowl 90\u00b0 and repeat 4 times. This builds gluten strength without kneading.",
+    "definition": "A gentle folding technique performed during bulk fermentation. Wet your hands, grab one side of the dough, stretch it up, and fold it over onto itself. Rotate the bowl 90° and repeat 4 times. This builds gluten strength without kneading.",
     "shortDefinition": "Folding technique to build dough strength during bulk.",
     "category": "Technique",
     "difficulty": "Beginner",
@@ -2068,12 +2106,14 @@
     "henrysTips": [
       "Wet hands are your friend! Sticky dough won't stick to wet hands."
     ],
-    "youtubeQuery": "stretch and fold sourdough"
+    "youtubeQuery": "stretch and fold sourdough",
+    "youtubeVideoId": "HZ9hvC0Zud8",
+    "youtubeChannel": "Henry Hunter Jr"
   },
   {
     "id": "tangzhong",
     "term": "Tangzhong",
-    "pronunciation": "/t\u0251\u014b\u02c8d\u0292\u0254\u014b/",
+    "pronunciation": "/tɑŋˈdʒɔŋ/",
     "definition": "An Asian technique where a small portion of flour is cooked with water to create a gel-like paste, then added to the dough. The gelatinized starches hold extra moisture, making bread incredibly soft and extending shelf life.",
     "shortDefinition": "Cooked flour paste that makes bread super soft.",
     "category": "Technique",
@@ -2262,6 +2302,8 @@
     "mediaPlaceholder": [
       "video"
     ],
-    "youtubeQuery": "how to do windowpane test bread"
+    "youtubeQuery": "how to do windowpane test bread",
+    "youtubeVideoId": "PpYVuuRsx5k",
+    "youtubeChannel": "Henry Hunter Jr"
   }
 ]
