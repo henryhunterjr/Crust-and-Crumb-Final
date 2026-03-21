@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { ClipboardList, ChevronRight, ChevronLeft, Loader2, RotateCcw, Award, Camera, X, ImageIcon } from 'lucide-react';
+import { ClipboardList, ChevronRight, ChevronLeft, Loader2, RotateCcw, Award, Camera, X, ImageIcon, Printer, Share2, Check } from 'lucide-react';
 
 interface AnalysisReport {
   totalScore: number;
@@ -234,7 +234,9 @@ export default function BreadAnalyzer() {
   const [error, setError] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const reportRef = useRef<HTMLDivElement>(null);
 
   const currentStep = STEPS[step];
   const isLastStep = step === STEPS.length - 1;
@@ -310,10 +312,104 @@ export default function BreadAnalyzer() {
     removeImage();
   };
 
+  const handlePrint = () => {
+    if (!report || !reportRef.current) return;
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+
+    const ferm = fermentationLabel(report.fermentation.status);
+    printWindow.document.write(`<!DOCTYPE html>
+<html><head><title>Bread Analysis Report - Crust &amp; Crumb Academy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 40px; color: #1e293b; max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 22px; text-align: center; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #64748b; font-size: 12px; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 2px; }
+  .banner { width: 100%; max-height: 120px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+  .score-box { text-align: center; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .score-big { font-size: 56px; font-weight: 900; }
+  .score-green { color: #15803d; } .score-amber { color: #b45309; } .score-red { color: #dc2626; }
+  .sub-scores { display: flex; justify-content: center; gap: 32px; margin-top: 8px; font-size: 14px; color: #475569; }
+  .quote { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 16px; margin-bottom: 16px; font-style: italic; color: #78350f; font-size: 14px; }
+  .quote .attr { font-style: normal; font-size: 11px; color: #d97706; font-weight: 600; margin-top: 6px; }
+  .section { border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .section h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .section p, .section li { font-size: 13px; color: #475569; line-height: 1.5; }
+  .photo-section { background: #eef2ff; border-color: #c7d2fe; }
+  .photo-section h3 { color: #3730a3; }
+  .photo-section p { color: #4338ca; }
+  .ferm { border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .ferm-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+  .ferm-status { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  ol, ul { padding-left: 20px; } li { margin-bottom: 6px; }
+  .tips { background: #fffbeb; border: 1px solid #fde68a; }
+  .tips h3 { color: #78350f; }
+  .tips li { color: #92400e; }
+  .footer { text-align: center; margin-top: 24px; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 16px; }
+  @media print { body { padding: 20px; } }
+</style></head><body>
+<img src="https://crust-and-crumb-tawny.vercel.app/banner.png" alt="Crust &amp; Crumb Academy" class="banner" />
+<p class="subtitle">Bread Analysis Report</p>
+<div class="score-box">
+  <div class="score-big ${report.totalScore >= 80 ? 'score-green' : report.totalScore >= 60 ? 'score-amber' : 'score-red'}">${report.totalScore}</div>
+  <div style="font-size:13px;color:#64748b;">out of 100</div>
+  <div class="sub-scores">
+    <span>Exterior: <strong>${report.exterior.score}/50</strong></span>
+    <span>Interior: <strong>${report.interior.score}/50</strong></span>
+  </div>
+</div>
+<div class="quote">"${report.encouragement}"<div class="attr">— Henry Hunter</div></div>
+${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis</h3><p>${report.photoFeedback}</p></div>` : ''}
+<div class="section"><h3>Exterior Feedback</h3><p>${report.exterior.feedback}</p></div>
+<div class="section"><h3>Interior Feedback</h3><p>${report.interior.feedback}</p></div>
+<div class="ferm" style="background:${ferm.label === 'WELL FERMENTED' ? '#f0fdf4;border:1px solid #bbf7d0' : ferm.label === 'SLIGHTLY UNDER' ? '#eff6ff;border:1px solid #bfdbfe' : ferm.label === 'OVERPROOFED' ? '#fef2f2;border:1px solid #fecaca' : '#f8fafc;border:1px solid #e2e8f0'}">
+  <div class="ferm-label">Fermentation Diagnostic</div>
+  <div class="ferm-status">${ferm.label}</div>
+  <p style="font-size:13px;color:#475569;">${report.fermentation.feedback}</p>
+</div>
+<div class="section"><h3>Top Fixes for Next Bake</h3><ol>${report.topFixes.map(f => `<li>${f}</li>`).join('')}</ol></div>
+<div class="section tips"><h3>Baker's Tips</h3><ul style="list-style:none;padding:0;">${report.nextBakeTips.map(t => `<li>&#10022; ${t}</li>`).join('')}</ul></div>
+<div class="footer">Crust &amp; Crumb Academy by Henry Hunter &mdash; "Perfection Not Required"<br/>crust-and-crumb-tawny.vercel.app</div>
+</body></html>`);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => printWindow.print(), 300);
+  };
+
+  const handleShare = async () => {
+    const url = 'https://crust-and-crumb-tawny.vercel.app';
+    const text = 'Check out the Bread Analyzer from Crust & Crumb Academy. Upload a photo of your bread and get an AI-powered bake report with scoring, feedback, and tips.';
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Bread Analyzer - Crust & Crumb Academy', text, url });
+        return;
+      } catch {
+        // User cancelled or share failed, fall through to clipboard
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback: select a temporary input
+      const input = document.createElement('input');
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   if (report) {
     const ferm = fermentationLabel(report.fermentation.status);
     return (
-      <div className="space-y-4">
+      <div className="space-y-4" ref={reportRef}>
         <div className={`rounded-xl border p-5 text-center ${scoreBg(report.totalScore)}`}>
           <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Crust & Crumb Analysis</p>
           <div className={`text-6xl font-black mb-1 ${scoreColor(report.totalScore)}`}>{report.totalScore}</div>
@@ -368,6 +464,14 @@ export default function BreadAnalyzer() {
               <li key={i} className="text-sm text-amber-800 flex gap-2"><span className="shrink-0">&#10022;</span>{tip}</li>
             ))}
           </ul>
+        </div>
+        <div className="flex gap-3">
+          <button onClick={handlePrint} className="flex-1 flex items-center justify-center gap-2 py-3 border border-slate-300 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors text-sm font-medium">
+            <Printer size={16} />Print Report
+          </button>
+          <button onClick={handleShare} className="flex-1 flex items-center justify-center gap-2 py-3 border border-amber-300 rounded-xl text-amber-700 hover:bg-amber-50 transition-colors text-sm font-medium">
+            {copied ? <><Check size={16} />Link Copied!</> : <><Share2 size={16} />Share Tool</>}
+          </button>
         </div>
         <button onClick={handleReset} className="w-full flex items-center justify-center gap-2 py-3 border border-slate-300 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors text-sm font-medium">
           <RotateCcw size={16} />Analyze Another Bake
