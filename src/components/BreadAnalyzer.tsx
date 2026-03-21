@@ -486,10 +486,13 @@ ${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis<
         <div className="bg-amber-100 p-2 rounded-lg">
           <Award size={22} className="text-amber-700" />
         </div>
-        <div>
+        <div className="flex-1">
           <h3 className="font-bold text-lg text-slate-800">Bread Analyzer</h3>
           <p className="text-xs text-slate-500">Describe your bake. Upload a photo. Get a scored report.</p>
         </div>
+        <button onClick={handleShare} className="flex items-center gap-1.5 px-3 py-2 border border-amber-300 rounded-lg text-amber-700 hover:bg-amber-50 transition-colors text-xs font-medium shrink-0" title="Share this tool">
+          {copied ? <><Check size={14} />Copied!</> : <><Share2 size={14} />Share</>}
+        </button>
       </div>
 
       {/* Photo upload - always visible */}
