@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ClipboardList, ChevronRight, ChevronLeft, Loader2, RotateCcw, Award } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ClipboardList, ChevronRight, ChevronLeft, Loader2, RotateCcw, Award, Camera, X, ImageIcon } from 'lucide-react';
 
 interface AnalysisReport {
   totalScore: number;
@@ -11,6 +11,7 @@ interface AnalysisReport {
   topFixes: string[];
   nextBakeTips: string[];
   encouragement: string;
+  photoFeedback?: string;
 }
 
 interface FormData {
@@ -118,10 +119,18 @@ function scoreInterior(data: FormData): number {
   return Math.min(score, 50);
 }
 
-async function analyzeWithClaude(data: FormData, exteriorScore: number, interiorScore: number): Promise<AnalysisReport> {
-  const prompt = `You are a master bread baker and educator for Crust & Crumb Academy by Henry Hunter ("Perfection Not Required").
+function buildPrompt(data: FormData, exteriorScore: number, interiorScore: number, hasImage: boolean): string {
+  const photoInstruction = hasImage
+    ? `\n\nIMPORTANT: The baker has uploaded a photo of their bread. Carefully examine the image and:
+- Compare what you SEE in the photo against what they REPORTED in the questionnaire
+- If you notice something they missed or got wrong (e.g. they said "golden brown" but the crust looks pale), call it out gently
+- Comment on visual details they couldn't capture in the questionnaire: shaping quality, flour dusting, bloom patterns, crumb distribution evenness
+- Add a "photoFeedback" field to your JSON with 2-3 sentences of visual analysis specific to what you see in the image`
+    : '';
 
-A home baker just submitted this bake report. Analyze it and return a JSON object ONLY — no markdown, no preamble.
+  return `You are a master bread baker and educator for Crust & Crumb Academy by Henry Hunter ("Perfection Not Required").
+
+A home baker just submitted this bake report. Analyze it and return a JSON object ONLY — no markdown, no preamble.${photoInstruction}
 
 BAKE DATA:
 - Bread type: ${data.breadType}
@@ -156,19 +165,46 @@ Return this exact JSON structure:
   },
   "topFixes": ["Fix #1 in 1 sentence", "Fix #2 in 1 sentence", "Fix #3 in 1 sentence"],
   "nextBakeTips": ["Tip #1 specific to their bake", "Tip #2 specific to their bake"],
-  "encouragement": "One sentence in Henry Hunter's voice — warm, direct, no fluff."
+  "encouragement": "One sentence in Henry Hunter's voice — warm, direct, no fluff."${hasImage ? ',\n  "photoFeedback": "2-3 sentences of visual analysis based on the uploaded photo."' : ''}
 }`;
+}
+
+async function analyzeWithClaude(data: FormData, exteriorScore: number, interiorScore: number, imageBase64: string | null, imageType: string | null): Promise<AnalysisReport> {
+  const hasImage = !!imageBase64;
+  const prompt = buildPrompt(data, exteriorScore, interiorScore, hasImage);
 
   const response = await fetch('/api/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt }),
+    body: JSON.stringify({
+      prompt,
+      image: imageBase64,
+      imageMediaType: imageType,
+    }),
   });
+
+  if (!response.ok) {
+    throw new Error('Analysis request failed');
+  }
 
   const result = await response.json();
   const text = result.content?.map((b: { type: string; text?: string }) => b.type === 'text' ? b.text : '').join('') || '';
   const clean = text.replace(/```json|```/g, '').trim();
   return JSON.parse(clean) as AnalysisReport;
+}
+
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      // Strip the data:image/...;base64, prefix
+      const base64 = result.split(',')[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
 function scoreColor(score: number): string {
@@ -196,6 +232,9 @@ export default function BreadAnalyzer() {
   const [loading, setLoading] = useState(false);
   const [report, setReport] = useState<AnalysisReport | null>(null);
   const [error, setError] = useState('');
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const currentStep = STEPS[step];
   const isLastStep = step === STEPS.length - 1;
@@ -203,6 +242,35 @@ export default function BreadAnalyzer() {
 
   const handleChange = (key: string, value: string) => {
     setForm(prev => ({ ...prev, [key]: value }));
+  };
+
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      setError('Please upload an image file (JPG, PNG, or WebP).');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setError('Image must be under 5MB. Try a smaller photo.');
+      return;
+    }
+
+    setError('');
+    setImageFile(file);
+    const url = URL.createObjectURL(file);
+    setImagePreview(url);
+  };
+
+  const removeImage = () => {
+    setImageFile(null);
+    if (imagePreview) URL.revokeObjectURL(imagePreview);
+    setImagePreview(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   const canAdvance = () => {
@@ -217,7 +285,15 @@ export default function BreadAnalyzer() {
     try {
       const ext = scoreExterior(form);
       const int = scoreInterior(form);
-      const result = await analyzeWithClaude(form, ext, int);
+
+      let base64: string | null = null;
+      let mediaType: string | null = null;
+      if (imageFile) {
+        base64 = await fileToBase64(imageFile);
+        mediaType = imageFile.type;
+      }
+
+      const result = await analyzeWithClaude(form, ext, int, base64, mediaType);
       setReport(result);
     } catch {
       setError('Something went wrong with the analysis. Please try again.');
@@ -231,6 +307,7 @@ export default function BreadAnalyzer() {
     setReport(null);
     setStep(0);
     setError('');
+    removeImage();
   };
 
   if (report) {
@@ -247,9 +324,20 @@ export default function BreadAnalyzer() {
           </div>
         </div>
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 italic text-amber-900 text-sm">
-          "{report.encouragement}"
+          &ldquo;{report.encouragement}&rdquo;
           <p className="text-xs text-amber-600 mt-1 not-italic font-semibold">— Henry Hunter</p>
         </div>
+
+        {report.photoFeedback && (
+          <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <Camera size={16} className="text-indigo-600" />
+              <h4 className="font-bold text-indigo-800">Photo Analysis</h4>
+            </div>
+            <p className="text-sm text-indigo-700">{report.photoFeedback}</p>
+          </div>
+        )}
+
         <div className="bg-white border border-slate-200 rounded-xl p-4">
           <h4 className="font-bold text-slate-800 mb-1">Exterior Feedback</h4>
           <p className="text-sm text-slate-600">{report.exterior.feedback}</p>
@@ -274,10 +362,10 @@ export default function BreadAnalyzer() {
           </ul>
         </div>
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-          <h4 className="font-bold text-amber-900 mb-2">Baker's Tips</h4>
+          <h4 className="font-bold text-amber-900 mb-2">Baker&apos;s Tips</h4>
           <ul className="space-y-1">
             {report.nextBakeTips.map((tip, i) => (
-              <li key={i} className="text-sm text-amber-800 flex gap-2"><span className="shrink-0">✦</span>{tip}</li>
+              <li key={i} className="text-sm text-amber-800 flex gap-2"><span className="shrink-0">&#10022;</span>{tip}</li>
             ))}
           </ul>
         </div>
@@ -296,9 +384,55 @@ export default function BreadAnalyzer() {
         </div>
         <div>
           <h3 className="font-bold text-lg text-slate-800">Bread Analyzer</h3>
-          <p className="text-xs text-slate-500">Describe your bake. Get a scored report.</p>
+          <p className="text-xs text-slate-500">Describe your bake. Upload a photo. Get a scored report.</p>
         </div>
       </div>
+
+      {/* Photo upload - always visible */}
+      <div className="border border-dashed border-slate-300 rounded-xl p-4 bg-slate-50">
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          onChange={handleImageSelect}
+          className="hidden"
+          aria-label="Upload a photo of your bread"
+        />
+        {imagePreview ? (
+          <div className="relative">
+            <img
+              src={imagePreview}
+              alt="Your bread photo"
+              className="w-full max-h-48 object-cover rounded-lg"
+            />
+            <button
+              onClick={removeImage}
+              className="absolute top-2 right-2 bg-white/90 rounded-full p-1 shadow-sm hover:bg-white transition-colors"
+              aria-label="Remove photo"
+            >
+              <X size={16} className="text-slate-600" />
+            </button>
+            <div className="flex items-center gap-1.5 mt-2 text-xs text-green-700">
+              <Camera size={12} />
+              Photo attached — Claude will analyze this visually
+            </div>
+          </div>
+        ) : (
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="w-full flex flex-col items-center gap-2 py-3 text-slate-500 hover:text-amber-700 transition-colors"
+          >
+            <div className="bg-white rounded-full p-3 shadow-sm border border-slate-200">
+              <ImageIcon size={24} />
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium">Upload a photo of your bread</p>
+              <p className="text-xs text-slate-400">Optional — JPG, PNG, or WebP, under 5MB</p>
+            </div>
+          </button>
+        )}
+      </div>
+
       <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
         <div className="h-full bg-amber-500 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
       </div>
