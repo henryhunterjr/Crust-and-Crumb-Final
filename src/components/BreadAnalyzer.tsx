@@ -234,6 +234,7 @@ export default function BreadAnalyzer() {
   const [error, setError] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [imageDataUrl, setImageDataUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const reportRef = useRef<HTMLDivElement>(null);
@@ -266,12 +267,18 @@ export default function BreadAnalyzer() {
     setImageFile(file);
     const url = URL.createObjectURL(file);
     setImagePreview(url);
+
+    // Store data URL for print report
+    const reader = new FileReader();
+    reader.onload = () => setImageDataUrl(reader.result as string);
+    reader.readAsDataURL(file);
   };
 
   const removeImage = () => {
     setImageFile(null);
     if (imagePreview) URL.revokeObjectURL(imagePreview);
     setImagePreview(null);
+    setImageDataUrl(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
@@ -325,7 +332,8 @@ export default function BreadAnalyzer() {
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 40px; color: #1e293b; max-width: 700px; margin: 0 auto; }
   h1 { font-size: 22px; text-align: center; margin-bottom: 4px; }
   .subtitle { text-align: center; color: #64748b; font-size: 12px; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 2px; }
-  .banner { width: 100%; max-height: 120px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+  .banner { width: 100%; max-height: 120px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; }
+  .bread-photo { width: 100%; max-height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #e2e8f0; }
   .score-box { text-align: center; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
   .score-big { font-size: 56px; font-weight: 900; }
   .score-green { color: #15803d; } .score-amber { color: #b45309; } .score-red { color: #dc2626; }
@@ -349,6 +357,7 @@ export default function BreadAnalyzer() {
   @media print { body { padding: 20px; } }
 </style></head><body>
 <img src="https://crust-and-crumb-tawny.vercel.app/banner.png" alt="Crust &amp; Crumb Academy" class="banner" />
+${imageDataUrl ? `<img src="${imageDataUrl}" alt="Your bread" class="bread-photo" />` : ''}
 <p class="subtitle">Bread Analysis Report</p>
 <div class="score-box">
   <div class="score-big ${report.totalScore >= 80 ? 'score-green' : report.totalScore >= 60 ? 'score-amber' : 'score-red'}">${report.totalScore}</div>
