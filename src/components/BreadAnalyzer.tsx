@@ -377,7 +377,7 @@ ${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis<
   };
 
   const handleShare = async () => {
-    const url = 'https://crust-and-crumb-tawny.vercel.app';
+    const url = 'https://crust-and-crumb-tawny.vercel.app/?tool=analyzer';
     const text = 'Check out the Bread Analyzer from Crust & Crumb Academy. Upload a photo of your bread and get an AI-powered bake report with scoring, feedback, and tips.';
 
     if (navigator.share) {

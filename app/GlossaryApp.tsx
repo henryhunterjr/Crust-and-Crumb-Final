@@ -54,6 +54,15 @@ export default function GlossaryApp() {
   const starterNeeded = Math.round(flour * 0.20);
   const totalDoughWeight = flour + waterNeeded + saltNeeded + starterNeeded;
 
+  // Auto-open Bread Analyzer if ?tool=analyzer is in the URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('tool') === 'analyzer') {
+      setIsToolsOpen(true);
+      setActiveToolTab('analyzer');
+    }
+  }, []);
+
   // Handle scroll for back to top button
   useEffect(() => {
     const handleScroll = () => {
