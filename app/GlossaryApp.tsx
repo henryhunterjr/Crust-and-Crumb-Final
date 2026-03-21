@@ -5,6 +5,7 @@ import { MessageSquare, ChefHat, ArrowUp, Instagram, Youtube, Facebook, Linkedin
 import Header from '@/src/components/Header';
 import GlossaryList from '@/src/components/GlossaryList';
 import ChatBot from '@/src/components/ChatBot';
+import BreadAnalyzer from '@/src/components/BreadAnalyzer';
 import { ChatMessage } from '@/src/types';
 
 // TikTok icon component (not in Lucide)
@@ -39,6 +40,7 @@ export default function GlossaryApp() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [resetFilters, setResetFilters] = useState(0);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const [activeToolTab, setActiveToolTab] = useState<'calculator' | 'analyzer'>('calculator');
 
   // Baker's Tools Calculator State
   const [flourWeight, setFlourWeight] = useState('1000');
@@ -179,7 +181,7 @@ export default function GlossaryApp() {
                   </div>
                   <div>
                     <h2 className="text-xl font-bold text-slate-800">Baker's Tools</h2>
-                    <p className="text-sm text-slate-500">Calculators & converters for bread baking</p>
+                    <p className="text-sm text-slate-500">Calculators, converters & bread analysis</p>
                   </div>
                 </div>
                 <button
@@ -190,8 +192,27 @@ export default function GlossaryApp() {
                 </button>
               </div>
 
+              {/* Tabs */}
+              <div className="flex border-b border-amber-100 px-6 bg-white">
+                <button
+                  onClick={() => setActiveToolTab('calculator')}
+                  className={`py-3 px-4 text-sm font-medium border-b-2 transition-colors ${activeToolTab === 'calculator' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+                >
+                  Calculator
+                </button>
+                <button
+                  onClick={() => setActiveToolTab('analyzer')}
+                  className={`py-3 px-4 text-sm font-medium border-b-2 transition-colors flex items-center gap-1.5 ${activeToolTab === 'analyzer' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+                >
+                  Bread Analyzer
+                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full font-bold">NEW</span>
+                </button>
+              </div>
+
               {/* Content */}
               <div className="p-6 space-y-6">
+                {activeToolTab === 'analyzer' && <BreadAnalyzer />}
+                {activeToolTab === 'calculator' && <>
                 {/* Baker's Percentage Calculator */}
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                   <div className="flex items-center gap-2 mb-4">
@@ -320,6 +341,7 @@ export default function GlossaryApp() {
                     </div>
                   </div>
                 </div>
+                </>}
               </div>
             </div>
           </div>
