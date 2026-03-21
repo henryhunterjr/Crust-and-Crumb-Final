@@ -159,14 +159,10 @@ Return this exact JSON structure:
   "encouragement": "One sentence in Henry Hunter's voice — warm, direct, no fluff."
 }`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetch('/api/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      messages: [{ role: 'user', content: prompt }],
-    }),
+    body: JSON.stringify({ prompt }),
   });
 
   const result = await response.json();
