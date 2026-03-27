@@ -12,7 +12,7 @@
       "blooming"
     ],
     "henrysTips": [
-      "If the water is too hot (over 110\u00b0F), you'll kill the yeast. Too cold, and it won't activate. Aim for 100-105\u00b0F."
+      "If the water is too hot (over 110°F), you'll kill the yeast. Too cold, and it won't activate. Aim for 100-105°F."
     ],
     "youtubeQuery": "active dry yeast vs instant yeast"
   },
@@ -79,7 +79,7 @@
   {
     "id": "autolyse",
     "term": "Autolyse",
-    "pronunciation": "/\u02c8\u0254\u02d0.t\u0259\u02ccla\u026az/",
+    "pronunciation": "/ˈɔː.təˌlaɪz/",
     "definition": "A resting period where flour and water are mixed and left to sit (typically 30 minutes to 2 hours) before adding salt and starter/yeast. During this time, enzymes naturally present in the flour begin breaking down proteins and starches, making the dough easier to work with and improving gluten development.",
     "shortDefinition": "Resting period for flour and water before adding other ingredients.",
     "category": "Technique",
@@ -167,7 +167,7 @@
   {
     "id": "bakers-percentage",
     "term": "Baker's Percentage",
-    "definition": "A system where all ingredients are expressed as a percentage of the flour weight. Flour is always 100%, and everything else is a ratio to that. For example: 500g flour, 350g water = 70% hydration (350\u00f7500). This makes recipes scalable.",
+    "definition": "A system where all ingredients are expressed as a percentage of the flour weight. Flour is always 100%, and everything else is a ratio to that. For example: 500g flour, 350g water = 70% hydration (350÷500). This makes recipes scalable.",
     "shortDefinition": "Recipe formula where flour is 100% and everything else is a ratio.",
     "category": "Scientific/Technical",
     "difficulty": "Advanced",
@@ -219,7 +219,7 @@
   {
     "id": "banneton",
     "term": "Banneton",
-    "pronunciation": "/\u02c8b\u00e6n.\u026a.t\u0252n/",
+    "pronunciation": "/ˈbæn.ɪ.tɒn/",
     "definition": "A basket used for proofing shaped bread dough, traditionally made from cane or rattan. The basket provides structure and support during the final rise and creates distinctive circular ridges on the loaf's surface.",
     "shortDefinition": "A proofing basket that gives bread its shape and texture.",
     "category": "Tool",
@@ -270,7 +270,7 @@
   {
     "id": "batard",
     "term": "Batard",
-    "pronunciation": "/b\u0259\u02c8t\u0251\u02d0rd/",
+    "pronunciation": "/bəˈtɑːrd/",
     "definition": "An oval or football-shaped loaf. This shape is often preferred by bakers because it yields more uniform slices than a round boule.",
     "category": "Bread",
     "difficulty": "Intermediate",
@@ -352,7 +352,7 @@
   {
     "id": "biga",
     "term": "Biga",
-    "pronunciation": "/\u02c8bi\u02d0\u0261\u0259/",
+    "pronunciation": "/ˈbiːɡə/",
     "definition": "A stiff Italian pre-ferment made from flour, water, and a tiny amount of yeast. It is mixed into a firm dough and allowed to ferment for 12-16 hours before being added to the final dough to add complexity and strength.",
     "category": "Process",
     "difficulty": "Intermediate",
@@ -387,7 +387,7 @@
   {
     "id": "boule",
     "term": "Boule",
-    "pronunciation": "/bu\u02d0l/",
+    "pronunciation": "/buːl/",
     "definition": "A traditional French bread shape resembling a round ball. It is the most common shape for sourdough baked in a Dutch oven.",
     "category": "Bread",
     "difficulty": "Beginner",
@@ -454,7 +454,7 @@
       "coil-fold"
     ],
     "henrysTips": [
-      "Watch the dough, not the clock. A 4-hour bulk fermentation at 78\u00b0F is not the same as 4 hours at 68\u00b0F."
+      "Watch the dough, not the clock. A 4-hour bulk fermentation at 78°F is not the same as 4 hours at 68°F."
     ],
     "troubleshooting": [
       {
@@ -482,7 +482,7 @@
   {
     "id": "ciabatta",
     "term": "Ciabatta",
-    "pronunciation": "/t\u0283\u0259\u02c8b\u0251\u02d0t\u0259/",
+    "pronunciation": "/tʃəˈbɑːtə/",
     "definition": "An Italian white bread made from a very wet (high hydration) dough. It is known for its flat, slipper-like shape and extremely open, airy crumb.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -521,7 +521,7 @@
   {
     "id": "coil-fold",
     "term": "Coil Fold",
-    "definition": "A gentle folding technique where you lift the center of the dough and let the sides fall underneath, then rotate 90\u00b0 and repeat. It builds strength without degassing the dough.",
+    "definition": "A gentle folding technique where you lift the center of the dough and let the sides fall underneath, then rotate 90° and repeat. It builds strength without degassing the dough.",
     "shortDefinition": "A gentle folding technique that builds dough strength.",
     "category": "Technique",
     "difficulty": "Intermediate",
@@ -534,6 +534,31 @@
       "This is my go-to for high-hydration doughs. It's gentler than stretch-and-fold and perfect for preserving those bubbles."
     ],
     "youtubeQuery": "coil fold technique sourdough"
+  },
+  {
+    "id": "cold-ferment",
+    "term": "Cold Ferment",
+    "definition": "Placing shaped or bulk dough in the refrigerator (typically 38–42°F) for an extended period, usually 8–72 hours. The cold doesn't stop fermentation, it slows it way down. This gives you two advantages. First, flavor development: slow fermentation produces more organic acids and complex flavors. Second, schedule flexibility: you can mix dough today and bake tomorrow, or even two days later. Nearly every artisan bakery uses cold fermentation as part of their process.",
+    "shortDefinition": "Extended refrigerator rest that develops flavor and fits your baking schedule.",
+    "category": "Technique",
+    "difficulty": "Intermediate",
+    "alternateQuestions": [
+      "Cold retard",
+      "Refrigerator fermentation",
+      "Overnight cold rise"
+    ],
+    "relatedTermIds": [
+      "bulk-fermentation",
+      "proofing",
+      "retarding",
+      "cold-proof",
+      "fermentation",
+      "scoring"
+    ],
+    "henrysTips": [
+      "Cold dough is also easier to score because it holds its shape under the blade. For sourdough, 12–18 hours in the fridge is a sweet spot for flavor without over-proofing. For pizza dough, 24–72 hours develops the best flavor and extensibility."
+    ],
+    "youtubeQuery": "cold ferment bread dough overnight"
   },
   {
     "id": "cold-proof",
@@ -669,7 +694,7 @@
   {
     "id": "desired-dough-temperature",
     "term": "Desired Dough Temperature (DDT)",
-    "definition": "A formula used by bakers to calculate exactly how hot or cold their water needs to be to hit a specific dough temperature (usually 75-78\u00b0F) after mixing. Controlling this ensures consistent fermentation timing regardless of the season.",
+    "definition": "A formula used by bakers to calculate exactly how hot or cold their water needs to be to hit a specific dough temperature (usually 75-78°F) after mixing. Controlling this ensures consistent fermentation timing regardless of the season.",
     "category": "Technique",
     "difficulty": "Advanced",
     "sources": [
@@ -763,14 +788,14 @@
       "scoring"
     ],
     "henrysTips": [
-      "Preheat it empty at 500\u00b0F for at least 30 minutes. A cold Dutch oven won't give you that explosive spring."
+      "Preheat it empty at 500°F for at least 30 minutes. A cold Dutch oven won't give you that explosive spring."
     ],
     "youtubeQuery": "baking sourdough in dutch oven"
   },
   {
     "id": "ear",
     "term": "Ear",
-    "definition": "The dramatic flap of crust that rises up along a properly executed score line. It's created by scoring at a shallow angle (about 30\u00b0) with a sharp blade, allowing the bread to open sideways instead of straight up.",
+    "definition": "The dramatic flap of crust that rises up along a properly executed score line. It's created by scoring at a shallow angle (about 30°) with a sharp blade, allowing the bread to open sideways instead of straight up.",
     "shortDefinition": "The raised flap of crust along the score line.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -780,9 +805,30 @@
       "oven-spring"
     ],
     "henrysTips": [
-      "Angle is everything. Hold your lame at 30\u00b0 to the surface, not straight down. That's the secret to a good ear."
+      "Angle is everything. Hold your lame at 30° to the surface, not straight down. That's the secret to a good ear."
     ],
     "youtubeQuery": "how to get an ear on sourdough"
+  },
+  {
+    "id": "egg-wash",
+    "term": "Egg Wash",
+    "definition": "A mixture of beaten egg (whole egg, yolk only, or white only) brushed onto dough before baking. It creates a golden, glossy crust and helps toppings like seeds or coarse salt stick. Whole egg gives you a balanced shine. Yolk only gives a deeper golden color. White only gives a lighter shine with a crispier finish. A splash of water or milk thins it out for easier brushing.",
+    "shortDefinition": "Beaten egg brushed on dough before baking for a golden, glossy crust.",
+    "category": "Technique",
+    "difficulty": "Beginner",
+    "relatedTermIds": [
+      "proofing",
+      "scoring",
+      "enriched-dough"
+    ],
+    "henrysTips": [
+      "For the richest color, use yolk plus a tablespoon of cream. For a subtle sheen on sandwich bread, milk alone works fine. Always brush gently so you don't deflate the dough."
+    ],
+    "commonMistakes": [
+      "Brushing too aggressively and deflating proofed dough.",
+      "Using egg wash on rustic breads where you want a matte, crackly crust instead of a glossy one."
+    ],
+    "youtubeQuery": "egg wash bread baking techniques"
   },
   {
     "id": "elasticity",
@@ -894,7 +940,7 @@
       "yeast"
     ],
     "henrysTips": [
-      "Temperature is everything. 76-78\u00b0F is the sweet spot for most doughs."
+      "Temperature is everything. 76-78°F is the sweet spot for most doughs."
     ],
     "youtubeQuery": "bread fermentation explained"
   },
@@ -967,7 +1013,7 @@
       "fermentation"
     ],
     "henrysTips": [
-      "The easiest bread to start with! No shaping required\u2014just dump it in a pan, dimple it with your fingers, and bake."
+      "The easiest bread to start with! No shaping required—just dump it in a pan, dimple it with your fingers, and bake."
     ],
     "youtubeQuery": "easy sourdough focaccia recipe"
   },
@@ -1007,17 +1053,24 @@
   {
     "id": "gelatinization",
     "term": "Gelatinization",
-    "definition": "The process where starch granules absorb water and swell up when heated (during baking). This sets the structure of the bread crumb, turning it from liquid dough into solid bread.",
-    "category": "Process",
-    "difficulty": "Advanced",
+    "definition": "What happens when starch granules absorb water and swell under heat. In baking, this is part of what transforms raw dough into bread. Starch gelatinizes between 140–180°F depending on the type of starch. In tangzhong and yudane, you're gelatinizing starch before it ever goes into the dough, which lets those starches hold onto extra moisture throughout the bake and during storage. In bagel making, the brief boil before baking gelatinizes the outer surface, creating that characteristic chewy crust.",
+    "shortDefinition": "The process where starch granules absorb water and swell under heat, transforming dough into bread.",
+    "category": "Scientific/Technical",
+    "difficulty": "Intermediate",
     "sources": [
       "The Perfect Loaf",
       "King Arthur Baking"
     ],
     "relatedTermIds": [
-      "crumb",
-      "tangzhong"
-    ]
+      "tangzhong",
+      "yudane",
+      "retrogradation",
+      "crumb"
+    ],
+    "henrysTips": [
+      "This is the science behind why tangzhong bread stays soft for days. Pre-gelatinized starch holds onto water more effectively than raw starch, which slows down staling (starch retrogradation). Same bread, same ingredients, dramatically different shelf life."
+    ],
+    "youtubeQuery": "starch gelatinization bread baking science"
   },
   {
     "id": "gluten",
@@ -1126,7 +1179,7 @@
   {
     "id": "hydration",
     "term": "Hydration",
-    "definition": "The ratio of water to flour in dough, expressed as a percentage using baker's math. A dough with 500g flour and 375g water has 75% hydration (375\u00f7500=0.75). Higher hydration typically means more open crumb but stickier dough.",
+    "definition": "The ratio of water to flour in dough, expressed as a percentage using baker's math. A dough with 500g flour and 375g water has 75% hydration (375÷500=0.75). Higher hydration typically means more open crumb but stickier dough.",
     "shortDefinition": "The percentage of water to flour in dough.",
     "category": "Scientific/Technical",
     "difficulty": "Intermediate",
@@ -1160,7 +1213,7 @@
   {
     "id": "infrared-thermometer",
     "term": "Infrared Thermometer",
-    "definition": "A 'point-and-shoot' laser thermometer that reads surface temperatures instantly. It is essential for checking if your baking stone or steel is hot enough (500\u00b0F+) before launching your bread.",
+    "definition": "A 'point-and-shoot' laser thermometer that reads surface temperatures instantly. It is essential for checking if your baking stone or steel is hot enough (500°F+) before launching your bread.",
     "category": "Tool",
     "difficulty": "Intermediate",
     "sources": [
@@ -1202,7 +1255,7 @@
       "lean-dough"
     ],
     "henrysTips": [
-      "I use this exclusively. You don't need to 'bloom' it in warm water\u2014just toss it in the bowl and go. It's foolproof."
+      "I use this exclusively. You don't need to 'bloom' it in warm water—just toss it in the bowl and go. It's foolproof."
     ],
     "alternateQuestions": [
       "Rapid rise yeast vs instant yeast"
@@ -1258,7 +1311,7 @@
   {
     "id": "lame",
     "term": "Lame",
-    "pronunciation": "/l\u0251\u02d0m/",
+    "pronunciation": "/lɑːm/",
     "definition": "A curved or straight blade used to score bread before baking. Professional lames typically use a double-edged razor blade attached to a handle, allowing for clean, precise cuts.",
     "shortDefinition": "A blade tool for scoring bread.",
     "category": "Tool",
@@ -1268,9 +1321,30 @@
       "ear"
     ],
     "henrysTips": [
-      "Hold it at a shallow angle (about 30\u00b0) for that dramatic ear. Straight down cuts give you a different look."
+      "Hold it at a shallow angle (about 30°) for that dramatic ear. Straight down cuts give you a different look."
     ],
     "youtubeQuery": "how to use bread lame"
+  },
+  {
+    "id": "laminated-pastry",
+    "term": "Laminated Pastry",
+    "definition": "The process of folding butter into dough through a series of rolls and folds called turns. Each turn creates thin alternating layers of dough and butter. When the pastry hits the oven, steam from the butter creates lift between the layers, producing the flaky, shattery texture you find in croissants, puff pastry, and Danish. The number of turns determines the number of layers. Three single folds gives you 27 layers. Four gives you 81.",
+    "shortDefinition": "Dough layered with butter through repeated folding for flaky pastry like croissants.",
+    "category": "Technique",
+    "difficulty": "Advanced",
+    "relatedTermIds": [
+      "bench-rest",
+      "cold-ferment",
+      "enriched-dough"
+    ],
+    "henrysTips": [
+      "Temperature is everything. If the butter gets too warm, it absorbs into the dough and you lose your layers. If it's too cold, it shatters and pokes through. Keep the dough and butter at the same firmness, about 60–65°F. Refrigerate between turns."
+    ],
+    "commonMistakes": [
+      "Working with butter that's too warm, causing it to melt into the dough.",
+      "Not resting the dough between turns, which builds up too much tension and causes tearing."
+    ],
+    "youtubeQuery": "laminated pastry croissant technique"
   },
   {
     "id": "lamination",
@@ -1332,6 +1406,26 @@
       "enriched-dough",
       "baguette"
     ]
+  },
+  {
+    "id": "leavening",
+    "term": "Leavening",
+    "definition": "Anything that makes dough or batter rise. In bread baking, the two main types are biological (yeast and sourdough starter, which produce carbon dioxide through fermentation) and chemical (baking powder and baking soda, which produce carbon dioxide through a chemical reaction with acid). Steam can also act as a leavening agent in pastries. Understanding which leavener does what helps you troubleshoot flat loaves and dense quick breads.",
+    "shortDefinition": "Any agent or process that makes dough or batter rise.",
+    "category": "Process",
+    "difficulty": "Beginner",
+    "relatedTermIds": [
+      "fermentation",
+      "bulk-fermentation",
+      "proofing",
+      "active-dry-yeast",
+      "instant-yeast",
+      "sourdough-starter"
+    ],
+    "henrysTips": [
+      "Baking powder is double-acting, meaning it reacts once when mixed with liquid and again in the oven. Baking soda only reacts once, so get your batter into the oven quickly. For yeast breads, time and temperature control your rise."
+    ],
+    "youtubeQuery": "leavening agents bread baking explained"
   },
   {
     "id": "levain",
@@ -1489,6 +1583,22 @@
     ]
   },
   {
+    "id": "oven-steam",
+    "term": "Steam (Baking)",
+    "definition": "Water vapor introduced into the oven during the first 20 minutes of baking. Steam keeps the crust soft and flexible, allowing the bread to expand fully (oven spring) before the crust hardens.",
+    "category": "Process",
+    "difficulty": "Intermediate",
+    "sources": [
+      "The Perfect Loaf",
+      "The Clever Carrot"
+    ],
+    "relatedTermIds": [
+      "dutch-oven",
+      "oven-spring",
+      "lava-rocks"
+    ]
+  },
+  {
     "id": "overproofed",
     "term": "Overproofed",
     "definition": "When dough has fermented too long, the gluten network breaks down and can no longer hold gas. The dough becomes weak, sticky, and spreads out instead of rising. Overproofed bread is typically flat and dense.",
@@ -1511,6 +1621,28 @@
     ]
   },
   {
+    "id": "overworking",
+    "term": "Overworking",
+    "definition": "Mixing or handling dough or batter past the point where it helps and into the territory where it hurts. In quick breads, muffins, and scones, overworking develops too much gluten, turning a tender crumb into something tough and chewy. In pie dough and biscuits, overworking melts the butter into the flour instead of keeping it in distinct pieces, which kills flakiness. In bread dough, overworking is less common but possible, especially in a stand mixer. The dough turns slack and sticky and loses its structure.",
+    "shortDefinition": "Mixing or handling dough past the point of benefit, causing tough or dense results.",
+    "category": "Technique",
+    "difficulty": "Beginner",
+    "relatedTermIds": [
+      "windowpane-test",
+      "gluten",
+      "kneading"
+    ],
+    "henrysTips": [
+      "For quick breads and scones, mix until the dry ingredients are just barely incorporated. You should still see streaks of flour. The batter will look rough. That's correct.",
+      "For bread, overworking in a mixer means you've gone past the windowpane stage and the dough has started to break down."
+    ],
+    "commonMistakes": [
+      "Confusing under-mixed batter (which is fine) with poorly mixed batter (which isn't).",
+      "Assuming bread dough can't be over-mixed just because it takes longer."
+    ],
+    "youtubeQuery": "overworking dough bread baking mistakes"
+  },
+  {
     "id": "pain-de-mie",
     "term": "Pain de Mie",
     "definition": "Also known as a 'Pullman loaf,' this is a soft, white sandwich bread baked in a rectangular pan with a sliding lid. The lid traps the dough, forcing it to fill the corners for a perfectly square slice with very little crust.",
@@ -1531,7 +1663,7 @@
   {
     "id": "panettone",
     "term": "Panettone",
-    "pronunciation": "/\u02ccp\u00e6n.\u026a\u02c8to\u028a.ni/",
+    "pronunciation": "/ˌpæn.ɪˈtoʊ.ni/",
     "definition": "A tall, cylindrical Italian sweet bread traditionally eaten at Christmas. It is notorious for being the 'Mount Everest' of baking due to its complex multi-day sourdough process and the need to hang it upside down while cooling.",
     "category": "Bread",
     "difficulty": "Advanced",
@@ -1545,6 +1677,22 @@
     ],
     "henrysTips": [
       "This is the final boss of bread baking. Don't attempt this until you're comfortable with basic sourdough!"
+    ]
+  },
+  {
+    "id": "pate-fermentee",
+    "term": "Pâte Fermentée",
+    "pronunciation": "/pat fer-mon-tay/",
+    "definition": "French for 'fermented dough,' this is simply a piece of fully mixed dough saved from a previous batch. It contains flour, water, yeast, and salt, and is added to a new batch to jump-start fermentation and add flavor.",
+    "shortDefinition": "Old dough saved from a previous batch to flavor the next one.",
+    "category": "Process",
+    "difficulty": "Advanced",
+    "sources": [
+      "The Perfect Loaf",
+      "King Arthur Baking"
+    ],
+    "henrysTips": [
+      "This is the old-school baker's secret! Save a fist-sized ball of dough from your pizza night and throw it into your next loaf for instant flavor depth."
     ]
   },
   {
@@ -1615,7 +1763,7 @@
   {
     "id": "poolish",
     "term": "Poolish",
-    "pronunciation": "/\u02c8pu\u02d0.l\u026a\u0283/",
+    "pronunciation": "/ˈpuː.lɪʃ/",
     "definition": "A wet preferment made with equal parts flour and water by weight (100% hydration) and a tiny amount of yeast. It ferments for 12-16 hours and adds flavor and structure to the final dough.",
     "shortDefinition": "A liquid preferment made with flour, water, and yeast.",
     "category": "Process",
@@ -1649,9 +1797,24 @@
     ]
   },
   {
+    "id": "pretzels",
+    "term": "Soft Pretzels",
+    "definition": "A knotted bread that is dipped in a lye or baking soda solution before baking. This alkaline bath gives pretzels their signature dark mahogany color and unique pretzel flavor.",
+    "category": "Bread",
+    "difficulty": "Intermediate",
+    "sources": [
+      "King Arthur Baking",
+      "The Perfect Loaf"
+    ],
+    "relatedTermIds": [
+      "maillard-reaction",
+      "lye"
+    ]
+  },
+  {
     "id": "probe-thermometer",
     "term": "Probe Thermometer",
-    "definition": "A thermometer with a metal needle used to check the internal temperature of the loaf. It is the only accurate way to know if bread is fully baked (usually 190\u00b0F-210\u00b0F) without cutting it open.",
+    "definition": "A thermometer with a metal needle used to check the internal temperature of the loaf. It is the only accurate way to know if bread is fully baked (usually 190°F-210°F) without cutting it open.",
     "category": "Tool",
     "difficulty": "Beginner",
     "sources": [
@@ -1663,7 +1826,7 @@
       "gummy-crumb"
     ],
     "henrysTips": [
-      "Stop thumping the bottom of the bread! Just stick a thermometer in it. 205\u00b0F means it's done. No guessing."
+      "Stop thumping the bottom of the bread! Just stick a thermometer in it. 205°F means it's done. No guessing."
     ]
   },
   {
@@ -1725,22 +1888,6 @@
     ],
     "relatedTermIds": [
       "pain-de-mie"
-    ]
-  },
-  {
-    "id": "pate-fermentee",
-    "term": "P\u00e2te Ferment\u00e9e",
-    "pronunciation": "/pat fer-mon-tay/",
-    "definition": "French for 'fermented dough,' this is simply a piece of fully mixed dough saved from a previous batch. It contains flour, water, yeast, and salt, and is added to a new batch to jump-start fermentation and add flavor.",
-    "shortDefinition": "Old dough saved from a previous batch to flavor the next one.",
-    "category": "Process",
-    "difficulty": "Advanced",
-    "sources": [
-      "The Perfect Loaf",
-      "King Arthur Baking"
-    ],
-    "henrysTips": [
-      "This is the old-school baker's secret! Save a fist-sized ball of dough from your pizza night and throw it into your next loaf for instant flavor depth."
     ]
   },
   {
@@ -1807,7 +1954,7 @@
       "King Arthur Baking"
     ],
     "henrysTips": [
-      "Rye dough is naturally sticky\u2014don't try to knead it like white bread! Think of it more like molding clay than stretching a rubber band."
+      "Rye dough is naturally sticky—don't try to knead it like white bread! Think of it more like molding clay than stretching a rubber band."
     ],
     "commonMistakes": [
       "Trying to knead rye dough until it passes the windowpane test (it never will)."
@@ -1831,7 +1978,7 @@
   {
     "id": "scalding",
     "term": "Scalding (Milk)",
-    "definition": "Heating milk to just below boiling (180\u00b0F) before adding it to bread dough. This denatures a specific protein in milk (serum whey protein) that would otherwise weaken the gluten and result in a gummy, dense loaf.",
+    "definition": "Heating milk to just below boiling (180°F) before adding it to bread dough. This denatures a specific protein in milk (serum whey protein) that would otherwise weaken the gluten and result in a gummy, dense loaf.",
     "category": "Technique",
     "difficulty": "Intermediate",
     "sources": [
@@ -1958,21 +2105,6 @@
     ]
   },
   {
-    "id": "pretzels",
-    "term": "Soft Pretzels",
-    "definition": "A knotted bread that is dipped in a lye or baking soda solution before baking. This alkaline bath gives pretzels their signature dark mahogany color and unique pretzel flavor.",
-    "category": "Bread",
-    "difficulty": "Intermediate",
-    "sources": [
-      "King Arthur Baking",
-      "The Perfect Loaf"
-    ],
-    "relatedTermIds": [
-      "maillard-reaction",
-      "lye"
-    ]
-  },
-  {
     "id": "sourdough-discard",
     "term": "Sourdough Discard",
     "definition": "The portion of sourdough starter that is removed before feeding to keep the total volume manageable. While not active enough to rise bread, it is packed with flavor and can be used in pancakes, crackers, and cookies.",
@@ -2038,25 +2170,9 @@
     ]
   },
   {
-    "id": "oven-steam",
-    "term": "Steam (Baking)",
-    "definition": "Water vapor introduced into the oven during the first 20 minutes of baking. Steam keeps the crust soft and flexible, allowing the bread to expand fully (oven spring) before the crust hardens.",
-    "category": "Process",
-    "difficulty": "Intermediate",
-    "sources": [
-      "The Perfect Loaf",
-      "The Clever Carrot"
-    ],
-    "relatedTermIds": [
-      "dutch-oven",
-      "oven-spring",
-      "lava-rocks"
-    ]
-  },
-  {
     "id": "stretch-and-fold",
     "term": "Stretch and Fold",
-    "definition": "A gentle folding technique performed during bulk fermentation. Wet your hands, grab one side of the dough, stretch it up, and fold it over onto itself. Rotate the bowl 90\u00b0 and repeat 4 times. This builds gluten strength without kneading.",
+    "definition": "A gentle folding technique performed during bulk fermentation. Wet your hands, grab one side of the dough, stretch it up, and fold it over onto itself. Rotate the bowl 90° and repeat 4 times. This builds gluten strength without kneading.",
     "shortDefinition": "Folding technique to build dough strength during bulk.",
     "category": "Technique",
     "difficulty": "Beginner",
@@ -2073,19 +2189,30 @@
   {
     "id": "tangzhong",
     "term": "Tangzhong",
-    "pronunciation": "/t\u0251\u014b\u02c8d\u0292\u0254\u014b/",
-    "definition": "An Asian technique where a small portion of flour is cooked with water to create a gel-like paste, then added to the dough. The gelatinized starches hold extra moisture, making bread incredibly soft and extending shelf life.",
-    "shortDefinition": "Cooked flour paste that makes bread super soft.",
+    "pronunciation": "/tɑŋˈdʒɔŋ/",
+    "definition": "A cooked paste made from flour and liquid (usually milk) heated to about 150°F until it thickens. This pre-gelatinizes the starch, which means the flour can absorb and hold significantly more water. The result is bread that comes out softer, moister, and stays fresh days longer than the same recipe without it. Originally popularized by Taiwanese baker Yvonne Chen in 2004. Common in Japanese milk bread, cinnamon rolls, and any enriched dough where you want that pillowy, pull-apart texture.",
+    "shortDefinition": "Cooked flour paste that pre-gelatinizes starch for softer, longer-lasting bread.",
     "category": "Technique",
-    "difficulty": "Advanced",
+    "difficulty": "Intermediate",
     "relatedTermIds": [
+      "yudane",
+      "enriched-dough",
+      "retrogradation",
+      "windowpane-test",
       "milk-bread",
-      "enriched-dough"
+      "gelatinization"
     ],
     "henrysTips": [
-      "This is the secret to that pillowy-soft Japanese milk bread. Game changer for sandwich loaves."
+      "The ratio is simple: 1 part flour to 5 parts liquid by weight. Cook it over medium-low heat, stirring constantly, until lines drawn with a spatula hold their shape. Cool it before adding to your dough.",
+      "This is the secret to that pillowy-soft Japanese milk bread. Game changer for sandwich loaves and cinnamon rolls too."
     ],
-    "youtubeQuery": "tangzhong method bread"
+    "commonMistakes": [
+      "Cooking the paste too fast on high heat, which can cause lumps or scorching.",
+      "Adding the tangzhong while it's still hot, which can kill your yeast."
+    ],
+    "history": "Originally popularized by Taiwanese baker Yvonne Chen in her 2004 book '65°C Bread Doctor.' The technique has roots in Japanese and Chinese baking traditions and has since spread worldwide as bakers discovered its ability to produce incredibly soft enriched breads.",
+    "youtubeQuery": "tangzhong method bread baking",
+    "bookRef": true
   },
   {
     "id": "tenacity",
@@ -2120,6 +2247,38 @@
       "video"
     ],
     "youtubeQuery": "how to create tension in bread dough"
+  },
+  {
+    "id": "tent-with-foil",
+    "term": "Tent with Foil",
+    "definition": "Loosely draping a sheet of aluminum foil over bread or pastry during baking to prevent the top from browning too quickly while the interior finishes cooking. You don't press the foil down or seal it. Just lay it gently on top like a tent. Common with enriched breads like brioche, challah, and banana bread, which brown faster due to their sugar and egg content.",
+    "shortDefinition": "Loosely covering baked goods with foil to prevent over-browning while baking continues.",
+    "category": "Technique",
+    "difficulty": "Beginner",
+    "relatedTermIds": [
+      "egg-wash",
+      "internal-temperature",
+      "enriched-dough"
+    ],
+    "henrysTips": [
+      "If your bread is getting dark on top but the internal temp isn't there yet, tent it and keep baking. Check every 5 minutes. The foil reflects heat away from the surface while the oven heat continues cooking the inside."
+    ],
+    "youtubeQuery": "tent bread with foil prevent burning"
+  },
+  {
+    "id": "toothpick-test",
+    "term": "Toothpick Test",
+    "definition": "A simple doneness check for quick breads, muffins, cakes, and banana bread. Insert a toothpick or thin skewer into the center of the bake. If it comes out clean or with just a few moist crumbs clinging to it, the bread is done. If it comes out with wet batter, it needs more time. Not used for yeast breads, where an instant-read thermometer checking internal temperature is more reliable.",
+    "shortDefinition": "Insert a toothpick into the center of a bake to check if it's done.",
+    "category": "Technique",
+    "difficulty": "Beginner",
+    "relatedTermIds": [
+      "internal-temperature"
+    ],
+    "henrysTips": [
+      "A few moist crumbs on the toothpick is actually ideal. Completely clean means you might have overbaked slightly. Test in the center, not near the edges, which cook faster."
+    ],
+    "youtubeQuery": "toothpick test bread doneness"
   },
   {
     "id": "tunneling",
