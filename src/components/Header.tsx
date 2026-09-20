@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
           >
             <div className="brand-logo-shell">
               <img
-                src="https://bakinggreatbread.blog/wp-content/uploads/2026/09/Youtube-logo.png"
+                src="/crust-crumb-academy-logo.png"
                 alt="Crust & Crumb Academy logo"
                 className="brand-logo-image"
               />
@@ -54,6 +54,14 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
               <Calculator size={17} />
               Baker&apos;s Tools
             </button>
+            <a
+              href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
+              target="_blank"
+              rel="noreferrer"
+              className="topbar-link"
+            >
+              The Book
+            </a>
             <a
               href="https://skoo.ly/recipepantry"
               target="_blank"
