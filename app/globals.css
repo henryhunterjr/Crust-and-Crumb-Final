@@ -12,7 +12,6 @@
   --ink: #2b211a;
 }
 
-/* Base body styling */
 body {
   margin: 0;
   color: var(--ink);
@@ -23,7 +22,6 @@ body {
   font-family: Georgia, Cambria, 'Times New Roman', serif;
 }
 
-/* Glossary top bar */
 .glossary-topbar {
   background:
     linear-gradient(90deg, rgba(35, 21, 14, 0.98), rgba(53, 32, 20, 0.97), rgba(35, 21, 14, 0.98));
@@ -48,7 +46,6 @@ body {
 
 .brand-wheat-icon {
   transform-origin: 50% 85%;
-  animation: brand-wheat-sway 4.2s ease-in-out infinite alternate;
 }
 
 .topbar-link {
@@ -64,42 +61,45 @@ body {
   transform: translateY(-1px);
 }
 
-/* Editorial glossary hero */
 .glossary-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   min-height: 340px;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(217, 165, 78, 0.19), transparent 28rem),
-    radial-gradient(circle at 78% 28%, rgba(160, 100, 45, 0.22), transparent 30rem),
-    linear-gradient(135deg, #24160f 0%, #3a2417 50%, #28180f 100%);
-  border-bottom: 1px solid rgba(201, 146, 63, 0.30);
+  background: #24160f;
+  border-bottom: 1px solid rgba(201, 146, 63, 0.22);
   box-shadow: inset 0 -1px 0 rgba(255,255,255,0.035);
 }
 
-.glossary-hero::before {
-  content: "";
+.hero-video {
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.42;
   pointer-events: none;
-  opacity: 0.24;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.10) 0 0.7px, transparent 0.9px);
-  background-size: 8px 8px;
-  mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
 
-.glossary-hero::after {
-  content: "";
+.hero-video-overlay {
   position: absolute;
-  inset: auto 0 0;
-  height: 130px;
+  inset: 0;
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(to top, rgba(21, 12, 8, 0.52), transparent);
+    linear-gradient(90deg, rgba(24, 14, 9, 0.82) 0%, rgba(30, 17, 10, 0.69) 48%, rgba(35, 20, 12, 0.58) 100%),
+    linear-gradient(180deg, rgba(21, 12, 8, 0.18), rgba(21, 12, 8, 0.42));
+}
+
+.hero-video-fade {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(24, 14, 9, 0.58), transparent);
 }
 
 .hero-kicker {
@@ -146,156 +146,6 @@ body {
   box-shadow: 0 8px 24px rgba(201, 146, 63, 0.18);
 }
 
-/* Moving wheat field */
-.wheat-field {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  mask-image: linear-gradient(to top, black 0%, rgba(0,0,0,0.88) 56%, transparent 96%);
-}
-
-.wheat-stalk {
-  position: absolute;
-  bottom: -18px;
-  width: 2px;
-  border-radius: 999px;
-  transform-origin: 50% 100%;
-  background: linear-gradient(to top, rgba(160, 100, 45, 0.35), rgba(229, 191, 112, 0.96));
-  box-shadow: 0 0 10px rgba(201, 146, 63, 0.10);
-  animation-name: wheat-sway;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.wheat-head {
-  position: absolute;
-  left: 50%;
-  top: -27px;
-  width: 9px;
-  height: 31px;
-  transform: translateX(-50%) rotate(-2deg);
-  border-radius: 70% 70% 58% 58%;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #e5bf70 0 3px,
-      #bf8434 3px 5px
-    );
-  box-shadow:
-    -5px 4px 0 -2px rgba(224, 181, 96, 0.95),
-    5px 7px 0 -2px rgba(224, 181, 96, 0.90),
-    -5px 12px 0 -2px rgba(207, 153, 64, 0.90),
-    5px 15px 0 -2px rgba(207, 153, 64, 0.88),
-    -4px 20px 0 -2px rgba(191, 132, 52, 0.82);
-}
-
-.wheat-head::before,
-.wheat-head::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 25px;
-  top: -5px;
-  background: linear-gradient(to top, rgba(224,181,96,0.16), rgba(242,211,141,0.88));
-  transform-origin: bottom;
-}
-
-.wheat-head::before {
-  left: 2px;
-  transform: rotate(-28deg);
-}
-
-.wheat-head::after {
-  right: 2px;
-  transform: rotate(28deg);
-}
-
-.wheat-leaf {
-  position: absolute;
-  width: 22px;
-  height: 7px;
-  border-top: 1.5px solid rgba(226, 184, 99, 0.80);
-  border-radius: 70% 10% 70% 10%;
-}
-
-.wheat-leaf-left {
-  left: -20px;
-  top: 35%;
-  transform: rotate(21deg);
-}
-
-.wheat-leaf-right {
-  right: -20px;
-  top: 55%;
-  transform: scaleX(-1) rotate(19deg);
-}
-
-.grain-mote {
-  position: absolute;
-  z-index: 2;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #efd692;
-  box-shadow: 0 0 10px rgba(239, 214, 146, 0.55);
-  opacity: 0;
-  pointer-events: none;
-  animation: grain-drift 8s ease-in-out infinite;
-}
-
-.grain-mote-1 { left: 15%; bottom: 15%; animation-delay: -1s; }
-.grain-mote-2 { left: 42%; bottom: 9%; animation-delay: -4.6s; }
-.grain-mote-3 { right: 22%; bottom: 18%; animation-delay: -2.4s; }
-.grain-mote-4 { right: 8%; bottom: 7%; animation-delay: -6.2s; }
-
-.hero-bottom-fade {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 28px;
-  background: linear-gradient(to bottom, transparent, rgba(247, 240, 227, 0.08));
-  pointer-events: none;
-}
-
-@keyframes wheat-sway {
-  0% {
-    transform: rotate(-3.4deg) translateX(-1px);
-  }
-  50% {
-    transform: rotate(1.4deg) translateX(1px);
-  }
-  100% {
-    transform: rotate(4.2deg) translateX(2px);
-  }
-}
-
-@keyframes brand-wheat-sway {
-  0% { transform: rotate(-5deg); }
-  100% { transform: rotate(5deg); }
-}
-
-@keyframes grain-drift {
-  0% {
-    transform: translate3d(0, 22px, 0) scale(0.75);
-    opacity: 0;
-  }
-  18% { opacity: 0.55; }
-  55% {
-    transform: translate3d(18px, -54px, 0) scale(1);
-    opacity: 0.45;
-  }
-  100% {
-    transform: translate3d(-10px, -124px, 0) scale(0.65);
-    opacity: 0;
-  }
-}
-
-/* Hide scrollbar utility */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -305,7 +155,6 @@ body {
   display: none;
 }
 
-/* Existing component entrance animation */
 @keyframes slide-in-from-bottom {
   from {
     transform: translateY(20px);
@@ -326,15 +175,22 @@ body {
     min-height: 380px;
   }
 
-  .wheat-stalk {
-    opacity: 0.24 !important;
+  .hero-video {
+    opacity: 0.38;
+  }
+
+  .hero-video-overlay {
+    background:
+      linear-gradient(90deg, rgba(24, 14, 9, 0.84), rgba(30, 17, 10, 0.67)),
+      linear-gradient(180deg, rgba(21, 12, 8, 0.14), rgba(21, 12, 8, 0.48));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wheat-stalk,
-  .grain-mote,
-  .brand-wheat-icon,
+  .hero-video {
+    display: none;
+  }
+
   .animate-in {
     animation: none !important;
   }
