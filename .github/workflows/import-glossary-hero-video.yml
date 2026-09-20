@@ -1,0 +1,35 @@
+name: Import glossary hero video
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/import-glossary-hero-video.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download uploaded hero video
+        run: |
+          mkdir -p public
+          curl -L --fail --retry 3 --retry-delay 2             "https://at.adobe.com/yJ6WiyCspFZOsgWS"             -o public/glossary-hero.mp4
+          test -s public/glossary-hero.mp4
+          file public/glossary-hero.mp4
+
+      - name: Commit video and remove one-time importer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/glossary-hero.mp4
+          git rm .github/workflows/import-glossary-hero-video.yml
+          git commit -m "Add glossary hero background video"
+          git push
