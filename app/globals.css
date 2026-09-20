@@ -23,8 +23,7 @@ body {
 }
 
 .glossary-topbar {
-  background:
-    linear-gradient(90deg, rgba(35, 21, 14, 0.98), rgba(53, 32, 20, 0.97), rgba(35, 21, 14, 0.98));
+  background: linear-gradient(90deg, rgba(35, 21, 14, 0.98), rgba(53, 32, 20, 0.97), rgba(35, 21, 14, 0.98));
   border-bottom: 1px solid rgba(201, 146, 63, 0.28);
   box-shadow: 0 12px 34px rgba(35, 21, 14, 0.18);
   backdrop-filter: blur(14px);
@@ -59,10 +58,7 @@ body {
   transition: color 180ms ease, transform 180ms ease;
 }
 
-.topbar-link:hover {
-  color: #f2cb79;
-  transform: translateY(-1px);
-}
+.topbar-link:hover { color: #f2cb79; transform: translateY(-1px); }
 
 .glossary-hero {
   position: relative;
@@ -82,7 +78,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.55;
+  opacity: 0.64;
   pointer-events: none;
 }
 
@@ -92,8 +88,8 @@ body {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(24, 14, 9, 0.74) 0%, rgba(30, 17, 10, 0.60) 48%, rgba(35, 20, 12, 0.50) 100%),
-    linear-gradient(180deg, rgba(21, 12, 8, 0.14), rgba(21, 12, 8, 0.34));
+    linear-gradient(90deg, rgba(24, 14, 9, 0.64) 0%, rgba(30, 17, 10, 0.48) 48%, rgba(35, 20, 12, 0.40) 100%),
+    linear-gradient(180deg, rgba(21, 12, 8, 0.08), rgba(21, 12, 8, 0.25));
 }
 
 .hero-video-fade {
@@ -102,7 +98,7 @@ body {
   z-index: 2;
   height: 120px;
   pointer-events: none;
-  background: linear-gradient(to top, rgba(24, 14, 9, 0.50), transparent);
+  background: linear-gradient(to top, rgba(24, 14, 9, 0.38), transparent);
 }
 
 .hero-kicker {
@@ -149,11 +145,7 @@ body {
   box-shadow: 0 8px 24px rgba(201, 146, 63, 0.18);
 }
 
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 
 @keyframes slide-in-from-bottom {
@@ -165,11 +157,11 @@ body {
 
 @media (max-width: 640px) {
   .glossary-hero { min-height: 380px; }
-  .hero-video { opacity: 0.50; }
+  .hero-video { opacity: 0.59; }
   .hero-video-overlay {
     background:
-      linear-gradient(90deg, rgba(24, 14, 9, 0.76), rgba(30, 17, 10, 0.58)),
-      linear-gradient(180deg, rgba(21, 12, 8, 0.12), rgba(21, 12, 8, 0.40));
+      linear-gradient(90deg, rgba(24, 14, 9, 0.68), rgba(30, 17, 10, 0.46)),
+      linear-gradient(180deg, rgba(21, 12, 8, 0.07), rgba(21, 12, 8, 0.30));
   }
 }
 
