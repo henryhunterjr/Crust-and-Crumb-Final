@@ -55,14 +55,6 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
               Baker&apos;s Tools
             </button>
             <a
-              href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
-              target="_blank"
-              rel="noreferrer"
-              className="topbar-link"
-            >
-              The Book
-            </a>
-            <a
               href="https://skoo.ly/recipepantry"
               target="_blank"
               rel="noreferrer"
