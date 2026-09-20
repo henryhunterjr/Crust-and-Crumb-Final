@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ChefHat, Wheat, Calculator, Search, Route, MessageSquare } from 'lucide-react';
+import { ChefHat, Calculator, Search, Route, MessageSquare } from 'lucide-react';
 import { GLOSSARY_DATA } from '../constants';
 
 interface HeaderProps {
@@ -26,8 +26,12 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
             className="flex items-center gap-3 cursor-pointer group"
             aria-label="Return to home"
           >
-            <div className="brand-wheat-shell">
-              <Wheat size={27} className="brand-wheat-icon" />
+            <div className="brand-logo-shell">
+              <img
+                src="https://bakinggreatbread.blog/wp-content/uploads/2026/09/Youtube-logo.png"
+                alt="Crust & Crumb Academy logo"
+                className="brand-logo-image"
+              />
             </div>
             <div className="text-left">
               <h1 className="text-xl sm:text-2xl font-serif font-bold text-[#fff7e8] leading-none tracking-tight">
@@ -51,12 +55,12 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
               Baker&apos;s Tools
             </button>
             <a
-              href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
+              href="https://skoo.ly/recipepantry"
               target="_blank"
               rel="noreferrer"
               className="topbar-link"
             >
-              The Book
+              Recipe Pantry
             </a>
             <div className="h-8 w-px bg-[#c99542]/30" />
             <div className="flex items-center gap-2 text-[#e8c982]">
