@@ -3,35 +3,40 @@ import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-  description: "Interactive bread baking glossary with 132 definitions, baker's percentage calculator & expert tips. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.",
-  keywords: 'sourdough, bread baking, glossary, baking terms, sourdough starter, bread techniques, Henry Hunter',
+  metadataBase: new URL('https://crust-and-crumb-tawny.vercel.app'),
+  applicationName: 'The Bread Baker\'s Glossary',
+  title: {
+    default: "The Bread Baker's Glossary | Crust & Crumb Academy",
+    template: '%s | Crust & Crumb Academy',
+  },
+  description: "A comprehensive bread baking glossary with 132+ terms and growing, covering sourdough, fermentation, flour, tools, techniques, baker's science and more.",
+  keywords: [
+    'bread baking glossary',
+    'bread baking terms',
+    'sourdough glossary',
+    'sourdough terms',
+    'bread techniques',
+    'fermentation terms',
+    'baker\'s percentage',
+    'bread tools',
+    'bread science',
+    'Henry Hunter',
+    'Crust & Crumb Academy',
+  ],
   authors: [{ name: 'Henry Hunter' }],
-  openGraph: {
-    title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-    description: "Free glossary with 132 sourdough & bread terms, baker's calculator & expert tips from Henry Hunter.",
-    type: 'website',
-    siteName: 'Baking Great Bread at Home',
-    locale: 'en_US',
-    images: [
-      {
-        url: 'https://crust-and-crumb-tawny.vercel.app/Thumbnail.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Crust and Crumb - Interactive Bread Baking Glossary',
-      }
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Crust and Crumb - Bread Baking Glossary',
-    description: "Interactive glossary with 132 definitions + baker's percentage calculator",
-    creator: '@bakinggreatbread',
-    images: ['https://crust-and-crumb-tawny.vercel.app/Thumbnail.jpg'],
-  },
+  creator: 'Henry Hunter',
+  publisher: 'Crust & Crumb Academy',
+  category: 'Bread Baking Education',
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 }
 
