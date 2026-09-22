@@ -2,10 +2,37 @@ import { Metadata } from 'next'
 import GlossaryApp from './GlossaryApp'
 import glossaryData from '@/src/data/glossary.json'
 
-// Generate metadata with actual glossary content for SEO
+const termCount = glossaryData.length
+
 export const metadata: Metadata = {
-  title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-  description: `Interactive bread baking glossary with ${glossaryData.length} definitions, baker's percentage calculator & expert tips. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.`,
+  title: "The Bread Baker's Glossary: 132+ Terms, Techniques & Tools",
+  description: `Explore ${termCount}+ bread baking terms with clear definitions, techniques, tools, sourdough guidance, baker's science, expert tips and an interactive baker's percentage calculator.`,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "The Bread Baker's Glossary: 132+ Terms & Growing",
+    description: "An extensive bread baking reference for sourdough, fermentation, flour, tools, techniques and baker's science, built by Crust & Crumb Academy.",
+    url: '/',
+    siteName: 'Crust & Crumb Academy',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/glossary-social-image',
+        width: 1200,
+        height: 630,
+        alt: "The Bread Baker's Glossary, 132 terms and growing, from Crust & Crumb Academy",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "The Bread Baker's Glossary: 132+ Terms & Growing",
+    description: "Bread baking definitions, techniques, tools, sourdough guidance, baker's science and expert tips in one growing reference.",
+    creator: '@bakinggreatbread',
+    images: ['/glossary-social-image'],
+  },
 }
 
 // Server component that renders SEO-friendly content
@@ -41,3 +68,4 @@ export default function Home() {
     </>
   )
 }
+
