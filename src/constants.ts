@@ -31,7 +31,7 @@ export const AFFILIATE_LINKS = {
   // Baking/Dutch Oven
   bakingShellBoule: { name: 'Brød & Taylor Baking Shell (Boule)', url: 'https://collabs.shop/jveyfn' },
   bakingShellBatard: { name: 'Brød & Taylor Baking Shell (Batard) & Steel', url: 'https://collabs.shop/noauwh' },
-  breadSteel: { name: 'Brød & Taylor Bread Steel', url: 'https://collabs.shop/soze7p' },
+  breadSteel: { name: 'Brød & Taylor Bread Steel Max', url: 'https://collabs.shop/zd4dhw' },
   // Bench work
   benchKnife: { name: 'Brød & Taylor Bench Knife', url: 'https://collabs.shop/8vcnxu' },
   // Proofing containers

@@ -36,7 +36,7 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['baking steel', 'pizza steel', 'bread steel', 'steel plate'],
-    product: { name: 'Brød & Taylor Bread Steel', url: 'https://collabs.shop/soze7p' }
+    product: { name: 'Brød & Taylor Bread Steel Max', url: 'https://collabs.shop/zd4dhw' }
   },
   {
     keywords: ['scale', 'kitchen scale', 'digital scale', 'weighing'],
