@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Cold Proof illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<rect x="110" y="30" width="180" height="200" rx="12" /><path d="M110 110 L290 110" /><path d="M274 60 L274 90" /><path d="M274 130 L274 170" /><path d="M130 190 Q130 150 200 148 Q270 150 270 190 Z" stroke="rgba(240,200,120,0.55)"/><path d="M150 190 Q150 160 200 158 Q250 160 250 190 Z" fill="rgba(240,200,120,0.14)"/><path d="M60 66 L60 94 M48 73 L72 87 M48 87 L72 73" stroke="rgba(240,200,120,0.55)"/><path d="M340 136 L340 164 M328 143 L352 157 M328 157 L352 143" stroke="rgba(240,200,120,0.55)"/><path d="M52 176 L52 204 M40 183 L64 197 M40 197 L64 183" stroke="rgba(240,200,120,0.55)"/><text x="200" y="252" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >SLOW, COLD, AND FULL OF FLAVOR</text>
+</g>
+</svg>

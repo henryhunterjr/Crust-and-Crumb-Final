@@ -57,6 +57,8 @@ export interface GlossaryItem {
   clusterPlan?: GlossaryClusterPlan;
   /** Source-backed relationships derived from the supplied inventories. */
   sourceRelations?: GlossarySourceRelation[];
+  /** Line illustration shown on the card and term page. */
+  illustration?: { src: string; alt: string; caption: string };
 }
 
 export interface GlossaryClusterPlan {

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Oven Steam illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<rect x="60" y="50" width="280" height="170" rx="10" /><path d="M60 86 L340 86" /><path d="M120 196 Q120 140 200 136 Q280 140 280 196 Z" fill="rgba(240,200,120,0.14)"/><path d="M100 196 L300 196" stroke="rgba(240,200,120,0.55)"/><path d="M120 120 Q130 104 120 90 Q110 76 120 62" stroke="rgba(240,200,120,0.55)"/><path d="M200 118 Q210 102 200 88 Q190 74 200 60" stroke="rgba(240,200,120,0.55)"/><path d="M280 120 Q290 104 280 90 Q270 76 280 62" stroke="rgba(240,200,120,0.55)"/><text x="200" y="246" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >STEAM KEEPS THE CRUST SOFT WHILE IT RISES</text>
+</g>
+</svg>

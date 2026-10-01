@@ -7,10 +7,10 @@ import {
   Search, Filter, Download, ExternalLink, BookOpen, ChevronDown, ChevronUp,
   CheckCircle, MessageSquare, AlertTriangle, Lightbulb, History, Calculator,
   Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info, X, ArrowRight,
-  Wheat, Sprout, Wrench, Croissant, GraduationCap
+  Wheat, Sprout, Wrench, Croissant, GraduationCap, Stethoscope
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS } from '../constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS, SYMPTOMS } from '../constants';
 
 // Affiliate product mappings - keywords to products
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
@@ -136,6 +136,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
   const [activePathId, setActivePathId] = useState<string | null>(null);
+  const [activeSymptomId, setActiveSymptomId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [quickMode, setQuickMode] = useState(false);
   const [activeTab, setActiveTab] = useState<'overview' | 'expert' | 'deep' | 'sources' | 'recipes'>('overview');
@@ -171,6 +172,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       setSelectedCategory('All');
       setSelectedDifficulty('All');
       setActivePathId(null);
+      setActiveSymptomId(null);
       setSelectedLetter('All');
       setExpandedId(null);
     }
@@ -211,6 +213,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       setSelectedDifficulty('All');
       setSelectedLetter('All');
       setActivePathId(null);
+      setActiveSymptomId(null);
       setSearchTerm('');
 
       // Scroll to the term
@@ -269,6 +272,13 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       }
     }
 
+    if (activeSymptomId) {
+      const symptom = SYMPTOMS.find(s => s.id === activeSymptomId);
+      if (symptom) {
+        data = data.filter(item => symptom.termIds.includes(item.id));
+      }
+    }
+
     // Filter by letter
     if (selectedLetter !== 'All') {
       if (selectedLetter === '#') {
@@ -292,15 +302,18 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       // Paths keep their teaching order; everything else is A to Z
       const path = activePathId ? LEARNING_PATHS.find(p => p.id === activePathId) : undefined;
       if (path) return path.termIds.indexOf(a.id) - path.termIds.indexOf(b.id);
+      const symptom = activeSymptomId ? SYMPTOMS.find(s => s.id === activeSymptomId) : undefined;
+      if (symptom) return symptom.termIds.indexOf(a.id) - symptom.termIds.indexOf(b.id);
       return a.term.localeCompare(b.term);
     });
-  }, [searchTerm, selectedCategory, selectedDifficulty, activePathId, selectedLetter]);
+  }, [searchTerm, selectedCategory, selectedDifficulty, activePathId, activeSymptomId, selectedLetter]);
 
   const clearFilters = useCallback(() => {
     setSearchTerm('');
     setSelectedCategory('All');
     setSelectedDifficulty('All');
     setActivePathId(null);
+    setActiveSymptomId(null);
     setSelectedLetter('All');
   }, []);
 
@@ -308,6 +321,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     selectedCategory !== 'All',
     selectedDifficulty !== 'All',
     activePathId !== null,
+    activeSymptomId !== null,
     selectedLetter !== 'All',
   ].filter(Boolean).length;
 
@@ -552,6 +566,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                 key={path.id}
                 onClick={() => {
                   setActivePathId(isActive ? null : path.id);
+                  setActiveSymptomId(null);
                   setTimeout(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
                 }}
                 aria-pressed={isActive}
@@ -567,6 +582,36 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                   <span className="font-display text-[24px] font-medium tracking-[-0.015em] text-[#fff8ec]">{path.title}</span>
                   <span className="text-[15px] leading-relaxed text-[rgba(246,236,220,0.74)]">{path.description}</span>
                 </span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="diagnose" className="glass sheen rounded-[28px] p-5 sm:p-7 mb-10 print:hidden scroll-mt-28" aria-labelledby="diagnose-heading">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+          <div>
+            <p className="eyebrow mb-2 flex items-center gap-2"><Stethoscope size={14} aria-hidden="true" /> Diagnose a problem</p>
+            <h2 id="diagnose-heading" className="font-display font-medium text-[30px] sm:text-[38px] leading-none tracking-[-0.025em] text-[#fff8ec]">What went wrong with the loaf?</h2>
+          </div>
+          <span className="text-[15px] text-[rgba(246,236,220,0.7)] sm:max-w-xs sm:text-right">Pick the symptom you can see. You'll get the causes first, then the fixes.</span>
+        </div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Symptoms">
+          {SYMPTOMS.map(symptom => {
+            const isActive = activeSymptomId === symptom.id;
+            return (
+              <button
+                key={symptom.id}
+                onClick={() => {
+                  setActiveSymptomId(isActive ? null : symptom.id);
+                  setActivePathId(null);
+                  setSelectedLetter('All');
+                  setTimeout(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }}
+                aria-pressed={isActive}
+                className={`btn-glass min-h-[44px] px-4 rounded-full text-[15px] font-semibold ${isActive ? 'is-active' : ''}`}
+              >
+                {symptom.label}
               </button>
             );
           })}
@@ -616,6 +661,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             <span className="text-xs font-semibold text-[rgba(246,236,220,0.65)]">Showing a focused view</span>
             {searchTerm && <span className="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-[#f6ecdc]">“{searchTerm}”</span>}
             {activePathId && <span className="inline-flex items-center gap-1 rounded-full bg-[rgba(240,200,120,0.15)] border border-[rgba(240,200,120,0.45)] px-3 py-1 text-xs text-[#ffe2a8]">{LEARNING_PATHS.find(path => path.id === activePathId)?.title}</span>}
+            {activeSymptomId && <span className="inline-flex items-center gap-1 rounded-full bg-[rgba(255,122,107,0.15)] border border-[rgba(255,122,107,0.45)] px-3 py-1 text-xs text-[#ffc2b2]">Diagnosing: {SYMPTOMS.find(s => s.id === activeSymptomId)?.label}</span>}
             <button onClick={clearFilters} className="text-xs font-semibold text-[#f0c878] hover:underline min-h-[32px] px-1">Clear view</button>
           </div>
         )}
@@ -703,9 +749,16 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                   {quickMode ? (
                     <p className="text-[rgba(246,236,220,0.82)] leading-relaxed">{item.shortDefinition || item.definition}</p>
                   ) : (
-                    <p className="text-[rgba(246,236,220,0.86)] leading-relaxed text-[17px]">
-                      {item.definition}
-                    </p>
+                    <div className={item.illustration ? 'grid gap-4 sm:grid-cols-[minmax(0,1fr)_200px] sm:items-start' : ''}>
+                      <p className="text-[rgba(246,236,220,0.86)] leading-relaxed text-[17px]">
+                        {item.definition}
+                      </p>
+                      {item.illustration && (
+                        <figure className="glass-inset rounded-[18px] p-2 m-0">
+                          <img src={item.illustration.src} alt={item.illustration.alt} width="400" height="260" loading="lazy" decoding="async" className="w-full h-auto rounded-[12px]" />
+                        </figure>
+                      )}
+                    </div>
                   )}
 
                   {/* Show affiliate products in collapsed view too */}

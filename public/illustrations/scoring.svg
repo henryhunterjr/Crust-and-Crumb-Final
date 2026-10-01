@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Scoring illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 196 Q70 96 200 86 Q330 96 330 196 Z" fill="rgba(240,200,120,0.14)"/><path d="M70 196 L330 196" /><path d="M138 150 Q180 112 262 128" stroke-width="5"/><path d="M138 150 Q175 128 262 128" stroke="rgba(240,200,120,0.55)"/><path d="M250 56 L318 42" /><rect x="300" y="30" width="48" height="20" rx="4" /><path d="M322 34 L330 46" /><path d="M248 58 L236 70" stroke="rgba(240,200,120,0.55)"/><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >ONE CONFIDENT SLASH AT A SHALLOW ANGLE</text>
+</g>
+</svg>

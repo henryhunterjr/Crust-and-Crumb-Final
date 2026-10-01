@@ -41,6 +41,7 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
         <nav className="hidden md:flex items-center gap-1 text-[15px] font-medium" aria-label="Primary navigation">
           <a href="#dictionary" className="px-4 py-2.5 rounded-full text-[#fff8ec] bg-white/10">Dictionary</a>
           <a href="#paths" className="px-4 py-2.5 rounded-full text-[rgba(246,236,220,0.82)] hover:text-[#fff8ec] hover:bg-white/5 transition-colors">Paths</a>
+          <a href="#diagnose" className="px-4 py-2.5 rounded-full text-[rgba(246,236,220,0.82)] hover:text-[#fff8ec] hover:bg-white/5 transition-colors">Diagnose</a>
           <button
             onClick={onToolsClick}
             className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-[rgba(246,236,220,0.82)] hover:text-[#fff8ec] hover:bg-white/5 transition-colors"
@@ -68,6 +69,7 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
             <nav aria-label="Mobile navigation" className="glass-strong absolute right-0 mt-2 w-56 rounded-2xl p-2 flex flex-col text-[15px] font-medium z-40" style={{ background: 'rgba(30, 23, 15, 0.94)' }}>
               <a href="#dictionary" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10">Dictionary</a>
               <a href="#paths" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10">Learning paths</a>
+              <a href="#diagnose" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10">Diagnose a problem</a>
               <a href="https://pantry.bakinggreatbread.com/?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-nav" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">Recipe Pantry <ArrowUpRight size={14} aria-hidden="true" /></a>
               <a href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">The Book <ArrowUpRight size={14} aria-hidden="true" /></a>
               <a href="https://www.skool.com/crust-crumb-academy-7621" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">The Academy <ArrowUpRight size={14} aria-hidden="true" /></a>

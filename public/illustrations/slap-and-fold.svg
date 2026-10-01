@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Slap And Fold illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M50 206 L350 206" /><path d="M120 206 Q120 150 190 150 L250 150 Q300 150 300 206 Z" fill="rgba(240,200,120,0.14)"/><path d="M250 150 Q250 100 215 72 Q180 50 150 60" stroke-width="4"/><path d="M150 60 Q130 54 112 70" /><path d="M106 64 L120 90 L140 86" /><path d="M70 150 Q60 130 72 110" stroke="rgba(240,200,120,0.55)"/><path d="M58 160 Q44 140 56 118" stroke="rgba(240,200,120,0.55)"/><path d="M330 90 Q345 120 322 150" /><path d="M322.3 138.0 L322 150 L333.5 146.6" /><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >SLAP DOWN, FOLD OVER, REPEAT</text>
+</g>
+</svg>

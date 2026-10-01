@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Proofing illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 200 L360 200" /><path d="M80 200 Q80 130 200 126 Q320 130 320 200 Z" fill="rgba(240,200,120,0.14)"/><path d="M100 200 Q100 160 200 158 Q300 160 300 200" stroke="rgba(240,200,120,0.55)" stroke-dasharray="6 7"/><circle cx="320" cy="60" r="28" /><path d="M320 44 L320 60 L330 68" /><path d="M200 106 L200 80" /><path d="M207.1 89.7 L200 80 L192.9 89.7" /><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >THE FINAL RISE BEFORE THE OVEN</text>
+</g>
+</svg>

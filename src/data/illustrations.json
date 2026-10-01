@@ -1,0 +1,232 @@
+{
+  "windowpane-test": {
+    "src": "/illustrations/windowpane-test.svg",
+    "alt": "Line drawing illustrating windowpane test",
+    "caption": "Stretch a piece of dough thin. If light shows through without it tearing, the gluten is developed."
+  },
+  "stretch-and-fold": {
+    "src": "/illustrations/stretch-and-fold.svg",
+    "alt": "Line drawing illustrating stretch and fold",
+    "caption": "Grab one side, stretch it up, and fold it over the top. Turn the bowl and repeat."
+  },
+  "coil-fold": {
+    "src": "/illustrations/coil-fold.svg",
+    "alt": "Line drawing illustrating coil fold",
+    "caption": "Lift from the middle so both ends hang, then let them tuck under as you set it down."
+  },
+  "slap-and-fold": {
+    "src": "/illustrations/slap-and-fold.svg",
+    "alt": "Line drawing illustrating slap and fold",
+    "caption": "Lift, slap the far end down, fold the rest over. Wet dough tightens fast this way."
+  },
+  "scoring": {
+    "src": "/illustrations/scoring.svg",
+    "alt": "Line drawing illustrating scoring",
+    "caption": "A shallow cut at a low angle tells the loaf where to open."
+  },
+  "ear": {
+    "src": "/illustrations/ear.svg",
+    "alt": "Line drawing illustrating ear",
+    "caption": "The raised flap of crust along the score, lifted by oven spring."
+  },
+  "shaping": {
+    "src": "/illustrations/shaping.svg",
+    "alt": "Line drawing illustrating shaping",
+    "caption": "Tension on the surface, seam on the bottom. That skin is what holds the rise."
+  },
+  "pre-shape": {
+    "src": "/illustrations/pre-shape.svg",
+    "alt": "Line drawing illustrating pre shape",
+    "caption": "A loose round first lets the dough relax before the final shape."
+  },
+  "poke-test": {
+    "src": "/illustrations/poke-test.svg",
+    "alt": "Line drawing illustrating poke test",
+    "caption": "A floured finger dent that fills back slowly is a loaf ready to bake."
+  },
+  "lamination": {
+    "src": "/illustrations/lamination.svg",
+    "alt": "Line drawing illustrating lamination",
+    "caption": "Alternating layers of dough and butter, folded over and over."
+  },
+  "braiding": {
+    "src": "/illustrations/braiding.svg",
+    "alt": "Line drawing illustrating braiding",
+    "caption": "Outside strand over the middle, alternating sides."
+  },
+  "autolyse": {
+    "src": "/illustrations/autolyse.svg",
+    "alt": "Line drawing illustrating autolyse",
+    "caption": "Flour and water, rested before salt and leaven go in."
+  },
+  "tangzhong": {
+    "src": "/illustrations/tangzhong.svg",
+    "alt": "Line drawing illustrating tangzhong",
+    "caption": "A cooked flour paste that holds extra water for a softer, longer-lasting crumb."
+  },
+  "bulk-fermentation": {
+    "src": "/illustrations/bulk-fermentation.svg",
+    "alt": "Line drawing illustrating bulk fermentation",
+    "caption": "The first rise, measured by how much the whole mass grows."
+  },
+  "oven-spring": {
+    "src": "/illustrations/oven-spring.svg",
+    "alt": "Line drawing illustrating oven spring",
+    "caption": "The fast rise in the first minutes of baking, before the crust sets."
+  },
+  "oven-steam": {
+    "src": "/illustrations/oven-steam.svg",
+    "alt": "Line drawing illustrating oven steam",
+    "caption": "Steam keeps the crust soft long enough for the loaf to finish expanding."
+  },
+  "cold-proof": {
+    "src": "/illustrations/cold-proof.svg",
+    "alt": "Line drawing illustrating cold proof",
+    "caption": "A long, cold final rise in the fridge builds flavor and makes scoring easier."
+  },
+  "float-test": {
+    "src": "/illustrations/float-test.svg",
+    "alt": "Line drawing illustrating float test",
+    "caption": "A spoonful that floats is full of gas. One that sinks may still be ready."
+  },
+  "crumb": {
+    "src": "/illustrations/crumb.svg",
+    "alt": "Line drawing illustrating crumb",
+    "caption": "The inside of the loaf: its holes, texture and tenderness."
+  },
+  "dense-crumb": {
+    "src": "/illustrations/dense-crumb.svg",
+    "alt": "Line drawing illustrating dense crumb",
+    "caption": "Tight and heavy, usually from too little fermentation or weak gluten."
+  },
+  "gummy-crumb": {
+    "src": "/illustrations/gummy-crumb.svg",
+    "alt": "Line drawing illustrating gummy crumb",
+    "caption": "A wet, sticky band, often from cutting too soon or underbaking."
+  },
+  "fools-crumb": {
+    "src": "/illustrations/fools-crumb.svg",
+    "alt": "Line drawing illustrating fools crumb",
+    "caption": "A few giant holes with dense crumb around them: underfermented, not open."
+  },
+  "tunneling": {
+    "src": "/illustrations/tunneling.svg",
+    "alt": "Line drawing illustrating tunneling",
+    "caption": "A long cavity under the crust, usually from trapped gas during shaping."
+  },
+  "flying-crust": {
+    "src": "/illustrations/flying-crust.svg",
+    "alt": "Line drawing illustrating flying crust",
+    "caption": "The top crust separates and lifts away from the crumb below it."
+  },
+  "pancaking": {
+    "src": "/illustrations/pancaking.svg",
+    "alt": "Line drawing illustrating pancaking",
+    "caption": "The loaf spreads sideways in the oven instead of rising up."
+  },
+  "blowout": {
+    "src": "/illustrations/blowout.svg",
+    "alt": "Line drawing illustrating blowout",
+    "caption": "The crust bursts where it was not scored, because the gas found its own exit."
+  },
+  "overproofed": {
+    "src": "/illustrations/overproofed.svg",
+    "alt": "Line drawing illustrating overproofed",
+    "caption": "Risen past its peak. The gluten is tired and the loaf will sink or spread."
+  },
+  "underproofed": {
+    "src": "/illustrations/underproofed.svg",
+    "alt": "Line drawing illustrating underproofed",
+    "caption": "Not enough rise yet. Bake it now and you get a tight, dense crumb."
+  },
+  "boule": {
+    "src": "/illustrations/boule.svg",
+    "alt": "Line drawing illustrating boule",
+    "caption": "A round loaf, from the French word for ball."
+  },
+  "batard": {
+    "src": "/illustrations/batard.svg",
+    "alt": "Line drawing illustrating batard",
+    "caption": "An oval loaf, shorter and fatter than a baguette."
+  },
+  "baguette": {
+    "src": "/illustrations/baguette.svg",
+    "alt": "Line drawing illustrating baguette",
+    "caption": "A long, thin loaf with a crackly crust, scored on the diagonal."
+  },
+  "banneton": {
+    "src": "/illustrations/banneton.svg",
+    "alt": "Line drawing illustrating banneton",
+    "caption": "The coiled basket that supports the dough during its final rise."
+  },
+  "lame": {
+    "src": "/illustrations/lame.svg",
+    "alt": "Line drawing illustrating lame",
+    "caption": "A razor blade on a handle, made for scoring dough."
+  },
+  "dutch-oven": {
+    "src": "/illustrations/dutch-oven.svg",
+    "alt": "Line drawing illustrating dutch oven",
+    "caption": "A heavy lidded pot that traps steam from the dough itself."
+  },
+  "bench-scraper": {
+    "src": "/illustrations/bench-scraper.svg",
+    "alt": "Line drawing illustrating bench scraper",
+    "caption": "A flat blade for dividing, lifting and shaping dough on the counter."
+  },
+  "digital-scale": {
+    "src": "/illustrations/digital-scale.svg",
+    "alt": "Line drawing illustrating digital scale",
+    "caption": "Weigh everything in grams. Cups are a guess."
+  },
+  "probe-thermometer": {
+    "src": "/illustrations/probe-thermometer.svg",
+    "alt": "Line drawing illustrating probe thermometer",
+    "caption": "Read the inside temperature to know the loaf is actually done."
+  },
+  "grain-mill": {
+    "src": "/illustrations/grain-mill.svg",
+    "alt": "Line drawing illustrating grain mill",
+    "caption": "Turns whole wheat berries into fresh flour at home."
+  },
+  "aliquot-jar": {
+    "src": "/illustrations/aliquot-jar.svg",
+    "alt": "Line drawing illustrating aliquot jar",
+    "caption": "A small straight-sided sample of dough that shows the true percentage rise."
+  },
+  "sourdough-starter": {
+    "src": "/illustrations/sourdough-starter.svg",
+    "alt": "Line drawing illustrating sourdough starter",
+    "caption": "A living culture of flour, water, wild yeast and bacteria that leavens bread."
+  },
+  "hydration": {
+    "src": "/illustrations/hydration.svg",
+    "alt": "Line drawing illustrating hydration",
+    "caption": "Water as a percentage of flour weight. 750 g water on 1,000 g flour is 75%."
+  },
+  "bakers-percentage": {
+    "src": "/illustrations/bakers-percentage.svg",
+    "alt": "Line drawing illustrating bakers percentage",
+    "caption": "Every ingredient expressed as a percent of the flour, which is always 100%."
+  },
+  "gluten": {
+    "src": "/illustrations/gluten.svg",
+    "alt": "Line drawing illustrating gluten",
+    "caption": "The stretchy protein network that traps gas and gives bread its structure."
+  },
+  "wheat-berry": {
+    "src": "/illustrations/wheat-berry.svg",
+    "alt": "Line drawing illustrating wheat berry",
+    "caption": "The whole kernel: bran outside, endosperm inside, germ at the base."
+  },
+  "proofing": {
+    "src": "/illustrations/proofing.svg",
+    "alt": "Line drawing illustrating proofing",
+    "caption": "The final rise after shaping, right before the oven."
+  },
+  "kneading": {
+    "src": "/illustrations/kneading.svg",
+    "alt": "Line drawing illustrating kneading",
+    "caption": "Working the dough by hand to build gluten strength."
+  }
+}

@@ -2,6 +2,7 @@
 import { GlossaryItem, LearningPath } from './types';
 import glossaryData from './data/glossary.json';
 import slugAliases from './data/slugAliases.json';
+import illustrations from './data/illustrations.json';
 
 // Export glossary data from JSON (canonical entries plus source-backed cluster terms)
 // Keep unfinished inventory additions in the source file, not the public glossary.
@@ -29,7 +30,11 @@ function publicSources(item: GlossaryItem): GlossaryItem['sourceRelations'] {
 
 export const GLOSSARY_DATA: GlossaryItem[] = (glossaryData as GlossaryItem[])
   .filter(item => item.definitionStatus !== 'editorial-draft')
-  .map(({ clusterPlan: _plan, ...item }) => ({ ...item, sourceRelations: publicSources(item as GlossaryItem) }));
+  .map(({ clusterPlan: _plan, ...item }) => ({
+    ...item,
+    sourceRelations: publicSources(item as GlossaryItem),
+    illustration: (illustrations as Record<string, GlossaryItem['illustration']>)[item.id],
+  }));
 
 // Visitor-facing labels for source relationships
 export const SOURCE_LABELS: Record<string, string> = {
@@ -82,6 +87,26 @@ export const EXTERNAL_URLS = {
 };
 
 // Special path ID for Baking Tools (opens modal instead of filtering)
+
+// "Diagnose a problem": a symptom a baker sees, mapped to the terms that explain it and fix it.
+export interface Symptom { id: string; label: string; termIds: string[] }
+export const SYMPTOMS: Symptom[] = [
+  { id: 'flat-loaf', label: 'My loaf spread flat', termIds: ['pancaking', 'overproofed', 'surface-tension', 'shaping', 'gluten', 'hydration', 'underfermented', 'flour-strength'] },
+  { id: 'dense-heavy', label: 'Dense and heavy', termIds: ['dense-crumb', 'underfermented', 'underproofed', 'bulk-rise-target', 'sourdough-starter', 'peak', 'kneading', 'windowpane-test'] },
+  { id: 'gummy-inside', label: 'Gummy or wet inside', termIds: ['gummy-crumb', 'underfermented', 'probe-thermometer', 'cooling-rack', 'hydration', 'starch-attack', 'sprout-damage'] },
+  { id: 'big-holes', label: 'Big holes, dense around them', termIds: ['fools-crumb', 'underfermented', 'degassing', 'shaping', 'tunneling'] },
+  { id: 'no-rise', label: 'No oven spring', termIds: ['oven-spring', 'overproofed', 'oven-steam', 'baking-steel', 'dutch-oven', 'scoring', 'surface-tension', 'pale-crust'] },
+  { id: 'pale-crust', label: "Crust didn't brown", termIds: ['pale-crust', 'maillard-reaction', 'caramelization', 'oven-steam', 'diastatic-malt', 'oven-thermometer', 'overproofed'] },
+  { id: 'burst-side', label: 'Burst on the side', termIds: ['blowout', 'scoring', 'underproofed', 'ear', 'oven-steam'] },
+  { id: 'flying-crust', label: 'Crust lifted off the crumb', termIds: ['flying-crust', 'shaping', 'degassing', 'oven-steam'] },
+  { id: 'soupy-dough', label: 'Dough turned to soup', termIds: ['hydration', 'overmixing', 'protease', 'sprout-damage', 'flour-strength', 'bassinage', 'slap-and-fold', 'desired-dough-temperature'] },
+  { id: 'sticky-dough', label: 'Sticky, hard to shape', termIds: ['hydration', 'bench-rest', 'pre-shape', 'bench-scraper', 'surface-tension', 'stitching', 'fresh-milled-flour'] },
+  { id: 'stuck-basket', label: 'Stuck to the basket', termIds: ['banneton-sticking', 'banneton', 'banneton-liner', 'rice-flour', 'overproofed'] },
+  { id: 'starter-trouble', label: "Starter won't rise", termIds: ['sourdough-starter', 'feeding', 'feeding-ratio', 'hooch', 'peak', 'float-test', 'desired-dough-temperature', 'proofing-box'] },
+  { id: 'sour-or-flat-taste', label: 'Too sour, or no flavor', termIds: ['acetic-acid', 'lactic-acid', 'retarding', 'feeding-ratio', 'overripe-starter', 'young-levain', 'salt'] },
+  { id: 'stale-fast', label: 'Stales fast', termIds: ['retrogradation', 'tangzhong', 'hydration', 'enriched-dough', 'cooling-rack'] },
+];
+
 export const BAKING_TOOLS_PATH_ID = 'baking-tools';
 
 export const LEARNING_PATHS: LearningPath[] = [

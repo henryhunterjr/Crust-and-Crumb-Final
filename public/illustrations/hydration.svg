@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Hydration illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M60 200 Q90 120 150 124 Q210 120 240 200 Z" fill="rgba(240,200,120,0.14)"/><path d="M60 200 L240 200" /><text x="150" y="232" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >FLOUR 100%</text><path d="M300 90 Q270 130 270 150 Q270 176 300 178 Q330 176 330 150 Q330 130 300 90 Z" fill="rgba(240,200,120,0.14)"/><text x="300" y="232" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >WATER 75%</text><text x="200" y="60" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" text-anchor="middle" >75% HYDRATION</text>
+</g>
+</svg>

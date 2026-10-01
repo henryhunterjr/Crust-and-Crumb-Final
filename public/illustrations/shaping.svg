@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Shaping illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M110 200 Q100 110 200 100 Q300 110 290 200 Z" fill="rgba(240,200,120,0.14)"/><path d="M110 200 L290 200" /><path d="M140 150 Q200 120 260 150" stroke="rgba(240,200,120,0.55)"/><path d="M150 180 Q200 160 250 180" stroke="rgba(240,200,120,0.55)"/><path d="M126 112 Q128 136 150 140" /><path d="M139.2 145.2 L150 140 L141.7 131.3" /><path d="M274 112 Q272 136 250 140" /><path d="M258.3 131.3 L250 140 L260.8 145.2" /><path d="M72 202 Q60 160 96 150 L110 160" stroke-width="3"/><path d="M328 202 Q340 160 304 150 L290 160" /><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >PULL THE SKIN TIGHT ON TOP, SEAM UNDERNEATH</text>
+</g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Pre Shape illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 196 L360 196" /><path d="M70 196 Q66 150 120 148 Q174 150 170 196 Z" fill="rgba(240,200,120,0.14)"/><path d="M150 196 Q146 146 206 144 Q266 146 262 196 Z" fill="rgba(240,200,120,0.14)"/><path d="M236 196 Q232 150 290 148 Q344 150 340 196 Z" fill="rgba(240,200,120,0.14)"/><path d="M100 164 Q120 156 140 164" stroke="rgba(240,200,120,0.55)"/><path d="M186 160 Q206 152 226 160" stroke="rgba(240,200,120,0.55)"/><path d="M270 164 Q290 156 310 164" stroke="rgba(240,200,120,0.55)"/><circle cx="200" cy="70" r="22" /><path d="M200 56 L200 70 L210 78" /><text x="200" y="236" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >LOOSE ROUNDS, THEN A SHORT REST</text>
+</g>
+</svg>

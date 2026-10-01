@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Pancaking illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 200 L360 200" /><path d="M110 200 Q110 110 200 104 Q290 110 290 200" stroke="rgba(240,200,120,0.55)" stroke-dasharray="6 7"/><path d="M60 200 Q70 160 200 156 Q330 160 340 200 Z" fill="rgba(240,200,120,0.14)"/><path d="M200 120 L200 150" /><path d="M192.9 140.3 L200 150 L207.1 140.3" /><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >SPREADS OUT INSTEAD OF UP</text>
+</g>
+</svg>

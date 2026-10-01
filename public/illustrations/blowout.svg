@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-labelledby="t">
+<title id="t">Blowout illustration</title>
+<g fill="none" stroke="#f0c878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 200 Q70 100 200 92 Q330 100 330 200 Z" fill="rgba(240,200,120,0.14)"/><path d="M70 200 L330 200" /><path d="M280 130 L322 112 L298 150 L344 156 L300 182 L326 200" stroke-width="4"/><path d="M280 130 L322 112 L298 150 L344 156 L300 182 L326 200 L286 190 Q270 160 280 130 Z" fill="rgba(240,200,120,0.14)"/><path d="M140 128 Q200 116 250 124" stroke="rgba(240,200,120,0.55)"/><text x="200" y="240" fill="#f0c878" stroke="none" font-family="Figtree, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle" >THE CRUST BURST WHERE IT WAS NOT SCORED</text>
+</g>
+</svg>

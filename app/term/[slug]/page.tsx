@@ -3,7 +3,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
 import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
-import { SITE_URL, SITE_NAME, AUTHOR_NAME, OG_IMAGE, SAME_AS, clip, jsonLd } from '../../../src/seo';
+import { SITE_URL, SITE_NAME, AUTHOR_NAME, SAME_AS, clip, jsonLd } from '../../../src/seo';
 import PronunciationButton from '../../../src/components/PronunciationButton';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Volume2, ChevronDown, AlertTriangle } from 'lucide-react';
 
@@ -85,13 +85,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: 'en_US',
       section: term.category,
       authors: [AUTHOR_NAME],
-      images: [{ ...OG_IMAGE, alt: `${term.term} in the Crust & Crumb Interactive Bread Baking Glossary` }],
+      images: [{ url: `/api/og/${term.id}`, width: 1200, height: 630, type: 'image/png', alt: `${term.term}: ${clip(term.shortDefinition || term.definition, 120)}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${term.term} | Crust & Crumb Glossary`,
       description: socialDescription,
-      images: [{ url: OG_IMAGE.url, alt: `${term.term} in the Crust & Crumb Interactive Bread Baking Glossary` }],
+      images: [{ url: `/api/og/${term.id}`, alt: `${term.term}: ${clip(term.shortDefinition || term.definition, 120)}` }],
     },
   };
 }
@@ -137,7 +137,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
       description: term.definition,
       url: termUrl,
       termCode: term.id,
-      image: `${SITE_URL}${OG_IMAGE.url}`,
+      image: `${SITE_URL}/api/og/${term.id}`,
       inDefinedTermSet: {
         '@type': 'DefinedTermSet',
         '@id': `${SITE_URL}/#glossary`,
@@ -217,6 +217,13 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                 <p className="font-display italic text-[22px] sm:text-[24px] leading-snug text-[#f0c878]">{term.shortDefinition}</p>
               )}
             </div>
+
+            {term.illustration && (
+              <figure className="glass-inset rounded-[26px] p-4 sm:p-6 m-0 flex flex-col gap-3">
+                <img src={term.illustration.src} alt={term.illustration.alt} width="400" height="260" decoding="async" className="w-full max-w-[520px] h-auto mx-auto" />
+                <figcaption className="text-[15px] leading-relaxed text-[rgba(246,236,220,0.74)] text-center">{term.illustration.caption}</figcaption>
+              </figure>
+            )}
 
             <p className="text-[19px] sm:text-[20px] leading-[1.65] text-[rgba(246,236,220,0.9)]">
               {term.definition}
