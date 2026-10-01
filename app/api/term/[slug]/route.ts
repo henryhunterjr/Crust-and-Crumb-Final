@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GLOSSARY_DATA } from '../../../../src/constants';
+import { GLOSSARY_DATA, resolveSlugAlias } from '../../../../src/constants';
 import { GlossaryItem } from '../../../../src/types';
 
 // CORS headers for cross-origin requests
@@ -19,9 +19,12 @@ export async function OPTIONS() {
 
 // Helper to find term by slug
 function getTermBySlug(slug: string): GlossaryItem | undefined {
-  return GLOSSARY_DATA.find(item =>
+  const direct = GLOSSARY_DATA.find(item =>
     item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
   );
+  if (direct) return direct;
+  const aliasId = resolveSlugAlias(slug);
+  return aliasId ? GLOSSARY_DATA.find(item => item.id === aliasId) : undefined;
 }
 
 // Helper to format related term IDs as slugs

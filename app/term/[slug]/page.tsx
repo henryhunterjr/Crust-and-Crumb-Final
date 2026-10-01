@@ -1,16 +1,19 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
-import { GLOSSARY_DATA } from '../../../src/constants';
+import { GLOSSARY_DATA, resolveSlugAlias } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
 import PronunciationButton from '../../../src/components/PronunciationButton';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Tag, BarChart, Volume2 } from 'lucide-react';
 
 // Helper functions
 function getTermBySlug(slug: string): GlossaryItem | undefined {
-  return GLOSSARY_DATA.find(item =>
+  const direct = GLOSSARY_DATA.find(item =>
     item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
   );
+  if (direct) return direct;
+  const aliasId = resolveSlugAlias(slug);
+  return aliasId ? GLOSSARY_DATA.find(item => item.id === aliasId) : undefined;
 }
 
 function getAllSlugs(): string[] {
@@ -35,6 +38,8 @@ function getCategoryColor(category: string): string {
   if (catLower === 'bread' || catLower === 'bread_type') return 'bg-orange-100 text-orange-800';
   if (catLower === 'pizza') return 'bg-rose-100 text-rose-800';
   if (catLower === 'schedule') return 'bg-teal-100 text-teal-800';
+  if (catLower === 'troubleshooting') return 'bg-red-100 text-red-800';
+  if (catLower === 'grain & milling') return 'bg-lime-100 text-lime-800';
   if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-indigo-100 text-indigo-800';
   return 'bg-gray-100 text-gray-800';
 }
@@ -104,6 +109,11 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
 
   if (!term) {
     notFound();
+  }
+
+  // Pantry and legacy alias slugs redirect to the canonical term URL
+  if (resolveSlugAlias(slug) === term.id && term.id !== slug) {
+    permanentRedirect(`/term/${term.id}`);
   }
 
   const relatedTerms = term.relatedTermIds ? getRelatedTerms(term.relatedTermIds) : [];

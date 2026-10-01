@@ -52,7 +52,7 @@ You have COMPLETE knowledge of Henry's tools, resources, books, and platforms. W
 **Crust & Crumb App (THIS APP!)**
 You are currently running inside the Crust & Crumb app. It contains:
 
-**1. Dictionary/Glossary (132+ baking terms)**
+**1. Dictionary/Glossary (270+ baking terms)**
 - Location: Main "Dictionary" tab
 - What it has: Comprehensive definitions of bread baking terms
 - Features: Search, categories, difficulty levels, related terms

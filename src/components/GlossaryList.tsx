@@ -14,7 +14,7 @@ import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } fr
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
   {
     keywords: ['bench knife', 'bench scraper', 'bench-scraper', 'dough scraper'],
-    product: { name: 'Brød & Taylor Bench Knife', url: 'https://collabs.shop/i4ifmu' }
+    product: { name: 'Brød & Taylor Bench Knife', url: 'https://collabs.shop/8vcnxu' }
   },
   {
     keywords: ['banneton', 'proofing basket', 'proofing container', 'brotform'],
@@ -22,15 +22,15 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['lame', 'scoring', 'bread lame', 'score', 'slash'],
-    product: { name: 'Wire Monkey Lame', url: 'https://wiremonkey.com/?ref=BAKINGGREATBREAD' }
+    product: { name: 'Wire Monkey Lame', url: 'https://wiremonkey.com/henryhunter' }
   },
   {
     keywords: ['dutch oven', 'baking vessel', 'combo cooker', 'lodge'],
-    product: { name: 'Brød & Taylor Baking Shell (Boule)', url: 'https://collabs.shop/yfjaxt' }
+    product: { name: 'Brød & Taylor Baking Shell (Boule)', url: 'https://collabs.shop/jveyfn' }
   },
   {
     keywords: ['batard', 'oval loaf', 'oblong'],
-    product: { name: 'Brød & Taylor Baking Shell (Batard)', url: 'https://collabs.shop/8su3wv' }
+    product: { name: 'Brød & Taylor Baking Shell (Batard) & Steel', url: 'https://collabs.shop/noauwh' }
   },
   {
     keywords: ['baking steel', 'pizza steel', 'bread steel', 'steel plate'],
@@ -38,15 +38,19 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['scale', 'kitchen scale', 'digital scale', 'weighing'],
-    product: { name: 'Brød & Taylor Scale', url: 'https://collabs.shop/bsdfl2' }
+    product: { name: 'Brød & Taylor Scale', url: 'https://collabs.shop/hvryn6' }
   },
   {
     keywords: ['proofing', 'proof', 'proofer', 'folding proofer', 'proofing box'],
-    product: { name: 'Brød & Taylor Folding Proofer', url: 'https://collabs.shop/38ff48' }
+    product: { name: 'Brød & Taylor Folding Proofer & Slow Cooker', url: 'https://collabs.shop/vutgu8' }
+  },
+  {
+    keywords: ['grain mill', 'home milling', 'home-milling', 'fresh-milled', 'freshly milled', 'wheat berr', 'impact mill', 'stone mill'],
+    product: { name: 'NutriMill Grain Mills', url: 'https://nutrimill.com/Academy26' }
   },
   {
     keywords: ['sourdough starter', 'levain', 'starter', 'mother dough', 'wild yeast'],
-    product: { name: 'Sourhouse Goldie', url: 'https://bit.ly/3Wd9rJy' }
+    product: { name: 'Sourhouse Goldie (code HBK26)', url: 'https://sourhouse.co/products/goldie-by-sourhouse-cooling-puck-white?ref=BAKINGGREATBREAD' }
   }
 ];
 
@@ -333,6 +337,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     if (catLower === 'bread' || catLower === 'bread_type') return 'bg-[#f7e7df] text-[#984c31]';
     if (catLower === 'pizza') return 'bg-[#f5e5e5] text-[#934848]';
     if (catLower === 'schedule') return 'bg-[#e2f0ef] text-[#2b6c69]';
+    if (catLower === 'troubleshooting') return 'bg-[#f8e1dc] text-[#9b3423]';
+    if (catLower === 'grain & milling') return 'bg-[#e9efd6] text-[#4d5e1c]';
     if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-[#e8eaf5] text-[#46517d]';
     if (catLower === 'business') return 'bg-[#e2efe6] text-[#2c6548]';
     if (catLower === 'practical') return 'bg-[#e3f0f2] text-[#2e6971]';
@@ -464,7 +470,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         <div className="relative max-w-3xl">
           <p className="text-[#8d4c13] text-xs font-bold tracking-[0.18em] uppercase mb-4">Crust &amp; Crumb Academy · the public field guide</p>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[0.98] tracking-[-0.03em] max-w-2xl">Learn the language.<br /><em className="text-[#a85e18]">Read the dough.</em></h2>
-          <p className="mt-5 text-[#455b50] text-base sm:text-lg leading-relaxed max-w-xl">A free, searchable reference to 132+ bread-baking terms, working techniques, and source-linked paths — built for the bake in front of you.</p>
+          <p className="mt-5 text-[#455b50] text-base sm:text-lg leading-relaxed max-w-xl">A free, searchable reference to {GLOSSARY_DATA.length} bread-baking terms, working techniques, and source-linked paths — built for the bake in front of you.</p>
           <div className="relative mt-7 max-w-2xl">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#6b8880]" size={21} aria-hidden="true" />
             <input
