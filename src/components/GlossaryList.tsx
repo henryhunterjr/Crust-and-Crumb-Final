@@ -12,7 +12,7 @@ import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } fr
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
   {
     keywords: ['bench knife', 'bench scraper', 'bench-scraper', 'dough scraper'],
-    product: { name: 'Brød & Taylor Bench Knife', url: 'https://collabs.shop/i4ifmu' }
+    product: { name: 'Brød & Taylor Bench Knife', url: 'https://collabs.shop/8vcnxu' }
   },
   {
     keywords: ['banneton', 'proofing basket', 'proofing container', 'brotform'],
@@ -20,15 +20,15 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['lame', 'scoring', 'bread lame', 'score', 'slash'],
-    product: { name: 'Wire Monkey Lame', url: 'https://wiremonkey.com/?ref=BAKINGGREATBREAD' }
+    product: { name: 'Wire Monkey Lame', url: 'https://wiremonkey.com/henryhunter' }
   },
   {
     keywords: ['dutch oven', 'baking vessel', 'combo cooker', 'lodge'],
-    product: { name: 'Brød & Taylor Baking Shell (Boule)', url: 'https://collabs.shop/yfjaxt' }
+    product: { name: 'Brød & Taylor Baking Shell (Boule)', url: 'https://collabs.shop/jveyfn' }
   },
   {
     keywords: ['batard', 'oval loaf', 'oblong'],
-    product: { name: 'Brød & Taylor Baking Shell (Batard)', url: 'https://collabs.shop/8su3wv' }
+    product: { name: 'Brød & Taylor Baking Shell (Batard) & Steel', url: 'https://collabs.shop/noauwh' }
   },
   {
     keywords: ['baking steel', 'pizza steel', 'bread steel', 'steel plate'],
@@ -36,15 +36,19 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['scale', 'kitchen scale', 'digital scale', 'weighing'],
-    product: { name: 'Brød & Taylor Scale', url: 'https://collabs.shop/bsdfl2' }
+    product: { name: 'Brød & Taylor Scale', url: 'https://collabs.shop/hvryn6' }
   },
   {
     keywords: ['proofing', 'proof', 'proofer', 'folding proofer', 'proofing box'],
-    product: { name: 'Brød & Taylor Folding Proofer', url: 'https://collabs.shop/38ff48' }
+    product: { name: 'Brød & Taylor Folding Proofer & Slow Cooker', url: 'https://collabs.shop/vutgu8' }
+  },
+  {
+    keywords: ['grain mill', 'home milling', 'home-milling', 'fresh-milled', 'freshly milled', 'wheat berr', 'impact mill', 'stone mill'],
+    product: { name: 'NutriMill Grain Mills', url: 'https://nutrimill.com/Academy26' }
   },
   {
     keywords: ['sourdough starter', 'levain', 'starter', 'mother dough', 'wild yeast'],
-    product: { name: 'Sourhouse Goldie', url: 'https://bit.ly/3Wd9rJy' }
+    product: { name: 'Sourhouse Goldie (code HBK26)', url: 'https://sourhouse.co/products/goldie-by-sourhouse-cooling-puck-white?ref=BAKINGGREATBREAD' }
   }
 ];
 
@@ -301,6 +305,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     if (catLower === 'bread' || catLower === 'bread_type') return 'bg-orange-100 text-orange-800';
     if (catLower === 'pizza') return 'bg-rose-100 text-rose-800';
     if (catLower === 'schedule') return 'bg-teal-100 text-teal-800';
+    if (catLower === 'troubleshooting') return 'bg-red-100 text-red-800';
+    if (catLower === 'grain & milling') return 'bg-lime-100 text-lime-800';
     if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-indigo-100 text-indigo-800';
     return 'bg-gray-100 text-gray-800';
   };

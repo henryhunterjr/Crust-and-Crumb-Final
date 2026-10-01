@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
-import { GLOSSARY_DATA } from '../../../src/constants';
+import { GLOSSARY_DATA, resolveTermSlug } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Tag, BarChart, Volume2 } from 'lucide-react';
 
 // Helper functions
 function getTermBySlug(slug: string): GlossaryItem | undefined {
-  return GLOSSARY_DATA.find(item => item.id === slug);
+  const id = resolveTermSlug(slug);
+  return id ? GLOSSARY_DATA.find(item => item.id === id) : undefined;
 }
 
 function getAllSlugs(): string[] {
@@ -29,6 +30,8 @@ function getCategoryColor(category: string): string {
   if (catLower === 'bread' || catLower === 'bread_type') return 'bg-orange-100 text-orange-800';
   if (catLower === 'pizza') return 'bg-rose-100 text-rose-800';
   if (catLower === 'schedule') return 'bg-teal-100 text-teal-800';
+  if (catLower === 'troubleshooting') return 'bg-red-100 text-red-800';
+  if (catLower === 'grain & milling') return 'bg-lime-100 text-lime-800';
   if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-indigo-100 text-indigo-800';
   return 'bg-gray-100 text-gray-800';
 }
@@ -98,6 +101,11 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
 
   if (!term) {
     notFound();
+  }
+
+  // Alias slugs (e.g. from Recipe Pantry) redirect to the canonical term URL
+  if (term.id !== slug) {
+    permanentRedirect(`/term/${term.id}`);
   }
 
   const relatedTerms = term.relatedTermIds ? getRelatedTerms(term.relatedTermIds) : [];
@@ -300,7 +308,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold shadow-md"
           >
             <ArrowLeft size={18} />
-            Explore All 132 Terms
+            Explore All {GLOSSARY_DATA.length} Terms
           </Link>
         </div>
       </main>

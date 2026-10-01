@@ -14,6 +14,8 @@ export enum Category {
   PIZZA = 'Pizza',
   SCHEDULE = 'Schedule',
   SCIENTIFIC = 'Scientific/Technical',
+  TROUBLESHOOTING = 'Troubleshooting',
+  GRAIN = 'Grain & Milling',
 }
 
 export interface GlossaryItem {

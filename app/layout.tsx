@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: "The Bread Baker's Glossary | Crust & Crumb Academy",
     template: '%s | Crust & Crumb Academy',
   },
-  description: "A comprehensive bread baking glossary with 132+ terms and growing, covering sourdough, fermentation, flour, tools, techniques, baker's science and more.",
+  description: "A comprehensive bread baking glossary with 270+ terms and growing, covering sourdough, fermentation, flour, tools, techniques, baker's science and more.",
   keywords: [
     'bread baking glossary',
     'bread baking terms',
