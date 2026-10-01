@@ -146,7 +146,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
   {
     id: 'learn', title: 'Learn and connect', blurb: 'The rest of the kitchen.',
     links: [
-      { name: 'The Bread Authority', blurb: 'The hub that ties the blog, videos, and this glossary together.', url: 'https://bakinggreatbread.com/bread-authority' },
+      { name: 'The Bread Authority', blurb: 'The hub that ties the blog, videos, and this glossary together.', url: 'https://skoo.ly/bread-authority' },
       { name: 'Crust & Crumb Academy', blurb: 'Post a bake and get real eyes on it, from me or the community.', url: 'https://www.skool.com/crust-crumb-academy-7621' },
       { name: 'Baking Great Bread at Home', blurb: 'The website and the blog behind all of this.', url: 'https://skoo.ly/my-website' },
     ],
