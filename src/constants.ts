@@ -2,8 +2,10 @@
 import { GlossaryItem, LearningPath } from './types';
 import glossaryData from './data/glossary.json';
 
-// Export glossary data from JSON (132 terms)
-export const GLOSSARY_DATA: GlossaryItem[] = glossaryData as GlossaryItem[];
+// Export glossary data from JSON (canonical entries plus source-backed cluster terms)
+// Keep unfinished inventory additions in the source file, not the public glossary.
+export const GLOSSARY_DATA: GlossaryItem[] = (glossaryData as GlossaryItem[])
+  .filter(item => item.definitionStatus !== 'editorial-draft');
 
 // Affiliate product links configuration
 export const AFFILIATE_LINKS = {

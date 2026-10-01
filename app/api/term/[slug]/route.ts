@@ -19,7 +19,9 @@ export async function OPTIONS() {
 
 // Helper to find term by slug
 function getTermBySlug(slug: string): GlossaryItem | undefined {
-  return GLOSSARY_DATA.find(item => item.id === slug);
+  return GLOSSARY_DATA.find(item =>
+    item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
+  );
 }
 
 // Helper to format related term IDs as slugs
@@ -90,6 +92,10 @@ export async function GET(
     history: term.history || null,
     sources: term.sources || [],
     youtubeQuery: term.youtubeQuery || null,
+    aliases: term.aliases || [],
+    definitionStatus: term.definitionStatus || 'verified',
+    clusterPlan: term.clusterPlan || null,
+    sourceRelations: term.sourceRelations || [],
   };
 
   return NextResponse.json(response, {

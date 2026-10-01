@@ -72,6 +72,19 @@ export default function GlossaryApp() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isToolsOpen) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsToolsOpen(false);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [isToolsOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -104,13 +117,13 @@ export default function GlossaryApp() {
         />
       </main>
 
-      <footer className="bg-white border-t border-amber-200 py-8 print:hidden">
+      <footer className="bg-[#173b3a] border-t border-[#2b5a55] py-10 print:hidden">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="flex justify-center items-center gap-2 mb-4 text-amber-600">
-            <ChefHat size={24} />
-            <span className="font-serif font-bold text-lg">Crust and Crumb</span>
+          <div className="flex justify-center items-center gap-2 mb-4 text-[#f4c95d]">
+            <img src="/brand/academy.png" alt="Crust & Crumb Academy" width="1280" height="720" className="w-28 h-16 object-contain" />
+            <span className="font-serif font-bold text-lg text-white">Crust and Crumb</span>
           </div>
-          <p className="text-slate-500 mb-6 max-w-md mx-auto text-sm">
+          <p className="text-[#bfd0c8] mb-6 max-w-md mx-auto text-sm">
             The official companion app for &quot;Sourdough for the Rest of Us&quot;.
           </p>
 
@@ -124,7 +137,7 @@ export default function GlossaryApp() {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100 text-amber-700 hover:bg-amber-600 hover:text-white transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#245b59] text-[#f4c95d] hover:bg-[#e2830b] hover:text-white transition-colors duration-200"
                   aria-label={link.name}
                   title={link.name}
                 >
@@ -134,7 +147,7 @@ export default function GlossaryApp() {
             })}
           </div>
 
-          <p className="text-xs text-slate-400 mt-8">© 2025 Baking Great Bread at Home by Henry Hunter. All rights reserved.</p>
+          <p className="text-xs text-[#8fa9a0] mt-8">© {new Date().getFullYear()} Baking Great Bread at Home by Henry Hunter. All rights reserved.</p>
         </div>
       </footer>
 
@@ -142,7 +155,7 @@ export default function GlossaryApp() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 z-40 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all transform hover:scale-105 print:hidden"
+          className="fixed bottom-24 right-5 z-40 bg-[#f4c95d] text-[#173b3a] p-3 rounded-full shadow-lg hover:bg-[#f8d878] transition-colors print:hidden"
           aria-label="Back to top"
           title="Back to top"
         >
@@ -154,10 +167,11 @@ export default function GlossaryApp() {
       {!isChatOpen && (
         <button
           onClick={() => setIsChatOpen(true)}
-          className="fixed bottom-6 right-6 z-40 bg-amber-600 text-white p-4 rounded-full shadow-lg hover:bg-amber-700 transition-all transform hover:scale-105 print:hidden"
+          className="fixed bottom-4 right-4 z-40 bg-[#e2830b] text-white p-3 lg:px-4 lg:py-3.5 rounded-full shadow-[0_10px_24px_rgba(140,76,4,0.28)] hover:bg-[#c86f07] transition-colors flex items-center gap-2 print:hidden"
           aria-label="Open Baking Assistant"
         >
-          <MessageSquare size={24} />
+          <MessageSquare size={21} />
+          <span className="hidden lg:inline text-sm font-semibold">Ask Krusty</span>
         </button>
       )}
 
@@ -181,23 +195,23 @@ export default function GlossaryApp() {
 
           {/* Modal */}
           <div className="flex min-h-full items-center justify-center p-4">
-            <div className="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div role="dialog" aria-modal="true" aria-labelledby="tools-title" className="relative bg-[#fbfaf6] rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
-              <div className="sticky top-0 bg-white border-b border-amber-200 px-6 py-4 flex items-center justify-between rounded-t-2xl">
+              <div className="sticky top-0 bg-[#fbfaf6] border-b border-[#d8e1dd] px-6 py-4 flex items-center justify-between rounded-t-2xl">
                 <div className="flex items-center gap-3">
-                  <div className="bg-amber-100 p-2 rounded-lg">
-                    <Calculator size={24} className="text-amber-700" />
+                  <div className="bg-[#f4ead1] p-2 rounded-lg">
+                    <Calculator size={24} className="text-[#8b4e0a]" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-slate-800">Baker's Tools</h2>
-                    <p className="text-sm text-slate-500">Calculators, converters & bread analysis</p>
+                    <h2 id="tools-title" className="text-xl font-bold text-[#173b3a]">Baker's Tools</h2>
+                    <p className="text-sm text-[#71827c]">Calculators, converters and bread analysis</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsToolsOpen(false)}
-                  className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="p-2 hover:bg-[#eef2ef] rounded-lg transition-colors"
                 >
-                  <X size={24} className="text-slate-500" />
+                  <X size={24} className="text-[#51645e]" />
                 </button>
               </div>
 

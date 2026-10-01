@@ -47,6 +47,44 @@ export interface GlossaryItem {
   bookChapter?: string;
   // Starter-related flag
   starterRelated?: boolean;
+  /** Alternate labels from the supplied cluster plan that resolve to this canonical entry. */
+  aliases?: string[];
+  /** Editorial state of the definition; missing means legacy content. */
+  definitionStatus?: 'verified' | 'editorial-draft';
+  /** Exact plan metadata retained separately from the editorial definition. */
+  clusterPlan?: GlossaryClusterPlan;
+  /** Source-backed relationships derived from the supplied inventories. */
+  sourceRelations?: GlossarySourceRelation[];
+}
+
+export interface GlossaryClusterPlan {
+  termType: string;
+  postsWithTermInTitle: number;
+  postsMentioningTerm: number;
+  draftsWithTermInTitle: number;
+  bestExistingPost: string;
+  bestPostUrl: string;
+  bestPostWordCount: number;
+  supportingVideoExists: boolean;
+  recommendedAction: string;
+}
+
+export type GlossaryRelationType =
+  | 'canonical-article'
+  | 'mentioned-in'
+  | 'related-video'
+  | 'related-recipe'
+  | 'supporting-asset';
+
+export interface GlossarySourceRelation {
+  sourceSystem: 'BakingGreatBread.blog' | 'YouTube' | 'Recipe Pantry' | 'From Oven to Market';
+  relation: GlossaryRelationType;
+  title: string;
+  url?: string;
+  status?: string;
+  sourceRecordId?: string;
+  evidence: 'direct' | 'derived';
+  wordCount?: number | null;
 }
 
 export interface ChatMessage {

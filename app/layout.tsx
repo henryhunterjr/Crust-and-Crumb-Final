@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import { GLOSSARY_DATA as glossaryData } from '@/src/constants'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-  description: "Interactive bread baking glossary with 132 definitions, baker's percentage calculator & expert tips. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.",
+  description: `Interactive bread baking glossary with ${glossaryData.length} definitions, guided learning paths, source-linked relationships, and baker's tools. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.`,
   keywords: 'sourdough, bread baking, glossary, baking terms, sourdough starter, bread techniques, Henry Hunter',
   authors: [{ name: 'Henry Hunter' }],
   openGraph: {
     title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-    description: "Free glossary with 132 sourdough & bread terms, baker's calculator & expert tips from Henry Hunter.",
+    description: `Free glossary with ${glossaryData.length} sourdough and bread terms, guided paths, baker's tools, and expert tips from Henry Hunter.`,
     type: 'website',
     siteName: 'Baking Great Bread at Home',
     locale: 'en_US',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Crust and Crumb - Bread Baking Glossary',
-    description: "Interactive glossary with 132 definitions + baker's percentage calculator",
+    description: `Interactive glossary with ${glossaryData.length} definitions and baker's percentage calculator`,
     creator: '@bakinggreatbread',
     images: ['https://crust-and-crumb-tawny.vercel.app/Thumbnail.jpg'],
   },
@@ -42,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-amber-50 text-slate-800">
+      <body className="bg-[#fbfaf6] text-[#173b3a]">
         {children}
         <Analytics />
       </body>

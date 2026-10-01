@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 import GlossaryApp from './GlossaryApp'
-import glossaryData from '@/src/data/glossary.json'
+import { GLOSSARY_DATA as glossaryData } from '@/src/constants'
 
 // Generate metadata with actual glossary content for SEO
 export const metadata: Metadata = {
   title: 'Crust and Crumb - Interactive Bread Baking Glossary',
-  description: `Interactive bread baking glossary with ${glossaryData.length} definitions, baker's percentage calculator & expert tips. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.`,
+  description: `Interactive bread baking glossary with ${glossaryData.length} definitions, guided learning paths, source-linked relationships, and baker's tools. Companion to 'Sourdough for the Rest of Us' by Henry Hunter.`,
 }
 
 // Server component that renders SEO-friendly content

@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
+import { WheatFilm, StorefrontFeature, BrandShelf } from './BrandFeatures';
+import PronunciationButton from './PronunciationButton';
 import {
   Search, Filter, Download, ExternalLink, BookOpen, ChevronDown, ChevronUp,
   CheckCircle, MessageSquare, AlertTriangle, Lightbulb, History, Calculator,
-  Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info
+  Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info, X, ArrowRight
 } from 'lucide-react';
 import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } from '../constants';
 
@@ -82,12 +84,13 @@ const ALPHABET = ['All', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
 
 // Build a set of valid term IDs for quick lookup
 const VALID_TERM_IDS = new Set(GLOSSARY_DATA.map(item => item.id));
+const TERM_LOOKUP = new Map(GLOSSARY_DATA.map(item => [item.id, item.term]));
 
 // Tooltip component
 const Tooltip: React.FC<{ text: string; children: React.ReactNode }> = ({ text, children }) => (
   <div className="group relative inline-block">
     {children}
-    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50 pointer-events-none">
+    <div className="absolute bottom-full right-0 mb-2 w-40 px-3 py-2 bg-slate-800 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-normal z-50 pointer-events-none">
       {text}
       <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
     </div>
@@ -108,11 +111,24 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   const [activePathId, setActivePathId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [quickMode, setQuickMode] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'expert' | 'deep' | 'recipes'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'expert' | 'deep' | 'sources' | 'recipes'>('overview');
   const [selectedLetter, setSelectedLetter] = useState<string>('All');
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Persisted state
   const [learnedTerms, setLearnedTerms] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const handleSlashShortcut = (event: KeyboardEvent) => {
+      if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA' || target?.tagName === 'SELECT') return;
+      event.preventDefault();
+      searchInputRef.current?.focus();
+    };
+    window.addEventListener('keydown', handleSlashShortcut);
+    return () => window.removeEventListener('keydown', handleSlashShortcut);
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem('learnedTerms');
@@ -240,12 +256,28 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     return data.filter((item) => {
       const matchesSearch =
         item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.definition.toLowerCase().includes(searchTerm.toLowerCase());
+        item.definition.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.aliases || []).some(alias => alias.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
       const matchesDifficulty = selectedDifficulty === 'All' || item.difficulty === selectedDifficulty;
       return matchesSearch && matchesCategory && matchesDifficulty;
     }).sort((a, b) => a.term.localeCompare(b.term));
   }, [searchTerm, selectedCategory, selectedDifficulty, activePathId, selectedLetter]);
+
+  const clearFilters = useCallback(() => {
+    setSearchTerm('');
+    setSelectedCategory('All');
+    setSelectedDifficulty('All');
+    setActivePathId(null);
+    setSelectedLetter('All');
+  }, []);
+
+  const activeFilterCount = [
+    selectedCategory !== 'All',
+    selectedDifficulty !== 'All',
+    activePathId !== null,
+    selectedLetter !== 'All',
+  ].filter(Boolean).length;
 
   const downloadData = (format: 'json' | 'csv' | 'md') => {
     let content = '';
@@ -286,23 +318,25 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
 
   const getDifficultyColor = (diff: string) => {
     const diffLower = diff.toLowerCase();
-    if (diffLower === 'beginner') return 'bg-green-100 text-green-800 border-green-200';
-    if (diffLower === 'intermediate') return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-    if (diffLower === 'advanced') return 'bg-red-100 text-red-800 border-red-200';
-    return 'bg-gray-100 text-gray-800 border-gray-200';
+    if (diffLower === 'beginner') return 'bg-[#e8f1ed] text-[#24604f] border-[#c6ddd3]';
+    if (diffLower === 'intermediate') return 'bg-[#f8efd4] text-[#8b5a12] border-[#ead6a9]';
+    if (diffLower === 'advanced') return 'bg-[#f7e7df] text-[#984c31] border-[#e8c6b7]';
+    return 'bg-[#f0f3f1] text-[#51645e] border-[#d8e1dd]';
   };
 
   const getCategoryColor = (cat: string) => {
     const catLower = cat.toLowerCase();
-    if (catLower === 'ingredient') return 'bg-amber-100 text-amber-800';
-    if (catLower === 'tool') return 'bg-slate-100 text-slate-800';
-    if (catLower === 'technique') return 'bg-blue-100 text-blue-800';
-    if (catLower === 'process') return 'bg-purple-100 text-purple-800';
-    if (catLower === 'bread' || catLower === 'bread_type') return 'bg-orange-100 text-orange-800';
-    if (catLower === 'pizza') return 'bg-rose-100 text-rose-800';
-    if (catLower === 'schedule') return 'bg-teal-100 text-teal-800';
-    if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-indigo-100 text-indigo-800';
-    return 'bg-gray-100 text-gray-800';
+    if (catLower === 'ingredient') return 'bg-[#f8efd4] text-[#8b5a12]';
+    if (catLower === 'tool') return 'bg-[#e8f1ed] text-[#24604f]';
+    if (catLower === 'technique') return 'bg-[#e8eef4] text-[#315879]';
+    if (catLower === 'process') return 'bg-[#f2e9f4] text-[#6c4776]';
+    if (catLower === 'bread' || catLower === 'bread_type') return 'bg-[#f7e7df] text-[#984c31]';
+    if (catLower === 'pizza') return 'bg-[#f5e5e5] text-[#934848]';
+    if (catLower === 'schedule') return 'bg-[#e2f0ef] text-[#2b6c69]';
+    if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-[#e8eaf5] text-[#46517d]';
+    if (catLower === 'business') return 'bg-[#e2efe6] text-[#2c6548]';
+    if (catLower === 'practical') return 'bg-[#e3f0f2] text-[#2e6971]';
+    return 'bg-[#f0f3f1] text-[#51645e]';
   };
 
   // Widget Components - Calculator State
@@ -425,151 +459,143 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 print:py-0">
+    <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 print:py-0">
+      <section id="dictionary" className="glossary-hero relative overflow-hidden rounded-[28px] px-5 py-8 sm:px-9 sm:py-10 lg:px-12 lg:py-12 mb-8 print:hidden">
+        <div className="relative max-w-3xl">
+          <p className="text-[#8d4c13] text-xs font-bold tracking-[0.18em] uppercase mb-4">Crust &amp; Crumb Academy · the public field guide</p>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[0.98] tracking-[-0.03em] max-w-2xl">Learn the language.<br /><em className="text-[#a85e18]">Read the dough.</em></h2>
+          <p className="mt-5 text-[#455b50] text-base sm:text-lg leading-relaxed max-w-xl">A free, searchable reference to 132+ bread-baking terms, working techniques, and source-linked paths — built for the bake in front of you.</p>
+          <div className="relative mt-7 max-w-2xl">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#6b8880]" size={21} aria-hidden="true" />
+            <input
+              ref={searchInputRef}
+              type="search"
+              aria-label="Search the bread glossary"
+              placeholder="Search a term, symptom, or technique"
+              className="w-full h-14 rounded-2xl bg-white text-[#173b3a] pl-12 pr-20 text-base shadow-lg outline-none ring-2 ring-transparent placeholder:text-[#8a9994] focus:ring-[#f4c95d]"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            {searchTerm ? (
+              <button onClick={() => setSearchTerm('')} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-2 text-[#5f746e] hover:bg-[#eef2ef]" aria-label="Clear search">
+                <X size={18} />
+              </button>
+            ) : (
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center gap-1 text-xs text-[#8a9994]"><kbd className="rounded border border-[#d8e1dd] px-1.5 py-0.5">/</kbd> to search</span>
+            )}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#60766a]">
+            <span><strong className="text-[#173b3a]">{GLOSSARY_DATA.length}</strong> terms</span>
+            <span><strong className="text-[#173b3a]">{LEARNING_PATHS.length}</strong> guided paths</span>
+            <span>Free to use and share</span>
+          </div>
+        </div>
+        <WheatFilm />
+      </section>
 
-      {/* Mastery Paths - Compact Grid */}
-      <div className="mb-6">
-        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Mastery Paths</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-          {/* All Terms */}
+      <section className="mb-7 print:hidden" aria-labelledby="path-heading">
+        <div className="flex items-end justify-between gap-4 mb-3">
+          <div>
+            <p className="text-xs font-bold tracking-[0.16em] uppercase text-[#b85d13] mb-1">Choose a way in</p>
+            <h2 id="path-heading" className="font-serif text-2xl sm:text-3xl text-[#173b3a]">Follow a baking path</h2>
+          </div>
+          <span className="hidden sm:block text-sm text-[#71827c]">Or search above if you know the term.</span>
+        </div>
+        <div className="flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
           <button
             onClick={() => setActivePathId(null)}
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-              !activePathId
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'bg-white border border-slate-200 text-slate-700 hover:border-amber-300 hover:bg-amber-50'
-            }`}
+            className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${!activePathId ? 'bg-[#e2830b] text-white shadow-sm' : 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]'}`}
           >
-            All Terms
+            All terms
           </button>
-          {/* Learning Paths */}
           {LEARNING_PATHS.map(path => (
             <button
               key={path.id}
               onClick={() => setActivePathId(activePathId === path.id ? null : path.id)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                activePathId === path.id
-                  ? 'bg-amber-600 text-white shadow-md'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:border-amber-300 hover:bg-amber-50'
-              }`}
+              title={path.description}
+              className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${activePathId === path.id ? 'bg-[#e2830b] text-white shadow-sm' : 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]'}`}
             >
               {path.title}
             </button>
           ))}
-          {/* Baking Tools - Opens Modal */}
           <button
             onClick={onToolsClick}
-            className="px-3 py-2 rounded-lg text-sm font-medium transition-all bg-amber-100 border border-amber-300 text-amber-800 hover:bg-amber-200 flex items-center justify-center gap-1.5"
+            className="shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold bg-[#f4ead1] border border-[#ead6a9] text-[#8b4e0a] hover:bg-[#f8e2b2] transition-colors flex items-center gap-2"
           >
-            <Calculator size={14} />
-            Baking Tools
+            <Calculator size={15} /> Baker's tools
           </button>
         </div>
-      </div>
+      </section>
 
-      {/* A-Z Navigation */}
-      <div className="mb-6 print:hidden">
-        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Browse A-Z</h2>
-        <div className="flex flex-wrap gap-1">
+      <section className="rounded-2xl border border-[#d8e1dd] bg-white px-4 py-4 sm:px-5 mb-8 print:hidden" aria-label="Glossary filters">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
+          <div className="flex-1 min-w-0">
+            <label className="block text-xs font-bold tracking-[0.12em] uppercase text-[#6d8079] mb-2">Filter the field guide</label>
+            <div className="flex flex-wrap gap-2">
+              <div className="relative min-w-[170px] flex-1">
+                <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-[#7b8c86]" size={16} aria-hidden="true" />
+                <select aria-label="Filter by category" className="w-full h-11 pl-9 pr-4 border border-[#d8e1dd] rounded-xl appearance-none bg-[#fbfcfa] text-[#35544c] focus:ring-2 focus:ring-[#f4c95d] focus:border-[#e2830b]" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                  <option value="All">All categories</option>
+                  {categories.map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+              </div>
+              <select aria-label="Filter by difficulty" className="min-w-[150px] h-11 px-3 border border-[#d8e1dd] rounded-xl appearance-none bg-[#fbfcfa] text-[#35544c] focus:ring-2 focus:ring-[#f4c95d] focus:border-[#e2830b]" value={selectedDifficulty} onChange={(e) => setSelectedDifficulty(e.target.value)}>
+                <option value="All">All levels</option>
+                {difficulties.map(d => <option key={d} value={d}>{d}</option>)}
+              </select>
+              <Tooltip text="Show shorter definitions for faster scanning">
+                <button onClick={() => setQuickMode(!quickMode)} className={`h-11 px-4 rounded-xl border text-sm font-semibold transition-colors ${quickMode ? 'bg-[#e8f1ed] border-[#a9c7bb] text-[#235c4d]' : 'bg-white border-[#d8e1dd] text-[#51645e] hover:border-[#9db6ac]'}`} aria-pressed={quickMode}>
+                  {quickMode ? 'Quick view on' : 'Quick view'}
+                </button>
+              </Tooltip>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 lg:pb-0">
+            <span className="text-sm text-[#6d8079] whitespace-nowrap"><strong className="text-[#173b3a]">{filteredData.length}</strong> of {GLOSSARY_DATA.length}</span>
+            <Tooltip text="Download the current glossary view">
+              <div className="group relative">
+                <button className="h-11 w-11 inline-flex items-center justify-center bg-[#173b3a] text-white rounded-xl hover:bg-[#245b59] transition-colors" aria-label="Download glossary"><Download size={17} /></button>
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-[#d8e1dd] py-1 hidden group-hover:block group-focus-within:block z-10">
+                  <button onClick={() => downloadData('json')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download JSON</button>
+                  <button onClick={() => downloadData('csv')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download CSV</button>
+                  <button onClick={() => downloadData('md')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download Markdown</button>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+        </div>
+        {(activeFilterCount > 0 || searchTerm) && (
+          <div className="mt-4 pt-3 border-t border-[#edf1ee] flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold text-[#71827c]">Showing a focused view</span>
+            {searchTerm && <span className="inline-flex items-center gap-1 rounded-full bg-[#eef2ef] px-3 py-1 text-xs text-[#35544c]">“{searchTerm}”</span>}
+            {activePathId && <span className="inline-flex items-center gap-1 rounded-full bg-[#eef2ef] px-3 py-1 text-xs text-[#35544c]">{LEARNING_PATHS.find(path => path.id === activePathId)?.title}</span>}
+            <button onClick={clearFilters} className="text-xs font-semibold text-[#b85d13] hover:underline">Clear view</button>
+          </div>
+        )}
+      </section>
+
+      <section className="mb-7 print:hidden" aria-labelledby="az-heading">
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <h2 id="az-heading" className="font-serif text-2xl text-[#173b3a]">Browse by letter</h2>
+          <span className="text-xs text-[#71827c]">Jump to a term</span>
+        </div>
+        <div className="flex flex-wrap gap-1.5">
           {ALPHABET.map(letter => {
             const hasTerms = letter === 'All' || lettersWithTerms.has(letter);
             const isActive = selectedLetter === letter;
             return (
-              <button
-                key={letter}
-                onClick={() => hasTerms && setSelectedLetter(letter)}
-                disabled={!hasTerms}
-                className={`w-9 h-9 rounded-lg text-sm font-medium transition-all ${
-                  isActive
-                    ? 'bg-amber-600 text-white shadow-md'
-                    : hasTerms
-                    ? 'bg-white border border-slate-200 text-slate-700 hover:border-amber-300 hover:bg-amber-50'
-                    : 'bg-slate-100 text-slate-300 cursor-not-allowed'
-                }`}
-              >
+              <button key={letter} onClick={() => hasTerms && setSelectedLetter(letter)} disabled={!hasTerms} aria-pressed={isActive} className={`min-w-9 h-9 px-2 rounded-lg text-sm font-semibold transition-colors ${isActive ? 'bg-[#173b3a] text-white' : hasTerms ? 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]' : 'bg-[#f0f3f1] text-[#c1cbc6] cursor-not-allowed'}`}>
                 {letter}
               </button>
             );
           })}
         </div>
-      </div>
-
-      {/* Controls */}
-      <div className="bg-white rounded-xl shadow-sm border border-amber-200 p-6 mb-8 print:hidden">
-        <div className="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-end">
-
-          <div className="w-full lg:w-1/3">
-            <label className="block text-sm font-medium text-slate-700 mb-2">Search Terms</label>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-              <input
-                type="text"
-                placeholder="Search definitions, tips..."
-                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-4 w-full lg:w-2/3 items-end">
-            <div className="flex-1 min-w-[150px]">
-              <label className="block text-sm font-medium text-slate-700 mb-2">Category</label>
-              <div className="relative">
-                <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
-                <select
-                  className="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-lg appearance-none bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                >
-                  <option value="All">All Categories</option>
-                  {categories.map(c => <option key={c} value={c}>{c}</option>)}
-                </select>
-              </div>
-            </div>
-
-            <div className="flex-1 min-w-[150px]">
-              <label className="block text-sm font-medium text-slate-700 mb-2">Difficulty</label>
-              <select
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg appearance-none bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                value={selectedDifficulty}
-                onChange={(e) => setSelectedDifficulty(e.target.value)}
-              >
-                <option value="All">All Levels</option>
-                {difficulties.map(d => <option key={d} value={d}>{d}</option>)}
-              </select>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Tooltip text="Quick Mode: Shows abbreviated definitions for faster browsing">
-                <button
-                  onClick={() => setQuickMode(!quickMode)}
-                  className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${quickMode ? 'bg-amber-100 border-amber-300 text-amber-800' : 'bg-white border-slate-300 text-slate-600 hover:bg-slate-50'}`}
-                >
-                  Quick Mode
-                </button>
-              </Tooltip>
-              <Tooltip text="Download glossary as JSON, CSV, or Markdown">
-                <div className="group relative">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors">
-                    <Download size={18} />
-                  </button>
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-100 py-1 hidden group-hover:block z-10">
-                    <button onClick={() => downloadData('json')} className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-amber-50">Download JSON</button>
-                    <button onClick={() => downloadData('csv')} className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-amber-50">Download CSV</button>
-                    <button onClick={() => downloadData('md')} className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-amber-50">Download Markdown</button>
-                  </div>
-                </div>
-              </Tooltip>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       {/* Grid */}
-      <div className={`grid grid-cols-1 ${quickMode ? 'md:grid-cols-2' : 'lg:grid-cols-1 xl:grid-cols-2'} gap-6 print:block print:space-y-6`}>
+      <div className={`grid grid-cols-1 ${quickMode ? 'md:grid-cols-2' : 'lg:grid-cols-1 xl:grid-cols-2'} gap-5 print:block print:space-y-6`}>
         {filteredData.length > 0 ? (
-          filteredData.map((item) => {
+          filteredData.map((item, index) => {
             // Get affiliate products for this term
             const affiliateProducts = getAffiliateProducts(item.id, item.term, item.definition);
             // Combine with existing affiliate tools
@@ -583,50 +609,59 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             const validRelatedTerms = (item.relatedTermIds || []).filter(tid => VALID_TERM_IDS.has(tid));
 
             return (
-              <div
+              <React.Fragment key={item.id}>
+              {index === 6 && !searchTerm && activeFilterCount === 0 && selectedLetter === 'All' && <StorefrontFeature />}
+              <article
                 key={item.id}
                 id={item.id}
-                className={`bg-white rounded-xl border shadow-sm transition-all duration-300 flex flex-col overflow-hidden print:border-none print:shadow-none print:mb-8 ${expandedId === item.id ? 'ring-2 ring-amber-200 shadow-md' : 'border-amber-100 hover:shadow-md'}`}
+                className={`bg-white rounded-2xl border transition-all duration-200 flex flex-col overflow-hidden print:border-none print:shadow-none print:mb-8 ${expandedId === item.id ? 'ring-2 ring-[#f4c95d] shadow-lg' : 'border-[#d8e1dd] shadow-[0_8px_24px_rgba(23,59,58,0.05)] hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(23,59,58,0.09)]'}`}
               >
                 {/* Card Header */}
-                <div className="p-6 pb-4">
-                  <div className="flex justify-between items-start mb-3">
+                <div className="p-5 sm:p-6 pb-4">
+                  <div className="flex justify-between items-start mb-4">
                     <div className="flex gap-2 items-center flex-wrap">
-                      <span className={`text-xs font-semibold px-2 py-1 rounded-full uppercase tracking-wide ${getCategoryColor(item.category)}`}>
+                      <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-[0.12em] ${getCategoryColor(item.category)}`}>
                         {item.category}
                       </span>
-                      <span className={`text-xs font-medium px-2 py-0.5 border rounded-full ${getDifficultyColor(item.difficulty)}`}>
+                      <span className={`text-[11px] font-semibold px-2 py-1 border rounded-full ${getDifficultyColor(item.difficulty)}`}>
                         {item.difficulty}
                       </span>
                       {item.bookRef && (
-                        <span className="flex items-center gap-1 text-xs font-medium px-2 py-0.5 bg-amber-50 text-amber-800 border border-amber-200 rounded-full">
+                        <span className="flex items-center gap-1 text-[11px] font-semibold px-2 py-1 bg-[#fff8e7] text-[#8b5a12] border border-[#ead6a9] rounded-full">
                           <Book size={12} />
                           {item.bookChapter || 'Featured in Book'}
+                        </span>
+                      )}
+                      {item.definitionStatus === 'editorial-draft' && (
+                        <span className="text-[11px] font-semibold px-2 py-1 bg-[#f0f3f1] text-[#51645e] border border-[#d8e1dd] rounded-full">
+                          Editorial draft
                         </span>
                       )}
                     </div>
                     <button
                       onClick={(e) => toggleLearned(item.id, e)}
                       onTouchEnd={(e) => toggleLearned(item.id, e)}
-                      className={`transition-colors p-1 min-w-[44px] min-h-[44px] flex items-center justify-center ${learnedTerms.has(item.id) ? 'text-green-500' : 'text-slate-300 hover:text-green-400'}`}
-                      title="Mark as learned"
+                      className={`transition-colors rounded-xl p-1 min-w-[44px] min-h-[44px] flex items-center justify-center ${learnedTerms.has(item.id) ? 'text-[#2f8a69] bg-[#e8f1ed]' : 'text-[#a9b7b1] hover:text-[#2f8a69] hover:bg-[#f1f6f3]'}`}
+                      title={learnedTerms.has(item.id) ? 'Mark as not learned' : 'Mark as learned'}
+                      aria-label={learnedTerms.has(item.id) ? `Mark ${item.term} as not learned` : `Mark ${item.term} as learned`}
                     >
                       <CheckCircle size={24} fill={learnedTerms.has(item.id) ? "currentColor" : "none"} />
                     </button>
                   </div>
 
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <h3 className="text-2xl font-serif font-bold text-slate-900">{item.term}</h3>
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
+                    <h3 className="text-[26px] leading-tight font-serif font-bold text-[#173b3a]">{item.term}</h3>
                     {item.pronunciation && (
-                      <span className="text-slate-400 font-serif italic text-sm">{item.pronunciation}</span>
+                        <span className="text-[#87958f] font-serif italic text-sm">{item.pronunciation}</span>
                     )}
+                    <PronunciationButton termId={item.id} term={item.term} compact />
                   </div>
 
                   {quickMode ? (
-                    <p className="text-slate-600">{item.shortDefinition || item.definition}</p>
+                    <p className="text-[#48635b] leading-relaxed">{item.shortDefinition || item.definition}</p>
                   ) : (
                     <div className="prose prose-slate max-w-none">
-                      <p className="text-slate-600 leading-relaxed text-lg">
+                      <p className="text-[#48635b] leading-relaxed text-[17px]">
                         {item.definition}
                       </p>
                     </div>
@@ -656,7 +691,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                 </div>
 
                 {/* Expanded Content */}
-                {!quickMode && expandedId === item.id && (
+                {expandedId === item.id && (
                   <div className="border-t border-slate-100 bg-slate-50/50">
                     {/* Tabs */}
                     <div className="flex border-b border-slate-200 overflow-x-auto">
@@ -680,6 +715,14 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                           className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'deep' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
                         >
                           Deep Dive
+                        </button>
+                      )}
+                      {item.sourceRelations && item.sourceRelations.length > 0 && (
+                        <button
+                          onClick={() => setActiveTab('sources')}
+                          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'sources' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+                        >
+                          Source Library ({item.sourceRelations.length})
                         </button>
                       )}
                       {item.relatedRecipes && (
@@ -840,6 +883,36 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                         </div>
                       )}
 
+                      {activeTab === 'sources' && item.sourceRelations && (
+                        <div className="space-y-3">
+                          <div>
+                            <h4 className="flex items-center gap-2 font-bold text-slate-700"><ExternalLink size={16} /> Source-backed relationships</h4>
+                            <p className="text-sm text-slate-500 mt-1">Links and records are drawn from the supplied inventories; derived matches are labeled.</p>
+                          </div>
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            {item.sourceRelations.map((resource, idx) => (
+                              <div key={`${resource.sourceSystem}-${resource.title}-${idx}`} className="rounded-lg border border-slate-200 bg-white p-3">
+                                <div className="flex justify-between gap-2 text-xs text-slate-400 mb-1">
+                                  <span className="font-semibold uppercase tracking-wide text-blue-700">{resource.sourceSystem}</span>
+                                  <span>{resource.status}</span>
+                                </div>
+                                {resource.url ? (
+                                  <a href={resource.url} target="_blank" rel="noreferrer" className="font-medium text-slate-800 hover:text-amber-700 hover:underline">{resource.title}</a>
+                                ) : (
+                                  <span className="font-medium text-slate-700">{resource.title}</span>
+                                )}
+                                <div className="text-xs text-slate-500 mt-1">{resource.relation.replaceAll('-', ' ')} · {resource.evidence} match</div>
+                              </div>
+                            ))}
+                          </div>
+                          {item.clusterPlan && (
+                            <div className="rounded-lg bg-blue-50 border border-blue-100 p-3 text-sm text-blue-900">
+                              <strong>Cluster plan:</strong> {item.clusterPlan.recommendedAction}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
                       {activeTab === 'recipes' && item.relatedRecipes && (
                         <div className="space-y-3">
                           <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-2"><Utensils size={16} /> Featured In</h4>
@@ -856,16 +929,17 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                 )}
 
                 {/* Card Footer */}
-                <div className="px-6 py-3 bg-amber-50 border-t border-amber-100 flex flex-wrap gap-3 justify-between items-center print:hidden">
-                  <div className="flex gap-2 overflow-x-auto max-w-[60%] hide-scrollbar">
+                <div className="px-5 sm:px-6 py-3 bg-[#f7faf7] border-t border-[#e4ece7] flex flex-wrap gap-3 justify-between items-center print:hidden">
+                  <div className="flex items-center gap-2 overflow-x-auto max-w-[62%] hide-scrollbar">
+                    {validRelatedTerms.length > 0 && <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#83928c] shrink-0">Related</span>}
                     {validRelatedTerms.map(tid => (
                       <button
                         key={tid}
                         onClick={(e) => handleRelatedTermClick(tid, e)}
                         onTouchEnd={(e) => handleRelatedTermClick(tid, e)}
-                        className="text-xs text-amber-600 hover:text-amber-800 hover:underline whitespace-nowrap py-2 px-1 min-h-[44px] flex items-center"
+                        className="text-xs text-[#3f7162] hover:text-[#b85d13] hover:underline whitespace-nowrap py-2 px-1 min-h-[44px] flex items-center"
                       >
-                        #{tid}
+                        {TERM_LOOKUP.get(tid) || tid}
                       </button>
                     ))}
                   </div>
@@ -874,7 +948,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     {!quickMode && (
                       <button
                         onClick={() => onAskKrusty(item.term)}
-                        className="text-slate-500 hover:text-amber-600 text-sm font-medium flex items-center gap-1 transition-colors py-2 px-3 min-h-[44px]"
+                        className="text-[#51645e] hover:text-[#b85d13] text-sm font-semibold flex items-center gap-1 transition-colors py-2 px-3 min-h-[44px]"
                       >
                         <MessageSquare size={16} />
                         <span className="hidden sm:inline">Ask Krusty</span>
@@ -883,36 +957,40 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     <button
                       onClick={(e) => handleExpandToggle(item.id, e)}
                       onTouchEnd={(e) => handleExpandToggle(item.id, e)}
-                      className="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium flex items-center gap-1 py-2 px-4 rounded-lg min-h-[44px] min-w-[100px] justify-center transition-colors active:bg-amber-800"
+                      aria-expanded={expandedId === item.id}
+                      className="bg-[#e2830b] hover:bg-[#c86f07] text-white text-sm font-semibold flex items-center gap-1.5 py-2 px-4 rounded-xl min-h-[44px] min-w-[124px] justify-center transition-colors active:bg-[#a95806]"
                     >
                       {expandedId === item.id ? (
-                        <>Collapse <ChevronUp size={18} /></>
+                        <>Close guide <ChevronUp size={17} /></>
                       ) : (
-                        <>Expand <ChevronDown size={18} /></>
+                        <>Open guide <ArrowRight size={17} /></>
                       )}
                     </button>
                   </div>
                 </div>
-              </div>
+              </article>
+              </React.Fragment>
             );
           })
         ) : (
-          <div className="col-span-full py-16 text-center text-slate-400">
-            <BookOpen size={48} className="mx-auto mb-4 opacity-30" />
-            <p className="text-lg">No baking terms found matching your criteria.</p>
+          <div className="col-span-full py-16 text-center text-[#71827c] rounded-2xl border border-dashed border-[#cbd8d1] bg-white">
+            <BookOpen size={42} className="mx-auto mb-4 text-[#b9c8c0]" />
+            <p className="text-lg text-[#35544c]">No terms match this view.</p>
+            <p className="mt-2 text-sm">Try a broader search or clear the filters.</p>
             <button
-              onClick={() => { setSearchTerm(''); setSelectedCategory('All'); setSelectedDifficulty('All'); setActivePathId(null); setSelectedLetter('All'); }}
-              className="mt-4 text-amber-600 font-medium hover:underline"
+              onClick={clearFilters}
+              className="mt-4 text-[#b85d13] font-semibold hover:underline"
             >
-              Clear all filters
+              Clear this view
             </button>
           </div>
         )}
       </div>
 
-      <div className="mt-8 text-center text-slate-400 text-sm print:hidden">
-        Showing {filteredData.length} of {GLOSSARY_DATA.length} entries
+      <div className="mt-8 text-center text-[#91a098] text-xs print:hidden">
+        You have reached the end of this view.
       </div>
+      <BrandShelf />
     </div>
   );
 };

@@ -3,15 +3,21 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { GLOSSARY_DATA } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
+import PronunciationButton from '../../../src/components/PronunciationButton';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Tag, BarChart, Volume2 } from 'lucide-react';
 
 // Helper functions
 function getTermBySlug(slug: string): GlossaryItem | undefined {
-  return GLOSSARY_DATA.find(item => item.id === slug);
+  return GLOSSARY_DATA.find(item =>
+    item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
+  );
 }
 
 function getAllSlugs(): string[] {
-  return GLOSSARY_DATA.map(item => item.id);
+  return GLOSSARY_DATA.flatMap(item => [
+    item.id,
+    ...(item.aliases || []).map(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-')),
+  ]).filter((slug, index, slugs) => slugs.indexOf(slug) === index);
 }
 
 function getRelatedTerms(termIds: string[]): GlossaryItem[] {
@@ -144,18 +150,26 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                   Featured in Book
                 </span>
               )}
+              {term.definitionStatus === 'editorial-draft' && (
+                <span className="text-sm font-medium px-3 py-1 bg-slate-100 text-slate-600 rounded-full">
+                  Editorial draft
+                </span>
+              )}
             </div>
 
             <h1 className="text-4xl font-bold text-slate-800 mb-2">
               {term.term}
             </h1>
 
-            {term.pronunciation && (
-              <p className="text-lg text-slate-500 flex items-center gap-2">
-                <Volume2 size={18} className="text-amber-600" />
-                <span className="font-mono">{term.pronunciation}</span>
-              </p>
-            )}
+            <div className="flex flex-wrap items-center gap-3">
+              {term.pronunciation && (
+                <p className="text-lg text-slate-500 flex items-center gap-2">
+                  <Volume2 size={18} className="text-amber-600" />
+                  <span className="font-mono">{term.pronunciation}</span>
+                </p>
+              )}
+              <PronunciationButton termId={term.id} term={term.term} />
+            </div>
           </div>
 
           {/* Definition */}
@@ -239,6 +253,37 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             </div>
           )}
 
+          {/* Source relationships */}
+          {term.sourceRelations && term.sourceRelations.length > 0 && (
+            <div className="p-8 border-b border-amber-100 bg-blue-50/40">
+              <h2 className="text-lg font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                <ExternalLink size={18} className="text-blue-600" />
+                Explore this term in the source library
+              </h2>
+              <p className="text-sm text-slate-600 mb-4">
+                Links below come from the supplied content inventories. Draft and indexed items are labeled as provided.
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {term.sourceRelations.map((resource, index) => (
+                  <div key={`${resource.sourceSystem}-${resource.title}-${index}`} className="rounded-lg border border-blue-100 bg-white p-3">
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-blue-700">{resource.sourceSystem}</span>
+                      {resource.status && <span className="text-xs text-slate-400">{resource.status}</span>}
+                    </div>
+                    {resource.url ? (
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="font-medium text-slate-800 hover:text-blue-700 hover:underline">
+                        {resource.title}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-slate-700">{resource.title}</span>
+                    )}
+                    <p className="text-xs text-slate-500 mt-1">{resource.relation.replaceAll('-', ' ')}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Affiliate Links / Recommended Tools */}
           {affiliateLinks.length > 0 && (
             <div className="p-8 border-b border-amber-100 bg-green-50/50">
@@ -300,7 +345,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold shadow-md"
           >
             <ArrowLeft size={18} />
-            Explore All 132 Terms
+            Explore All {GLOSSARY_DATA.length} Terms
           </Link>
         </div>
       </main>
