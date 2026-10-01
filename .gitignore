@@ -39,3 +39,4 @@ lerna-debug.log*
 # Claude
 .claude/
 tsconfig.tsbuildinfo
+__pycache__/
