@@ -105,6 +105,54 @@ export const GRAIN_PHOTOS: Record<string, GrainPhoto> = {
 };
 export const MILLING_TERM_IDS = ['home-milling', 'fresh-milled-flour', 'grain-mill', 'impact-mill', 'stone-mill', 'milling-temperature', 'particle-size', 'whole-wheat-flour', 'bran', 'extraction-rate', 'bolting', 'sifter', 'bolted-flour', 'high-extraction-flour', 'flour-freshness'];
 
+
+// Baker's Tools drawer: Henry's tools and resources, grouped the way a baker reaches for them.
+export interface ToolLink { name: string; blurb: string; url: string }
+export interface ToolGroup { id: string; title: string; blurb: string; links: ToolLink[] }
+export const TOOL_GROUPS: ToolGroup[] = [
+  {
+    id: 'calculators', title: 'Calculators and converters', blurb: 'Numbers you need mid-bake.',
+    links: [
+      { name: 'Sourdough to Yeast Converter', blurb: 'Swap starter for commercial yeast, or the other way around.', url: 'https://skoo.ly/sourdough-converter' },
+      { name: 'Fermentation Compass', blurb: 'Dial in your bulk time from dough temperature and starter amount.', url: 'https://skoo.ly/fermentation-compass' },
+      { name: 'Salt Converter', blurb: 'Kosher, table, sea: get the same saltiness by weight.', url: 'https://bakinggreatbread.com/salt-converter' },
+      { name: 'Price Your Loaf', blurb: 'Free calculator for what a loaf costs you and what to charge.', url: 'https://skoo.ly/price-your-loaf' },
+    ],
+  },
+  {
+    id: 'milling', title: 'Fresh milling', blurb: 'From whole berries to the oven.',
+    links: [
+      { name: 'The Mill', blurb: 'Grain guides, milling how-tos, and what to bake with each wheat.', url: 'https://skoo.ly/the-mill' },
+      { name: 'Fresh-Milled Recipes', blurb: 'Recipes written for flour you ground this morning.', url: 'https://skoo.ly/fresh-mill-recipes' },
+      { name: 'NutriMill, $20 off with ACADEMY26', blurb: 'The mill I use. Academy bakers save on it.', url: 'https://nutrimill.com/Academy26' },
+    ],
+  },
+  {
+    id: 'recipes', title: 'Recipes and guides', blurb: 'Something to bake this week.',
+    links: [
+      { name: 'Recipe Pantry', blurb: 'Every recipe, with the glossary linked right in the steps.', url: 'https://pantry.bakinggreatbread.com/?utm_source=glossary&utm_medium=referral&utm_campaign=tools-drawer' },
+      { name: 'Recipe Pantry Pro', blurb: 'The pro version: scaling, baker\'s math, and your own recipe box.', url: 'https://skoo.ly/pantry-pro-landing' },
+      { name: 'Holiday Bake', blurb: 'The seasonal bake-along, start to finish.', url: 'https://skoo.ly/holiday-bake' },
+      { name: 'Holiday Shoppers Guide', blurb: 'Gifts for the baker on your list, tested by me.', url: 'https://skoo.ly/holiday-guide' },
+    ],
+  },
+  {
+    id: 'business', title: 'Selling your bread', blurb: 'When the kitchen becomes a business.',
+    links: [
+      { name: 'Storefront Builder', blurb: 'Give your bakery a place online, without code.', url: 'https://skoo.ly/get-your-storefront' },
+      { name: 'From Oven to Market', blurb: 'The course for turning a home bakery into income.', url: 'https://www.skool.com/from-oven-to-market' },
+    ],
+  },
+  {
+    id: 'learn', title: 'Learn and connect', blurb: 'The rest of the kitchen.',
+    links: [
+      { name: 'The Bread Authority', blurb: 'The hub that ties the blog, videos, and this glossary together.', url: 'https://bakinggreatbread.com/bread-authority' },
+      { name: 'Crust & Crumb Academy', blurb: 'Post a bake and get real eyes on it, from me or the community.', url: 'https://www.skool.com/crust-crumb-academy-7621' },
+      { name: 'Baking Great Bread at Home', blurb: 'The website and the blog behind all of this.', url: 'https://skoo.ly/my-website' },
+    ],
+  },
+];
+
 // External resource URLs
 export const EXTERNAL_URLS = {
   starterGuide: 'https://sourdough-starter-master-kxo6qxb.gamma.site/',

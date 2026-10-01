@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { MessageSquare, ChefHat, ArrowUp, Instagram, Youtube, Facebook, Linkedin, Mail, Globe, X, Calculator, ExternalLink, Thermometer, RefreshCw, Scale } from 'lucide-react';
+import { MessageSquare, ChefHat, ArrowUp, Instagram, Youtube, Facebook, Linkedin, Mail, Globe, X, Calculator, ExternalLink, Thermometer, Scale } from 'lucide-react';
 import Header from '@/src/components/Header';
 import GlossaryList from '@/src/components/GlossaryList';
 import ChatBot from '@/src/components/ChatBot';
 import BreadAnalyzer from '@/src/components/BreadAnalyzer';
 import { ChatMessage } from '@/src/types';
+import { TOOL_GROUPS } from '@/src/constants';
 
 // TikTok icon component (not in Lucide)
 const TikTokIcon = ({ size = 20 }: { size?: number }) => (
@@ -320,52 +321,37 @@ export default function GlossaryApp() {
                   </p>
                 </div>
 
-                {/* External Tools */}
-                <div className="space-y-3">
+                {/* Henry's tools and resources */}
+                <div className="space-y-5">
                   <h3 className="font-bold text-slate-700 flex items-center gap-2">
                     <ExternalLink size={18} />
-                    More Baking Tools
+                    Henry&apos;s tools and resources
                   </h3>
-
-                  <a
-                    href="https://sourdough-yeast-converter.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block bg-purple-50 border border-purple-200 rounded-xl p-4 hover:bg-purple-100 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="bg-purple-100 p-2 rounded-lg">
-                        <RefreshCw size={20} className="text-purple-700" />
+                  {TOOL_GROUPS.map(group => (
+                    <section key={group.id} aria-labelledby={`tools-${group.id}`} className="space-y-2">
+                      <div className="flex items-baseline gap-2">
+                        <h4 id={`tools-${group.id}`} className="text-xs font-bold uppercase tracking-[0.12em] text-amber-800">{group.title}</h4>
+                        <span className="text-xs text-slate-500">{group.blurb}</span>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-bold text-purple-800">Sourdough ↔ Yeast Converter</h4>
-                          <ExternalLink size={14} className="text-purple-400" />
-                        </div>
-                        <p className="text-sm text-purple-600">Convert between sourdough starter and commercial yeast</p>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {group.links.map(link => (
+                          <a
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 hover:bg-amber-100 transition-colors min-h-[44px]"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="font-bold text-amber-900 text-sm">{link.name}</span>
+                              <ExternalLink size={13} className="text-amber-500 shrink-0" aria-hidden="true" />
+                            </div>
+                            <p className="text-xs text-slate-600 mt-0.5 leading-snug">{link.blurb}</p>
+                          </a>
+                        ))}
                       </div>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://bakinggreatbread.com/salt-converter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block bg-blue-50 border border-blue-200 rounded-xl p-4 hover:bg-blue-100 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="bg-blue-100 p-2 rounded-lg">
-                        <Scale size={20} className="text-blue-700" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-bold text-blue-800">Salt Converter</h4>
-                          <ExternalLink size={14} className="text-blue-400" />
-                        </div>
-                        <p className="text-sm text-blue-600">Convert between different salt types for baking</p>
-                      </div>
-                    </div>
-                  </a>
+                    </section>
+                  ))}
                 </div>
 
                 {/* Quick Reference */}
