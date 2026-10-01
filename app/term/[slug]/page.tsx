@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
-import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias } from '../../../src/constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
 import { SITE_URL, SITE_NAME, AUTHOR_NAME, OG_IMAGE, SAME_AS, clip, jsonLd } from '../../../src/seo';
 import PronunciationButton from '../../../src/components/PronunciationButton';
@@ -300,7 +300,6 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                     <div key={`${resource.sourceSystem}-${resource.title}-${index}`} className="glass rounded-[20px] p-4">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
                         <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#f0c878]">{resource.sourceSystem}</span>
-                        {resource.status && <span className="text-[11px] text-[rgba(246,236,220,0.55)]">{resource.status}</span>}
                       </div>
                       {resource.url ? (
                         <a href={resource.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#fff8ec] hover:text-[#f0c878] hover:underline">
@@ -309,7 +308,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                       ) : (
                         <span className="font-semibold text-[#fff8ec]">{resource.title}</span>
                       )}
-                      <p className="text-xs text-[rgba(246,236,220,0.55)] mt-1">{resource.relation.replaceAll('-', ' ')}</p>
+                      <p className="text-xs text-[rgba(246,236,220,0.55)] mt-1">{SOURCE_LABELS[resource.relation] || 'Related'}</p>
                     </div>
                   ))}
                 </div>

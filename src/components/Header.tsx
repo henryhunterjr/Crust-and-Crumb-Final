@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Calculator, ArrowUpRight } from 'lucide-react';
+import { Calculator, ArrowUpRight, Menu } from 'lucide-react';
 
 interface HeaderProps {
   onHomeClick?: () => void;
@@ -52,14 +52,28 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onToolsClick }) => {
           <a href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest" target="_blank" rel="noreferrer" className="flex items-center gap-1 px-4 py-2.5 rounded-full text-[rgba(246,236,220,0.82)] hover:text-[#fff8ec] hover:bg-white/5 transition-colors">The Book <ArrowUpRight size={14} /></a>
         </nav>
         <span className="hidden lg:block font-display italic text-[15px] text-[#f0c878] pr-4">Perfection not required</span>
-        {/* Mobile Tools Button */}
-        <button
-          onClick={onToolsClick}
-          className="md:hidden btn-gold flex items-center gap-1.5 h-11 px-4 rounded-full font-semibold text-sm shrink-0"
-        >
-          <Calculator size={16} />
-          Tools
-        </button>
+        {/* Mobile actions */}
+        <div className="md:hidden flex items-center gap-2 shrink-0">
+          <button
+            onClick={onToolsClick}
+            className="btn-gold flex items-center gap-1.5 h-11 px-4 rounded-full font-semibold text-sm"
+          >
+            <Calculator size={16} aria-hidden="true" />
+            Tools
+          </button>
+          <details className="relative">
+            <summary className="btn-glass list-none [&::-webkit-details-marker]:hidden w-11 h-11 rounded-full inline-flex items-center justify-center cursor-pointer" aria-label="Open menu">
+              <Menu size={18} aria-hidden="true" />
+            </summary>
+            <nav aria-label="Mobile navigation" className="glass-strong absolute right-0 mt-2 w-56 rounded-2xl p-2 flex flex-col text-[15px] font-medium z-40" style={{ background: 'rgba(30, 23, 15, 0.94)' }}>
+              <a href="#dictionary" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10">Dictionary</a>
+              <a href="#paths" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10">Learning paths</a>
+              <a href="https://pantry.bakinggreatbread.com/?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-nav" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">Recipe Pantry <ArrowUpRight size={14} aria-hidden="true" /></a>
+              <a href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">The Book <ArrowUpRight size={14} aria-hidden="true" /></a>
+              <a href="https://www.skool.com/crust-crumb-academy-7621" target="_blank" rel="noreferrer" className="px-4 py-3 rounded-xl text-[#fff8ec] hover:bg-white/10 flex items-center justify-between">The Academy <ArrowUpRight size={14} aria-hidden="true" /></a>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
   );

@@ -556,15 +556,15 @@ ${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis<
       <div className="space-y-4">
         {currentStep.fields.map(field => (
           <div key={field.key}>
-            <label className="block text-sm font-medium text-slate-700 mb-1">{field.label}</label>
+            <label htmlFor={`analyzer-${field.key}`} className="block text-sm font-medium text-slate-700 mb-1">{field.label}</label>
             {field.type === 'select' && (
-              <select value={form[field.key as keyof FormData]} onChange={e => handleChange(field.key, e.target.value)} className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white">
+              <select id={`analyzer-${field.key}`} value={form[field.key as keyof FormData]} onChange={e => handleChange(field.key, e.target.value)} className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white">
                 <option value="">Select one...</option>
                 {field.options?.map(opt => <option key={opt} value={opt}>{opt}</option>)}
               </select>
             )}
             {field.type === 'textarea' && (
-              <textarea value={form[field.key as keyof FormData]} onChange={e => handleChange(field.key, e.target.value)} placeholder={field.placeholder} rows={3} className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 resize-none" />
+              <textarea id={`analyzer-${field.key}`} value={form[field.key as keyof FormData]} onChange={e => handleChange(field.key, e.target.value)} placeholder={field.placeholder} rows={3} className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 resize-none" />
             )}
           </div>
         ))}

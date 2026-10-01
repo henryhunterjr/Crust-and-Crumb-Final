@@ -1,5 +1,5 @@
 // Shared SEO and social sharing settings for the glossary
-export const SITE_URL = 'https://crust-and-crumb-tawny.vercel.app';
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://crust-and-crumb-tawny.vercel.app').replace(/\/$/, '');
 export const SITE_NAME = 'Crust & Crumb Glossary';
 export const PUBLISHER_NAME = 'Baking Great Bread at Home';
 export const AUTHOR_NAME = 'Henry Hunter';

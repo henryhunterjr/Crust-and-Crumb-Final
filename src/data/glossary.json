@@ -25,15 +25,16 @@
   {
     "id": "active-dry-yeast",
     "term": "Active Dry Yeast",
-    "definition": "A form of commercial yeast with larger granules that needs to be dissolved in warm water (bloomed) before use. It's less potent than instant yeast, so use about 25% more if you're substituting it for instant.",
-    "shortDefinition": "Traditional dry yeast that needs to bloom in water.",
+    "definition": "A form of commercial yeast with larger, coarser granules than instant yeast. The classic method is to dissolve it in warm water (blooming, or proofing the yeast) before mixing, and many recipes still call for that step. Newer active dry yeast can usually go straight into the dry ingredients too, so follow the instructions on your package. It's a bit slower than instant yeast; if you're swapping it in for instant, use about 25% more.",
+    "shortDefinition": "Coarse dry yeast that's traditionally bloomed in warm water first.",
     "category": "Ingredient",
     "difficulty": "Beginner",
     "relatedTermIds": [
       "instant-yeast"
     ],
     "henrysTips": [
-      "If the water is too hot (over 110°F), you'll kill the yeast. Too cold, and it won't activate. Aim for 100-105°F."
+      "Check your package for the water temperature. Red Star, for example, calls for 110 to 115°F when you bloom it. Too cold and it's sluggish; much hotter water, and by around 140°F you'll kill it.",
+      "Not sure your yeast is still good? Bloom it with a pinch of sugar. If it isn't foamy in about 10 minutes, toss it and open a fresh pack."
     ],
     "youtubeQuery": "active dry yeast vs instant yeast",
     "sourceRelations": []
@@ -4326,7 +4327,7 @@
       "discard"
     ],
     "henrysTips": [
-      "I do 1:1:1 (starter:water:flour) for maintenance. Simple and consistent."
+      "I do 1:1:1 (starter:flour:water) for maintenance. Simple and consistent."
     ],
     "youtubeQuery": "how to feed sourdough starter",
     "sourceRelations": []
@@ -4397,8 +4398,8 @@
   {
     "id": "float-test",
     "term": "Float Test",
-    "definition": "A simple test to check if your sourdough starter is active and ready to use. Drop a spoonful of starter in water. If it floats, it's full of gas and ready to bake with. If it sinks, it needs more time or another feeding.",
-    "shortDefinition": "Test to see if starter is ready by floating it in water.",
+    "definition": "A quick check on sourdough starter activity. Drop a spoonful of starter into room temperature water. If it floats, it's full of gas and almost certainly ready to bake with. If it sinks, it may need more time or another feeding, but a sinking starter isn't proof it's not ready: whole grain, rye, and very wet starters can be at their peak and still sink. Use it alongside the rise, the bubbles, and the smell.",
+    "shortDefinition": "Starter that floats is usually ready; one that sinks may still be.",
     "category": "Technique",
     "difficulty": "Beginner",
     "relatedTermIds": [
@@ -4407,7 +4408,7 @@
     ],
     "henrysTips": [
       "Use room temperature water for the test. Cold water can give false negatives.",
-      "Don't treat it as gospel. Whole grain, rye, and very wet starters can be ready to bake and still sink. Trust the rise, the bubbles, and the smell too."
+      "I trust the jar more than the float. If it has doubled, smells pleasantly sour, and is domed with bubbles, it's ready."
     ],
     "youtubeQuery": "sourdough float test",
     "sourceRelations": []

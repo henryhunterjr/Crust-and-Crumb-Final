@@ -19,6 +19,7 @@ export default function PronunciationButton({ termId, term, compact = false }: P
   useEffect(() => {
     const stopAudio = () => {
       audioRef.current?.pause();
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       audioRef.current = null;
       if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
       objectUrlRef.current = null;
@@ -37,6 +38,7 @@ export default function PronunciationButton({ termId, term, compact = false }: P
 
     if (status === 'playing') {
       audioRef.current?.pause();
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
       setStatus('idle');
       return;
     }
@@ -60,16 +62,37 @@ export default function PronunciationButton({ termId, term, compact = false }: P
         objectUrlRef.current = null;
       };
       audio.onerror = () => {
-        setStatus('error');
         audioRef.current = null;
         URL.revokeObjectURL(objectUrl);
         objectUrlRef.current = null;
+        speakWithBrowser();
       };
       await audio.play();
       setStatus('playing');
     } catch {
-      setStatus('error');
+      speakWithBrowser();
     }
+  };
+
+  // Fallback: the visitor's own device voice, so Listen always works
+  const speakWithBrowser = () => {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+      setStatus('error');
+      return;
+    }
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(term);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    const voices = synth.getVoices();
+    const preferred = voices.find((v) => v.lang === 'en-US' && /natural|samantha|google us/i.test(v.name))
+      || voices.find((v) => v.lang && v.lang.startsWith('en'));
+    if (preferred) utterance.voice = preferred;
+    utterance.onend = () => setStatus('idle');
+    utterance.onerror = () => setStatus('idle');
+    setStatus('playing');
+    synth.speak(utterance);
   };
 
   const label = status === 'playing'

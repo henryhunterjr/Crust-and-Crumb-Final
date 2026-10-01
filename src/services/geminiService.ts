@@ -201,19 +201,31 @@ const API_URL = 'https://crust-crumb-backend.vercel.app';
 export const sendMessageToGemini = async (history: {role: 'user' | 'model', text: string}[], message: string): Promise<string> => {
   const endpoint = `${API_URL}/api/chat`;
 
-  // Format history as the backend expects: array of {role, text}
-  const formattedHistory = history.map(h => ({
-    role: h.role,
-    text: h.text
-  }));
+  // Gemini requires the history to start with a user turn and alternate roles,
+  // and the current message is sent separately, so clean the history first.
+  const prior = [...history];
+  const last = prior[prior.length - 1];
+  if (last && last.role === 'user' && last.text === message) prior.pop();
+  while (prior.length && prior[0].role !== 'user') prior.shift();
+  const formattedHistory: { role: 'user' | 'model'; text: string }[] = [];
+  for (const h of prior) {
+    const previous = formattedHistory[formattedHistory.length - 1];
+    if (previous && previous.role === h.role) {
+      previous.text = `${previous.text}\n\n${h.text}`;
+    } else {
+      formattedHistory.push({ role: h.role, text: h.text });
+    }
+  }
+  // History must end on a model turn before the new user message
+  if (formattedHistory.length && formattedHistory[formattedHistory.length - 1].role === 'user') {
+    formattedHistory.pop();
+  }
 
   const requestBody = {
     message,
     history: formattedHistory,
   };
 
-  console.log('[Krusty] Calling API:', endpoint);
-  console.log('[Krusty] Request body:', JSON.stringify(requestBody, null, 2));
 
   try {
     const response = await fetch(endpoint, {
@@ -224,7 +236,6 @@ export const sendMessageToGemini = async (history: {role: 'user' | 'model', text
       body: JSON.stringify(requestBody),
     });
 
-    console.log('[Krusty] Response status:', response.status);
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -233,7 +244,6 @@ export const sendMessageToGemini = async (history: {role: 'user' | 'model', text
     }
 
     const data = await response.json();
-    console.log('[Krusty] Response data:', data);
 
     return data.response || data.text || "I couldn't generate a response. Let's try that again, baker!";
   } catch (error) {

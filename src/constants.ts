@@ -5,8 +5,40 @@ import slugAliases from './data/slugAliases.json';
 
 // Export glossary data from JSON (canonical entries plus source-backed cluster terms)
 // Keep unfinished inventory additions in the source file, not the public glossary.
+// Public copies also drop draft sources and internal editorial planning fields.
+const normalizeWords = (value: string) => value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+const RELATION_ORDER: Record<string, number> = { 'canonical-article': 0, 'mentioned-in': 1, 'related-video': 2, 'related-recipe': 3, 'supporting-asset': 4 };
+
+function publicSources(item: GlossaryItem): GlossaryItem['sourceRelations'] {
+  if (!item.sourceRelations) return item.sourceRelations;
+  const names = [item.term, ...(item.aliases || [])].map(normalizeWords).filter(Boolean);
+  return item.sourceRelations
+    .filter(source => !/draft|private|pending|unpublished/i.test(source.status || ''))
+    .filter(source => !/[?&]p=\d+/.test(source.url || ''))
+    .map(source => {
+      // Only call an article the main read when it is actually about this term
+      if (source.relation === 'canonical-article') {
+        const title = normalizeWords(source.title || '');
+        const isAbout = names.some(name => title.includes(name));
+        return isAbout ? source : { ...source, relation: 'mentioned-in' as const };
+      }
+      return source;
+    })
+    .sort((a, b) => (RELATION_ORDER[a.relation] ?? 9) - (RELATION_ORDER[b.relation] ?? 9));
+}
+
 export const GLOSSARY_DATA: GlossaryItem[] = (glossaryData as GlossaryItem[])
-  .filter(item => item.definitionStatus !== 'editorial-draft');
+  .filter(item => item.definitionStatus !== 'editorial-draft')
+  .map(({ clusterPlan: _plan, ...item }) => ({ ...item, sourceRelations: publicSources(item as GlossaryItem) }));
+
+// Visitor-facing labels for source relationships
+export const SOURCE_LABELS: Record<string, string> = {
+  'canonical-article': 'Full article',
+  'mentioned-in': 'Also covered in',
+  'related-video': 'Video',
+  'related-recipe': 'Recipe',
+  'supporting-asset': 'Resource',
+};
 
 // Old or alternate slugs (from Recipe Pantry markers and older links) mapped to a current term id.
 // Never delete an entry here: removing one breaks every link that still uses it.
@@ -57,7 +89,7 @@ export const LEARNING_PATHS: LearningPath[] = [
     id: 'beginner-basics',
     title: 'Beginner Basics',
     description: 'Start here! The fundamental building blocks of all great bread.',
-    termIds: ['gluten', 'kneading', 'fermentation', 'proofing', 'oven-spring', 'scoring', 'crumb', 'windowpane-test', 'hydration']
+    termIds: ['hydration', 'gluten', 'kneading', 'windowpane-test', 'fermentation', 'proofing', 'scoring', 'oven-spring', 'crumb']
   },
   {
     id: 'sourdough-mastery',
@@ -65,13 +97,13 @@ export const LEARNING_PATHS: LearningPath[] = [
     description: 'The "Sourdough for the Rest of Us" Companion Path.',
     termIds: [
       'sourdough-starter',
+      'bakers-percentage',
       'fermentolyse',
       'stretch-and-fold',
       'coil-fold',
       'bulk-fermentation',
       'cold-proof',
-      'scoring',
-      'bakers-percentage'
+      'scoring'
     ]
   },
   {
@@ -84,18 +116,18 @@ export const LEARNING_PATHS: LearningPath[] = [
     id: 'fresh-milled-grains',
     title: 'Fresh-Milled & Ancient Grains',
     description: 'From wheat berry to loaf: milling, sifting, and baking with whole and ancient grains.',
-    termIds: ['fresh-milled-flour', 'home-milling', 'wheat-berry', 'bran', 'extraction-rate', 'bolting', 'bran-soaker', 'hard-white-wheat', 'einkorn', 'spelt-flour', 'khorasan-wheat', 'rye-flour']
+    termIds: ['wheat-berry', 'hard-white-wheat', 'home-milling', 'fresh-milled-flour', 'bran', 'extraction-rate', 'bolting', 'bran-soaker', 'rye-flour', 'spelt-flour', 'einkorn', 'khorasan-wheat']
   },
   {
     id: 'troubleshooting',
     title: 'Troubleshooting',
     description: 'What went wrong with that loaf, and how to fix it next time.',
-    termIds: ['dense-crumb', 'gummy-crumb', 'underfermented', 'fools-crumb', 'overproofed', 'underproofed', 'pancaking', 'blowout', 'flying-crust', 'tunneling', 'pale-crust', 'banneton-sticking']
+    termIds: ['underfermented', 'dense-crumb', 'gummy-crumb', 'fools-crumb', 'tunneling', 'flying-crust', 'underproofed', 'overproofed', 'pancaking', 'banneton-sticking', 'blowout', 'pale-crust']
   },
   {
     id: 'tools-equipment',
     title: 'Tools & Equipment',
     description: 'Essential tools for your bread baking journey.',
-    termIds: ['banneton', 'lame', 'dutch-oven', 'bench-scraper', 'digital-scale', 'probe-thermometer', 'baking-steel']
+    termIds: ['digital-scale', 'bench-scraper', 'banneton', 'lame', 'dutch-oven', 'baking-steel', 'probe-thermometer']
   }
 ];

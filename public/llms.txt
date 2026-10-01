@@ -1,0 +1,319 @@
+# Crust & Crumb Interactive Bread Baking Glossary
+
+> A free reference to 279 bread baking and sourdough terms, written by baker Henry Hunter, founder of Baking Great Bread at Home and Crust & Crumb Academy. Each term has a plain-language definition, Henry's practical tips from the bench, related terms, and links to recipes and videos.
+
+Each term lives at its own URL: https://crust-and-crumb-tawny.vercel.app/term/{term-id}.
+
+## Key pages
+
+- [Glossary home](https://crust-and-crumb-tawny.vercel.app/): search, filter by category and level, and guided learning paths
+- [Sitemap](https://crust-and-crumb-tawny.vercel.app/sitemap.xml)
+- [Recipe Pantry](https://pantry.bakinggreatbread.com/): Henry's recipe library, linked from many terms
+- [Crust & Crumb Academy](https://www.skool.com/crust-crumb-academy-7621): the community where bakers get help with their bakes
+- [Baking Great Bread blog](https://www.bakinggreatbread.blog)
+
+## Bread
+
+- [Babka](https://crust-and-crumb-tawny.vercel.app/term/babka): A sweet, braided bread originating from Jewish communities in Poland and Ukraine
+- [Bagel](https://crust-and-crumb-tawny.vercel.app/term/bagel): A ring-shaped bread that is boiled in water (often with malt or honey) before baking
+- [Baguette](https://crust-and-crumb-tawny.vercel.app/term/baguette): A long, thin loaf of French bread characterized by a crisp crust and large, irregular holes in the crumb
+- [Batard](https://crust-and-crumb-tawny.vercel.app/term/batard): An oval or football-shaped loaf
+- [Belly](https://crust-and-crumb-tawny.vercel.app/term/belly): The rounded part of the loaf that expands and opens up during the bake, usually right next to the 'ear.' A big belly indicates strong fermentation and good shaping tension.
+- [Bialy](https://crust-and-crumb-tawny.vercel.app/term/bialy): A cousin to the bagel, this round roll has a depressed center filled with cooked onions and poppy seeds
+- [Boule](https://crust-and-crumb-tawny.vercel.app/term/boule): A traditional French bread shape resembling a round ball
+- [Brioche](https://crust-and-crumb-tawny.vercel.app/term/brioche): A highly enriched French bread with a high egg and butter content
+- [Challah](https://crust-and-crumb-tawny.vercel.app/term/challah): A braided, enriched bread of Jewish origin, traditionally eaten on Shabbat
+- [Ciabatta](https://crust-and-crumb-tawny.vercel.app/term/ciabatta): An Italian white bread made from a very wet (high hydration) dough
+- [Colomba](https://crust-and-crumb-tawny.vercel.app/term/colomba): Italian dove-shaped Easter bread topped with almond glaze.
+- [Croissant](https://crust-and-crumb-tawny.vercel.app/term/croissant): A flaky crescent roll made from yeasted laminated dough.
+- [Crumb](https://crust-and-crumb-tawny.vercel.app/term/crumb): The interior texture and hole structure of bread.
+- [Crust](https://crust-and-crumb-tawny.vercel.app/term/crust): The hard, caramelized outer shell of the bread
+- [Ear](https://crust-and-crumb-tawny.vercel.app/term/ear): The raised flap of crust along the score line.
+- [English Muffin](https://crust-and-crumb-tawny.vercel.app/term/english-muffin): A small, round, flat yeast bread that is cooked on a griddle or skillet rather than in an oven
+- [Enriched Dough](https://crust-and-crumb-tawny.vercel.app/term/enriched-dough): Dough that contains significant amounts of fat, sugar, dairy, or eggs (like Brioche or Challah)
+- [Focaccia](https://crust-and-crumb-tawny.vercel.app/term/focaccia): An oven-baked Italian flatbread similar in style to pizza dough
+- [Fougasse](https://crust-and-crumb-tawny.vercel.app/term/fougasse): A Provençal flatbread cut and stretched into a leaf shape.
+- [Hearth Loaf](https://crust-and-crumb-tawny.vercel.app/term/hearth-loaf): Any bread baked directly on the hot floor of an oven (or on a pizza stone/steel) rather than in a pan
+- [Hoagie Roll](https://crust-and-crumb-tawny.vercel.app/term/hoagie-roll): A long, flat Italian-American roll with a soft interior and a slightly crisp crust, designed to hold heavy sandwich fillings without falling apart.
+- [Injera](https://crust-and-crumb-tawny.vercel.app/term/injera): Spongy fermented teff flatbread of Ethiopia and Eritrea.
+- [Kaiser Roll](https://crust-and-crumb-tawny.vercel.app/term/kaiser-roll): A round, crusty Austrian roll characterized by a 5-point pinwheel pattern on top
+- [Lean Dough](https://crust-and-crumb-tawny.vercel.app/term/lean-dough): A dough consisting primarily of flour, water, salt, and yeast, with little to no added fat or sugar
+- [Miche](https://crust-and-crumb-tawny.vercel.app/term/miche): A large, rustic French round loaf (often 1kg-2kg) made with a high percentage of whole wheat or rye flour
+- [Milk Bread (Shokupan)](https://crust-and-crumb-tawny.vercel.app/term/milk-bread): A Japanese white bread known for its incredibly soft, feathery texture and milky sweetness
+- [Naan](https://crust-and-crumb-tawny.vercel.app/term/naan): Soft leavened flatbread traditionally baked in a tandoor.
+- [Pain de Campagne](https://crust-and-crumb-tawny.vercel.app/term/pain-de-campagne): French country bread, often levain-leavened with some rye.
+- [Pain de Mie](https://crust-and-crumb-tawny.vercel.app/term/pain-de-mie): Also known as a 'Pullman loaf,' this is a soft, white sandwich bread baked in a rectangular pan with a sliding lid
+- [Panettone](https://crust-and-crumb-tawny.vercel.app/term/panettone): A tall, cylindrical Italian sweet bread traditionally eaten at Christmas
+- [Pita](https://crust-and-crumb-tawny.vercel.app/term/pita): Round flatbread that puffs into a pocket in a hot oven.
+- [Pumpernickel](https://crust-and-crumb-tawny.vercel.app/term/pumpernickel): Dark, dense German rye bread baked long and slow.
+- [Quick Bread](https://crust-and-crumb-tawny.vercel.app/term/quick-bread): Bread raised with baking powder or soda, not yeast.
+- [Soft Pretzels](https://crust-and-crumb-tawny.vercel.app/term/pretzels): A knotted bread that is dipped in a lye or baking soda solution before baking
+- [Sourdough](https://crust-and-crumb-tawny.vercel.app/term/sourdough): Bread raised by wild yeast and bacteria instead of packaged yeast.
+- [Vollkornbrot](https://crust-and-crumb-tawny.vercel.app/term/vollkornbrot): Dense German whole-grain rye bread baked in a pan.
+
+## Grain & Milling
+
+- [Aged Flour](https://crust-and-crumb-tawny.vercel.app/term/aged-flour): Flour rested after milling so it oxidizes and strengthens.
+- [Aleurone Layer](https://crust-and-crumb-tawny.vercel.app/term/aleurone-layer): Nutrient-rich layer under the bran, removed with it in milling.
+- [Amaranth](https://crust-and-crumb-tawny.vercel.app/term/amaranth): Tiny gluten-free seed used like a grain.
+- [Ancient Grain](https://crust-and-crumb-tawny.vercel.app/term/ancient-grain): Loose term for grains little changed by modern breeding.
+- [Barley](https://crust-and-crumb-tawny.vercel.app/term/barley): Ancient cereal used for flour and for malt.
+- [Bran](https://crust-and-crumb-tawny.vercel.app/term/bran): The fibrous outer layers of the grain kernel.
+- [Bread Wheat](https://crust-and-crumb-tawny.vercel.app/term/bread-wheat): Triticum aestivum, the common wheat used for most flour.
+- [Buckwheat](https://crust-and-crumb-tawny.vercel.app/term/buckwheat): Gluten-free seed, not wheat, used like a grain.
+- [Durum Wheat](https://crust-and-crumb-tawny.vercel.app/term/durum-wheat): Hard amber wheat behind semolina and pasta.
+- [Einkorn](https://crust-and-crumb-tawny.vercel.app/term/einkorn): Early domesticated wheat with weak, sticky gluten.
+- [Emmer](https://crust-and-crumb-tawny.vercel.app/term/emmer): Ancient hulled wheat, the usual farro in the US.
+- [Endosperm](https://crust-and-crumb-tawny.vercel.app/term/endosperm): The starchy inner part of the kernel that makes white flour.
+- [Farro](https://crust-and-crumb-tawny.vercel.app/term/farro): Italian name for einkorn, emmer, or spelt grain.
+- [Flour Freshness](https://crust-and-crumb-tawny.vercel.app/term/flour-freshness): How recently flour was milled and how well it's stored.
+- [Fonio](https://crust-and-crumb-tawny.vercel.app/term/fonio): Fast-cooking, gluten-free West African grain.
+- [Fresh-Milled Flour](https://crust-and-crumb-tawny.vercel.app/term/fresh-milled-flour): Whole-grain flour ground at or near the time of baking.
+- [Germ](https://crust-and-crumb-tawny.vercel.app/term/germ): The oil-rich embryo of the grain kernel.
+- [Hard Red Spring Wheat](https://crust-and-crumb-tawny.vercel.app/term/hard-red-spring-wheat): Spring-planted hard wheat, usually very high in protein.
+- [Hard Red Winter Wheat](https://crust-and-crumb-tawny.vercel.app/term/hard-red-winter-wheat): Fall-planted hard wheat behind much US bread and AP flour.
+- [Hard Wheat](https://crust-and-crumb-tawny.vercel.app/term/hard-wheat): Wheat with a firm kernel, usually higher in protein.
+- [Hard White Wheat](https://crust-and-crumb-tawny.vercel.app/term/hard-white-wheat): Hard wheat with pale bran for milder, lighter whole wheat.
+- [Heritage Grain](https://crust-and-crumb-tawny.vercel.app/term/heritage-grain): Older grain varieties preserved from before modern breeding.
+- [Home Milling](https://crust-and-crumb-tawny.vercel.app/term/home-milling): Grinding your own flour from whole grain at home.
+- [Identity-Preserved Grain](https://crust-and-crumb-tawny.vercel.app/term/identity-preserved-grain): Grain kept separate and traceable from farm to mill.
+- [Khorasan Wheat](https://crust-and-crumb-tawny.vercel.app/term/khorasan-wheat): Large-kerneled ancient wheat, sold as the KAMUT® brand.
+- [Landrace Grain](https://crust-and-crumb-tawny.vercel.app/term/landrace-grain): Locally adapted, genetically varied grain kept by farmers.
+- [Marquis Wheat](https://crust-and-crumb-tawny.vercel.app/term/marquis-wheat): Canadian hard red spring wheat bred from Red Fife.
+- [Middlings](https://crust-and-crumb-tawny.vercel.app/term/middlings): Intermediate particles in roller milling, or a milling byproduct.
+- [Millet](https://crust-and-crumb-tawny.vercel.app/term/millet): Small gluten-free grains used whole or as flour.
+- [Milling Temperature](https://crust-and-crumb-tawny.vercel.app/term/milling-temperature): How warm flour gets from the heat of grinding.
+- [Modern Wheat](https://crust-and-crumb-tawny.vercel.app/term/modern-wheat): Today's widely grown bread wheat from modern breeding.
+- [Oats](https://crust-and-crumb-tawny.vercel.app/term/oats): Cereal that adds softness; gluten-free only if certified.
+- [Particle Size](https://crust-and-crumb-tawny.vercel.app/term/particle-size): How fine or coarse a flour is ground.
+- [Pseudocereal](https://crust-and-crumb-tawny.vercel.app/term/pseudocereal): Grain-like seed from a plant that isn't a grass.
+- [Quinoa](https://crust-and-crumb-tawny.vercel.app/term/quinoa): Andean seed used like a grain; gluten-free.
+- [Red Fife](https://crust-and-crumb-tawny.vercel.app/term/red-fife): Canadian heritage red wheat from the 1840s.
+- [Rouge de Bordeaux](https://crust-and-crumb-tawny.vercel.app/term/rouge-de-bordeaux): French heritage red wheat from the 1800s.
+- [Soft Wheat](https://crust-and-crumb-tawny.vercel.app/term/soft-wheat): Wheat with a crumbly kernel, usually lower in protein.
+- [Soft White Wheat](https://crust-and-crumb-tawny.vercel.app/term/soft-white-wheat): Low-protein, pale wheat for pastry and tender baking.
+- [Sonora Wheat](https://crust-and-crumb-tawny.vercel.app/term/sonora-wheat): Soft white heritage wheat of the Southwest, for tortillas.
+- [Sorghum](https://crust-and-crumb-tawny.vercel.app/term/sorghum): Hardy gluten-free cereal used for flatbreads.
+- [Teff](https://crust-and-crumb-tawny.vercel.app/term/teff): Tiny Ethiopian and Eritrean grain behind injera.
+- [Tempering](https://crust-and-crumb-tawny.vercel.app/term/tempering): Moistening and resting grain before milling.
+- [Terroir](https://crust-and-crumb-tawny.vercel.app/term/terroir): How growing place and season shape a grain's flavor.
+- [Triticale](https://crust-and-crumb-tawny.vercel.app/term/triticale): Wheat and rye cross with traits of both.
+- [Turkey Red](https://crust-and-crumb-tawny.vercel.app/term/turkey-red): Heritage hard red winter wheat brought to Kansas, 1870s.
+- [Wheat Berry](https://crust-and-crumb-tawny.vercel.app/term/wheat-berry): The whole wheat kernel: bran, germ, and endosperm.
+- [Wheat Class](https://crust-and-crumb-tawny.vercel.app/term/wheat-class): How wheat is grouped by hardness, color, and season.
+
+## Ingredient
+
+- [Active Dry Yeast](https://crust-and-crumb-tawny.vercel.app/term/active-dry-yeast): Coarse dry yeast that's traditionally bloomed in warm water first.
+- [All-Purpose Flour](https://crust-and-crumb-tawny.vercel.app/term/all-purpose-flour): A medium-protein flour designed to do everything reasonably well
+- [Ascorbic Acid](https://crust-and-crumb-tawny.vercel.app/term/ascorbic-acid): Also known as Vitamin C, this is often added to bread recipes in tiny amounts to strengthen the gluten network and help the dough hold its shape during a long rise.
+- [Baking Powder](https://crust-and-crumb-tawny.vercel.app/term/baking-powder): A chemical leavener that rises with moisture and heat.
+- [Baking Soda](https://crust-and-crumb-tawny.vercel.app/term/baking-soda): An alkaline leavener that needs an acid to rise.
+- [Bolted Flour](https://crust-and-crumb-tawny.vercel.app/term/bolted-flour): Whole-grain flour sifted to remove some of the bran.
+- [Bread Flour](https://crust-and-crumb-tawny.vercel.app/term/bread-flour): High-protein flour that creates strong gluten for chewy, high-rising loaves.
+- [Buttermilk](https://crust-and-crumb-tawny.vercel.app/term/buttermilk): Tangy, acidic cultured milk for tender, lifted bakes.
+- [Clear Flour](https://crust-and-crumb-tawny.vercel.app/term/clear-flour): Darker, higher-ash flour left after patent is removed.
+- [Cornmeal](https://crust-and-crumb-tawny.vercel.app/term/cornmeal): Ground dried corn; gluten-free, used for cornbread and dusting.
+- [Cracked Grain](https://crust-and-crumb-tawny.vercel.app/term/cracked-grain): Whole grain broken into coarse pieces, not flour.
+- [Diastatic Malt Powder](https://crust-and-crumb-tawny.vercel.app/term/diastatic-malt): A powder made from sprouted barley that is rich in enzymes (amylase)
+- [Discard](https://crust-and-crumb-tawny.vercel.app/term/discard): Starter removed before feeding, great for recipes.
+- [Fresh Yeast](https://crust-and-crumb-tawny.vercel.app/term/fresh-yeast): Also known as 'cake yeast,' this is moist, perishable yeast sold in compressed blocks
+- [Gluten](https://crust-and-crumb-tawny.vercel.app/term/gluten): The protein network that gives bread structure.
+- [High-Extraction Flour](https://crust-and-crumb-tawny.vercel.app/term/high-extraction-flour): Flour between whole wheat and white, with some bran removed.
+- [Inclusions](https://crust-and-crumb-tawny.vercel.app/term/inclusions): Any solid ingredients added to the dough, such as nuts, seeds, dried fruit, cheese, or olives
+- [Instant Yeast](https://crust-and-crumb-tawny.vercel.app/term/instant-yeast): A fast-acting dry yeast that can be mixed directly into flour without dissolving in water first
+- [Levain](https://crust-and-crumb-tawny.vercel.app/term/levain): A prepared portion of starter for baking.
+- [Lievito Madre](https://crust-and-crumb-tawny.vercel.app/term/lievito-madre): A stiff Italian sourdough starter (maintained at 50% hydration or less), often kept submerged in water or bound in cloth
+- [Lye (Sodium Hydroxide)](https://crust-and-crumb-tawny.vercel.app/term/lye): A strong alkali used to dip pretzels and bagels
+- [Mother](https://crust-and-crumb-tawny.vercel.app/term/mother): Another name for a Sourdough Starter
+- [Non-Diastatic Malt](https://crust-and-crumb-tawny.vercel.app/term/non-diastatic-malt): Heat-treated malt for flavor and color, no active enzymes.
+- [Osmotolerant Yeast](https://crust-and-crumb-tawny.vercel.app/term/osmotolerant-yeast): A special strain of yeast (often labeled as 'SAF Gold') designed to survive in high-sugar doughs
+- [Patent Flour](https://crust-and-crumb-tawny.vercel.app/term/patent-flour): The whitest, most refined flour from the endosperm's center.
+- [Rice Flour](https://crust-and-crumb-tawny.vercel.app/term/rice-flour): Non-stick flour for dusting proofing baskets.
+- [Roasted Garlic](https://crust-and-crumb-tawny.vercel.app/term/roasted-garlic): Garlic roasted soft and sweet for folding into dough.
+- [Rye Flour](https://crust-and-crumb-tawny.vercel.app/term/rye-flour): A flavorful flour made from rye grain that contains very little gluten-forming protein
+- [Salt](https://crust-and-crumb-tawny.vercel.app/term/salt): Seasons bread, tightens gluten, and slows fermentation.
+- [Semolina Flour](https://crust-and-crumb-tawny.vercel.app/term/semolina-flour): A coarse, golden flour made from durum wheat
+- [Sourdough Discard](https://crust-and-crumb-tawny.vercel.app/term/sourdough-discard): The portion of sourdough starter that is removed before feeding to keep the total volume manageable
+- [Sourdough Starter](https://crust-and-crumb-tawny.vercel.app/term/sourdough-starter): Living culture of wild yeast and bacteria for leavening.
+- [Spelt Flour](https://crust-and-crumb-tawny.vercel.app/term/spelt-flour): An ancient hulled wheat (Triticum spelta) with a nutty, sweet flavor
+- [Sprouted Flour](https://crust-and-crumb-tawny.vercel.app/term/sprouted-flour): Flour milled from grain that was sprouted and then dried.
+- [Straight Grade Flour](https://crust-and-crumb-tawny.vercel.app/term/straight-grade-flour): White flour combining all of the mill's flour streams.
+- [Type 00 Flour](https://crust-and-crumb-tawny.vercel.app/term/type-00-flour): Finely milled, low-ash Italian flour; strength varies.
+- [Type Flour](https://crust-and-crumb-tawny.vercel.app/term/type-flour): European flour grades based mainly on ash content.
+- [Vital Wheat Gluten](https://crust-and-crumb-tawny.vercel.app/term/vital-wheat-gluten): A powdered form of almost pure gluten
+- [Whole Wheat Flour](https://crust-and-crumb-tawny.vercel.app/term/whole-wheat-flour): Flour milled from the entire wheat kernel, including the bran, germ, and endosperm
+- [Yeast](https://crust-and-crumb-tawny.vercel.app/term/yeast): The living organism that makes bread dough rise.
+- [Yeast Water](https://crust-and-crumb-tawny.vercel.app/term/yeast-water): A wild leaven made by fermenting fruit in water.
+- [Zest](https://crust-and-crumb-tawny.vercel.app/term/zest): The fragrant outer peel of citrus, without the pith.
+
+## Pizza
+
+- [Detroit Style Pizza](https://crust-and-crumb-tawny.vercel.app/term/detroit-style-pizza): Rectangular pan pizza with a crisp cheese edge.
+- [Neapolitan Pizza](https://crust-and-crumb-tawny.vercel.app/term/neapolitan-pizza): Naples-style pizza with a puffy rim, baked fast and hot.
+- [New York Style Pizza](https://crust-and-crumb-tawny.vercel.app/term/new-york-style-pizza): A large, thin, foldable pizza baked in deck ovens.
+- [Pizza Dough Balls](https://crust-and-crumb-tawny.vercel.app/term/pizza-dough-balls): Portioned and shaped pizza dough ready for stretching.
+
+## Process
+
+- [Amylase](https://crust-and-crumb-tawny.vercel.app/term/amylase): The enzyme that turns starch into sugar for the yeast to eat.
+- [Bench Rest](https://crust-and-crumb-tawny.vercel.app/term/bench-rest): A resting period (usually 15-30 minutes) after pre-shaping
+- [Biga](https://crust-and-crumb-tawny.vercel.app/term/biga): A stiff Italian pre-ferment made from flour, water, and a tiny amount of yeast
+- [Blisters](https://crust-and-crumb-tawny.vercel.app/term/blisters): Tiny, crispy bubbles on the surface of the crust
+- [Bulk Fermentation](https://crust-and-crumb-tawny.vercel.app/term/bulk-fermentation): The first rise before shaping, where flavor develops.
+- [Bulk Rise Target](https://crust-and-crumb-tawny.vercel.app/term/bulk-rise-target): How much the dough should rise during bulk fermentation.
+- [Cold Proof](https://crust-and-crumb-tawny.vercel.app/term/cold-proof): Slow final rise in the refrigerator overnight.
+- [Feeding](https://crust-and-crumb-tawny.vercel.app/term/feeding): Adding fresh flour and water to keep starter alive.
+- [Feeding Ratio](https://crust-and-crumb-tawny.vercel.app/term/feeding-ratio): How much starter, flour, and water you combine at a feeding.
+- [Fermentation](https://crust-and-crumb-tawny.vercel.app/term/fermentation): The process where yeast creates gas and flavor.
+- [Gelatinization](https://crust-and-crumb-tawny.vercel.app/term/gelatinization): The process where starch granules absorb water and swell up when heated (during baking)
+- [Hooch](https://crust-and-crumb-tawny.vercel.app/term/hooch): Liquid on hungry starter (alcohol from yeast).
+- [Maillard Reaction](https://crust-and-crumb-tawny.vercel.app/term/maillard-reaction): The chemical reaction that creates the brown, tasty crust.
+- [Oven Spring](https://crust-and-crumb-tawny.vercel.app/term/oven-spring): The rapid expansion of the dough during the first 10 minutes of baking
+- [Overripe Starter](https://crust-and-crumb-tawny.vercel.app/term/overripe-starter): A starter past its peak, collapsed and very sour.
+- [Peak](https://crust-and-crumb-tawny.vercel.app/term/peak): When a fed starter reaches its highest rise.
+- [Poolish](https://crust-and-crumb-tawny.vercel.app/term/poolish): A liquid preferment made with flour, water, and yeast.
+- [Pre-Shape](https://crust-and-crumb-tawny.vercel.app/term/pre-shape): An intermediate round of shaping performed after bulk fermentation but before the final shape
+- [Preferment](https://crust-and-crumb-tawny.vercel.app/term/preferment): Dough made ahead and fermented to add flavor and strength.
+- [Proofing](https://crust-and-crumb-tawny.vercel.app/term/proofing): The final rise after shaping, before baking.
+- [Protease](https://crust-and-crumb-tawny.vercel.app/term/protease): An enzyme that breaks down protein (gluten)
+- [Pâte Fermentée](https://crust-and-crumb-tawny.vercel.app/term/pate-fermentee): Old dough saved from a previous batch to flavor the next one.
+- [Ripe Starter](https://crust-and-crumb-tawny.vercel.app/term/ripe-starter): A starter that's active and ready to use in dough.
+- [Seam](https://crust-and-crumb-tawny.vercel.app/term/seam): The line where the dough comes together after shaping
+- [Shaggy Mass](https://crust-and-crumb-tawny.vercel.app/term/shaggy-mass): The initial stage of mixing where flour and water are combined but no gluten has developed
+- [Sponge](https://crust-and-crumb-tawny.vercel.app/term/sponge): A wet pre-ferment, similar to a poolish but often containing all the liquid for the recipe
+- [Steam (Baking)](https://crust-and-crumb-tawny.vercel.app/term/oven-steam): Water vapor introduced into the oven during the first 20 minutes of baking
+- [Stiff Starter](https://crust-and-crumb-tawny.vercel.app/term/stiff-starter): A low-hydration starter kept as a firm dough.
+- [Young Levain](https://crust-and-crumb-tawny.vercel.app/term/young-levain): A levain used early, before peak, for milder flavor.
+
+## Scientific/Technical
+
+- [Acetic Acid](https://crust-and-crumb-tawny.vercel.app/term/acetic-acid): The sharp, vinegar-like acid in sourdough.
+- [Ash Content](https://crust-and-crumb-tawny.vercel.app/term/ash-content): A measure of how much mineral content remains in flour after milling
+- [Baker's Percentage](https://crust-and-crumb-tawny.vercel.app/term/bakers-percentage): Recipe formula where flour is 100% and everything else is a ratio.
+- [Bran Sharpness](https://crust-and-crumb-tawny.vercel.app/term/bran-sharpness): The idea that bran particles cut gluten and limit rise.
+- [Caramelization](https://crust-and-crumb-tawny.vercel.app/term/caramelization): Browning of sugars by heat, separate from Maillard browning.
+- [Damaged Starch](https://crust-and-crumb-tawny.vercel.app/term/damaged-starch): Starch granules broken during milling that soak up more water.
+- [Elasticity](https://crust-and-crumb-tawny.vercel.app/term/elasticity): The dough's ability to snap back and hold its shape.
+- [Extensibility](https://crust-and-crumb-tawny.vercel.app/term/extensibility): How much the dough can stretch before it snaps or tears.
+- [Extraction Rate](https://crust-and-crumb-tawny.vercel.app/term/extraction-rate): Percentage of the whole grain kept in the flour.
+- [Falling Number](https://crust-and-crumb-tawny.vercel.app/term/falling-number): Seconds-based test of a flour's starch-eating enzymes.
+- [Flour Strength](https://crust-and-crumb-tawny.vercel.app/term/flour-strength): A flour's power to build and hold a gassy dough.
+- [Friction Factor](https://crust-and-crumb-tawny.vercel.app/term/friction-factor): The amount of heat generated by the friction of a mixer or hand-kneading
+- [Gluten Quality](https://crust-and-crumb-tawny.vercel.app/term/gluten-quality): How well gluten performs, separate from how much there is.
+- [Hydration](https://crust-and-crumb-tawny.vercel.app/term/hydration): The percentage of water to flour in dough.
+- [Inoculation](https://crust-and-crumb-tawny.vercel.app/term/inoculation): The percentage of sourdough starter added to a dough recipe
+- [Lactic Acid](https://crust-and-crumb-tawny.vercel.app/term/lactic-acid): The mild, yogurt-like acid in sourdough.
+- [Lactic Acid Bacteria](https://crust-and-crumb-tawny.vercel.app/term/lactic-acid-bacteria): The bacteria that make sourdough sour.
+- [Maltose](https://crust-and-crumb-tawny.vercel.app/term/maltose): Sugar released from starch that feeds yeast and browning.
+- [P/L Ratio](https://crust-and-crumb-tawny.vercel.app/term/p-l-ratio): Alveograph balance between dough resistance and stretch.
+- [Pentosans](https://crust-and-crumb-tawny.vercel.app/term/pentosans): Water-loving grain carbs that give rye its structure.
+- [pH](https://crust-and-crumb-tawny.vercel.app/term/ph): A measure of how acidic a starter or dough is.
+- [Protein Content](https://crust-and-crumb-tawny.vercel.app/term/protein-content): How much protein a flour has, a clue to its strength.
+- [Retrogradation](https://crust-and-crumb-tawny.vercel.app/term/retrogradation): The scientific name for 'staling.' It occurs when starch molecules in the bread recrystallize and harden over time
+- [Sprout Damage](https://crust-and-crumb-tawny.vercel.app/term/sprout-damage): Grain that started sprouting in the field, raising enzymes.
+- [Tenacity](https://crust-and-crumb-tawny.vercel.app/term/tenacity): A technical term for dough that resists stretching entirely
+- [Titratable Acidity](https://crust-and-crumb-tawny.vercel.app/term/titratable-acidity): Total acid in a dough, as opposed to pH intensity.
+- [W Value](https://crust-and-crumb-tawny.vercel.app/term/w-value): Alveograph number for flour strength, common on Italian bags.
+
+## Technique
+
+- [Autolyse](https://crust-and-crumb-tawny.vercel.app/term/autolyse): Resting period for flour and water before adding other ingredients.
+- [Bassinage](https://crust-and-crumb-tawny.vercel.app/term/bassinage): A technique of holding back some water from the initial mix and adding it slowly later in the mixing process
+- [Bolting](https://crust-and-crumb-tawny.vercel.app/term/bolting): Sifting flour to remove some of the bran.
+- [Braiding](https://crust-and-crumb-tawny.vercel.app/term/braiding): Weaving strands of dough into a braided loaf.
+- [Bran Soaker](https://crust-and-crumb-tawny.vercel.app/term/bran-soaker): Bran pre-hydrated in water before adding to dough.
+- [Brine](https://crust-and-crumb-tawny.vercel.app/term/brine): Salt water, often poured over focaccia before baking.
+- [Brühstück](https://crust-and-crumb-tawny.vercel.app/term/bruhstuck): A German hot-water scald of grains, seeds, or flour.
+- [Coil Fold](https://crust-and-crumb-tawny.vercel.app/term/coil-fold): A gentle folding technique that builds dough strength.
+- [Cold Bulk](https://crust-and-crumb-tawny.vercel.app/term/cold-bulk): Running bulk fermentation partly in the fridge.
+- [Cross Score](https://crust-and-crumb-tawny.vercel.app/term/cross-score): A simple 'X' cut across the top of a round boule
+- [Degassing](https://crust-and-crumb-tawny.vercel.app/term/degassing): Pressing gas out of fermented dough, on purpose or not.
+- [Desired Dough Temperature (DDT)](https://crust-and-crumb-tawny.vercel.app/term/desired-dough-temperature): A formula used by bakers to calculate exactly how hot or cold their water needs to be to hit a specific dough temperature (usually 75-78°F) after mixing
+- [Docking](https://crust-and-crumb-tawny.vercel.app/term/docking): Pricking a flat dough (like crackers, pizza, or focaccia) with a fork or roller to create small holes
+- [Egg Wash](https://crust-and-crumb-tawny.vercel.app/term/egg-wash): Beaten egg brushed on dough for shine and color.
+- [Fermentolyse](https://crust-and-crumb-tawny.vercel.app/term/fermentolyse): Autolyse with starter included (Henry's method).
+- [Float Test](https://crust-and-crumb-tawny.vercel.app/term/float-test): Starter that floats is usually ready; one that sinks may still be.
+- [Intensive Mix](https://crust-and-crumb-tawny.vercel.app/term/intensive-mix): A mixing method involving high speed and long duration to fully develop gluten mechanically
+- [Kneading](https://crust-and-crumb-tawny.vercel.app/term/kneading): Working dough to develop gluten structure.
+- [Kochstück](https://crust-and-crumb-tawny.vercel.app/term/kochstuck): A cooked flour or grain paste added to dough.
+- [Laminated Dough](https://crust-and-crumb-tawny.vercel.app/term/laminated-dough): Butter-layered dough rolled and folded in turns.
+- [Lamination](https://crust-and-crumb-tawny.vercel.app/term/lamination): A technique where dough is stretched out very thinly on a counter (like a bedsheet) and then folded back up
+- [Leaf Score](https://crust-and-crumb-tawny.vercel.app/term/leaf-score): A decorative pattern where shallow cuts are made to resemble the veins of a leaf
+- [Letter Fold](https://crust-and-crumb-tawny.vercel.app/term/letter-fold): Folding dough in thirds, like a business letter.
+- [Par-Baking](https://crust-and-crumb-tawny.vercel.app/term/par-baking): Partly baking bread now to finish baking later.
+- [Poke Test](https://crust-and-crumb-tawny.vercel.app/term/poke-test): Press dough to check if it's ready to bake.
+- [Quellstück](https://crust-and-crumb-tawny.vercel.app/term/quellstuck): A German cold soaker for grains and seeds.
+- [Retarding](https://crust-and-crumb-tawny.vercel.app/term/retarding): The process of slowing down fermentation by placing the dough in a cold environment (usually the fridge)
+- [Rubaud Method](https://crust-and-crumb-tawny.vercel.app/term/rubaud-method): An in-bowl hand mixing method for wet doughs.
+- [Scald](https://crust-and-crumb-tawny.vercel.app/term/scald): A technique where boiling water is poured over flour (often rye or coarse grains) to soften the bran and gelatinize the starches before adding it to the main dough
+- [Scalding (Milk)](https://crust-and-crumb-tawny.vercel.app/term/scalding): Heating milk to just below boiling (180°F) before adding it to bread dough
+- [Scoring](https://crust-and-crumb-tawny.vercel.app/term/scoring): Cutting patterns in dough before baking.
+- [Shaping](https://crust-and-crumb-tawny.vercel.app/term/shaping): Forming dough into its final shape before proofing.
+- [Slap and Fold](https://crust-and-crumb-tawny.vercel.app/term/slap-and-fold): A fast hand-kneading method for wet, sticky doughs.
+- [Soaker](https://crust-and-crumb-tawny.vercel.app/term/soaker): Grains or seeds that have been soaked in water (or milk) before being added to the dough
+- [Stitching](https://crust-and-crumb-tawny.vercel.app/term/stitching): Pulling the sides across and pinching to build tension.
+- [Stretch and Fold](https://crust-and-crumb-tawny.vercel.app/term/stretch-and-fold): Folding technique to build dough strength during bulk.
+- [Surface Tension](https://crust-and-crumb-tawny.vercel.app/term/surface-tension): The tight outer skin built on dough during shaping.
+- [Tangzhong](https://crust-and-crumb-tawny.vercel.app/term/tangzhong): Cooked flour paste that makes bread super soft.
+- [Tension Pull](https://crust-and-crumb-tawny.vercel.app/term/tension-pull): A shaping motion where the baker drags the dough ball across the counter surface towards themselves
+- [Wheat Stalk Score](https://crust-and-crumb-tawny.vercel.app/term/wheat-stalk-score): A classic decorative scoring pattern that resembles a stalk of wheat
+- [Windowpane Test](https://crust-and-crumb-tawny.vercel.app/term/windowpane-test): A technique to check if gluten is fully developed
+- [Yudane](https://crust-and-crumb-tawny.vercel.app/term/yudane): A Japanese scald of flour with boiling water.
+
+## Tool
+
+- [Aliquot Jar](https://crust-and-crumb-tawny.vercel.app/term/aliquot-jar): A small sample jar used to track dough rise.
+- [Baker's Couche](https://crust-and-crumb-tawny.vercel.app/term/bakers-couche): A heavy linen cloth used to support dough (like baguettes) while they proof
+- [Baking Steel](https://crust-and-crumb-tawny.vercel.app/term/baking-steel): A thick plate of solid steel used as a baking surface
+- [Baking Stone](https://crust-and-crumb-tawny.vercel.app/term/baking-stone): A flat slab of ceramic or cordierite designed to hold heat and bake bread/pizza evenly
+- [Banneton](https://crust-and-crumb-tawny.vercel.app/term/banneton): A proofing basket that gives bread its shape and texture.
+- [Banneton Liner](https://crust-and-crumb-tawny.vercel.app/term/banneton-liner): A linen or cotton cloth cover for a proofing basket
+- [Bench Scraper](https://crust-and-crumb-tawny.vercel.app/term/bench-scraper): A flat, rectangular metal or plastic tool used to divide dough, scrape sticky bits off the counter, and help lift dough during shaping
+- [Bowl Scraper](https://crust-and-crumb-tawny.vercel.app/term/bowl-scraper): A flexible curved scraper for getting dough out of bowls.
+- [Bread Knife](https://crust-and-crumb-tawny.vercel.app/term/bread-knife): A long serrated knife for slicing crusty bread.
+- [Cast Iron Skillet](https://crust-and-crumb-tawny.vercel.app/term/cast-iron-skillet): A heavy iron pan that holds heat for flatbreads and pan breads.
+- [Cloche](https://crust-and-crumb-tawny.vercel.app/term/cloche): A bell-shaped ceramic or cast iron cover used to bake bread
+- [Combo Cooker](https://crust-and-crumb-tawny.vercel.app/term/combo-cooker): A cast iron set consisting of a deep pot and a shallow skillet lid that lock together
+- [Cooling Rack](https://crust-and-crumb-tawny.vercel.app/term/cooling-rack): A wire grid that allows air to circulate under the hot bread
+- [Danish Dough Whisk](https://crust-and-crumb-tawny.vercel.app/term/danish-dough-whisk): A mixing tool with a long handle and a stiff, looped wire head
+- [Digital Scale](https://crust-and-crumb-tawny.vercel.app/term/digital-scale): A kitchen scale used to weigh ingredients by gram rather than volume
+- [Dough Container](https://crust-and-crumb-tawny.vercel.app/term/dough-container): A clear, straight-sided tub for tracking bulk rise.
+- [Dough Sheeter](https://crust-and-crumb-tawny.vercel.app/term/dough-sheeter): A machine that rolls dough to an even thickness.
+- [Dutch Oven](https://crust-and-crumb-tawny.vercel.app/term/dutch-oven): Cast iron pot that traps steam for better bread.
+- [Grain Mill](https://crust-and-crumb-tawny.vercel.app/term/grain-mill): A countertop appliance used to grind whole berries (wheat, rye, spelt) into fresh flour at home
+- [Impact Mill](https://crust-and-crumb-tawny.vercel.app/term/impact-mill): A fast mill that shatters grain with high-speed steel fins.
+- [Infrared Thermometer](https://crust-and-crumb-tawny.vercel.app/term/infrared-thermometer): A 'point-and-shoot' laser thermometer that reads surface temperatures instantly
+- [Lame](https://crust-and-crumb-tawny.vercel.app/term/lame): A blade tool for scoring bread.
+- [Lava Rocks](https://crust-and-crumb-tawny.vercel.app/term/lava-rocks): Porous volcanic rocks placed in a tray at the bottom of a home oven
+- [Oven Thermometer](https://crust-and-crumb-tawny.vercel.app/term/oven-thermometer): Shows the oven's real temperature, not the dial's.
+- [Pizza Peel](https://crust-and-crumb-tawny.vercel.app/term/pizza-peel): Flat paddle for moving pizza in and out of oven.
+- [Pizza Stone / Steel](https://crust-and-crumb-tawny.vercel.app/term/pizza-stone-steel): Hot surface for crispy pizza and bread crusts.
+- [Probe Thermometer](https://crust-and-crumb-tawny.vercel.app/term/probe-thermometer): A thermometer with a metal needle used to check the internal temperature of the loaf
+- [Proofing Box](https://crust-and-crumb-tawny.vercel.app/term/proofing-box): A temperature-controlled box that keeps your dough at the perfect warm temperature for fermentation
+- [Pullman Pan](https://crust-and-crumb-tawny.vercel.app/term/pullman-pan): A specialized loaf pan with a slide-on lid
+- [Rolling Pin](https://crust-and-crumb-tawny.vercel.app/term/rolling-pin): A cylinder for rolling dough flat and even.
+- [Sifter](https://crust-and-crumb-tawny.vercel.app/term/sifter): A mesh tool used to aerate flour or remove bran particles from whole grain flour (a process called 'bolting')
+- [Spiral Mixer](https://crust-and-crumb-tawny.vercel.app/term/spiral-mixer): A mixer that turns both bowl and hook, built for bread.
+- [Stand Mixer](https://crust-and-crumb-tawny.vercel.app/term/stand-mixer): A countertop mixer with a hook for kneading dough.
+- [Starter Jar](https://crust-and-crumb-tawny.vercel.app/term/starter-jar): The container your sourdough starter lives in.
+- [Stone Mill](https://crust-and-crumb-tawny.vercel.app/term/stone-mill): A mill that grinds grain between two stones or burrs.
+- [Turning Peel](https://crust-and-crumb-tawny.vercel.app/term/turning-peel): A small, round, metal pizza peel used specifically to rotate the pizza inside a wood-fired oven
+
+## Troubleshooting
+
+- [Banneton Sticking](https://crust-and-crumb-tawny.vercel.app/term/banneton-sticking): Dough sticking to the proofing basket when you turn it out.
+- [Blowout](https://crust-and-crumb-tawny.vercel.app/term/blowout): A loaf bursting open in an unplanned spot in the oven.
+- [Dense Crumb](https://crust-and-crumb-tawny.vercel.app/term/dense-crumb): A bread interior that lacks air bubbles and feels heavy or brick-like
+- [Flying Crust](https://crust-and-crumb-tawny.vercel.app/term/flying-crust): A defect where the top crust separates from the crumb, creating a large gap or 'cave' at the top of the loaf
+- [Fool's Crumb](https://crust-and-crumb-tawny.vercel.app/term/fools-crumb): Big holes in an underfermented loaf with dense crumb between.
+- [Gummy Crumb](https://crust-and-crumb-tawny.vercel.app/term/gummy-crumb): A texture fault where the inside of the bread feels damp, sticky, or doughy even after cooling
+- [Overmixing](https://crust-and-crumb-tawny.vercel.app/term/overmixing): Mixing so much the gluten breaks down and dough goes slack.
+- [Overproofed](https://crust-and-crumb-tawny.vercel.app/term/overproofed): Dough that fermented too long and lost structure.
+- [Pale Crust](https://crust-and-crumb-tawny.vercel.app/term/pale-crust): A crust that stays light and dull instead of browning.
+- [Pancaking](https://crust-and-crumb-tawny.vercel.app/term/pancaking): A loaf that spreads flat instead of rising up.
+- [Rope](https://crust-and-crumb-tawny.vercel.app/term/rope): Bacterial spoilage that makes the crumb sticky and stringy.
+- [Starch Attack](https://crust-and-crumb-tawny.vercel.app/term/starch-attack): Enzymes break down rye starch in the oven, leaving a gummy crumb.
+- [Tunneling](https://crust-and-crumb-tawny.vercel.app/term/tunneling): A troubleshooting term for large, unwanted caverns or holes in the crumb, often right under the crust, while the rest of the crumb is dense
+- [Underfermented](https://crust-and-crumb-tawny.vercel.app/term/underfermented): Dough that didn't ferment long enough in bulk.
+- [Underproofed](https://crust-and-crumb-tawny.vercel.app/term/underproofed): Dough that needs more time to rise.

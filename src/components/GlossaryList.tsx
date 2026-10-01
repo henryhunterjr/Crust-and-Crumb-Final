@@ -10,7 +10,7 @@ import {
   Wheat, Sprout, Wrench, Croissant, GraduationCap
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } from '../constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS } from '../constants';
 
 // Affiliate product mappings - keywords to products
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
@@ -288,7 +288,12 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
       const matchesDifficulty = selectedDifficulty === 'All' || item.difficulty === selectedDifficulty;
       return matchesSearch && matchesCategory && matchesDifficulty;
-    }).sort((a, b) => a.term.localeCompare(b.term));
+    }).sort((a, b) => {
+      // Paths keep their teaching order; everything else is A to Z
+      const path = activePathId ? LEARNING_PATHS.find(p => p.id === activePathId) : undefined;
+      if (path) return path.termIds.indexOf(a.id) - path.termIds.indexOf(b.id);
+      return a.term.localeCompare(b.term);
+    });
   }, [searchTerm, selectedCategory, selectedDifficulty, activePathId, selectedLetter]);
 
   const clearFilters = useCallback(() => {
@@ -376,16 +381,18 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
           <input
             type="number"
             value={calcFlour}
+            aria-label="Flour in grams"
             onChange={(e) => setCalcFlour(e.target.value)}
             placeholder="1000"
             className="w-full glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
           />
         </div>
         <div>
-          <label className="block text-[rgba(246,236,220,0.65)] mb-1 font-medium">Hydration (%)</label>
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 font-medium">Water (% of flour)</label>
           <input
             type="number"
             value={calcHydration}
+            aria-label="Water as a percent of flour"
             onChange={(e) => setCalcHydration(e.target.value)}
             placeholder="75"
             className="w-full glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
@@ -452,6 +459,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
           <input
             type="number"
             value={tempCelsius}
+            aria-label="Temperature in Celsius"
             onChange={(e) => handleCelsiusChange(e.target.value)}
             placeholder="°C"
             className="w-24 glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
@@ -463,6 +471,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
           <input
             type="number"
             value={tempFahrenheit}
+            aria-label="Temperature in Fahrenheit"
             onChange={(e) => handleFahrenheitChange(e.target.value)}
             placeholder="°F"
             className="w-24 glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
@@ -476,12 +485,15 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-10 print:py-0">
       <section id="dictionary" className="glossary-hero relative pt-6 sm:pt-12 pb-10 sm:pb-14 print:hidden">
         <div className="relative max-w-3xl">
-          <p className="eyebrow mb-5">Crust &amp; Crumb Academy · the public field guide</p>
-          <h2 className="font-display font-medium text-[44px] sm:text-[64px] lg:text-[84px] leading-[0.98] tracking-[-0.035em] text-[#fff8ec] [text-shadow:0_2px_30px_rgba(0,0,0,0.45)]">
+          <h1 className="font-display font-medium text-[44px] sm:text-[64px] lg:text-[84px] leading-[0.98] tracking-[-0.035em] text-[#fff8ec] [text-shadow:0_2px_30px_rgba(0,0,0,0.45)]">
+            <span className="eyebrow block mb-5 font-sans not-italic tracking-[0.16em] [text-shadow:none]">Crust &amp; Crumb Interactive Bread Baking Glossary</span>
             Learn the language.<br /><em className="text-[#f0c878]">Read the dough.</em>
-          </h2>
+          </h1>
           <p className="mt-6 text-[rgba(246,236,220,0.86)] text-lg sm:text-xl leading-relaxed max-w-xl">
-            A free, searchable reference to {GLOSSARY_DATA.length} bread-baking terms, working techniques, and source-linked paths. Built for the bake in front of you.
+            A free, searchable reference to {GLOSSARY_DATA.length} bread-baking terms, working techniques, and guided learning paths. Built for the bake in front of you.
+          </p>
+          <p className="mt-3 text-[rgba(246,236,220,0.66)] text-[15px] leading-relaxed max-w-xl">
+            Written by baker Henry Hunter, founder of Baking Great Bread at Home and Crust &amp; Crumb Academy, for home bakers learning sourdough, artisan bread, fresh-milled flour, and ancient grains.
           </p>
           <div className="glass-strong sheen mt-8 max-w-2xl rounded-[26px] flex items-center gap-3 h-16 sm:h-[72px] pl-5 pr-3 focus-within:border-[rgba(240,200,120,0.75)] focus-within:shadow-[0_0_0_4px_rgba(240,200,120,0.18)] transition-shadow">
             <Search className="text-[#f0c878] shrink-0" size={22} aria-hidden="true" />
@@ -528,7 +540,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             <p className="eyebrow mb-2">Guided paths</p>
             <h2 id="path-heading" className="font-display font-medium text-[34px] sm:text-[44px] leading-none tracking-[-0.025em] text-[#fff8ec]">Choose a way in</h2>
           </div>
-          <span className="hidden sm:block text-[15px] text-[rgba(246,236,220,0.7)] max-w-xs text-right">Each path is a short run of terms in the order a baker actually meets them.</span>
+          <span className="hidden sm:block text-[15px] text-[rgba(246,236,220,0.7)] max-w-xs text-right">Each path is a short run of terms in the order a baker actually meets them. Bread Types is a collection to browse.</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {LEARNING_PATHS.map(path => {
@@ -564,17 +576,17 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       <section id="results" className="glass sheen rounded-[28px] px-4 py-4 sm:px-5 mb-5 print:hidden scroll-mt-28" aria-label="Glossary filters">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
           <div className="flex-1 min-w-0 flex flex-wrap gap-2">
-            <div className="relative min-w-[170px] flex-1">
+            <div className="relative min-w-0 basis-full sm:basis-auto sm:min-w-[170px] flex-1">
               <Filter className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#f0c878]" size={16} aria-hidden="true" />
               <select aria-label="Filter by category" className="glass-select w-full h-12 pl-10 pr-4 rounded-2xl appearance-none focus:outline-none focus:border-[rgba(240,200,120,0.7)]" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
                 <option value="All">All categories</option>
                 {categories.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
-            <div className="glass-inset flex items-center gap-1 p-1 rounded-2xl" role="group" aria-label="Filter by level">
+            <div className="glass-inset flex flex-wrap items-center gap-1 p-1 rounded-2xl max-w-full" role="group" aria-label="Filter by level">
               {['All', ...difficulties].map(d => (
                 <button key={d} onClick={() => setSelectedDifficulty(d)} aria-pressed={selectedDifficulty === d}
-                  className={`h-10 px-3.5 rounded-xl text-sm font-semibold transition-colors ${selectedDifficulty === d ? 'bg-white/15 text-[#fff8ec] border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]' : 'text-[rgba(246,236,220,0.72)] hover:text-[#fff8ec] border border-transparent'}`}>
+                  className={`h-10 px-3 sm:px-3.5 rounded-xl text-sm font-semibold transition-colors ${selectedDifficulty === d ? 'bg-white/15 text-[#fff8ec] border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]' : 'text-[rgba(246,236,220,0.72)] hover:text-[#fff8ec] border border-transparent'}`}>
                   {d === 'All' ? 'All levels' : d}
                 </button>
               ))}
@@ -586,7 +598,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             </Tooltip>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-[rgba(246,236,220,0.7)] whitespace-nowrap tabular-nums"><strong className="text-[#fff8ec]">{filteredData.length}</strong> of {GLOSSARY_DATA.length}</span>
+            <span className="text-sm text-[rgba(246,236,220,0.7)] whitespace-nowrap tabular-nums" aria-live="polite"><strong className="text-[#fff8ec]">{filteredData.length}</strong> of {GLOSSARY_DATA.length}</span>
             <Tooltip text="Download the current glossary view">
               <div className="group relative">
                 <button className="btn-glass h-12 w-12 inline-flex items-center justify-center rounded-2xl" aria-label="Download glossary"><Download size={17} /></button>
@@ -679,7 +691,9 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                   </div>
 
                   <div className="flex items-center gap-3 mb-3 flex-wrap">
-                    <h3 className="font-display text-[30px] sm:text-[32px] leading-tight font-medium tracking-[-0.02em] text-[#fff8ec]">{item.term}</h3>
+                    <h3 className="font-display text-[30px] sm:text-[32px] leading-tight font-medium tracking-[-0.02em] text-[#fff8ec]">
+                      <a href={`/term/${item.id}`} onClick={(e) => e.stopPropagation()} className="hover:text-[#f0c878] focus-visible:text-[#f0c878]">{item.term}</a>
+                    </h3>
                     {item.pronunciation && (
                       <span className="text-[#f0c878] font-display italic text-[15px] opacity-90">{item.pronunciation}</span>
                     )}
@@ -795,8 +809,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                             </div>
                           )}
 
-                          {item.widgets?.includes('calculator') && <CalculatorWidget />}
-                          {item.widgets?.includes('converter') && <TempConverterWidget />}
+                          {item.widgets?.includes('calculator') && CalculatorWidget()}
+                          {item.widgets?.includes('converter') && TempConverterWidget()}
                         </div>
                       )}
 
@@ -895,14 +909,13 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                               <div key={`${resource.sourceSystem}-${resource.title}-${idx}`} className="glass rounded-[18px] p-4">
                                 <div className="flex justify-between gap-2 text-[11px] text-[rgba(246,236,220,0.55)] mb-1.5">
                                   <span className="font-bold uppercase tracking-[0.12em] text-[#f0c878]">{resource.sourceSystem}</span>
-                                  <span>{resource.status}</span>
                                 </div>
                                 {resource.url ? (
                                   <a href={resource.url} target="_blank" rel="noreferrer" className="font-semibold text-[#fff8ec] hover:text-[#f0c878] hover:underline">{resource.title}</a>
                                 ) : (
                                   <span className="font-semibold text-[#fff8ec]">{resource.title}</span>
                                 )}
-                                <div className="text-xs text-[rgba(246,236,220,0.55)] mt-1">{resource.relation.replaceAll('-', ' ')}</div>
+                                <div className="text-xs text-[rgba(246,236,220,0.55)] mt-1">{SOURCE_LABELS[resource.relation] || 'Related'}</div>
                               </div>
                             ))}
                           </div>
@@ -944,6 +957,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     {!quickMode && (
                       <button
                         onClick={() => onAskKrusty(item.term)}
+                        aria-label={`Ask Krusty about ${item.term}`}
                         className="btn-glass text-sm font-semibold flex items-center gap-1.5 px-4 rounded-full min-h-[44px]"
                       >
                         <MessageSquare size={16} className="text-[#f0c878]" />

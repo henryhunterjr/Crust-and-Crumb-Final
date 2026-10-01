@@ -96,9 +96,7 @@ export async function GET(
     sources: term.sources || [],
     youtubeQuery: term.youtubeQuery || null,
     aliases: term.aliases || [],
-    definitionStatus: term.definitionStatus || 'verified',
-    clusterPlan: term.clusterPlan || null,
-    sourceRelations: term.sourceRelations || [],
+    sourceRelations: (term.sourceRelations || []).map(({ sourceSystem, relation, title, url }) => ({ sourceSystem, relation, title, url })),
   };
 
   return NextResponse.json(response, {

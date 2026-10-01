@@ -32,7 +32,7 @@ export default function GlossaryApp() {
     {
       id: 'welcome',
       role: 'model',
-      text: "Hey there, baker! I'm Krusty, your friendly bread concierge. I'm here to help you on your sourdough journey using wisdom from Henry's book. Ask me about techniques, schedules, or troubleshooting - you've got this!",
+      text: "Hey there, baker! I'm Krusty, your friendly bread concierge. I'm here to help you on your sourdough journey using wisdom from Henry's book. Ask me about techniques, schedules, or troubleshooting. You've got this!",
       timestamp: Date.now()
     }
   ]);
@@ -45,6 +45,7 @@ export default function GlossaryApp() {
   // Baker's Tools Calculator State
   const [flourWeight, setFlourWeight] = useState('1000');
   const [hydrationPercent, setHydrationPercent] = useState('75');
+  const [starterHydrationPercent, setStarterHydrationPercent] = useState('100');
 
   // Calculate derived values
   const flour = parseFloat(flourWeight) || 0;
@@ -52,6 +53,10 @@ export default function GlossaryApp() {
   const waterNeeded = Math.round(flour * (hydration / 100));
   const saltNeeded = Math.round(flour * 0.02);
   const starterNeeded = Math.round(flour * 0.20);
+  const starterHydration = parseFloat(starterHydrationPercent) || 0;
+  const starterFlour = starterNeeded / (1 + starterHydration / 100);
+  const starterWater = starterNeeded - starterFlour;
+  const totalHydration = flour > 0 ? ((waterNeeded + starterWater) / (flour + starterFlour)) * 100 : 0;
   const totalDoughWeight = flour + waterNeeded + saltNeeded + starterNeeded;
 
   // Auto-open Bread Analyzer if ?tool=analyzer is in the URL
@@ -244,10 +249,12 @@ export default function GlossaryApp() {
                     <h3 className="font-bold text-lg text-slate-800">Baker's Percentage Calculator</h3>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-600 mb-1">Flour (g)</label>
+                      <label htmlFor="calc-flour" className="block text-sm font-medium text-slate-600 mb-1">Flour (g)</label>
                       <input
+                        id="calc-flour"
+                        inputMode="decimal"
                         type="number"
                         value={flourWeight}
                         onChange={(e) => setFlourWeight(e.target.value)}
@@ -256,12 +263,26 @@ export default function GlossaryApp() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-600 mb-1">Hydration (%)</label>
+                      <label htmlFor="calc-hydration" className="block text-sm font-medium text-slate-600 mb-1">Water (% of flour)</label>
                       <input
+                        id="calc-hydration"
+                        inputMode="decimal"
                         type="number"
                         value={hydrationPercent}
                         onChange={(e) => setHydrationPercent(e.target.value)}
                         placeholder="75"
+                        className="w-full border border-slate-300 rounded-lg px-4 py-3 text-lg font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                      />
+                    </div>
+                    <div className="col-span-2 sm:col-span-1">
+                      <label htmlFor="calc-starter-hydration" className="block text-sm font-medium text-slate-600 mb-1">Starter hydration (%)</label>
+                      <input
+                        id="calc-starter-hydration"
+                        inputMode="decimal"
+                        type="number"
+                        value={starterHydrationPercent}
+                        onChange={(e) => setStarterHydrationPercent(e.target.value)}
+                        placeholder="100"
                         className="w-full border border-slate-300 rounded-lg px-4 py-3 text-lg font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
                       />
                     </div>
@@ -288,10 +309,14 @@ export default function GlossaryApp() {
                         <span className="font-bold text-xl">{totalDoughWeight}g</span>
                       </div>
                     </div>
+                    <div className="mt-3 flex justify-between items-center rounded-lg px-4 py-3 border border-amber-200 bg-amber-50" aria-live="polite">
+                      <span className="text-slate-700 font-medium">Total hydration, counting the starter</span>
+                      <span className="font-bold text-amber-800 text-xl">{totalHydration.toFixed(1)}%</span>
+                    </div>
                   </div>
 
                   <p className="text-xs text-slate-500 mt-3 italic">
-                    Standard sourdough uses 2% salt and 20% starter (based on flour weight)
+                    Water, 2% salt, and 20% starter are all figured on the flour you add. Your starter also carries flour and water, so the total hydration of the finished dough runs a little higher than the water percentage you enter.
                   </p>
                 </div>
 

@@ -82,6 +82,7 @@ select {
     linear-gradient(180deg, rgba(13, 10, 7, 0.45) 0%, rgba(13, 10, 7, 0.7) 45vh, var(--ground) 95vh);
 }
 
+@layer components {
 /* Glass surfaces */
 .glass {
   position: relative;
@@ -120,6 +121,8 @@ select {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass { background: rgba(38, 30, 22, 0.92); }
   .glass-strong { background: rgba(48, 38, 28, 0.95); }
+}
+
 }
 
 .lift {
