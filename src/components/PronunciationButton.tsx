@@ -86,12 +86,12 @@ export default function PronunciationButton({ termId, term, compact = false }: P
         void playPronunciation();
       }}
       onTouchEnd={(event) => event.stopPropagation()}
-      className={`inline-flex items-center justify-center gap-1.5 rounded-xl border px-2.5 py-1.5 min-h-[40px] text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e2830b] focus-visible:ring-offset-2 ${
+      className={`inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 min-h-[44px] min-w-[44px] text-xs font-semibold transition-colors ${
         status === 'error'
-          ? 'border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100'
+          ? 'border-[rgba(255,122,107,0.45)] bg-[rgba(255,122,107,0.12)] text-[#ffb2a8]'
           : status === 'playing'
-            ? 'border-[#e2830b] bg-[#fff3df] text-[#a85e18]'
-            : 'border-[#d8e1dd] bg-[#f7faf7] text-[#4f6d63] hover:border-[#e2830b] hover:bg-[#fff8e7] hover:text-[#a85e18]'
+            ? 'border-[rgba(240,200,120,0.7)] bg-[rgba(240,200,120,0.18)] text-[#ffe2a8]'
+            : 'border-white/15 bg-white/[0.07] text-[rgba(246,236,220,0.85)] hover:border-[rgba(240,200,120,0.55)] hover:text-[#ffe2a8]'
       }`}
       aria-label={label}
       aria-pressed={status === 'playing'}

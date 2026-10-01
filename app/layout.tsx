@@ -43,7 +43,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#fbfaf6] text-[#173b3a]">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap"
+        />
+        <meta name="theme-color" content="#0d0a07" />
+      </head>
+      <body className="bg-[#0d0a07] text-[#f6ecdc]">
+        <div className="app-backdrop" aria-hidden="true" />
         {children}
         <Analytics />
       </body>

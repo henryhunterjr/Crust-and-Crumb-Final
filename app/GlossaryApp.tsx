@@ -106,7 +106,7 @@ export default function GlossaryApp() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-amber-50/50">
+    <div className="min-h-screen flex flex-col">
       <Header onHomeClick={handleHomeClick} onToolsClick={() => setIsToolsOpen(true)} />
       <main className="flex-grow">
         <GlossaryList
@@ -117,13 +117,13 @@ export default function GlossaryApp() {
         />
       </main>
 
-      <footer className="bg-[#173b3a] border-t border-[#2b5a55] py-10 print:hidden">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="flex justify-center items-center gap-2 mb-4 text-[#f4c95d]">
-            <img src="/brand/academy.png" alt="Crust & Crumb Academy" width="1280" height="720" className="w-28 h-16 object-contain" />
-            <span className="font-serif font-bold text-lg text-white">Crust and Crumb</span>
+      <footer className="px-4 sm:px-6 lg:px-10 pb-8 pt-4 print:hidden">
+        <div className="glass-strong sheen max-w-[1440px] mx-auto rounded-[32px] px-6 py-10 text-center">
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <img src="/brand/academy.png" alt="Crust & Crumb Academy" width="1280" height="720" className="w-14 h-14 rounded-full object-cover ring-1 ring-white/25" />
+            <span className="font-display font-semibold text-2xl text-[#fff8ec]">Crust &amp; Crumb</span>
           </div>
-          <p className="text-[#bfd0c8] mb-6 max-w-md mx-auto text-sm">
+          <p className="text-[rgba(246,236,220,0.72)] mb-6 max-w-md mx-auto text-[15px]">
             The official companion app for &quot;Sourdough for the Rest of Us&quot;.
           </p>
 
@@ -137,7 +137,7 @@ export default function GlossaryApp() {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#245b59] text-[#f4c95d] hover:bg-[#e2830b] hover:text-white transition-colors duration-200"
+                  className="btn-glass w-11 h-11 flex items-center justify-center rounded-full text-[#f0c878] hover:text-[#fff8ec]"
                   aria-label={link.name}
                   title={link.name}
                 >
@@ -147,7 +147,7 @@ export default function GlossaryApp() {
             })}
           </div>
 
-          <p className="text-xs text-[#8fa9a0] mt-8">© {new Date().getFullYear()} Baking Great Bread at Home by Henry Hunter. All rights reserved.</p>
+          <p className="text-xs text-[rgba(246,236,220,0.5)] mt-8">© {new Date().getFullYear()} Baking Great Bread at Home by Henry Hunter. All rights reserved.</p>
         </div>
       </footer>
 
@@ -155,7 +155,7 @@ export default function GlossaryApp() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-5 z-40 bg-[#f4c95d] text-[#173b3a] p-3 rounded-full shadow-lg hover:bg-[#f8d878] transition-colors print:hidden"
+          className="glass-strong fixed bottom-24 right-5 z-40 text-[#f6ecdc] w-12 h-12 flex items-center justify-center rounded-full print:hidden"
           aria-label="Back to top"
           title="Back to top"
         >
@@ -167,7 +167,7 @@ export default function GlossaryApp() {
       {!isChatOpen && (
         <button
           onClick={() => setIsChatOpen(true)}
-          className="fixed bottom-4 right-4 z-40 bg-[#e2830b] text-white p-3 lg:px-4 lg:py-3.5 rounded-full shadow-[0_10px_24px_rgba(140,76,4,0.28)] hover:bg-[#c86f07] transition-colors flex items-center gap-2 print:hidden"
+          className="btn-gold fixed bottom-5 right-5 z-40 h-12 px-4 lg:px-5 rounded-full flex items-center gap-2 font-bold print:hidden"
           aria-label="Open Baking Assistant"
         >
           <MessageSquare size={21} />
@@ -189,34 +189,35 @@ export default function GlossaryApp() {
         <div className="fixed inset-0 z-50 overflow-y-auto print:hidden">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/50 transition-opacity"
+            className="fixed inset-0 bg-black/55 backdrop-blur-sm transition-opacity"
             onClick={() => setIsToolsOpen(false)}
           />
 
           {/* Modal */}
           <div className="flex min-h-full items-center justify-center p-4">
-            <div role="dialog" aria-modal="true" aria-labelledby="tools-title" className="relative bg-[#fbfaf6] rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div role="dialog" aria-modal="true" aria-labelledby="tools-title" className="relative bg-[#fbf7f0]/95 backdrop-blur-2xl border border-white/60 rounded-[28px] shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)] max-w-2xl w-full max-h-[90vh] overflow-y-auto text-[#2a1f14]">
               {/* Header */}
-              <div className="sticky top-0 bg-[#fbfaf6] border-b border-[#d8e1dd] px-6 py-4 flex items-center justify-between rounded-t-2xl">
+              <div className="sticky top-0 z-10 bg-[#fbf7f0]/90 backdrop-blur-xl border-b border-[#e8dcc7] px-6 py-4 flex items-center justify-between rounded-t-[28px]">
                 <div className="flex items-center gap-3">
                   <div className="bg-[#f4ead1] p-2 rounded-lg">
                     <Calculator size={24} className="text-[#8b4e0a]" />
                   </div>
                   <div>
-                    <h2 id="tools-title" className="text-xl font-bold text-[#173b3a]">Baker's Tools</h2>
-                    <p className="text-sm text-[#71827c]">Calculators, converters and bread analysis</p>
+                    <h2 id="tools-title" className="font-display text-2xl font-semibold text-[#2a1f14]">Baker's Tools</h2>
+                    <p className="text-sm text-[#7a6650]">Calculators, converters and bread analysis</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsToolsOpen(false)}
-                  className="p-2 hover:bg-[#eef2ef] rounded-lg transition-colors"
+                  className="w-11 h-11 flex items-center justify-center hover:bg-black/5 rounded-full transition-colors"
+                  aria-label="Close tools"
                 >
-                  <X size={24} className="text-[#51645e]" />
+                  <X size={22} className="text-[#5b4a38]" />
                 </button>
               </div>
 
               {/* Tabs */}
-              <div className="flex border-b border-amber-100 px-6 bg-white">
+              <div className="flex border-b border-[#eee3cf] px-6 bg-white/60">
                 <button
                   onClick={() => setActiveToolTab('calculator')}
                   className={`py-3 px-4 text-sm font-medium border-b-2 transition-colors ${activeToolTab === 'calculator' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}

@@ -34,13 +34,13 @@ export function WheatFilm() {
 
 export function StorefrontFeature() {
   return (
-    <aside className="storefront-feature col-span-full print:hidden" aria-labelledby="storefront-heading">
+    <aside className="storefront-feature glass-strong sheen col-span-full print:hidden" aria-labelledby="storefront-heading">
       <img className="storefront-portrait" src="/brand/henry-storefront.png" alt="Henry presenting a bakery website on a phone" loading="lazy" width="941" height="1672" />
       <div className="storefront-copy">
         <p className="brand-eyebrow">From our baking community</p>
         <h2 id="storefront-heading">You’re a baker.<br />Your website should be the easy part.</h2>
         <p>Taking your bread beyond your own kitchen? Meet Storefront Builder from From Oven to Market. Give your baking a place online, without starting with code.</p>
-        <a className="brand-link" href="https://fromoventomarket.com/storefront-builder/funnel?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-launch" target="_blank" rel="noopener noreferrer">Explore Storefront Builder <span aria-hidden="true">↗</span></a>
+        <a className="brand-link btn-gold" href="https://fromoventomarket.com/storefront-builder/funnel?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-launch" target="_blank" rel="noopener noreferrer">Explore Storefront Builder <span aria-hidden="true">↗</span></a>
         <img className="storefront-seal" src="/brand/oven-to-market.png" alt="From Oven to Market, a Crust & Crumb Academy course" loading="lazy" width="1254" height="1254" />
       </div>
     </aside>
@@ -54,17 +54,17 @@ export function BrandShelf() {
       <h2 id="brand-shelf-heading">The definition is just the beginning.</h2>
       <p className="brand-shelf-intro">Keep baking, exploring, and learning with the resources behind this guide.</p>
       <div className="brand-shelf-grid">
-        <a href="https://pantry.bakinggreatbread.com/?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-launch" target="_blank" rel="noopener noreferrer">
+        <a className="glass sheen lift" href="https://pantry.bakinggreatbread.com/?utm_source=glossary&utm_medium=referral&utm_campaign=glossary-launch" target="_blank" rel="noopener noreferrer">
           <img src="/brand/recipe-pantry.png" alt="Recipe Pantry" loading="lazy" width="1280" height="720" />
           <h3>Put it into practice <span aria-hidden="true">↗</span></h3>
           <p>Find your next bake in Recipe Pantry.</p>
         </a>
-        <a href="https://recipepantry.app/collections/ancient-grains" target="_blank" rel="noopener noreferrer">
+        <a className="glass sheen lift" href="https://recipepantry.app/collections/ancient-grains" target="_blank" rel="noopener noreferrer">
           <img src="/brand/ancient-grains.png" alt="Recipe Pantry Ancient Grains" loading="lazy" width="1254" height="1254" />
           <h3>Get to know your grains <span aria-hidden="true">↗</span></h3>
           <p>Explore the Ancient Grains recipe collection.</p>
         </a>
-        <a href="https://www.facebook.com/groups/1082865755403754" target="_blank" rel="noopener noreferrer">
+        <a className="glass sheen lift" href="https://www.facebook.com/groups/1082865755403754" target="_blank" rel="noopener noreferrer">
           <img src="/brand/community.png" alt="Baking Great Bread at Home" loading="lazy" width="1024" height="1024" />
           <h3>Pull up a chair <span aria-hidden="true">↗</span></h3>
           <p>Share your bakes with our bread community.</p>

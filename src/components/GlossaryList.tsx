@@ -6,8 +6,10 @@ import PronunciationButton from './PronunciationButton';
 import {
   Search, Filter, Download, ExternalLink, BookOpen, ChevronDown, ChevronUp,
   CheckCircle, MessageSquare, AlertTriangle, Lightbulb, History, Calculator,
-  Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info, X, ArrowRight
+  Thermometer, Clock, ShoppingBag, Utensils, Youtube, Book, Users, FileText, Calendar, Sparkles, Info, X, ArrowRight,
+  Wheat, Sprout, Wrench, Croissant, GraduationCap
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID } from '../constants';
 
 // Affiliate product mappings - keywords to products
@@ -41,31 +43,33 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
     product: { name: 'Brød & Taylor Scale', url: 'https://collabs.shop/hvryn6' }
   },
   {
-    keywords: ['proofing', 'proof', 'proofer', 'folding proofer', 'proofing box'],
+    keywords: ['proofing', 'proof', 'proofer', 'folding proofer', 'proofing box', 'overproofed', 'underproofed'],
     product: { name: 'Brød & Taylor Folding Proofer & Slow Cooker', url: 'https://collabs.shop/vutgu8' }
   },
   {
-    keywords: ['grain mill', 'home milling', 'home-milling', 'fresh-milled', 'freshly milled', 'wheat berr', 'impact mill', 'stone mill'],
+    keywords: ['grain mill', 'home milling', 'fresh milled', 'freshly milled', 'wheat berry', 'impact mill', 'stone mill'],
     product: { name: 'NutriMill Grain Mills', url: 'https://nutrimill.com/Academy26' }
   },
   {
-    keywords: ['sourdough starter', 'levain', 'starter', 'mother dough', 'wild yeast'],
+    keywords: ['sourdough starter', 'levain', 'starter', 'mother', 'mother dough', 'wild yeast'],
     product: { name: 'Sourhouse Goldie (code HBK26)', url: 'https://sourhouse.co/products/goldie-by-sourhouse-cooling-puck-white?ref=BAKINGGREATBREAD' }
   }
 ];
 
-// Get matching affiliate products for a term
-const getAffiliateProducts = (termId: string, termName: string, definition: string): { name: string; url: string }[] => {
-  const searchText = `${termId} ${termName} ${definition}`.toLowerCase();
+// Get matching affiliate products for a term.
+// Match on the term's own id and name only (not the definition), with word boundaries,
+// so a passing mention of "starter" or "lame" doesn't attach unrelated gear.
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const getAffiliateProducts = (termId: string, termName: string, _definition: string): { name: string; url: string }[] => {
+  const searchText = `${termId.replace(/-/g, ' ')} ${termName}`.toLowerCase();
   const matches: { name: string; url: string }[] = [];
   const seenUrls = new Set<string>();
 
   for (const mapping of AFFILIATE_MAPPINGS) {
-    if (mapping.keywords.some(kw => searchText.includes(kw.toLowerCase()))) {
-      if (!seenUrls.has(mapping.product.url)) {
-        matches.push(mapping.product);
-        seenUrls.add(mapping.product.url);
-      }
+    const hit = mapping.keywords.some(kw => new RegExp(`\\b${escapeRegExp(kw.toLowerCase())}(?![a-z])`).test(searchText));
+    if (hit && !seenUrls.has(mapping.product.url)) {
+      matches.push(mapping.product);
+      seenUrls.add(mapping.product.url);
     }
   }
 
@@ -90,13 +94,32 @@ const ALPHABET = ['All', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
 const VALID_TERM_IDS = new Set(GLOSSARY_DATA.map(item => item.id));
 const TERM_LOOKUP = new Map(GLOSSARY_DATA.map(item => [item.id, item.term]));
 
+// Visual identity for each guided path card
+const PATH_META: Record<string, { icon: LucideIcon; tint: string }> = {
+  'beginner-basics': { icon: GraduationCap, tint: 'rgba(124,196,242,.32)' },
+  'sourdough-mastery': { icon: Book, tint: 'rgba(240,200,120,.34)' },
+  'fresh-milled-grains': { icon: Sprout, tint: 'rgba(181,212,106,.32)' },
+  'troubleshooting': { icon: AlertTriangle, tint: 'rgba(255,122,107,.32)' },
+  'bread-types': { icon: Croissant, tint: 'rgba(240,154,99,.32)' },
+  'tools-equipment': { icon: Wrench, tint: 'rgba(157,180,217,.32)' },
+  default: { icon: Wheat, tint: 'rgba(240,200,120,.28)' },
+};
+
+// Category accent dots (bright enough to read on the dark glass)
+const CATEGORY_DOTS: Record<string, string> = {
+  ingredient: '#e8b25c', tool: '#9db4d9', technique: '#7cc4f2', process: '#b9a3f0', bread: '#f09a63',
+  pizza: '#f08c9b', 'scientific/technical': '#8e9bf5', troubleshooting: '#ff7a6b', 'grain & milling': '#b5d46a',
+  business: '#7fd1a8', practical: '#6fd0d8', schedule: '#6fd0d8',
+};
+const categoryDot = (cat: string) => CATEGORY_DOTS[cat.toLowerCase()] || '#f0c878';
+
 // Tooltip component
 const Tooltip: React.FC<{ text: string; children: React.ReactNode }> = ({ text, children }) => (
   <div className="group relative inline-block">
     {children}
-    <div className="absolute bottom-full right-0 mb-2 w-40 px-3 py-2 bg-slate-800 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-normal z-50 pointer-events-none">
+    <div className="absolute bottom-full right-0 mb-2 w-40 px-3 py-2 bg-[#241b13] text-[#f6ecdc] border border-white/15 text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-normal z-50 pointer-events-none">
       {text}
-      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#241b13]"></div>
     </div>
   </div>
 );
@@ -322,28 +345,13 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
 
   const getDifficultyColor = (diff: string) => {
     const diffLower = diff.toLowerCase();
-    if (diffLower === 'beginner') return 'bg-[#e8f1ed] text-[#24604f] border-[#c6ddd3]';
-    if (diffLower === 'intermediate') return 'bg-[#f8efd4] text-[#8b5a12] border-[#ead6a9]';
-    if (diffLower === 'advanced') return 'bg-[#f7e7df] text-[#984c31] border-[#e8c6b7]';
-    return 'bg-[#f0f3f1] text-[#51645e] border-[#d8e1dd]';
+    if (diffLower === 'beginner') return 'bg-[rgba(181,212,106,0.12)] text-[#d6ebaa] border-[rgba(181,212,106,0.4)]';
+    if (diffLower === 'intermediate') return 'bg-[rgba(240,200,120,0.12)] text-[#ffe2a8] border-[rgba(240,200,120,0.4)]';
+    if (diffLower === 'advanced') return 'bg-[rgba(255,138,110,0.12)] text-[#ffc2b2] border-[rgba(255,138,110,0.4)]';
+    return 'bg-white/10 text-[#f6ecdc] border-white/20';
   };
 
-  const getCategoryColor = (cat: string) => {
-    const catLower = cat.toLowerCase();
-    if (catLower === 'ingredient') return 'bg-[#f8efd4] text-[#8b5a12]';
-    if (catLower === 'tool') return 'bg-[#e8f1ed] text-[#24604f]';
-    if (catLower === 'technique') return 'bg-[#e8eef4] text-[#315879]';
-    if (catLower === 'process') return 'bg-[#f2e9f4] text-[#6c4776]';
-    if (catLower === 'bread' || catLower === 'bread_type') return 'bg-[#f7e7df] text-[#984c31]';
-    if (catLower === 'pizza') return 'bg-[#f5e5e5] text-[#934848]';
-    if (catLower === 'schedule') return 'bg-[#e2f0ef] text-[#2b6c69]';
-    if (catLower === 'troubleshooting') return 'bg-[#f8e1dc] text-[#9b3423]';
-    if (catLower === 'grain & milling') return 'bg-[#e9efd6] text-[#4d5e1c]';
-    if (catLower === 'scientific/technical' || catLower === 'scientific') return 'bg-[#e8eaf5] text-[#46517d]';
-    if (catLower === 'business') return 'bg-[#e2efe6] text-[#2c6548]';
-    if (catLower === 'practical') return 'bg-[#e3f0f2] text-[#2e6971]';
-    return 'bg-[#f0f3f1] text-[#51645e]';
-  };
+  const getCategoryColor = (_cat: string) => 'bg-white/[0.07] text-[rgba(246,236,220,0.85)] border-white/15';
 
   // Widget Components - Calculator State
   const [calcFlour, setCalcFlour] = useState<string>('1000');
@@ -357,46 +365,46 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   const starterNeeded = Math.round(flourWeight * 0.20); // 20% starter
 
   const CalculatorWidget = () => (
-    <div className="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-      <div className="flex items-center gap-2 mb-3 text-amber-700 font-semibold">
+    <div className="mt-4 p-5 glass rounded-[22px]">
+      <div className="flex items-center gap-2 mb-3 text-[#f0c878] font-semibold">
         <Calculator size={18} />
         <span>Baker's Percentage Calculator</span>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
         <div>
-          <label className="block text-slate-500 mb-1 font-medium">Flour (g)</label>
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 font-medium">Flour (g)</label>
           <input
             type="number"
             value={calcFlour}
             onChange={(e) => setCalcFlour(e.target.value)}
             placeholder="1000"
-            className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+            className="w-full glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
           />
         </div>
         <div>
-          <label className="block text-slate-500 mb-1 font-medium">Hydration (%)</label>
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 font-medium">Hydration (%)</label>
           <input
             type="number"
             value={calcHydration}
             onChange={(e) => setCalcHydration(e.target.value)}
             placeholder="75"
-            className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+            className="w-full glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
           />
         </div>
         <div className="col-span-2 sm:col-span-2">
-          <label className="block text-slate-500 mb-1 font-medium">Results</label>
-          <div className="bg-white border border-amber-200 rounded-lg p-3 space-y-1">
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 font-medium">Results</label>
+          <div className="glass-inset rounded-xl p-3 space-y-1">
             <div className="flex justify-between">
-              <span className="text-slate-600">Water:</span>
-              <span className="font-bold text-amber-700">{waterNeeded}g</span>
+              <span className="text-[rgba(246,236,220,0.7)]">Water:</span>
+              <span className="font-bold text-[#ffe2a8]">{waterNeeded}g</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Salt (2%):</span>
-              <span className="font-bold text-amber-700">{saltNeeded}g</span>
+              <span className="text-[rgba(246,236,220,0.7)]">Salt (2%):</span>
+              <span className="font-bold text-[#ffe2a8]">{saltNeeded}g</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Starter (20%):</span>
-              <span className="font-bold text-amber-700">{starterNeeded}g</span>
+              <span className="text-[rgba(246,236,220,0.7)]">Starter (20%):</span>
+              <span className="font-bold text-[#ffe2a8]">{starterNeeded}g</span>
             </div>
           </div>
         </div>
@@ -433,31 +441,31 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   };
 
   const TempConverterWidget = () => (
-    <div className="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-      <div className="flex items-center gap-2 mb-3 text-amber-700 font-semibold">
+    <div className="mt-4 p-5 glass rounded-[22px]">
+      <div className="flex items-center gap-2 mb-3 text-[#f0c878] font-semibold">
         <Thermometer size={18} />
         <span>Temperature Converter</span>
       </div>
       <div className="flex flex-wrap gap-4 items-center">
         <div>
-          <label className="block text-slate-500 mb-1 text-xs font-medium">Celsius</label>
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 text-xs font-medium">Celsius</label>
           <input
             type="number"
             value={tempCelsius}
             onChange={(e) => handleCelsiusChange(e.target.value)}
             placeholder="°C"
-            className="w-24 border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+            className="w-24 glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
           />
         </div>
-        <span className="text-slate-400 mt-5">=</span>
+        <span className="text-[rgba(246,236,220,0.5)] mt-5">=</span>
         <div>
-          <label className="block text-slate-500 mb-1 text-xs font-medium">Fahrenheit</label>
+          <label className="block text-[rgba(246,236,220,0.65)] mb-1 text-xs font-medium">Fahrenheit</label>
           <input
             type="number"
             value={tempFahrenheit}
             onChange={(e) => handleFahrenheitChange(e.target.value)}
             placeholder="°F"
-            className="w-24 border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+            className="w-24 glass-select rounded-xl px-3 py-2 focus:outline-none focus:border-[rgba(240,200,120,0.7)]"
           />
         </div>
       </div>
@@ -465,138 +473,156 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   );
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 print:py-0">
-      <section id="dictionary" className="glossary-hero relative overflow-hidden rounded-[28px] px-5 py-8 sm:px-9 sm:py-10 lg:px-12 lg:py-12 mb-8 print:hidden">
+    <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-10 print:py-0">
+      <section id="dictionary" className="glossary-hero relative pt-6 sm:pt-12 pb-10 sm:pb-14 print:hidden">
         <div className="relative max-w-3xl">
-          <p className="text-[#8d4c13] text-xs font-bold tracking-[0.18em] uppercase mb-4">Crust &amp; Crumb Academy · the public field guide</p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[0.98] tracking-[-0.03em] max-w-2xl">Learn the language.<br /><em className="text-[#a85e18]">Read the dough.</em></h2>
-          <p className="mt-5 text-[#455b50] text-base sm:text-lg leading-relaxed max-w-xl">A free, searchable reference to {GLOSSARY_DATA.length} bread-baking terms, working techniques, and source-linked paths — built for the bake in front of you.</p>
-          <div className="relative mt-7 max-w-2xl">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#6b8880]" size={21} aria-hidden="true" />
+          <p className="eyebrow mb-5">Crust &amp; Crumb Academy · the public field guide</p>
+          <h2 className="font-display font-medium text-[44px] sm:text-[64px] lg:text-[84px] leading-[0.98] tracking-[-0.035em] text-[#fff8ec] [text-shadow:0_2px_30px_rgba(0,0,0,0.45)]">
+            Learn the language.<br /><em className="text-[#f0c878]">Read the dough.</em>
+          </h2>
+          <p className="mt-6 text-[rgba(246,236,220,0.86)] text-lg sm:text-xl leading-relaxed max-w-xl">
+            A free, searchable reference to {GLOSSARY_DATA.length} bread-baking terms, working techniques, and source-linked paths. Built for the bake in front of you.
+          </p>
+          <div className="glass-strong sheen mt-8 max-w-2xl rounded-[26px] flex items-center gap-3 h-16 sm:h-[72px] pl-5 pr-3 focus-within:border-[rgba(240,200,120,0.75)] focus-within:shadow-[0_0_0_4px_rgba(240,200,120,0.18)] transition-shadow">
+            <Search className="text-[#f0c878] shrink-0" size={22} aria-hidden="true" />
             <input
               ref={searchInputRef}
               type="search"
               aria-label="Search the bread glossary"
               placeholder="Search a term, symptom, or technique"
-              className="w-full h-14 rounded-2xl bg-white text-[#173b3a] pl-12 pr-20 text-base shadow-lg outline-none ring-2 ring-transparent placeholder:text-[#8a9994] focus:ring-[#f4c95d]"
+              className="glass-input flex-1 min-w-0 h-full text-base sm:text-lg outline-none"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             {searchTerm ? (
-              <button onClick={() => setSearchTerm('')} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-2 text-[#5f746e] hover:bg-[#eef2ef]" aria-label="Clear search">
+              <button onClick={() => setSearchTerm('')} className="btn-glass rounded-xl w-11 h-11 inline-flex items-center justify-center shrink-0" aria-label="Clear search">
                 <X size={18} />
               </button>
             ) : (
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center gap-1 text-xs text-[#8a9994]"><kbd className="rounded border border-[#d8e1dd] px-1.5 py-0.5">/</kbd> to search</span>
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[rgba(246,236,220,0.6)] shrink-0 pr-1">
+                <kbd className="rounded-md border border-white/20 bg-white/10 px-2 py-1 font-semibold text-[rgba(246,236,220,0.85)]">/</kbd> to search
+              </span>
             )}
           </div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#60766a]">
-            <span><strong className="text-[#173b3a]">{GLOSSARY_DATA.length}</strong> terms</span>
-            <span><strong className="text-[#173b3a]">{LEARNING_PATHS.length}</strong> guided paths</span>
-            <span>Free to use and share</span>
+          <div className="mt-6 grid grid-cols-3 gap-3 max-w-2xl">
+            <div className="glass sheen rounded-[20px] px-4 py-3.5">
+              <div className="font-display text-[28px] sm:text-[32px] font-medium leading-none tracking-[-0.02em]">{GLOSSARY_DATA.length}</div>
+              <div className="text-[13px] text-[rgba(246,236,220,0.7)] mt-1.5">terms and techniques</div>
+            </div>
+            <div className="glass sheen rounded-[20px] px-4 py-3.5">
+              <div className="font-display text-[28px] sm:text-[32px] font-medium leading-none tracking-[-0.02em]">{LEARNING_PATHS.length}</div>
+              <div className="text-[13px] text-[rgba(246,236,220,0.7)] mt-1.5">guided paths</div>
+            </div>
+            <div className="glass sheen rounded-[20px] px-4 py-3.5">
+              <div className="font-display text-[28px] sm:text-[32px] font-medium leading-none tracking-[-0.02em]">Free</div>
+              <div className="text-[13px] text-[rgba(246,236,220,0.7)] mt-1.5">to use and share</div>
+            </div>
           </div>
         </div>
         <WheatFilm />
       </section>
 
-      <section className="mb-7 print:hidden" aria-labelledby="path-heading">
-        <div className="flex items-end justify-between gap-4 mb-3">
+      <section id="paths" className="mb-10 print:hidden scroll-mt-28" aria-labelledby="path-heading">
+        <div className="flex items-end justify-between gap-4 mb-5">
           <div>
-            <p className="text-xs font-bold tracking-[0.16em] uppercase text-[#b85d13] mb-1">Choose a way in</p>
-            <h2 id="path-heading" className="font-serif text-2xl sm:text-3xl text-[#173b3a]">Follow a baking path</h2>
+            <p className="eyebrow mb-2">Guided paths</p>
+            <h2 id="path-heading" className="font-display font-medium text-[34px] sm:text-[44px] leading-none tracking-[-0.025em] text-[#fff8ec]">Choose a way in</h2>
           </div>
-          <span className="hidden sm:block text-sm text-[#71827c]">Or search above if you know the term.</span>
+          <span className="hidden sm:block text-[15px] text-[rgba(246,236,220,0.7)] max-w-xs text-right">Each path is a short run of terms in the order a baker actually meets them.</span>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
-          <button
-            onClick={() => setActivePathId(null)}
-            className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${!activePathId ? 'bg-[#e2830b] text-white shadow-sm' : 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]'}`}
-          >
-            All terms
-          </button>
-          {LEARNING_PATHS.map(path => (
-            <button
-              key={path.id}
-              onClick={() => setActivePathId(activePathId === path.id ? null : path.id)}
-              title={path.description}
-              className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${activePathId === path.id ? 'bg-[#e2830b] text-white shadow-sm' : 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]'}`}
-            >
-              {path.title}
-            </button>
-          ))}
-          <button
-            onClick={onToolsClick}
-            className="shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold bg-[#f4ead1] border border-[#ead6a9] text-[#8b4e0a] hover:bg-[#f8e2b2] transition-colors flex items-center gap-2"
-          >
-            <Calculator size={15} /> Baker's tools
-          </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {LEARNING_PATHS.map(path => {
+            const meta = PATH_META[path.id] || PATH_META.default;
+            const Icon = meta.icon;
+            const isActive = activePathId === path.id;
+            return (
+              <button
+                key={path.id}
+                onClick={() => {
+                  setActivePathId(isActive ? null : path.id);
+                  setTimeout(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }}
+                aria-pressed={isActive}
+                className={`glass sheen lift text-left rounded-[28px] p-6 flex flex-col gap-4 min-h-[184px] ${isActive ? '!border-[rgba(240,200,120,0.7)] !bg-[rgba(240,200,120,0.12)]' : ''}`}
+              >
+                <span className="flex items-center justify-between w-full">
+                  <span className="w-12 h-12 rounded-2xl flex items-center justify-center border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]" style={{ background: meta.tint }}>
+                    <Icon size={22} className="text-[#fff8ec]" aria-hidden="true" />
+                  </span>
+                  <span className="text-[13px] font-semibold text-[rgba(246,236,220,0.7)]">{path.termIds.length} terms</span>
+                </span>
+                <span className="flex flex-col gap-1.5">
+                  <span className="font-display text-[24px] font-medium tracking-[-0.015em] text-[#fff8ec]">{path.title}</span>
+                  <span className="text-[15px] leading-relaxed text-[rgba(246,236,220,0.74)]">{path.description}</span>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[#d8e1dd] bg-white px-4 py-4 sm:px-5 mb-8 print:hidden" aria-label="Glossary filters">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
-          <div className="flex-1 min-w-0">
-            <label className="block text-xs font-bold tracking-[0.12em] uppercase text-[#6d8079] mb-2">Filter the field guide</label>
-            <div className="flex flex-wrap gap-2">
-              <div className="relative min-w-[170px] flex-1">
-                <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-[#7b8c86]" size={16} aria-hidden="true" />
-                <select aria-label="Filter by category" className="w-full h-11 pl-9 pr-4 border border-[#d8e1dd] rounded-xl appearance-none bg-[#fbfcfa] text-[#35544c] focus:ring-2 focus:ring-[#f4c95d] focus:border-[#e2830b]" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-                  <option value="All">All categories</option>
-                  {categories.map(c => <option key={c} value={c}>{c}</option>)}
-                </select>
-              </div>
-              <select aria-label="Filter by difficulty" className="min-w-[150px] h-11 px-3 border border-[#d8e1dd] rounded-xl appearance-none bg-[#fbfcfa] text-[#35544c] focus:ring-2 focus:ring-[#f4c95d] focus:border-[#e2830b]" value={selectedDifficulty} onChange={(e) => setSelectedDifficulty(e.target.value)}>
-                <option value="All">All levels</option>
-                {difficulties.map(d => <option key={d} value={d}>{d}</option>)}
+      <section id="results" className="glass sheen rounded-[28px] px-4 py-4 sm:px-5 mb-5 print:hidden scroll-mt-28" aria-label="Glossary filters">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+          <div className="flex-1 min-w-0 flex flex-wrap gap-2">
+            <div className="relative min-w-[170px] flex-1">
+              <Filter className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#f0c878]" size={16} aria-hidden="true" />
+              <select aria-label="Filter by category" className="glass-select w-full h-12 pl-10 pr-4 rounded-2xl appearance-none focus:outline-none focus:border-[rgba(240,200,120,0.7)]" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                <option value="All">All categories</option>
+                {categories.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
-              <Tooltip text="Show shorter definitions for faster scanning">
-                <button onClick={() => setQuickMode(!quickMode)} className={`h-11 px-4 rounded-xl border text-sm font-semibold transition-colors ${quickMode ? 'bg-[#e8f1ed] border-[#a9c7bb] text-[#235c4d]' : 'bg-white border-[#d8e1dd] text-[#51645e] hover:border-[#9db6ac]'}`} aria-pressed={quickMode}>
-                  {quickMode ? 'Quick view on' : 'Quick view'}
-                </button>
-              </Tooltip>
             </div>
+            <div className="glass-inset flex items-center gap-1 p-1 rounded-2xl" role="group" aria-label="Filter by level">
+              {['All', ...difficulties].map(d => (
+                <button key={d} onClick={() => setSelectedDifficulty(d)} aria-pressed={selectedDifficulty === d}
+                  className={`h-10 px-3.5 rounded-xl text-sm font-semibold transition-colors ${selectedDifficulty === d ? 'bg-white/15 text-[#fff8ec] border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]' : 'text-[rgba(246,236,220,0.72)] hover:text-[#fff8ec] border border-transparent'}`}>
+                  {d === 'All' ? 'All levels' : d}
+                </button>
+              ))}
+            </div>
+            <Tooltip text="Show shorter definitions for faster scanning">
+              <button onClick={() => setQuickMode(!quickMode)} className="btn-glass h-12 px-4 rounded-2xl text-sm font-semibold" aria-pressed={quickMode}>
+                {quickMode ? 'Quick view on' : 'Quick view'}
+              </button>
+            </Tooltip>
           </div>
-          <div className="flex items-center gap-2 lg:pb-0">
-            <span className="text-sm text-[#6d8079] whitespace-nowrap"><strong className="text-[#173b3a]">{filteredData.length}</strong> of {GLOSSARY_DATA.length}</span>
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-[rgba(246,236,220,0.7)] whitespace-nowrap tabular-nums"><strong className="text-[#fff8ec]">{filteredData.length}</strong> of {GLOSSARY_DATA.length}</span>
             <Tooltip text="Download the current glossary view">
               <div className="group relative">
-                <button className="h-11 w-11 inline-flex items-center justify-center bg-[#173b3a] text-white rounded-xl hover:bg-[#245b59] transition-colors" aria-label="Download glossary"><Download size={17} /></button>
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-[#d8e1dd] py-1 hidden group-hover:block group-focus-within:block z-10">
-                  <button onClick={() => downloadData('json')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download JSON</button>
-                  <button onClick={() => downloadData('csv')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download CSV</button>
-                  <button onClick={() => downloadData('md')} className="block w-full text-left px-4 py-2.5 text-sm text-[#35544c] hover:bg-[#f4ead1]">Download Markdown</button>
+                <button className="btn-glass h-12 w-12 inline-flex items-center justify-center rounded-2xl" aria-label="Download glossary"><Download size={17} /></button>
+                <div className="glass-strong absolute right-0 mt-2 w-52 rounded-2xl py-1.5 hidden group-hover:block group-focus-within:block z-10">
+                  <button onClick={() => downloadData('json')} className="block w-full text-left px-4 py-2.5 text-sm text-[#f6ecdc] hover:bg-white/10">Download JSON</button>
+                  <button onClick={() => downloadData('csv')} className="block w-full text-left px-4 py-2.5 text-sm text-[#f6ecdc] hover:bg-white/10">Download CSV</button>
+                  <button onClick={() => downloadData('md')} className="block w-full text-left px-4 py-2.5 text-sm text-[#f6ecdc] hover:bg-white/10">Download Markdown</button>
                 </div>
               </div>
             </Tooltip>
           </div>
         </div>
         {(activeFilterCount > 0 || searchTerm) && (
-          <div className="mt-4 pt-3 border-t border-[#edf1ee] flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-[#71827c]">Showing a focused view</span>
-            {searchTerm && <span className="inline-flex items-center gap-1 rounded-full bg-[#eef2ef] px-3 py-1 text-xs text-[#35544c]">“{searchTerm}”</span>}
-            {activePathId && <span className="inline-flex items-center gap-1 rounded-full bg-[#eef2ef] px-3 py-1 text-xs text-[#35544c]">{LEARNING_PATHS.find(path => path.id === activePathId)?.title}</span>}
-            <button onClick={clearFilters} className="text-xs font-semibold text-[#b85d13] hover:underline">Clear view</button>
+          <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold text-[rgba(246,236,220,0.65)]">Showing a focused view</span>
+            {searchTerm && <span className="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-[#f6ecdc]">“{searchTerm}”</span>}
+            {activePathId && <span className="inline-flex items-center gap-1 rounded-full bg-[rgba(240,200,120,0.15)] border border-[rgba(240,200,120,0.45)] px-3 py-1 text-xs text-[#ffe2a8]">{LEARNING_PATHS.find(path => path.id === activePathId)?.title}</span>}
+            <button onClick={clearFilters} className="text-xs font-semibold text-[#f0c878] hover:underline min-h-[32px] px-1">Clear view</button>
           </div>
         )}
       </section>
 
-      <section className="mb-7 print:hidden" aria-labelledby="az-heading">
-        <div className="flex items-center justify-between gap-3 mb-3">
-          <h2 id="az-heading" className="font-serif text-2xl text-[#173b3a]">Browse by letter</h2>
-          <span className="text-xs text-[#71827c]">Jump to a term</span>
-        </div>
-        <div className="flex flex-wrap gap-1.5">
+      <nav className="glass rounded-[20px] p-1.5 mb-8 print:hidden overflow-x-auto hide-scrollbar" aria-label="Browse by letter">
+        <div className="flex gap-1 min-w-max lg:min-w-0 lg:justify-between">
           {ALPHABET.map(letter => {
             const hasTerms = letter === 'All' || lettersWithTerms.has(letter);
             const isActive = selectedLetter === letter;
             return (
-              <button key={letter} onClick={() => hasTerms && setSelectedLetter(letter)} disabled={!hasTerms} aria-pressed={isActive} className={`min-w-9 h-9 px-2 rounded-lg text-sm font-semibold transition-colors ${isActive ? 'bg-[#173b3a] text-white' : hasTerms ? 'bg-white border border-[#d8e1dd] text-[#48635b] hover:border-[#e2830b] hover:text-[#a75208]' : 'bg-[#f0f3f1] text-[#c1cbc6] cursor-not-allowed'}`}>
+              <button key={letter} onClick={() => hasTerms && setSelectedLetter(letter)} disabled={!hasTerms} aria-pressed={isActive}
+                className={`min-w-[38px] h-10 px-2 rounded-xl text-sm font-semibold transition-colors ${isActive ? 'btn-gold' : hasTerms ? 'text-[#f6ecdc] hover:bg-white/10' : 'text-[rgba(246,236,220,0.25)] cursor-not-allowed'}`}>
                 {letter}
               </button>
             );
           })}
         </div>
-      </section>
+      </nav>
 
       {/* Grid */}
       <div className={`grid grid-cols-1 ${quickMode ? 'md:grid-cols-2' : 'lg:grid-cols-1 xl:grid-cols-2'} gap-5 print:block print:space-y-6`}>
@@ -613,6 +639,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             ];
             // Filter related terms to only valid ones
             const validRelatedTerms = (item.relatedTermIds || []).filter(tid => VALID_TERM_IDS.has(tid));
+            const isOpen = expandedId === item.id;
 
             return (
               <React.Fragment key={item.id}>
@@ -620,34 +647,30 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
               <article
                 key={item.id}
                 id={item.id}
-                className={`bg-white rounded-2xl border transition-all duration-200 flex flex-col overflow-hidden print:border-none print:shadow-none print:mb-8 ${expandedId === item.id ? 'ring-2 ring-[#f4c95d] shadow-lg' : 'border-[#d8e1dd] shadow-[0_8px_24px_rgba(23,59,58,0.05)] hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(23,59,58,0.09)]'}`}
+                className={`glass sheen rounded-[28px] flex flex-col overflow-hidden scroll-mt-28 transition-[transform,border-color,background-color] duration-300 print:border-none print:shadow-none print:mb-8 ${isOpen ? '!border-[rgba(240,200,120,0.6)] !bg-[rgba(255,244,228,0.1)]' : 'hover:-translate-y-0.5 hover:border-white/25'}`}
               >
                 {/* Card Header */}
-                <div className="p-5 sm:p-6 pb-4">
-                  <div className="flex justify-between items-start mb-4">
+                <div className="p-5 sm:p-7 pb-4 sm:pb-5">
+                  <div className="flex justify-between items-start gap-3 mb-4">
                     <div className="flex gap-2 items-center flex-wrap">
-                      <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-[0.12em] ${getCategoryColor(item.category)}`}>
+                      <span className={`inline-flex items-center gap-2 text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-[0.12em] border ${getCategoryColor(item.category)}`}>
+                        <span className="w-2 h-2 rounded-full" style={{ background: categoryDot(item.category), boxShadow: `0 0 10px ${categoryDot(item.category)}` }} aria-hidden="true" />
                         {item.category}
                       </span>
-                      <span className={`text-[11px] font-semibold px-2 py-1 border rounded-full ${getDifficultyColor(item.difficulty)}`}>
+                      <span className={`text-[12px] font-semibold px-2.5 py-1 border rounded-full ${getDifficultyColor(item.difficulty)}`}>
                         {item.difficulty}
                       </span>
                       {item.bookRef && (
-                        <span className="flex items-center gap-1 text-[11px] font-semibold px-2 py-1 bg-[#fff8e7] text-[#8b5a12] border border-[#ead6a9] rounded-full">
+                        <span className="flex items-center gap-1 text-[12px] font-semibold px-2.5 py-1 bg-[rgba(240,200,120,0.14)] text-[#ffe2a8] border border-[rgba(240,200,120,0.45)] rounded-full">
                           <Book size={12} />
                           {item.bookChapter || 'Featured in Book'}
-                        </span>
-                      )}
-                      {item.definitionStatus === 'editorial-draft' && (
-                        <span className="text-[11px] font-semibold px-2 py-1 bg-[#f0f3f1] text-[#51645e] border border-[#d8e1dd] rounded-full">
-                          Editorial draft
                         </span>
                       )}
                     </div>
                     <button
                       onClick={(e) => toggleLearned(item.id, e)}
                       onTouchEnd={(e) => toggleLearned(item.id, e)}
-                      className={`transition-colors rounded-xl p-1 min-w-[44px] min-h-[44px] flex items-center justify-center ${learnedTerms.has(item.id) ? 'text-[#2f8a69] bg-[#e8f1ed]' : 'text-[#a9b7b1] hover:text-[#2f8a69] hover:bg-[#f1f6f3]'}`}
+                      className={`transition-colors rounded-2xl min-w-[44px] min-h-[44px] flex items-center justify-center border ${learnedTerms.has(item.id) ? 'text-[#b5d46a] bg-[rgba(181,212,106,0.15)] border-[rgba(181,212,106,0.45)]' : 'text-[rgba(246,236,220,0.45)] border-transparent hover:text-[#b5d46a] hover:bg-white/5'}`}
                       title={learnedTerms.has(item.id) ? 'Mark as not learned' : 'Mark as learned'}
                       aria-label={learnedTerms.has(item.id) ? `Mark ${item.term} as not learned` : `Mark ${item.term} as learned`}
                     >
@@ -655,27 +678,25 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     </button>
                   </div>
 
-                  <div className="flex items-center gap-3 mb-2 flex-wrap">
-                    <h3 className="text-[26px] leading-tight font-serif font-bold text-[#173b3a]">{item.term}</h3>
+                  <div className="flex items-center gap-3 mb-3 flex-wrap">
+                    <h3 className="font-display text-[30px] sm:text-[32px] leading-tight font-medium tracking-[-0.02em] text-[#fff8ec]">{item.term}</h3>
                     {item.pronunciation && (
-                        <span className="text-[#87958f] font-serif italic text-sm">{item.pronunciation}</span>
+                      <span className="text-[#f0c878] font-display italic text-[15px] opacity-90">{item.pronunciation}</span>
                     )}
                     <PronunciationButton termId={item.id} term={item.term} compact />
                   </div>
 
                   {quickMode ? (
-                    <p className="text-[#48635b] leading-relaxed">{item.shortDefinition || item.definition}</p>
+                    <p className="text-[rgba(246,236,220,0.82)] leading-relaxed">{item.shortDefinition || item.definition}</p>
                   ) : (
-                    <div className="prose prose-slate max-w-none">
-                      <p className="text-[#48635b] leading-relaxed text-[17px]">
-                        {item.definition}
-                      </p>
-                    </div>
+                    <p className="text-[rgba(246,236,220,0.86)] leading-relaxed text-[17px]">
+                      {item.definition}
+                    </p>
                   )}
 
                   {/* Show affiliate products in collapsed view too */}
-                  {!quickMode && allAffiliateTools.length > 0 && expandedId !== item.id && (
-                    <div className="mt-4 flex flex-wrap gap-2">
+                  {!quickMode && allAffiliateTools.length > 0 && !isOpen && (
+                    <div className="mt-5 flex flex-wrap gap-2">
                       {allAffiliateTools.slice(0, 2).map((tool, idx) => (
                         <a
                           key={idx}
@@ -683,100 +704,79 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                           target="_blank"
                           rel="noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 text-green-700 border border-green-200 rounded-lg text-xs font-medium hover:bg-green-100 transition-colors"
+                          className="btn-glass inline-flex items-center gap-1.5 px-3.5 h-9 rounded-full text-xs font-semibold"
                         >
-                          <ShoppingBag size={14} />
+                          <ShoppingBag size={14} className="text-[#f0c878]" />
                           {tool.name}
                         </a>
                       ))}
                       {allAffiliateTools.length > 2 && (
-                        <span className="text-xs text-slate-400 self-center">+{allAffiliateTools.length - 2} more</span>
+                        <span className="text-xs text-[rgba(246,236,220,0.55)] self-center">+{allAffiliateTools.length - 2} more</span>
                       )}
                     </div>
                   )}
                 </div>
 
                 {/* Expanded Content */}
-                {expandedId === item.id && (
-                  <div className="border-t border-slate-100 bg-slate-50/50">
+                {isOpen && (
+                  <div className="border-t border-white/10 bg-black/15">
                     {/* Tabs */}
-                    <div className="flex border-b border-slate-200 overflow-x-auto">
-                      <button
-                        onClick={() => setActiveTab('overview')}
-                        className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'overview' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
-                      >
-                        Overview
-                      </button>
-                      {(item.henrysTips || item.commonMistakes || item.troubleshooting) && (
+                    <div className="flex gap-1 px-3 sm:px-5 pt-3 overflow-x-auto hide-scrollbar" role="tablist">
+                      {[
+                        { key: 'overview' as const, label: 'Overview', show: true },
+                        { key: 'expert' as const, label: "Henry's Advice", show: Boolean(item.henrysTips || item.commonMistakes || item.troubleshooting) },
+                        { key: 'deep' as const, label: 'Deep Dive', show: Boolean(item.history || item.difficultyExplanation || allAffiliateTools.length > 0 || (item.sources && item.sources.length > 0)) },
+                        { key: 'sources' as const, label: `Source Library (${item.sourceRelations?.length || 0})`, show: Boolean(item.sourceRelations && item.sourceRelations.length > 0) },
+                        { key: 'recipes' as const, label: 'Recipes', show: Boolean(item.relatedRecipes) },
+                      ].filter(t => t.show).map(t => (
                         <button
-                          onClick={() => setActiveTab('expert')}
-                          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'expert' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+                          key={t.key}
+                          role="tab"
+                          aria-selected={activeTab === t.key}
+                          onClick={() => setActiveTab(t.key)}
+                          className={`px-4 h-11 rounded-full text-sm font-semibold whitespace-nowrap transition-colors border ${activeTab === t.key ? 'bg-white/15 border-white/25 text-[#fff8ec] shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]' : 'border-transparent text-[rgba(246,236,220,0.7)] hover:text-[#fff8ec]'}`}
                         >
-                          Henry's Advice
+                          {t.label}
                         </button>
-                      )}
-                      {(item.history || item.difficultyExplanation || allAffiliateTools.length > 0 || (item.sources && item.sources.length > 0)) && (
-                        <button
-                          onClick={() => setActiveTab('deep')}
-                          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'deep' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
-                        >
-                          Deep Dive
-                        </button>
-                      )}
-                      {item.sourceRelations && item.sourceRelations.length > 0 && (
-                        <button
-                          onClick={() => setActiveTab('sources')}
-                          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'sources' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
-                        >
-                          Source Library ({item.sourceRelations.length})
-                        </button>
-                      )}
-                      {item.relatedRecipes && (
-                        <button
-                          onClick={() => setActiveTab('recipes')}
-                          className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[48px] ${activeTab === 'recipes' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
-                        >
-                          Recipes
-                        </button>
-                      )}
+                      ))}
                     </div>
 
-                    <div className="p-6">
+                    <div className="p-5 sm:p-7">
                       {activeTab === 'overview' && (
                         <div className="space-y-6">
                           {/* Resource Buttons */}
-                          <div className="flex flex-wrap gap-2 mb-4">
+                          <div className="flex flex-wrap gap-2">
                             <a href={getYouTubeSearchUrl(item.term, item.youtubeQuery)} target="_blank" rel="noreferrer"
-                              className="flex items-center gap-2 px-3 py-2 bg-red-50 text-red-700 border border-red-200 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors min-h-[44px]">
-                              <Youtube size={16} /> Watch Video
+                              className="btn-glass flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]">
+                              <Youtube size={16} className="text-[#ff8a7a]" /> Watch Video
                             </a>
                             {item.bookRef && (
                               <a href={EXTERNAL_URLS.bookPage} target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 px-3 py-2 bg-amber-50 text-amber-800 border border-amber-200 rounded-lg text-sm font-medium hover:bg-amber-100 transition-colors min-h-[44px]">
+                                className="btn-gold flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]">
                                 <Book size={16} /> Get the Book
                               </a>
                             )}
                             <a href={getBlogSearchUrl(item.term)} target="_blank" rel="noreferrer"
-                              className="flex items-center gap-2 px-3 py-2 bg-white text-slate-600 border border-slate-200 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors min-h-[44px]">
-                              <FileText size={16} /> Read Blog
+                              className="btn-glass flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]">
+                              <FileText size={16} className="text-[#f0c878]" /> Read Blog
                             </a>
                             <a href={EXTERNAL_URLS.facebookGroup} target="_blank" rel="noreferrer"
-                              className="flex items-center gap-2 px-3 py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors min-h-[44px]">
-                              <Users size={16} /> Facebook Group
+                              className="btn-glass flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]">
+                              <Users size={16} className="text-[#9db4d9]" /> Facebook Group
                             </a>
                             {item.starterRelated && (
                               <a href={EXTERNAL_URLS.starterGuide} target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 px-3 py-2 bg-purple-50 text-purple-700 border border-purple-200 rounded-lg text-sm font-medium hover:bg-purple-100 transition-colors min-h-[44px]">
-                                <Sparkles size={16} /> Starter Guide
+                                className="btn-glass flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]">
+                                <Sparkles size={16} className="text-[#b9a3f0]" /> Starter Guide
                               </a>
                             )}
                           </div>
 
                           {/* Affiliate Products in Overview */}
                           {allAffiliateTools.length > 0 && (
-                            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                              <h4 className="flex items-center gap-2 font-bold text-green-800 mb-3">
-                                <ShoppingBag size={18} /> Recommended Gear
+                            <div className="glass rounded-[22px] p-5">
+                              <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-3">
+                                <ShoppingBag size={18} className="text-[#f0c878]" /> Recommended Gear
                               </h4>
                               <div className="flex flex-wrap gap-2">
                                 {allAffiliateTools.map((tool, idx) => (
@@ -785,21 +785,15 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                                     href={tool.url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2 px-4 py-2 bg-white text-green-700 border border-green-300 rounded-lg text-sm font-medium hover:bg-green-100 hover:border-green-400 transition-colors min-h-[44px]"
+                                    className="btn-glass inline-flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]"
                                   >
-                                    <ShoppingBag size={16} />
+                                    <ShoppingBag size={16} className="text-[#f0c878]" />
                                     {tool.name}
                                   </a>
                                 ))}
                               </div>
                             </div>
                           )}
-
-                          {item.mediaPlaceholder?.map((media, idx) => (
-                            <div key={idx} className="bg-slate-200 rounded-lg h-48 flex items-center justify-center text-slate-400 border-2 border-dashed border-slate-300">
-                              {media === 'video' ? 'Video Placeholder' : 'Image Placeholder'}
-                            </div>
-                          ))}
 
                           {item.widgets?.includes('calculator') && <CalculatorWidget />}
                           {item.widgets?.includes('converter') && <TempConverterWidget />}
@@ -807,67 +801,68 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                       )}
 
                       {activeTab === 'expert' && (
-                        <div className="space-y-6">
+                        <div className="space-y-5">
                           {item.henrysTips && (
-                            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                              <div className="flex items-center gap-2 mb-2 text-amber-800 font-bold">
-                                <Lightbulb size={18} />
-                                <h4>Henry's Tips</h4>
+                            <div className="rounded-[22px] p-5 bg-[rgba(240,200,120,0.1)] border border-[rgba(240,200,120,0.32)] shadow-[inset_0_1px_0_rgba(255,236,190,0.22)]">
+                              <div className="flex items-center gap-2 mb-3 text-[#f0c878] font-bold text-xs uppercase tracking-[0.14em]">
+                                <Lightbulb size={16} />
+                                <h4>Henry&apos;s notes from the bench</h4>
                               </div>
-                              <ul className="list-disc list-inside space-y-1 text-amber-900 text-sm">
+                              <ul className="space-y-2.5 text-[#fff3df] text-[16px] leading-relaxed">
                                 {item.henrysTips.map((tip, idx) => <li key={idx}>{tip}</li>)}
                               </ul>
                             </div>
                           )}
                           {item.commonMistakes && (
-                            <div className="bg-rose-50 border border-rose-200 rounded-lg p-4">
-                              <div className="flex items-center gap-2 mb-2 text-rose-800 font-bold">
-                                <AlertTriangle size={18} />
+                            <div className="rounded-[22px] p-5 bg-[rgba(255,122,107,0.08)] border border-[rgba(255,122,107,0.3)]">
+                              <div className="flex items-center gap-2 mb-3 text-[#ffb2a8] font-bold text-xs uppercase tracking-[0.14em]">
+                                <AlertTriangle size={16} />
                                 <h4>Common Mistakes</h4>
                               </div>
-                              <ul className="list-disc list-inside space-y-1 text-rose-900 text-sm">
+                              <ul className="space-y-2 text-[rgba(246,236,220,0.88)] text-[15px] leading-relaxed list-disc pl-5">
                                 {item.commonMistakes.map((mistake, idx) => <li key={idx}>{mistake}</li>)}
                               </ul>
                             </div>
                           )}
                           {item.troubleshooting && (
-                            <div className="bg-slate-100 rounded-lg p-4">
-                              <h4 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
-                                <BookOpen size={18} /> Troubleshooting
+                            <div className="space-y-2.5">
+                              <h4 className="font-display text-[22px] font-medium text-[#fff8ec] flex items-center gap-2">
+                                Diagnose and fix
                               </h4>
-                              <div className="space-y-3">
-                                {item.troubleshooting.map((ts, idx) => (
-                                  <div key={idx} className="text-sm">
-                                    <span className="font-semibold text-slate-800 block">Problem: {ts.problem}</span>
-                                    <span className="text-slate-600">Try: {ts.solution}</span>
-                                  </div>
-                                ))}
-                              </div>
+                              {item.troubleshooting.map((ts, idx) => (
+                                <details key={idx} className="glass rounded-[18px] px-5 group" open={idx === 0}>
+                                  <summary className="flex items-center justify-between gap-3 min-h-[56px] cursor-pointer list-none text-[16px] font-semibold text-[#fff8ec]">
+                                    {ts.problem}
+                                    <ChevronDown size={18} className="text-[#f0c878] shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                                  </summary>
+                                  <p className="pb-4 text-[15px] leading-relaxed text-[rgba(246,236,220,0.84)]">{ts.solution}</p>
+                                </details>
+                              ))}
                             </div>
                           )}
                         </div>
                       )}
 
                       {activeTab === 'deep' && (
-                        <div className="space-y-4">
+                        <div className="space-y-5">
                           {item.history && (
                             <div>
-                              <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-2"><History size={16} /> Origin & History</h4>
-                              <p className="text-sm text-slate-600 italic">{item.history}</p>
+                              <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-2"><History size={16} className="text-[#f0c878]" /> Origin &amp; History</h4>
+                              <p className="text-[15px] text-[rgba(246,236,220,0.82)] italic leading-relaxed">{item.history}</p>
                             </div>
                           )}
                           {item.difficultyExplanation && (
                             <div>
-                              <h4 className="font-bold text-slate-700 mb-2">Why is this {item.difficulty}?</h4>
-                              <p className="text-sm text-slate-600">{item.difficultyExplanation}</p>
+                              <h4 className="font-semibold text-[#fff8ec] mb-2">Why is this {item.difficulty}?</h4>
+                              <p className="text-[15px] text-[rgba(246,236,220,0.82)] leading-relaxed">{item.difficultyExplanation}</p>
                             </div>
                           )}
                           {allAffiliateTools.length > 0 && (
-                            <div className="pt-4 border-t border-slate-200">
-                              <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-3"><ShoppingBag size={16} /> Recommended Gear</h4>
+                            <div className="pt-4 border-t border-white/10">
+                              <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-3"><ShoppingBag size={16} className="text-[#f0c878]" /> Recommended Gear</h4>
                               <div className="flex flex-wrap gap-2">
                                 {allAffiliateTools.map((tool, idx) => (
-                                  <a key={idx} href={tool.url} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-600 hover:border-amber-400 hover:text-amber-600 transition-colors min-h-[44px] inline-flex items-center">
+                                  <a key={idx} href={tool.url} target="_blank" rel="noreferrer" className="btn-glass px-4 rounded-full text-sm font-semibold min-h-[44px] inline-flex items-center">
                                     {tool.name}
                                   </a>
                                 ))}
@@ -875,11 +870,11 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                             </div>
                           )}
                           {item.sources && item.sources.length > 0 && (
-                            <div className="pt-4 border-t border-slate-200">
-                              <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-2"><BookOpen size={16} /> Sources</h4>
+                            <div className="pt-4 border-t border-white/10">
+                              <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-2"><BookOpen size={16} className="text-[#f0c878]" /> Sources</h4>
                               <div className="flex flex-wrap gap-2">
                                 {item.sources.map((source, idx) => (
-                                  <span key={idx} className="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs">
+                                  <span key={idx} className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[rgba(246,236,220,0.85)] text-xs">
                                     {source}
                                   </span>
                                 ))}
@@ -892,40 +887,35 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                       {activeTab === 'sources' && item.sourceRelations && (
                         <div className="space-y-3">
                           <div>
-                            <h4 className="flex items-center gap-2 font-bold text-slate-700"><ExternalLink size={16} /> Source-backed relationships</h4>
-                            <p className="text-sm text-slate-500 mt-1">Links and records are drawn from the supplied inventories; derived matches are labeled.</p>
+                            <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec]"><ExternalLink size={16} className="text-[#f0c878]" /> Go deeper</h4>
+                            <p className="text-sm text-[rgba(246,236,220,0.62)] mt-1">Articles, videos, and recipes that cover this term.</p>
                           </div>
                           <div className="grid gap-3 sm:grid-cols-2">
                             {item.sourceRelations.map((resource, idx) => (
-                              <div key={`${resource.sourceSystem}-${resource.title}-${idx}`} className="rounded-lg border border-slate-200 bg-white p-3">
-                                <div className="flex justify-between gap-2 text-xs text-slate-400 mb-1">
-                                  <span className="font-semibold uppercase tracking-wide text-blue-700">{resource.sourceSystem}</span>
+                              <div key={`${resource.sourceSystem}-${resource.title}-${idx}`} className="glass rounded-[18px] p-4">
+                                <div className="flex justify-between gap-2 text-[11px] text-[rgba(246,236,220,0.55)] mb-1.5">
+                                  <span className="font-bold uppercase tracking-[0.12em] text-[#f0c878]">{resource.sourceSystem}</span>
                                   <span>{resource.status}</span>
                                 </div>
                                 {resource.url ? (
-                                  <a href={resource.url} target="_blank" rel="noreferrer" className="font-medium text-slate-800 hover:text-amber-700 hover:underline">{resource.title}</a>
+                                  <a href={resource.url} target="_blank" rel="noreferrer" className="font-semibold text-[#fff8ec] hover:text-[#f0c878] hover:underline">{resource.title}</a>
                                 ) : (
-                                  <span className="font-medium text-slate-700">{resource.title}</span>
+                                  <span className="font-semibold text-[#fff8ec]">{resource.title}</span>
                                 )}
-                                <div className="text-xs text-slate-500 mt-1">{resource.relation.replaceAll('-', ' ')} · {resource.evidence} match</div>
+                                <div className="text-xs text-[rgba(246,236,220,0.55)] mt-1">{resource.relation.replaceAll('-', ' ')}</div>
                               </div>
                             ))}
                           </div>
-                          {item.clusterPlan && (
-                            <div className="rounded-lg bg-blue-50 border border-blue-100 p-3 text-sm text-blue-900">
-                              <strong>Cluster plan:</strong> {item.clusterPlan.recommendedAction}
-                            </div>
-                          )}
                         </div>
                       )}
 
                       {activeTab === 'recipes' && item.relatedRecipes && (
                         <div className="space-y-3">
-                          <h4 className="flex items-center gap-2 font-bold text-slate-700 mb-2"><Utensils size={16} /> Featured In</h4>
+                          <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-2"><Utensils size={16} className="text-[#f0c878]" /> Featured In</h4>
                           {item.relatedRecipes.map((recipe, idx) => (
-                            <a key={idx} href={recipe.url || '#'} className="block p-3 bg-white border border-slate-200 rounded-lg hover:border-amber-400 hover:shadow-sm transition-all group min-h-[44px]">
-                              <div className="font-medium text-slate-800 group-hover:text-amber-700">{recipe.name}</div>
-                              <div className="text-xs text-slate-400">View Recipe →</div>
+                            <a key={idx} href={recipe.url || '#'} className="glass lift block p-4 rounded-[18px] min-h-[44px]">
+                              <div className="font-semibold text-[#fff8ec]">{recipe.name}</div>
+                              <div className="text-xs text-[#f0c878] mt-0.5">View recipe</div>
                             </a>
                           ))}
                         </div>
@@ -935,38 +925,38 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                 )}
 
                 {/* Card Footer */}
-                <div className="px-5 sm:px-6 py-3 bg-[#f7faf7] border-t border-[#e4ece7] flex flex-wrap gap-3 justify-between items-center print:hidden">
-                  <div className="flex items-center gap-2 overflow-x-auto max-w-[62%] hide-scrollbar">
-                    {validRelatedTerms.length > 0 && <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#83928c] shrink-0">Related</span>}
+                <div className="mt-auto px-5 sm:px-7 py-3 border-t border-white/10 flex flex-col gap-1 print:hidden">
+                  <div className="flex items-center gap-1 overflow-x-auto hide-scrollbar -mx-1">
+                    {validRelatedTerms.length > 0 && <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[rgba(246,236,220,0.5)] shrink-0 mr-1">Related</span>}
                     {validRelatedTerms.map(tid => (
                       <button
                         key={tid}
                         onClick={(e) => handleRelatedTermClick(tid, e)}
                         onTouchEnd={(e) => handleRelatedTermClick(tid, e)}
-                        className="text-xs text-[#3f7162] hover:text-[#b85d13] hover:underline whitespace-nowrap py-2 px-1 min-h-[44px] flex items-center"
+                        className="text-[13px] text-[rgba(246,236,220,0.85)] hover:text-[#f0c878] whitespace-nowrap px-3 rounded-full hover:bg-white/5 min-h-[44px] flex items-center transition-colors"
                       >
                         {TERM_LOOKUP.get(tid) || tid}
                       </button>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-end gap-2">
                     {!quickMode && (
                       <button
                         onClick={() => onAskKrusty(item.term)}
-                        className="text-[#51645e] hover:text-[#b85d13] text-sm font-semibold flex items-center gap-1 transition-colors py-2 px-3 min-h-[44px]"
+                        className="btn-glass text-sm font-semibold flex items-center gap-1.5 px-4 rounded-full min-h-[44px]"
                       >
-                        <MessageSquare size={16} />
+                        <MessageSquare size={16} className="text-[#f0c878]" />
                         <span className="hidden sm:inline">Ask Krusty</span>
                       </button>
                     )}
                     <button
                       onClick={(e) => handleExpandToggle(item.id, e)}
                       onTouchEnd={(e) => handleExpandToggle(item.id, e)}
-                      aria-expanded={expandedId === item.id}
-                      className="bg-[#e2830b] hover:bg-[#c86f07] text-white text-sm font-semibold flex items-center gap-1.5 py-2 px-4 rounded-xl min-h-[44px] min-w-[124px] justify-center transition-colors active:bg-[#a95806]"
+                      aria-expanded={isOpen}
+                      className="btn-gold text-sm font-bold flex items-center gap-1.5 px-5 rounded-full min-h-[44px] min-w-[132px] justify-center"
                     >
-                      {expandedId === item.id ? (
+                      {isOpen ? (
                         <>Close guide <ChevronUp size={17} /></>
                       ) : (
                         <>Open guide <ArrowRight size={17} /></>
@@ -979,22 +969,20 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             );
           })
         ) : (
-          <div className="col-span-full py-16 text-center text-[#71827c] rounded-2xl border border-dashed border-[#cbd8d1] bg-white">
-            <BookOpen size={42} className="mx-auto mb-4 text-[#b9c8c0]" />
-            <p className="text-lg text-[#35544c]">No terms match this view.</p>
-            <p className="mt-2 text-sm">Try a broader search or clear the filters.</p>
-            <button
-              onClick={clearFilters}
-              className="mt-4 text-[#b85d13] font-semibold hover:underline"
-            >
-              Clear this view
-            </button>
+          <div className="glass sheen col-span-full py-16 px-6 text-center rounded-[28px]">
+            <BookOpen size={42} className="mx-auto mb-4 text-[#f0c878]" />
+            <p className="font-display text-[26px] text-[#fff8ec]">Not in the glossary yet</p>
+            <p className="mt-2 text-[15px] text-[rgba(246,236,220,0.72)] max-w-md mx-auto">Try a broader search, or ask Krusty. Every term bakers look for goes on the list for the next update.</p>
+            <div className="mt-6 flex justify-center gap-2 flex-wrap">
+              <button onClick={() => onAskKrusty(searchTerm || 'this term')} className="btn-gold h-11 px-5 rounded-full font-bold text-sm">Ask Krusty about it</button>
+              <button onClick={clearFilters} className="btn-glass h-11 px-5 rounded-full font-semibold text-sm">Clear this view</button>
+            </div>
           </div>
         )}
       </div>
 
-      <div className="mt-8 text-center text-[#91a098] text-xs print:hidden">
-        You have reached the end of this view.
+      <div className="mt-10 text-center text-[rgba(246,236,220,0.45)] text-xs print:hidden">
+        You&apos;ve reached the end of this view.
       </div>
       <BrandShelf />
     </div>
