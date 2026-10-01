@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
-import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS } from '../../../src/constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS, GRAIN_PHOTOS, MILLING_TERM_IDS } from '../../../src/constants';
+import { GrainFeature, HomeMillingFeature } from '../../../src/components/BrandFeatures';
 import { GlossaryItem } from '../../../src/types';
 import { SITE_URL, SITE_NAME, AUTHOR_NAME, SAME_AS, clip, jsonLd } from '../../../src/seo';
 import PronunciationButton from '../../../src/components/PronunciationButton';
@@ -298,6 +299,9 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                 </div>
               </section>
             )}
+
+            {GRAIN_PHOTOS[term.id] && <GrainFeature {...GRAIN_PHOTOS[term.id]} />}
+            {MILLING_TERM_IDS.includes(term.id) && <HomeMillingFeature compact />}
 
             {term.sourceRelations && term.sourceRelations.length > 0 && (
               <section aria-labelledby="deeper-h" className="flex flex-col gap-3">

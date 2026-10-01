@@ -78,6 +78,33 @@ export const AFFILIATE_LINKS = {
   bakingScale: { name: 'Brød & Taylor High-Capacity Baking Scale', url: 'https://collabs.shop/hvryn6' },
 };
 
+
+// Partner features. Grand Teton grain photos sit on the matching grain terms; NutriMill sits on the milling terms.
+export const GRAND_TETON_URL = 'https://www.ancientgrains.com/?utm_source=crust-and-crumb-glossary&utm_medium=referral&utm_campaign=grain-terms';
+export const NUTRIMILL_URL = 'https://nutrimill.com/Academy26';
+export const NUTRIMILL_CODE = 'ACADEMY26';
+
+export interface GrainPhoto { src: string; alt: string; product: string }
+export const GRAIN_PHOTOS: Record<string, GrainPhoto> = {
+  'soft-white-wheat': { src: '/partners/grand-teton-soft-white.webp', alt: 'Grand Teton organic soft white wheat berries', product: 'Organic Soft White Wheat Berries' },
+  'soft-wheat': { src: '/partners/grand-teton-soft-white.webp', alt: 'Grand Teton organic soft white wheat berries', product: 'Organic Soft White Wheat Berries' },
+  'hard-white-wheat': { src: '/partners/grand-teton-hard-white.webp', alt: 'Grand Teton organic hard white wheat berries', product: 'Organic Hard White Wheat Berries' },
+  'hard-red-spring-wheat': { src: '/partners/grand-teton-hard-red.webp', alt: 'Grand Teton organic Yecora Rojo hard red wheat berries', product: 'Organic Hard Red Wheat Berries (Yecora Rojo)' },
+  'hard-red-winter-wheat': { src: '/partners/grand-teton-hard-red.webp', alt: 'Grand Teton organic hard red wheat berries', product: 'Organic Hard Red Wheat Berries' },
+  'hard-wheat': { src: '/partners/grand-teton-hard-red.webp', alt: 'Grand Teton organic hard red wheat berries', product: 'Organic Hard Red Wheat Berries' },
+  'durum-wheat': { src: '/partners/grand-teton-durum.webp', alt: 'Grand Teton organic durum wheat berries', product: 'Organic Durum Wheat Berries' },
+  'rye-flour': { src: '/partners/grand-teton-rye.webp', alt: 'Grand Teton organic rye berries', product: 'Organic Rye Berries' },
+  'khorasan-wheat': { src: '/partners/grand-teton-khorasan.webp', alt: 'Grand Teton organic khorasan berries', product: 'Organic Khorasan Berries' },
+  'spelt-flour': { src: '/partners/grand-teton-spelt.webp', alt: 'Grand Teton organic spelt berries', product: 'Organic Spelt Berries' },
+  'emmer': { src: '/partners/grand-teton-emmer.webp', alt: 'Grand Teton organic emmer berries', product: 'Organic Emmer Berries' },
+  'farro': { src: '/partners/grand-teton-emmer.webp', alt: 'Grand Teton organic emmer berries, the usual farro', product: 'Organic Emmer Berries' },
+  'einkorn': { src: '/partners/grand-teton-einkorn.webp', alt: 'Grand Teton organic einkorn berries', product: 'Organic Einkorn Berries' },
+  'ancient-grain': { src: '/partners/grand-teton-khorasan.webp', alt: 'Grand Teton organic khorasan berries', product: 'Organic Ancient Grain Berries' },
+  'heritage-grain': { src: '/partners/grand-teton-emmer.webp', alt: 'Grand Teton organic emmer berries', product: 'Organic Heritage and Ancient Grains' },
+  'wheat-berry': { src: '/partners/grand-teton-hard-white.webp', alt: 'Grand Teton organic hard white wheat berries', product: 'Organic Wheat Berries' },
+};
+export const MILLING_TERM_IDS = ['home-milling', 'fresh-milled-flour', 'grain-mill', 'impact-mill', 'stone-mill', 'milling-temperature', 'particle-size', 'whole-wheat-flour', 'bran', 'extraction-rate', 'bolting', 'sifter', 'bolted-flour', 'high-extraction-flour', 'flour-freshness'];
+
 // External resource URLs
 export const EXTERNAL_URLS = {
   starterGuide: 'https://sourdough-starter-master-kxo6qxb.gamma.site/',

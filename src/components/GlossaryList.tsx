@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { WheatFilm, StorefrontFeature, BrandShelf } from './BrandFeatures';
+import { WheatFilm, StorefrontFeature, BrandShelf, HomeMillingFeature, GrainFeature } from './BrandFeatures';
 import PronunciationButton from './PronunciationButton';
 import {
   Search, Filter, Download, ExternalLink, BookOpen, ChevronDown, ChevronUp,
@@ -10,7 +10,7 @@ import {
   Wheat, Sprout, Wrench, Croissant, GraduationCap, Stethoscope
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS, SYMPTOMS } from '../constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS, SYMPTOMS, GRAIN_PHOTOS, MILLING_TERM_IDS } from '../constants';
 
 // Affiliate product mappings - keywords to products
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
@@ -702,6 +702,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
             return (
               <React.Fragment key={item.id}>
               {index === 6 && !searchTerm && activeFilterCount === 0 && selectedLetter === 'All' && <StorefrontFeature />}
+              {index === 0 && activePathId === 'fresh-milled-grains' && <div className="col-span-full"><HomeMillingFeature /></div>}
+              {index === 14 && !searchTerm && activeFilterCount === 0 && selectedLetter === 'All' && <div className="col-span-full"><HomeMillingFeature /></div>}
               <article
                 key={item.id}
                 id={item.id}
@@ -987,6 +989,12 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                         </div>
                       )}
                     </div>
+                    {GRAIN_PHOTOS[item.id] && (
+                      <div className="px-3 sm:px-5 pb-5"><GrainFeature {...GRAIN_PHOTOS[item.id]} /></div>
+                    )}
+                    {MILLING_TERM_IDS.includes(item.id) && (
+                      <div className="px-3 sm:px-5 pb-5"><HomeMillingFeature compact /></div>
+                    )}
                   </div>
                 )}
 

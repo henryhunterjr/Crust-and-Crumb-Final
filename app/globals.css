@@ -232,6 +232,31 @@ select {
   .brand-shelf-grid img { height: 140px; }
 }
 
+
+/* Partner features */
+.milling-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-radius: 30px; overflow: hidden; margin: 1.25rem 0; }
+.milling-photo { width: 100%; height: 100%; min-height: 380px; object-fit: cover; object-position: 35% center; }
+.milling-copy { padding: clamp(1.5rem, 4vw, 3.25rem); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.milling-copy h2 { font-family: var(--font-display); font-weight: 500; color: var(--ink); font-size: clamp(1.9rem, 3vw, 2.7rem); line-height: 1.06; letter-spacing: -.025em; margin: .8rem 0 1rem; }
+.milling-copy > p:not(.brand-eyebrow) { color: var(--ink-soft); line-height: 1.7; max-width: 460px; }
+.milling-copy strong { color: var(--gold); }
+.milling-feature-compact { margin: 0; border-radius: 26px; }
+.milling-feature-compact .milling-photo { min-height: 260px; }
+.milling-feature-compact .milling-copy h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
+.grain-feature { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 1.25rem; border-radius: 26px; padding: 1rem; align-items: center; }
+.grain-photo-link { display: block; border-radius: 18px; overflow: hidden; background: #fff; }
+.grain-photo { width: 100%; height: auto; display: block; }
+.grain-copy { position: relative; padding: .5rem .75rem .5rem 0; }
+.grain-seal { position: absolute; top: 0; right: 0; width: 72px; height: auto; opacity: .9; }
+.grain-copy h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink); font-size: 1.5rem; line-height: 1.15; margin: .4rem 5.5rem .6rem 0; }
+.grain-copy > p:not(.brand-eyebrow) { color: var(--ink-soft); line-height: 1.6; font-size: .95rem; margin-bottom: 1rem; }
+.grain-copy .btn-glass { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1.1rem; border-radius: 999px; font-weight: 700; font-size: .9rem; }
+@media (max-width: 767px) {
+  .milling-feature, .grain-feature { grid-template-columns: minmax(0, 1fr); }
+  .milling-photo { height: 320px; min-height: 0; }
+  .grain-copy { padding: 0 .25rem .5rem; }
+}
+
 /* Print stays light and ink-friendly */
 @media print {
   body { background: #fff; color: #111; }

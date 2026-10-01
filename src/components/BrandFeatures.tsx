@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { GRAND_TETON_URL, NUTRIMILL_URL, NUTRIMILL_CODE } from '../constants';
 
 export function WheatFilm() {
   const video = useRef<HTMLVideoElement>(null);
@@ -71,5 +72,39 @@ export function BrandShelf() {
         </a>
       </div>
     </section>
+  );
+}
+
+
+/** Henry at the mill: shown on the home page in the fresh-milled path and on milling term pages. */
+export function HomeMillingFeature({ compact = false }: { compact?: boolean }) {
+  return (
+    <aside className={`milling-feature glass-strong sheen print:hidden ${compact ? 'milling-feature-compact' : ''}`} aria-labelledby="milling-heading">
+      <img className="milling-photo" src="/partners/henry-nutrimill.webp" alt="Henry Hunter milling hard red wheat in his kitchen with a NutriMill grain mill" loading="lazy" width="1254" height="1254" />
+      <div className="milling-copy">
+        <p className="brand-eyebrow">Home milling</p>
+        <h2 id="milling-heading">Fresh flour changes the bread.</h2>
+        <p>Mill the berries the day you bake and you get flavor and nutrition a bag of flour lost months ago. I mill on a NutriMill, and Academy bakers save $20 with code <strong>{NUTRIMILL_CODE}</strong>.</p>
+        <a className="brand-link btn-gold" href={NUTRIMILL_URL} target="_blank" rel="noopener noreferrer sponsored" data-affiliate-link="NutriMill">Shop NutriMill, save $20 <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+  );
+}
+
+/** The grain itself: Grand Teton photo for the matching grain term. */
+export function GrainFeature({ src, alt, product }: { src: string; alt: string; product: string }) {
+  return (
+    <aside className="grain-feature glass sheen print:hidden" aria-label="Where to get this grain">
+      <a href={GRAND_TETON_URL} target="_blank" rel="noopener noreferrer sponsored" data-affiliate-link="Grand Teton Ancient Grains" className="grain-photo-link">
+        <img className="grain-photo" src={src} alt={alt} loading="lazy" width="900" height="900" />
+      </a>
+      <div className="grain-copy">
+        <img className="grain-seal" src="/partners/grand-teton-seal.png" alt="Proudly produced by Grand Teton Ancient Grains" loading="lazy" width="316" height="336" />
+        <p className="brand-eyebrow">Our grain partner</p>
+        <h3>{product}</h3>
+        <p>Grown and milled by a family farm in Teton, Idaho. Certified 100% organic, food grade, and ready to mill, sprout, or cook whole. This is the grain I bake with.</p>
+        <a className="btn-glass" href={GRAND_TETON_URL} target="_blank" rel="noopener noreferrer sponsored" data-affiliate-link="Grand Teton Ancient Grains">Shop Grand Teton Ancient Grains <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
   );
 }
