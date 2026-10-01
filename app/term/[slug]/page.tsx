@@ -3,6 +3,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
 import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias } from '../../../src/constants';
 import { GlossaryItem } from '../../../src/types';
+import { SITE_URL, SITE_NAME, AUTHOR_NAME, OG_IMAGE, SAME_AS, clip, jsonLd } from '../../../src/seo';
 import PronunciationButton from '../../../src/components/PronunciationButton';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Volume2, ChevronDown, AlertTriangle } from 'lucide-react';
 
@@ -63,34 +64,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const description = term.shortDefinition || term.definition.substring(0, 160);
+  const lede = term.shortDefinition || term.definition;
+  const description = clip(`${term.term}: ${lede} Clear definition, Henry's tips, and related bread baking terms.`);
+  const socialDescription = clip(term.shortDefinition || term.definition, 200);
+  const path = `/term/${term.id}`;
+  const title = `${term.term}: Bread Baking Definition`;
 
   return {
-    title: `${term.term} - Bread Baking Glossary | Crust and Crumb`,
-    description: `${term.term}: ${description}`,
-    keywords: `${term.term}, bread baking, ${term.category}, baking glossary, Henry Hunter`,
-    authors: [{ name: 'Henry Hunter' }],
+    title,
+    description,
+    keywords: [term.term, `${term.term} bread baking`, `${term.term} sourdough`, term.category, 'bread baking glossary', 'Henry Hunter'],
+    authors: [{ name: AUTHOR_NAME }],
+    alternates: { canonical: path },
     openGraph: {
-      title: `${term.term} - Bread Baking Term`,
-      description: description,
+      title: `${term.term} | Crust & Crumb Bread Baking Glossary`,
+      description: socialDescription,
+      url: path,
       type: 'article',
-      siteName: 'Crust and Crumb',
+      siteName: SITE_NAME,
       locale: 'en_US',
-      images: [
-        {
-          url: 'https://crust-and-crumb-tawny.vercel.app/Thumbnail.jpg',
-          width: 1200,
-          height: 630,
-          alt: `${term.term} - Crust and Crumb Glossary`,
-        }
-      ],
+      section: term.category,
+      authors: [AUTHOR_NAME],
+      images: [{ ...OG_IMAGE, alt: `${term.term} in the Crust & Crumb Interactive Bread Baking Glossary` }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${term.term} - Bread Baking Term`,
-      description: description,
-      creator: '@bakinggreatbread',
-      images: ['https://crust-and-crumb-tawny.vercel.app/Thumbnail.jpg'],
+      title: `${term.term} | Crust & Crumb Glossary`,
+      description: socialDescription,
+      images: [{ url: OG_IMAGE.url, alt: `${term.term} in the Crust & Crumb Interactive Bread Baking Glossary` }],
     },
   };
 }
@@ -126,9 +127,38 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
   const nextId = path && pathIndex < path.termIds.length - 1 ? path.termIds[pathIndex + 1] : undefined;
   const termName = (id?: string) => (id ? GLOSSARY_DATA.find(item => item.id === id)?.term || id : '');
   const dot = CATEGORY_DOTS[term.category.toLowerCase()] || '#f0c878';
+  const termUrl = `${SITE_URL}/term/${term.id}`;
+  const termJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTerm',
+      '@id': termUrl,
+      name: term.term,
+      description: term.definition,
+      url: termUrl,
+      termCode: term.id,
+      image: `${SITE_URL}${OG_IMAGE.url}`,
+      inDefinedTermSet: {
+        '@type': 'DefinedTermSet',
+        '@id': `${SITE_URL}/#glossary`,
+        name: 'Crust & Crumb Interactive Bread Baking Glossary',
+        url: SITE_URL,
+        author: { '@type': 'Person', name: AUTHOR_NAME, sameAs: SAME_AS },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE_NAME, item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: term.term, item: termUrl },
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen text-[#f6ecdc]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(termJsonLd) }} />
       <header className="sticky top-0 z-50 px-3 sm:px-6 pt-3 sm:pt-4">
         <div className="glass-strong sheen max-w-6xl mx-auto rounded-full pl-2 pr-2 sm:pl-3 py-2 flex items-center justify-between gap-3" style={{ background: 'rgba(30, 23, 15, 0.62)' }}>
           <Link href="/" className="flex items-center gap-3 rounded-full pr-2 min-w-0">
