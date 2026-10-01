@@ -28,11 +28,24 @@ def candidates(priority_ids):
     out.sort(key=lambda x: (x[0] not in priority_ids, -len(x[1])))
     return out
 
+def retarget_hub_links(content, linked):
+    """Existing links to the generic Bread Authority hub on a term word get pointed at the term page."""
+    def repl(m):
+        text = m.group(2)
+        key = re.sub(r'\W+', ' ', text.lower()).strip().rstrip('s')
+        for t in GLOSSARY:
+            for n in [t['term']] + list(t.get('aliases') or []):
+                if re.sub(r'\W+', ' ', n.lower()).strip().rstrip('s') == key and t['id'] not in linked:
+                    linked[t['id']] = text
+                    return f'<a href="{BASE}{t["id"]}">{text}</a>'
+        return m.group(0)
+    return re.sub(r'<a href="https://bakinggreatbread\.com/bread-authority/?">([^<]*)</a>'.replace('([^<]*)', '()([^<]*)'), repl, content)
+
 def link_post(content, priority_ids, max_links=10):
+    linked = {}
+    content = retarget_hub_links(content, linked)
     parts = TOKEN.split(content)
     stack = []
-    in_block_comment_skip = False
-    linked = {}
     existing = set(re.findall(r'crust-and-crumb[^"]*/term/([a-z0-9-]+)', content))
     cands = [(tid, n) for tid, n in candidates(priority_ids) if tid not in existing]
     for i, part in enumerate(parts):
@@ -55,21 +68,33 @@ def link_post(content, priority_ids, max_links=10):
         if any(t in NO_LINK_TAGS for t in stack): continue
         if not any(t in TEXT_OK_TAGS for t in stack): continue
         text = part
+        spans = []  # (start, end, tid) on the ORIGINAL text, non-overlapping
         for tid, name in cands:
             if tid in linked: continue
-            pat = re.compile(r'(?<![\w-])(' + re.escape(name) + r'(?:s|es)?)(?![\w-])', re.I)
-            m = pat.search(text)
-            if not m: continue
-            # don't link inside an all-caps heading-like strong line; handled by tag stack. Replace first occurrence.
-            start, end = m.span(1)
-            text = text[:start] + f'<a href="{BASE}{tid}">' + text[start:end] + '</a>' + text[end:]
-            linked[tid] = m.group(1)
             if len(linked) >= max_links: break
+            pat = re.compile(r'(?<![\w-])(' + re.escape(name) + r'(?:s|es)?)(?![\w-])', re.I)
+            m = None
+            for cand in pat.finditer(text):
+                before = text[:cand.start(1)]
+                if re.search(r'Crust (&amp;|&) $', before) or re.search(r'Recipe $', before):
+                    continue  # brand names: Crust & Crumb Academy, Recipe Pantry
+                s, e = cand.span(1)
+                if any(s < e2 and e > s2 for s2, e2, _ in spans):
+                    continue  # overlaps a link already placed in this text node
+                m = cand; break
+            if not m: continue
+            spans.append((m.start(1), m.end(1), tid))
+            linked[tid] = m.group(1)
+        out = []; pos = 0
+        for s, e, tid in sorted(spans):
+            out.append(text[pos:s]); out.append(f'<a href="{BASE}{tid}">' + text[s:e] + '</a>'); pos = e
+        out.append(text[pos:]); text = ''.join(out)
         parts[i] = text
     return ''.join(parts), linked
 
 if __name__ == '__main__':
     src = json.load(open(sys.argv[1]))
+    if src.get('allow_strong'): NO_LINK_TAGS -= {'strong', 'b'}  # posts written entirely in bold
     out, linked = link_post(src['content'], set(src.get('priority', [])), int(src.get('max', 10)))
     json.dump({'content': out, 'linked': linked}, open(sys.argv[2], 'w'))
     for k, v in linked.items(): print(f'{k:28s} <- "{v}"')
