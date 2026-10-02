@@ -1,0 +1,391 @@
+{
+  "installedCount": 76,
+  "uniqueFiles": 75,
+  "installed": [
+    {
+      "id": "flying-crust",
+      "term": "Flying Crust",
+      "filename": "flying-crust-bread-defect.jpg"
+    },
+    {
+      "id": "fools-crumb",
+      "term": "Fool's Crumb",
+      "filename": "fools-crumb-underfermented-sourdough.jpg"
+    },
+    {
+      "id": "tunneling",
+      "term": "Tunneling",
+      "filename": "bread-crumb-tunneling.jpg"
+    },
+    {
+      "id": "underproofed",
+      "term": "Underproofed",
+      "filename": "underproofed-sourdough-bread.jpg"
+    },
+    {
+      "id": "dense-crumb",
+      "term": "Dense Crumb",
+      "filename": "dense-sourdough-crumb.jpg"
+    },
+    {
+      "id": "blowout",
+      "term": "Blowout",
+      "filename": "sourdough-bread-blowout.jpg"
+    },
+    {
+      "id": "overproofed",
+      "term": "Overproofed",
+      "filename": "overproofed-sourdough.jpg"
+    },
+    {
+      "id": "gummy-crumb",
+      "term": "Gummy Crumb",
+      "filename": "gummy-sourdough-crumb.jpg"
+    },
+    {
+      "id": "pancaking",
+      "term": "Pancaking",
+      "filename": "sourdough-pancaking-flat-loaf.jpg"
+    },
+    {
+      "id": "aliquot-jar",
+      "term": "Aliquot Jar",
+      "filename": "aliquot-jar-bulk-fermentation.jpg"
+    },
+    {
+      "id": "autolyse",
+      "term": "Autolyse",
+      "filename": "autolyse-flour-water-dough.jpg"
+    },
+    {
+      "id": "baguette",
+      "term": "Baguette",
+      "filename": "artisan-sourdough-baguette.jpg"
+    },
+    {
+      "id": "bakers-percentage",
+      "term": "Baker's Percentage",
+      "filename": "bakers-percentage-bread-formula.jpg"
+    },
+    {
+      "id": "banneton",
+      "term": "Banneton",
+      "filename": "banneton-proofing-bread-dough.jpg"
+    },
+    {
+      "id": "bench-scraper",
+      "term": "Bench Scraper",
+      "filename": "bench-scraper-bread-dough.jpg"
+    },
+    {
+      "id": "batard",
+      "term": "Batard",
+      "filename": "sourdough-batard-bread.jpg"
+    },
+    {
+      "id": "boule",
+      "term": "Boule",
+      "filename": "sourdough-boule.jpg"
+    },
+    {
+      "id": "bulk-fermentation",
+      "term": "Bulk Fermentation",
+      "filename": "sourdough-bulk-fermentation.jpg"
+    },
+    {
+      "id": "braiding",
+      "term": "Braiding",
+      "filename": "braiding-challah-bread-dough.jpg"
+    },
+    {
+      "id": "coil-fold",
+      "term": "Coil Fold",
+      "filename": "coil-fold-sourdough-dough.jpg"
+    },
+    {
+      "id": "cold-proof",
+      "term": "Cold Proof",
+      "filename": "cold-proof-sourdough-refrigerator.jpg"
+    },
+    {
+      "id": "crumb",
+      "term": "Crumb",
+      "filename": "sourdough-bread-crumb-structure.jpg"
+    },
+    {
+      "id": "dutch-oven",
+      "term": "Dutch Oven",
+      "filename": "dutch-oven-sourdough-bread.jpg"
+    },
+    {
+      "id": "float-test",
+      "term": "Float Test",
+      "filename": "sourdough-starter-float-test.jpg"
+    },
+    {
+      "id": "digital-scale",
+      "term": "Digital Scale",
+      "filename": "digital-scale-bread-baking.jpg"
+    },
+    {
+      "id": "ear",
+      "term": "Ear",
+      "filename": "sourdough-bread-ear.jpg"
+    },
+    {
+      "id": "windowpane-test",
+      "term": "Windowpane Test",
+      "filename": "windowpane-test-bread-dough.jpg"
+    },
+    {
+      "id": "lamination",
+      "term": "Lamination",
+      "filename": "sourdough-lamination-technique.jpg"
+    },
+    {
+      "id": "poke-test",
+      "term": "Poke Test",
+      "filename": "sourdough-poke-test.jpg"
+    },
+    {
+      "id": "pre-shape",
+      "term": "Pre-Shape",
+      "filename": "preshaping-sourdough-bread.jpg"
+    },
+    {
+      "id": "probe-thermometer",
+      "term": "Probe Thermometer",
+      "filename": "bread-internal-temperature-thermometer.jpg"
+    },
+    {
+      "id": "scoring",
+      "term": "Scoring",
+      "filename": "scoring-sourdough-bread.jpg"
+    },
+    {
+      "id": "oven-spring",
+      "term": "Oven Spring",
+      "filename": "sourdough-oven-spring.jpg"
+    },
+    {
+      "id": "gluten",
+      "term": "Gluten",
+      "filename": "gluten-development-bread-dough.jpg"
+    },
+    {
+      "id": "proofing",
+      "term": "Proofing",
+      "filename": "bread-dough-final-proof.jpg"
+    },
+    {
+      "id": "shaping",
+      "term": "Shaping",
+      "filename": "shaping-sourdough-bread.jpg"
+    },
+    {
+      "id": "slap-and-fold",
+      "term": "Slap and Fold",
+      "filename": "slap-and-fold-bread-dough.jpg"
+    },
+    {
+      "id": "stretch-and-fold",
+      "term": "Stretch and Fold",
+      "filename": "stretch-and-fold-sourdough.jpg"
+    },
+    {
+      "id": "tangzhong",
+      "term": "Tangzhong",
+      "filename": "tangzhong-bread-technique.jpg"
+    },
+    {
+      "id": "oven-steam",
+      "term": "Steam (Baking)",
+      "filename": "steam-bread-baking.jpg"
+    },
+    {
+      "id": "biga",
+      "term": "Biga",
+      "filename": "biga-preferment.jpg"
+    },
+    {
+      "id": "poolish",
+      "term": "Poolish",
+      "filename": "poolish-preferment.jpg"
+    },
+    {
+      "id": "levain",
+      "term": "Levain",
+      "filename": "sourdough-levain-at-peak.jpg"
+    },
+    {
+      "id": "ancient-grain",
+      "term": "Ancient Grain",
+      "filename": "ancient-grains-wheat-varieties.jpg"
+    },
+    {
+      "id": "bran",
+      "term": "Bran",
+      "filename": "wheat-bran-fresh-milled-flour.jpg"
+    },
+    {
+      "id": "bolting",
+      "term": "Bolting",
+      "filename": "bolting-sifting-fresh-milled-flour.jpg"
+    },
+    {
+      "id": "aleurone-layer",
+      "term": "Aleurone Layer",
+      "filename": "wheat-kernel-aleurone-layer.jpg"
+    },
+    {
+      "id": "bolted-flour",
+      "term": "Bolted Flour",
+      "filename": "bolted-fresh-milled-flour.jpg"
+    },
+    {
+      "id": "stone-mill",
+      "term": "Stone Mill",
+      "filename": "stone-grain-mill.jpg"
+    },
+    {
+      "id": "hard-red-spring-wheat",
+      "term": "Hard Red Spring Wheat",
+      "filename": "hard-red-wheat-berries-flour.jpg"
+    },
+    {
+      "id": "hard-red-winter-wheat",
+      "term": "Hard Red Winter Wheat",
+      "filename": "hard-red-wheat-berries-flour.jpg"
+    },
+    {
+      "id": "rye-flour",
+      "term": "Rye Flour",
+      "filename": "rye-berries-fresh-milled-flour.jpg"
+    },
+    {
+      "id": "hard-white-wheat",
+      "term": "Hard White Wheat",
+      "filename": "hard-white-wheat-berries-flour.jpg"
+    },
+    {
+      "id": "sifter",
+      "term": "Sifter",
+      "filename": "fresh-milled-flour-sifter.jpg"
+    },
+    {
+      "id": "bench-rest",
+      "term": "Bench Rest",
+      "filename": "sourdough-bench-rest.jpg"
+    },
+    {
+      "id": "rubaud-method",
+      "term": "Rubaud Method",
+      "filename": "rubaud-method-sourdough.jpg"
+    },
+    {
+      "id": "stiff-starter",
+      "term": "Stiff Starter",
+      "filename": "stiff-sourdough-starter.jpg"
+    },
+    {
+      "id": "letter-fold",
+      "term": "Letter Fold",
+      "filename": "letter-fold-bread-dough.jpg"
+    },
+    {
+      "id": "stitching",
+      "term": "Stitching",
+      "filename": "sourdough-stitching-technique.jpg"
+    },
+    {
+      "id": "surface-tension",
+      "term": "Surface Tension",
+      "filename": "surface-tension-sourdough-shaping.jpg"
+    },
+    {
+      "id": "bassinage",
+      "term": "Bassinage",
+      "filename": "bassinage-bread-dough.jpg"
+    },
+    {
+      "id": "endosperm",
+      "term": "Endosperm",
+      "filename": "wheat-kernel-endosperm.jpg"
+    },
+    {
+      "id": "bagel",
+      "term": "Bagel",
+      "filename": "homemade-artisan-bagels.jpg"
+    },
+    {
+      "id": "babka",
+      "term": "Babka",
+      "filename": "chocolate-babka-bread.jpg"
+    },
+    {
+      "id": "bialy",
+      "term": "Bialy",
+      "filename": "bialy-onion-poppy-seed.jpg"
+    },
+    {
+      "id": "brioche",
+      "term": "Brioche",
+      "filename": "brioche-bread.jpg"
+    },
+    {
+      "id": "ciabatta",
+      "term": "Ciabatta",
+      "filename": "ciabatta-open-crumb.jpg"
+    },
+    {
+      "id": "challah",
+      "term": "Challah",
+      "filename": "braided-challah-bread.jpg"
+    },
+    {
+      "id": "focaccia",
+      "term": "Focaccia",
+      "filename": "artisan-focaccia-bread.jpg"
+    },
+    {
+      "id": "english-muffin",
+      "term": "English Muffin",
+      "filename": "homemade-english-muffin-crumb.jpg"
+    },
+    {
+      "id": "pita",
+      "term": "Pita",
+      "filename": "pita-bread-pocket.jpg"
+    },
+    {
+      "id": "naan",
+      "term": "Naan",
+      "filename": "homemade-naan-bread.jpg"
+    },
+    {
+      "id": "pretzels",
+      "term": "Soft Pretzels",
+      "filename": "soft-pretzel-bread.jpg"
+    },
+    {
+      "id": "milk-bread",
+      "term": "Milk Bread (Shokupan)",
+      "filename": "japanese-milk-bread-shokupan.jpg"
+    },
+    {
+      "id": "pumpernickel",
+      "term": "Pumpernickel",
+      "filename": "pumpernickel-rye-bread.jpg"
+    },
+    {
+      "id": "vollkornbrot",
+      "term": "Vollkornbrot",
+      "filename": "vollkornbrot-whole-rye-bread.jpg"
+    }
+  ],
+  "intentionallyMissing": [
+    "bread-dough-hydration-comparison.jpg",
+    "fresh-milled-flour-particle-size.jpg",
+    "bran-soaker-bread-baking.jpg"
+  ]
+}
