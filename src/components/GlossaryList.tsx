@@ -54,7 +54,7 @@ const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: st
   },
   {
     keywords: ['sourdough starter', 'levain', 'starter', 'mother', 'mother dough', 'wild yeast'],
-    product: { name: 'Sourhouse Goldie (code HBK26)', url: 'https://sourhouse.co/products/goldie-by-sourhouse-cooling-puck-white?ref=BAKINGGREATBREAD' }
+    product: { name: 'Sourhouse Goldie (code HBK26 · 10% off)', url: 'https://sourhouse.co?ref=BAKINGGREATBREAD' }
   }
 ];
 
@@ -838,7 +838,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                           key={idx}
                           href={tool.url}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="sponsored noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
                           className="btn-glass inline-flex items-center gap-1.5 px-3.5 h-9 rounded-full text-xs font-semibold"
                         >
@@ -920,7 +920,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                                     key={idx}
                                     href={tool.url}
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="sponsored noopener noreferrer"
                                     className="btn-glass inline-flex items-center gap-2 px-4 rounded-full text-sm font-semibold min-h-[44px]"
                                   >
                                     <ShoppingBag size={16} className="text-[#f0c878]" />
