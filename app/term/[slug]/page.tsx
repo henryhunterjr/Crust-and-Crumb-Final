@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
-import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS, GRAIN_PHOTOS, MILLING_TERM_IDS } from '../../../src/constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS, GRAIN_PHOTOS, MILLING_TERM_IDS, RELATED_TOOLS_BY_TERM } from '../../../src/constants';
 import { GrainFeature, HomeMillingFeature } from '../../../src/components/BrandFeatures';
 import { GlossaryItem } from '../../../src/types';
 import { SITE_URL, SITE_NAME, AUTHOR_NAME, SAME_AS, clip, jsonLd } from '../../../src/seo';
@@ -128,6 +128,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
       url: link.url
     }))
   ];
+  const relatedTools = RELATED_TOOLS_BY_TERM[term.id] || [];
 
   // Guided path context (prev / next) when this term sits on a path
   const path = LEARNING_PATHS.find(p => p.termIds.includes(term.id));
@@ -250,6 +251,33 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             <p className="text-[19px] sm:text-[20px] leading-[1.65] text-[rgba(246,236,220,0.9)]">
               {term.definition}
             </p>
+            {relatedTools.length > 0 && (
+              <section className="rounded-[24px] border border-[rgba(240,200,120,0.3)] bg-[rgba(240,200,120,0.08)] p-5 sm:p-6" aria-labelledby="related-tool-h">
+                <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#f0c878] mb-2">Put this into practice</div>
+                <h2 id="related-tool-h" className="font-display text-[23px] sm:text-[26px] font-medium text-[#fff8ec]">Related Tool</h2>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {relatedTools.map(tool => {
+                    const external = tool.url.startsWith('http');
+                    return (
+                      <a
+                        key={tool.url}
+                        href={tool.url}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noreferrer' : undefined}
+                        className="glass lift rounded-[18px] p-4 min-h-[44px]"
+                      >
+                        <div className="flex items-center gap-2 font-semibold text-[#fff8ec]">
+                          {tool.name}
+                          <ExternalLink size={14} className="text-[#f0c878]" aria-hidden="true" />
+                        </div>
+                        <p className="mt-1 text-[14px] leading-relaxed text-[rgba(246,236,220,0.72)]">{tool.blurb}</p>
+                        <span className="mt-2 inline-flex text-sm font-semibold text-[#f0c878]">{tool.cta} →</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
             {dates && (
               <p className="-mt-4 text-[13px] text-[rgba(246,236,220,0.55)]">
                 By {AUTHOR_NAME} · Updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time>
