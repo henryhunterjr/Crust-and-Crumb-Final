@@ -23,6 +23,8 @@ const pages: Record<string, { title: string; paragraphs: string[] }> = {
     'Henry’s articles, videos, and recipes are learning resources. Older publisher labels and inventory-derived related resources are separate from claim-specific references. Source checks do not imply endorsement by the named publishers.',
   ] },
   updates: { title: 'Glossary updates', paragraphs: [
+    'October 2, 2026: related-term link audit passed across all 279 public entries. No entry links to itself, and no related-term ID points to a missing public term.',
+    'October 2, 2026: crawl baseline passed. The sitemap lists all 279 canonical term pages; robots.txt points to the sitemap; term pages are indexable and render unique term titles/descriptions plus WebPage and DefinedTerm structured data. Google Search Console indexing confirmation is still pending.',
     'October 2, 2026: removed the NEW badge from Bread Analyzer while AI bake analysis is paused; the troubleshooting guides remain available and the pause stays documented here until analysis returns.',
     'October 2, 2026: launched Starter & Levain Studio as the first featured Baker’s Tool and connected relevant starter, levain, fermentation, yeast, milling, hydration, and baker’s-percentage entries to the tools that help put those definitions into practice.',
     'October 2, 2026: formalized the glossary correction inbox under Henry Hunter. Every correction receives a reply within 7 days, with the term URL and supporting reference requested in the message.',
