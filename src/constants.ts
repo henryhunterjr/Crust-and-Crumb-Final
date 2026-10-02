@@ -106,6 +106,18 @@ export const GRAIN_PHOTOS: Record<string, GrainPhoto> = {
 export const MILLING_TERM_IDS = ['home-milling', 'fresh-milled-flour', 'grain-mill', 'impact-mill', 'stone-mill', 'milling-temperature', 'particle-size', 'whole-wheat-flour', 'bran', 'extraction-rate', 'bolting', 'sifter', 'bolted-flour', 'high-extraction-flour', 'flour-freshness'];
 
 
+// Featured Baker's Tool: keep this separate from the regular grouped links so it can receive flagship treatment.
+export const FEATURED_TOOL = {
+  eyebrow: 'Featured Tool',
+  name: 'Starter & Levain Studio',
+  headline: 'Know your starter. Build your levain.',
+  blurb: 'Build the exact levain you need, feed your starter by ratio, plan multi-stage builds, scale your dough, and keep a peak journal that helps you learn your starter’s own rhythm.',
+  cta: 'Open Starter & Levain Studio',
+  url: 'https://bakinggreatbread.com/starter-levain-studio',
+  image: '/brand/starter-levain-studio.webp',
+  imageAlt: 'Starter & Levain Studio from Crust & Crumb Academy, with starter jar, bread, and planning tools',
+} as const;
+
 // Baker's Tools drawer: Henry's tools and resources, grouped the way a baker reaches for them.
 export interface ToolLink { name: string; blurb: string; url: string }
 export interface ToolGroup { id: string; title: string; blurb: string; links: ToolLink[] }
