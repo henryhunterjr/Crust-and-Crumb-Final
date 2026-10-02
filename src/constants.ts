@@ -165,6 +165,86 @@ export const TOOL_GROUPS: ToolGroup[] = [
   },
 ];
 
+
+// Contextual tools: only surface a tool when it helps the baker act on the definition they are reading.
+export interface RelatedToolLink { name: string; blurb: string; url: string; cta: string }
+
+export const RELATED_TOOL_LIBRARY = {
+  bakersPercentage: {
+    name: "Baker's Percentage Calculator",
+    blurb: "Put the percentages to work. Enter your flour and hydration and turn the formula into practical dough weights.",
+    url: '/?tool=calculator',
+    cta: 'Open calculator',
+  },
+  starterStudio: {
+    name: 'Starter & Levain Studio',
+    blurb: 'Build a levain, feed your starter by ratio, plan multiple stages, scale a dough, and learn your own peak timing.',
+    url: FEATURED_TOOL.url,
+    cta: 'Open Starter & Levain Studio',
+  },
+  fermentationCompass: {
+    name: 'Fermentation Compass',
+    blurb: 'Use dough temperature and starter amount to plan a practical bulk-fermentation window.',
+    url: 'https://skoo.ly/fermentation-compass',
+    cta: 'Open Fermentation Compass',
+  },
+  yeastConverter: {
+    name: 'Sourdough to Yeast Converter',
+    blurb: 'Convert a bread formula between sourdough starter and commercial yeast without doing the math by hand.',
+    url: 'https://skoo.ly/sourdough-converter',
+    cta: 'Open converter',
+  },
+  mill: {
+    name: 'The Mill',
+    blurb: 'Match grains, milling choices, and fresh-milled recipes to the flour you are working with.',
+    url: 'https://skoo.ly/the-mill',
+    cta: 'Open The Mill',
+  },
+  starterGuide: {
+    name: 'Sourdough Starter Guide',
+    blurb: 'Use the starter guide for maintenance, recovery, feeding, and common starter problems.',
+    url: 'https://skoo.ly/starter-guide',
+    cta: 'Open Starter Guide',
+  },
+} satisfies Record<string, RelatedToolLink>;
+
+export const RELATED_TOOLS_BY_TERM: Record<string, RelatedToolLink[]> = {
+  'bakers-percentage': [RELATED_TOOL_LIBRARY.bakersPercentage],
+  hydration: [RELATED_TOOL_LIBRARY.bakersPercentage],
+
+  'sourdough-starter': [RELATED_TOOL_LIBRARY.starterStudio, RELATED_TOOL_LIBRARY.starterGuide],
+  levain: [RELATED_TOOL_LIBRARY.starterStudio],
+  feeding: [RELATED_TOOL_LIBRARY.starterStudio, RELATED_TOOL_LIBRARY.starterGuide],
+  'feeding-ratio': [RELATED_TOOL_LIBRARY.starterStudio],
+  peak: [RELATED_TOOL_LIBRARY.starterStudio],
+  'stiff-starter': [RELATED_TOOL_LIBRARY.starterStudio],
+  'young-levain': [RELATED_TOOL_LIBRARY.starterStudio],
+  hooch: [RELATED_TOOL_LIBRARY.starterGuide],
+  'overripe-starter': [RELATED_TOOL_LIBRARY.starterGuide],
+  'float-test': [RELATED_TOOL_LIBRARY.starterGuide],
+
+  fermentation: [RELATED_TOOL_LIBRARY.fermentationCompass],
+  'bulk-fermentation': [RELATED_TOOL_LIBRARY.fermentationCompass],
+  'bulk-rise-target': [RELATED_TOOL_LIBRARY.fermentationCompass],
+  'desired-dough-temperature': [RELATED_TOOL_LIBRARY.fermentationCompass],
+
+  yeast: [RELATED_TOOL_LIBRARY.yeastConverter],
+  'active-dry-yeast': [RELATED_TOOL_LIBRARY.yeastConverter],
+  'instant-yeast': [RELATED_TOOL_LIBRARY.yeastConverter],
+
+  'grain-mill': [RELATED_TOOL_LIBRARY.mill],
+  'home-milling': [RELATED_TOOL_LIBRARY.mill],
+  'fresh-milled-flour': [RELATED_TOOL_LIBRARY.mill],
+  'wheat-berry': [RELATED_TOOL_LIBRARY.mill],
+  'ancient-grain': [RELATED_TOOL_LIBRARY.mill],
+  'stone-mill': [RELATED_TOOL_LIBRARY.mill],
+  'impact-mill': [RELATED_TOOL_LIBRARY.mill],
+  'particle-size': [RELATED_TOOL_LIBRARY.mill],
+  bran: [RELATED_TOOL_LIBRARY.mill],
+  bolting: [RELATED_TOOL_LIBRARY.mill],
+  sifter: [RELATED_TOOL_LIBRARY.mill],
+};
+
 // External resource URLs
 export const EXTERNAL_URLS = {
   starterGuide: 'https://sourdough-starter-master-kxo6qxb.gamma.site/',
