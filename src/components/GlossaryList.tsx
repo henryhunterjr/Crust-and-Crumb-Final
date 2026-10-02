@@ -824,6 +824,12 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     </div>
                   )}
 
+                  {item.contentCheckedOn && !quickMode && (
+                    <p className="mt-3 text-[12px] text-[rgba(246,236,220,0.5)]">
+                      Sources last checked <time dateTime={item.contentCheckedOn}>{new Date(`${item.contentCheckedOn}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                    </p>
+                  )}
+
                   {/* Show affiliate products in collapsed view too */}
                   {!quickMode && allAffiliateTools.length > 0 && !isOpen && (
                     <div className="mt-5 flex flex-wrap gap-2">
