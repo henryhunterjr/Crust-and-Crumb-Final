@@ -165,7 +165,7 @@ Return this exact JSON structure:
   },
   "topFixes": ["Fix #1 in 1 sentence", "Fix #2 in 1 sentence", "Fix #3 in 1 sentence"],
   "nextBakeTips": ["Tip #1 specific to their bake", "Tip #2 specific to their bake"],
-  "encouragement": "One sentence in Henry Hunter's voice — warm, direct, no fluff."${hasImage ? ',\n  "photoFeedback": "2-3 sentences of visual analysis based on the uploaded photo."' : ''}
+  "encouragement": "One sentence of plain encouraging AI guidance; do not attribute it to Henry."${hasImage ? ',\n  "photoFeedback": "2-3 sentences of visual analysis based on the uploaded photo."' : ''}
 }`;
 }
 
@@ -375,7 +375,7 @@ ${imageDataUrl ? `<img src="${imageDataUrl}" alt="Your bread" class="bread-photo
     <span>Interior: <strong>${report.interior.score}/50</strong></span>
   </div>
 </div>
-<div class="quote">"${report.encouragement}"<div class="attr">— Henry Hunter</div></div>
+<div class="quote">"${report.encouragement}"<div class="attr">— AI baking guidance</div></div>
 ${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis</h3><p>${report.photoFeedback}</p></div>` : ''}
 <div class="section"><h3>Exterior Feedback</h3><p>${report.exterior.feedback}</p></div>
 <div class="section"><h3>Interior Feedback</h3><p>${report.interior.feedback}</p></div>
@@ -438,7 +438,7 @@ ${report.photoFeedback ? `<div class="section photo-section"><h3>Photo Analysis<
         </div>
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 italic text-amber-900 text-sm">
           &ldquo;{report.encouragement}&rdquo;
-          <p className="text-xs text-amber-600 mt-1 not-italic font-semibold">— Henry Hunter</p>
+          <p className="text-xs text-amber-600 mt-1 not-italic font-semibold">— AI baking guidance</p>
         </div>
 
         {report.photoFeedback && (

@@ -34,7 +34,7 @@ export default function GlossaryApp() {
     {
       id: 'welcome',
       role: 'model',
-      text: "Hey there, baker! I'm Krusty, your friendly bread concierge. I'm here to help you on your sourdough journey using wisdom from Henry's book. Ask me about techniques, schedules, or troubleshooting. You've got this!",
+      text: "I'm Krusty, your bread glossary helper. Ask about a term or technique. If AI conversation is unavailable, I'll show matching glossary definitions and links.",
       timestamp: Date.now()
     }
   ]);
