@@ -5,6 +5,11 @@ import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS, GRAIN_P
 import { GrainFeature, HomeMillingFeature } from '../../../src/components/BrandFeatures';
 import { GlossaryItem } from '../../../src/types';
 import { SITE_URL, SITE_NAME, AUTHOR_NAME, SAME_AS, clip, jsonLd } from '../../../src/seo';
+import VideoEmbed from '../../../src/components/VideoEmbed';
+import TERM_DATES from '../../../src/data/term-dates.json';
+
+const YT_ID = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+const formatDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 import PronunciationButton from '../../../src/components/PronunciationButton';
 import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Volume2, ChevronDown, AlertTriangle } from 'lucide-react';
 
@@ -129,7 +134,24 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
   const termName = (id?: string) => (id ? GLOSSARY_DATA.find(item => item.id === id)?.term || id : '');
   const dot = CATEGORY_DOTS[term.category.toLowerCase()] || '#f0c878';
   const termUrl = `${SITE_URL}/term/${term.id}`;
+  const allRelations = term.sourceRelations || [];
+  const seenVideos = new Set<string>();
+  const videos = allRelations
+    .map(r => ({ r, id: r.url?.match(YT_ID)?.[1] }))
+    .filter((v): v is { r: typeof allRelations[number]; id: string } => !!v.id && !seenVideos.has(v.id) && !!seenVideos.add(v.id));
+  const readings = allRelations.filter(r => !r.url || !YT_ID.test(r.url));
+  const dates = (TERM_DATES as Record<string, { published: string; modified: string }>)[term.id];
   const termJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${termUrl}#webpage`,
+      url: termUrl,
+      name: `${term.term}: bread baking definition`,
+      mainEntity: { '@id': termUrl },
+      author: { '@type': 'Person', name: AUTHOR_NAME, sameAs: SAME_AS },
+      ...(dates ? { datePublished: dates.published, dateModified: dates.modified } : {}),
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'DefinedTerm',
@@ -229,6 +251,11 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             <p className="text-[19px] sm:text-[20px] leading-[1.65] text-[rgba(246,236,220,0.9)]">
               {term.definition}
             </p>
+            {dates && (
+              <p className="-mt-4 text-[13px] text-[rgba(246,236,220,0.55)]">
+                By {AUTHOR_NAME} · Updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time>
+              </p>
+            )}
 
             {term.henrysTips && term.henrysTips.length > 0 && (
               <section className="flex gap-4 sm:gap-5 rounded-[26px] p-5 sm:p-6 bg-[rgba(240,200,120,0.1)] border border-[rgba(240,200,120,0.32)] shadow-[inset_0_1px_0_rgba(255,236,190,0.22)]" aria-labelledby="tips-h">
@@ -303,11 +330,22 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             {GRAIN_PHOTOS[term.id] && <GrainFeature {...GRAIN_PHOTOS[term.id]} />}
             {MILLING_TERM_IDS.includes(term.id) && <HomeMillingFeature compact />}
 
-            {term.sourceRelations && term.sourceRelations.length > 0 && (
+            {videos.length > 0 && (
+              <section aria-labelledby="watch-h" className="flex flex-col gap-3">
+                <h2 id="watch-h" className="font-display font-medium text-[28px] sm:text-[32px] tracking-[-0.02em] text-[#fff8ec]">Watch it at the bench</h2>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  {videos.slice(0, 4).map(({ r, id }) => (
+                    <VideoEmbed key={id} id={id} title={r.title} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {readings.length > 0 && (
               <section aria-labelledby="deeper-h" className="flex flex-col gap-3">
                 <h2 id="deeper-h" className="font-display font-medium text-[28px] sm:text-[32px] tracking-[-0.02em] text-[#fff8ec]">Go deeper</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {term.sourceRelations.map((resource, index) => (
+                  {readings.map((resource, index) => (
                     <div key={`${resource.sourceSystem}-${resource.title}-${index}`} className="glass rounded-[20px] p-4">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
                         <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#f0c878]">{resource.sourceSystem}</span>

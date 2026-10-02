@@ -1,0 +1,1170 @@
+{
+ "acetic-acid": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "active-dry-yeast": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "aged-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "aleurone-layer": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "aliquot-jar": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "all-purpose-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "amaranth": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "amylase": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "ancient-grain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "ancient-grains": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "ascorbic-acid": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "ash-content": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "autolyse": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "babka": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bagel": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "baguette": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "baker-s-percentage": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bakers-couche": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bakers-percentage": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "baking-at-altitude": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "baking-powder": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "baking-soda": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "baking-steel": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "baking-steel-stone": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "baking-stone": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "banneton": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "banneton-liner": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "banneton-sticking": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "barley": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bassinage": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "batard": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "belly": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bench-rest": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bench-scraper": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bialy": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "biga": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "blisters": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "blowout": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bolted-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bolting": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "boule": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bowl-scraper": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "braiding": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bran": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bran-sharpness": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bran-soaker": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bread-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bread-knife": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bread-storage-and-freezing": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bread-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "brine": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "brioche": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bruhstuck": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "buckwheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "bulk-fermentation": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "bulk-rise-target": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "buttermilk": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "caramelization": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cast-iron-skillet": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "challah": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "ciabatta": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "clear-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cloche": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "coil-fold": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "cold-bulk": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cold-proof": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "colomba": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "combo-cooker": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "cooling-rack": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "cornmeal": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cottage-food-law": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cracked-grain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "croissant": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "cross-score": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "crumb": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "crust": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "damaged-starch": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "danish-dough-whisk": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "degassing": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "dense-crumb": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "desired-dough-temperature": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "detroit-style-pizza": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "diastatic-malt": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "digital-scale": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "discard": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "docking": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "dough-container": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "dough-sheeter": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "durum-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "dutch-oven": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "ear": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "egg-wash": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "einkorn": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "elasticity": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "emmer": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "emmer-farro": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "endosperm": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "english-muffin": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "enriched-dough": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "extensibility": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "extraction-rate": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "falling-number": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "farro": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "feeding": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "feeding-ratio": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "fermentation": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "fermentolyse": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "float-test": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "flour-freshness": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "flour-strength": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "flying-crust": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "focaccia": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "fonio": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "fools-crumb": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "fougasse": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "fresh-milled-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "fresh-yeast": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "friction-factor": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "gelatinization": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "germ": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "gluten": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "gluten-free": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "gluten-quality": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "grain-mill": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "gummy-crumb": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "hard-red-spring-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hard-red-winter-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hard-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hard-white-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hearth-loaf": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "heritage-grain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "high-extraction-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hoagie-roll": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "home-milling": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "hooch": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "hydration": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "identity-preserved-grain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "impact-mill": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "inclusions": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "infrared-thermometer": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "injera": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "inoculation": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "instant-yeast": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "intensive-mix": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "kaiser-roll": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "khorasan-kamut": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "khorasan-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "kneading": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "kochstuck": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lactic-acid": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lactic-acid-bacteria": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lame": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "laminated-dough": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lamination": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "landrace-grain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lava-rocks": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "leaf-score": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "lean-dough": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "letter-fold": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "levain": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "lievito-madre": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "lievito-madre-pasta-madre": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "low-carb-diabetic-baking": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "lye": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "maillard-reaction": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "maltose": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "marquis-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "miche": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "middlings": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "milk-bread": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "millet": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "milling-temperature": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "modern-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "mother": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "naan": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "neapolitan-pizza": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "new-york-style-pizza": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "non-diastatic-malt": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "oats": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "osmotolerant-yeast": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "oven-spring": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "oven-steam": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "oven-thermometer": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "overmixing": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "overproofed": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "overripe-starter": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "p-l-ratio": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pain-de-campagne": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pain-de-mie": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "pale-crust": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pancaking": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "panettone": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "par-baking": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "particle-size": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pate-fermentee": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "patent-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "peak": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pentosans": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "ph": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pita": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pizza-dough-balls": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "pizza-peel": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "pizza-stone-steel": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "poke-test": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "poolish": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "pre-shape": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "preferment": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pretzels": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "probe-thermometer": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "proofing": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "proofing-box": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "protease": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "protein-content": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pseudocereal": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "pullman-pan": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "pumpernickel": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "quellstuck": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "quick-bread": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "quinoa": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "red-fife": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "retarding": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "retrogradation": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "rice-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "ripe-starter": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "roasted-garlic": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "rolling-pin": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "rope": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "rouge-de-bordeaux": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "rubaud-method": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "rye-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "salt": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "scald": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "scalding": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "scoring": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "seam": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "semolina-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "shaggy-mass": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "shaping": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "sifter": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "slap-and-fold": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "soaker": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "soft-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "soft-white-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sonora-wheat": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sorghum": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sourdough": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sourdough-discard": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "sourdough-for-beginners": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sourdough-starter": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "spelt-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "spiral-mixer": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sponge": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "sprout-damage": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "sprouted-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "stand-mixer": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "starch-attack": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "starter-jar": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "stiff-starter": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "stitching": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "stone-mill": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "straight-grade-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "stretch-and-fold": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "surface-tension": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "tangzhong": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "teff": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "tempering": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "tenacity": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "tension-pull": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "terroir": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "titratable-acidity": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "triticale": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "tunneling": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "turkey-red": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "turning-peel": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "type-00-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "type-flour": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "underfermented": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "underproofed": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "vital-wheat-gluten": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "vollkornbrot": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "w-value": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "wheat-berry": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "wheat-class": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "wheat-stalk-score": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "whole-wheat-flour": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "wholesale-pricing": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "windowpane-test": {
+  "published": "2025-12-01",
+  "modified": "2026-10-01"
+ },
+ "yeast": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "yeast-water": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "young-levain": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "yudane": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ },
+ "zest": {
+  "published": "2026-10-01",
+  "modified": "2026-10-01"
+ }
+}
