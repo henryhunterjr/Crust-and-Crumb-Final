@@ -3,6 +3,8 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { WheatFilm, StorefrontFeature, BrandShelf, HomeMillingFeature, GrainFeature } from './BrandFeatures';
 import PronunciationButton from './PronunciationButton';
+import { normalizeSearch, searchScore } from '../search';
+import TermEvidence from './TermEvidence';
 import {
   Search, Filter, Download, ExternalLink, BookOpen, ChevronDown, ChevronUp,
   CheckCircle, MessageSquare, AlertTriangle, Lightbulb, History, Calculator,
@@ -133,6 +135,8 @@ interface GlossaryListProps {
 
 const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, onToolsClick, resetTrigger }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [viewReady, setViewReady] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(36);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
   const [activePathId, setActivePathId] = useState<string | null>(null);
@@ -142,6 +146,35 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   const [activeTab, setActiveTab] = useState<'overview' | 'expert' | 'deep' | 'sources' | 'recipes'>('overview');
   const [selectedLetter, setSelectedLetter] = useState<string>('All');
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const restore = () => {
+      const params = new URLSearchParams(window.location.search);
+      setSearchTerm(params.get('q') || '');
+      setSelectedCategory(params.get('category') || 'All');
+      setSelectedDifficulty(params.get('level') || 'All');
+      setSelectedLetter(params.get('letter') || 'All');
+      setActivePathId(params.get('path'));
+      setActiveSymptomId(params.get('symptom'));
+      setQuickMode(params.get('quick') === '1');
+      setViewReady(true);
+    };
+    restore();
+    window.addEventListener('popstate', restore);
+    return () => window.removeEventListener('popstate', restore);
+  }, []);
+
+  useEffect(() => {
+    if (!viewReady) return;
+    const url = new URL(window.location.href);
+    const values: Record<string, string | null> = { q: searchTerm, category: selectedCategory === 'All' ? null : selectedCategory,
+      level: selectedDifficulty === 'All' ? null : selectedDifficulty, letter: selectedLetter === 'All' ? null : selectedLetter,
+      path: activePathId, symptom: activeSymptomId, quick: quickMode ? '1' : null };
+    Object.entries(values).forEach(([key, value]) => value ? url.searchParams.set(key, value) : url.searchParams.delete(key));
+    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+    try { sessionStorage.setItem('glossary-view', url.pathname + url.search + '#results'); } catch { /* optional */ }
+    setVisibleCount(36);
+  }, [searchTerm, selectedCategory, selectedDifficulty, selectedLetter, activePathId, activeSymptomId, quickMode, viewReady]);
 
   // Persisted state
   const [learnedTerms, setLearnedTerms] = useState<Set<string>>(new Set());
@@ -159,10 +192,10 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   }, []);
 
   useEffect(() => {
-    const saved = localStorage.getItem('learnedTerms');
-    if (saved) {
-      setLearnedTerms(new Set(JSON.parse(saved)));
-    }
+    try {
+      const saved = JSON.parse(localStorage.getItem('learnedTerms') || '[]');
+      if (Array.isArray(saved)) setLearnedTerms(new Set(saved.filter(id => VALID_TERM_IDS.has(id))));
+    } catch { /* Keep browsing available when storage is blocked or damaged. */ }
   }, []);
 
   // Reset all filters when resetTrigger changes
@@ -185,7 +218,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
     if (newSet.has(id)) newSet.delete(id);
     else newSet.add(id);
     setLearnedTerms(newSet);
-    localStorage.setItem('learnedTerms', JSON.stringify(Array.from(newSet)));
+    try { localStorage.setItem('learnedTerms', JSON.stringify(Array.from(newSet))); } catch { /* optional */ }
   };
 
   // Handle expand toggle with proper mobile support
@@ -250,8 +283,12 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
   // Calculate which letters have terms
   const lettersWithTerms = useMemo(() => {
     const letters = new Set<string>();
-    GLOSSARY_DATA.forEach(item => {
-      const firstLetter = item.term.charAt(0).toUpperCase();
+    GLOSSARY_DATA.filter(item => searchScore(item, searchTerm) > 0 &&
+      (selectedCategory === 'All' || item.category === selectedCategory) &&
+      (selectedDifficulty === 'All' || item.difficulty === selectedDifficulty) &&
+      (!activePathId || LEARNING_PATHS.find(p => p.id === activePathId)?.termIds.includes(item.id)) &&
+      (!activeSymptomId || SYMPTOMS.find(p => p.id === activeSymptomId)?.termIds.includes(item.id))).forEach(item => {
+      const firstLetter = normalizeSearch(item.term).charAt(0).toUpperCase();
       // Handle numbers (like "1:1:1")
       if (/[0-9]/.test(firstLetter)) {
         letters.add('#');
@@ -260,7 +297,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       }
     });
     return letters;
-  }, []);
+  }, [searchTerm, selectedCategory, selectedDifficulty, activePathId, activeSymptomId]);
 
   const filteredData = useMemo(() => {
     let data = GLOSSARY_DATA;
@@ -285,20 +322,18 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         data = data.filter(item => /^[0-9]/.test(item.term));
       } else {
         data = data.filter(item =>
-          item.term.charAt(0).toUpperCase() === selectedLetter
+          normalizeSearch(item.term).charAt(0).toUpperCase() === selectedLetter
         );
       }
     }
 
     return data.filter((item) => {
-      const matchesSearch =
-        item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.definition.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (item.aliases || []).some(alias => alias.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesSearch = searchScore(item, searchTerm) > 0;
       const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
       const matchesDifficulty = selectedDifficulty === 'All' || item.difficulty === selectedDifficulty;
       return matchesSearch && matchesCategory && matchesDifficulty;
     }).sort((a, b) => {
+      if (normalizeSearch(searchTerm)) { const difference = searchScore(b, searchTerm) - searchScore(a, searchTerm); if (difference) return difference; }
       // Paths keep their teaching order; everything else is A to Z
       const path = activePathId ? LEARNING_PATHS.find(p => p.id === activePathId) : undefined;
       if (path) return path.termIds.indexOf(a.id) - path.termIds.indexOf(b.id);
@@ -667,7 +702,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         )}
       </section>
 
-      <nav className="glass rounded-[20px] p-1.5 mb-8 print:hidden overflow-x-auto hide-scrollbar" aria-label="Browse by letter">
+      <nav className="glass rounded-[20px] p-1.5 mb-8 print:hidden overflow-x-auto hide-scrollbar" aria-label="Filter results by starting letter">
         <div className="flex gap-1 min-w-max lg:min-w-0 lg:justify-between">
           {ALPHABET.map(letter => {
             const hasTerms = letter === 'All' || lettersWithTerms.has(letter);
@@ -685,7 +720,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
       {/* Grid */}
       <div className={`grid grid-cols-1 ${quickMode ? 'md:grid-cols-2' : 'lg:grid-cols-1 xl:grid-cols-2'} gap-5 print:block print:space-y-6`}>
         {filteredData.length > 0 ? (
-          filteredData.map((item, index) => {
+          filteredData.slice(0, visibleCount).map((item, index) => {
             // Get affiliate products for this term
             const affiliateProducts = getAffiliateProducts(item.id, item.term, item.definition);
             // Combine with existing affiliate tools
@@ -729,7 +764,6 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     </div>
                     <button
                       onClick={(e) => toggleLearned(item.id, e)}
-                      onTouchEnd={(e) => toggleLearned(item.id, e)}
                       className={`transition-colors rounded-2xl min-w-[44px] min-h-[44px] flex items-center justify-center border ${learnedTerms.has(item.id) ? 'text-[#b5d46a] bg-[rgba(181,212,106,0.15)] border-[rgba(181,212,106,0.45)]' : 'text-[rgba(246,236,220,0.45)] border-transparent hover:text-[#b5d46a] hover:bg-white/5'}`}
                       title={learnedTerms.has(item.id) ? 'Mark as not learned' : 'Mark as learned'}
                       aria-label={learnedTerms.has(item.id) ? `Mark ${item.term} as not learned` : `Mark ${item.term} as learned`}
@@ -955,6 +989,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
 
                       {activeTab === 'sources' && item.sourceRelations && (
                         <div className="space-y-3">
+                          <TermEvidence term={item} />
                           <div>
                             <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec]"><ExternalLink size={16} className="text-[#f0c878]" /> Go deeper</h4>
                             <p className="text-sm text-[rgba(246,236,220,0.62)] mt-1">Articles, videos, and recipes that cover this term.</p>
@@ -1003,14 +1038,13 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                   <div className="flex items-center gap-1 overflow-x-auto hide-scrollbar -mx-1">
                     {validRelatedTerms.length > 0 && <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[rgba(246,236,220,0.5)] shrink-0 mr-1">Related</span>}
                     {validRelatedTerms.map(tid => (
-                      <button
+                      <a
                         key={tid}
-                        onClick={(e) => handleRelatedTermClick(tid, e)}
-                        onTouchEnd={(e) => handleRelatedTermClick(tid, e)}
+                        href={`/term/${tid}`}
                         className="text-[13px] text-[rgba(246,236,220,0.85)] hover:text-[#f0c878] whitespace-nowrap px-3 rounded-full hover:bg-white/5 min-h-[44px] flex items-center transition-colors"
                       >
                         {TERM_LOOKUP.get(tid) || tid}
-                      </button>
+                      </a>
                     ))}
                   </div>
 
@@ -1027,7 +1061,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                     )}
                     <button
                       onClick={(e) => handleExpandToggle(item.id, e)}
-                      onTouchEnd={(e) => handleExpandToggle(item.id, e)}
+
                       aria-expanded={isOpen}
                       className="btn-gold text-sm font-bold flex items-center gap-1.5 px-5 rounded-full min-h-[44px] min-w-[132px] justify-center"
                     >
@@ -1046,8 +1080,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         ) : (
           <div className="glass sheen col-span-full py-16 px-6 text-center rounded-[28px]">
             <BookOpen size={42} className="mx-auto mb-4 text-[#f0c878]" />
-            <p className="font-display text-[26px] text-[#fff8ec]">Not in the glossary yet</p>
-            <p className="mt-2 text-[15px] text-[rgba(246,236,220,0.72)] max-w-md mx-auto">Try a broader search, or ask Krusty. Every term bakers look for goes on the list for the next update.</p>
+            <p className="font-display text-[26px] text-[#fff8ec]">No terms match this view</p>
+            <p className="mt-2 text-[15px] text-[rgba(246,236,220,0.72)] max-w-md mx-auto">Try a broader search, or ask Krusty. Clear the filters to search the whole library.</p>
             <div className="mt-6 flex justify-center gap-2 flex-wrap">
               <button onClick={() => onAskKrusty(searchTerm || 'this term')} className="btn-gold h-11 px-5 rounded-full font-bold text-sm">Ask Krusty about it</button>
               <button onClick={clearFilters} className="btn-glass h-11 px-5 rounded-full font-semibold text-sm">Clear this view</button>
@@ -1056,8 +1090,16 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         )}
       </div>
 
-      <div className="mt-10 text-center text-[rgba(246,236,220,0.45)] text-xs print:hidden">
-        You&apos;ve reached the end of this view.
+      {visibleCount < filteredData.length && <button type="button" onClick={() => setVisibleCount(count => count + 36)} className="btn-gold min-h-11 px-6 py-3 rounded-full mt-6">
+        Show more terms ({Math.min(visibleCount, filteredData.length)} of {filteredData.length} shown)
+      </button>}
+      <details className="glass rounded-2xl p-5 mt-8">
+        <summary className="cursor-pointer min-h-11">All {GLOSSARY_DATA.length} terms, A to Z</summary>
+        <ul className="grid gap-2 sm:grid-cols-3 mt-4">{[...GLOSSARY_DATA].sort((a, b) => a.term.localeCompare(b.term)).map(item =>
+          <li key={item.id}><a className="inline-flex min-h-11 items-center text-[#f0c878] underline" href={`/term/${item.id}`}>{item.term}</a></li>)}</ul>
+      </details>
+      <div className="mt-10 text-center text-[rgba(246,236,220,0.7)] text-xs print:hidden">
+        {visibleCount >= filteredData.length ? "You've reached the end of this view." : 'More matching terms are available above.'}
       </div>
       <BrandShelf />
     </div>

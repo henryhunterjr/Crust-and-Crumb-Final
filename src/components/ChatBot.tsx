@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { X, Send, Loader2, ChefHat } from 'lucide-react';
+import { useDialogFocus } from './useDialogFocus';
 import { ChatMessage } from '../types';
 import { sendMessageToGemini } from '../services/geminiService';
 
@@ -16,6 +17,8 @@ interface ChatBotProps {
 
 const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, messages, setMessages, input, setInput }) => {
   const [isLoading, setIsLoading] = React.useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(isOpen, dialogRef, false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -42,7 +45,6 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, messages, setMessage
 
     // Prepare history for API
     const history = messages.map(m => ({ role: m.role, text: m.text }));
-    history.push({ role: 'user', text: userMessage.text });
 
     const responseText = await sendMessageToGemini(history, userMessage.text);
 
@@ -71,7 +73,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, messages, setMessage
   if (!isOpen) return null;
 
   return (
-    <div role="dialog" aria-label="Ask Krusty, the bread concierge" className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] bg-white rounded-2xl shadow-2xl border border-amber-200 flex flex-col overflow-hidden h-[500px] animate-in slide-in-from-bottom-5 fade-in duration-300">
+    <div ref={dialogRef} role="dialog" aria-label="Ask Krusty, the bread concierge" className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] bg-white rounded-2xl shadow-2xl border border-amber-200 flex flex-col overflow-hidden h-[min(500px,calc(100dvh-3rem))] animate-in slide-in-from-bottom-5 fade-in duration-300">
       
       {/* Header */}
       <div className="bg-amber-600 p-4 flex justify-between items-center text-white">
@@ -98,7 +100,9 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, messages, setMessage
                   : 'bg-white text-slate-800 border border-amber-200 shadow-sm rounded-tl-none'
               }`}
             >
-              {msg.text}
+              {msg.text.split(/(https?:\/\/[^\s)]+)/g).map((part, index) => part.startsWith('https://') || part.startsWith('http://')
+                ? <a key={index} href={part.replace(/[.,;!?]+$/, '')} className="underline break-words">{part}</a>
+                : <React.Fragment key={index}>{part}</React.Fragment>)}
             </div>
           </div>
         ))}

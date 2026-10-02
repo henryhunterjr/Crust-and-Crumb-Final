@@ -263,3 +263,7 @@ select {
   .app-backdrop { display: none; }
   .glass, .glass-strong { background: #fff !important; box-shadow: none !important; border-color: #ddd !important; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
+
+/* Keep long terms and source URLs readable at narrow widths. */
+article, main, section, nav { min-width: 0; }
+h1, h2, h3, article p, article a { overflow-wrap: anywhere; }

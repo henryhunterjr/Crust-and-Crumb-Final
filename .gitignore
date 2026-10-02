@@ -40,3 +40,9 @@ lerna-debug.log*
 .claude/
 tsconfig.tsbuildinfo
 __pycache__/
+reports/*.zip
+reports/baseline-glossary.json
+reports/dependencies-before-lock-refresh/
+reports/package-lock-before-refresh.json
+scripts/apply-review-fixes.mjs
+scripts/update-reviewed-content.mjs

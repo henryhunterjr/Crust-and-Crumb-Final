@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { MessageSquare, ChefHat, ArrowUp, Instagram, Youtube, Facebook, Linkedin, Mail, Globe, X, Calculator, ExternalLink, Thermometer, Scale } from 'lucide-react';
+import { useDialogFocus } from '@/src/components/useDialogFocus';
 import Header from '@/src/components/Header';
 import GlossaryList from '@/src/components/GlossaryList';
 import ChatBot from '@/src/components/ChatBot';
@@ -41,6 +42,8 @@ export default function GlossaryApp() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [resetFilters, setResetFilters] = useState(0);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(isToolsOpen, toolsRef);
   const [activeToolTab, setActiveToolTab] = useState<'calculator' | 'analyzer'>('calculator');
 
   // Baker's Tools Calculator State
@@ -101,7 +104,7 @@ export default function GlossaryApp() {
 
   const handleAskKrusty = (term: string) => {
     setIsChatOpen(true);
-    setChatInput(`Tell me more about ${term} as explained in "Sourdough for the Rest of Us".`);
+    setChatInput(`Tell me more about ${term} using the glossary.`);
   };
 
   const handleTermClick = (termId: string) => {
@@ -153,6 +156,7 @@ export default function GlossaryApp() {
             })}
           </div>
 
+          <nav aria-label="About this glossary" className="flex flex-wrap justify-center gap-4 mt-6">{['editorial-standards', 'methodology', 'sources', 'updates'].map(page => <a key={page} className="text-[#f0c878] underline min-h-11 inline-flex items-center" href={`/${page}`}>{page.replaceAll('-', ' ')}</a>)}</nav>
           <p className="text-xs text-[rgba(246,236,220,0.5)] mt-8">© {new Date().getFullYear()} Baking Great Bread at Home by Henry Hunter. All rights reserved.</p>
         </div>
       </footer>
@@ -201,7 +205,7 @@ export default function GlossaryApp() {
 
           {/* Modal */}
           <div className="flex min-h-full items-center justify-center p-4">
-            <div role="dialog" aria-modal="true" aria-labelledby="tools-title" className="relative bg-[#fbf7f0]/95 backdrop-blur-2xl border border-white/60 rounded-[28px] shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)] max-w-2xl w-full max-h-[90vh] overflow-y-auto text-[#2a1f14]">
+            <div ref={toolsRef} role="dialog" aria-modal="true" aria-labelledby="tools-title" className="relative bg-[#fbf7f0]/95 backdrop-blur-2xl border border-white/60 rounded-[28px] shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)] max-w-2xl w-full max-h-[90vh] overflow-y-auto text-[#2a1f14]">
               {/* Header */}
               <div className="sticky top-0 z-10 bg-[#fbf7f0]/90 backdrop-blur-xl border-b border-[#e8dcc7] px-6 py-4 flex items-center justify-between rounded-t-[28px]">
                 <div className="flex items-center gap-3">
@@ -257,7 +261,7 @@ export default function GlossaryApp() {
                         id="calc-flour"
                         inputMode="decimal"
                         type="number"
-                        value={flourWeight}
+                        min="0" value={flourWeight}
                         onChange={(e) => setFlourWeight(e.target.value)}
                         placeholder="1000"
                         className="w-full border border-slate-300 rounded-lg px-4 py-3 text-lg font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
@@ -269,7 +273,7 @@ export default function GlossaryApp() {
                         id="calc-hydration"
                         inputMode="decimal"
                         type="number"
-                        value={hydrationPercent}
+                        min="0" value={hydrationPercent}
                         onChange={(e) => setHydrationPercent(e.target.value)}
                         placeholder="75"
                         className="w-full border border-slate-300 rounded-lg px-4 py-3 text-lg font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500"

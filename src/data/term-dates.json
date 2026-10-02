@@ -45,7 +45,7 @@
  },
  "ash-content": {
   "published": "2025-12-01",
-  "modified": "2026-10-01"
+  "modified": "2026-10-02"
  },
  "autolyse": {
   "published": "2025-12-01",
@@ -217,7 +217,7 @@
  },
  "bulk-fermentation": {
   "published": "2025-12-01",
-  "modified": "2026-10-01"
+  "modified": "2026-10-02"
  },
  "bulk-rise-target": {
   "published": "2026-10-01",
@@ -461,7 +461,7 @@
  },
  "fresh-milled-flour": {
   "published": "2026-10-01",
-  "modified": "2026-10-01"
+  "modified": "2026-10-02"
  },
  "fresh-yeast": {
   "published": "2025-12-01",
@@ -1109,7 +1109,7 @@
  },
  "underproofed": {
   "published": "2025-12-01",
-  "modified": "2026-10-01"
+  "modified": "2026-10-02"
  },
  "vital-wheat-gluten": {
   "published": "2025-12-01",
@@ -1137,7 +1137,7 @@
  },
  "whole-wheat-flour": {
   "published": "2025-12-01",
-  "modified": "2026-10-01"
+  "modified": "2026-10-02"
  },
  "wholesale-pricing": {
   "published": "2026-10-01",

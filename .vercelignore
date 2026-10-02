@@ -1,0 +1,3 @@
+reports/
+scripts/apply-review-fixes.mjs
+scripts/update-reviewed-content.mjs

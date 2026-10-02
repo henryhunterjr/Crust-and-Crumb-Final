@@ -25,6 +25,15 @@ export interface GlossaryItem {
   category: string; // Allow any category string from JSON
   difficulty: string; // Allow any difficulty string from JSON
   sources?: string[];
+  keywords?: string[];
+  whyItMatters?: string;
+  practicalExample?: string;
+  sensoryCues?: string;
+  nuance?: string;
+  contentCheckedOn?: string;
+  entryRole?: 'major' | 'supporting';
+  nextResource?: { label: string; url: string };
+  references?: { title: string; publisher: string; author?: string; url: string; supports: string }[];
   links?: {
     label: string;
     url: string;

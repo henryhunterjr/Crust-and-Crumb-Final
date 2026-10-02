@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GLOSSARY_DATA, resolveSlugAlias } from '../../../../src/constants';
+import { aliasSlug } from '../../../../src/search';
 import { GlossaryItem } from '../../../../src/types';
 
 // CORS headers for cross-origin requests
@@ -20,7 +21,7 @@ export async function OPTIONS() {
 // Helper to find term by slug
 function getTermBySlug(slug: string): GlossaryItem | undefined {
   const direct = GLOSSARY_DATA.find(item =>
-    item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
+    item.id === slug || (item.aliases || []).some(alias => aliasSlug(alias) === slug)
   );
   if (direct) return direct;
   const aliasId = resolveSlugAlias(slug);
@@ -94,6 +95,12 @@ export async function GET(
     commonMistakes: term.commonMistakes || [],
     history: term.history || null,
     sources: term.sources || [],
+    references: term.references || [],
+    whyItMatters: term.whyItMatters || null,
+    practicalExample: term.practicalExample || null,
+    sensoryCues: term.sensoryCues || null,
+    nuance: term.nuance || null,
+    contentCheckedOn: term.contentCheckedOn || null,
     youtubeQuery: term.youtubeQuery || null,
     aliases: term.aliases || [],
     sourceRelations: (term.sourceRelations || []).map(({ sourceSystem, relation, title, url }) => ({ sourceSystem, relation, title, url })),

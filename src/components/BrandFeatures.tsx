@@ -10,7 +10,7 @@ export function WheatFilm() {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const applyPreference = () => {
       if (preference.matches) video.current?.pause();
-      else void video.current?.play().catch(() => {});
+      else video.current?.pause();
     };
     applyPreference();
     preference.addEventListener('change', applyPreference);
@@ -84,7 +84,7 @@ export function HomeMillingFeature({ compact = false }: { compact?: boolean }) {
       <div className="milling-copy">
         <p className="brand-eyebrow">Home milling</p>
         <h2 id="milling-heading">Fresh flour changes the bread.</h2>
-        <p>Mill the berries the day you bake and you get flavor and nutrition a bag of flour lost months ago. I mill on a NutriMill, and Academy bakers save $20 with code <strong>{NUTRIMILL_CODE}</strong>.</p>
+        <p>Milling at home lets you choose your grain, texture, and when the flour is ground. Freshness, whole-grain content, and storage each matter. I mill on a NutriMill, and Academy bakers save $20 with code <strong>{NUTRIMILL_CODE}</strong>.</p>
         <a className="brand-link btn-gold" href={NUTRIMILL_URL} target="_blank" rel="noopener noreferrer sponsored" data-affiliate-link="NutriMill">Shop NutriMill, save $20 <span aria-hidden="true">↗</span></a>
       </div>
     </aside>

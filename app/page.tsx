@@ -3,8 +3,10 @@ import GlossaryApp from './GlossaryApp'
 import { GLOSSARY_DATA as glossaryData } from '@/src/constants'
 import { SITE_URL, SITE_NAME, PUBLISHER_NAME, AUTHOR_NAME, OG_IMAGE, SAME_AS, jsonLd } from '@/src/seo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
+export async function generateMetadata({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }): Promise<Metadata> {
+  const query = await searchParams;
+  const filtered = ['q', 'category', 'level', 'letter', 'path', 'symptom', 'quick'].some(key => !!query[key]);
+  return { alternates: { canonical: '/' }, ...(filtered ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } } : {}) };
 }
 
 const homeJsonLd = [

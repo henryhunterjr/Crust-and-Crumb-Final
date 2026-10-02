@@ -1,6 +1,6 @@
 
 import { GlossaryItem, LearningPath } from './types';
-import glossaryData from './data/glossary.json';
+import glossaryData from './data/public-glossary.json';
 import slugAliases from './data/slugAliases.json';
 import illustrations from './data/illustrations.json';
 

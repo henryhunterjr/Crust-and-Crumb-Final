@@ -4,8 +4,9 @@ import { GLOSSARY_DATA } from '../../../../src/constants';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-export async function GET(_request: Request, { params }: { params: { slug: string } }) {
-  const term = GLOSSARY_DATA.find((item) => item.id === params.slug);
+export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const term = GLOSSARY_DATA.find((item) => item.id === slug);
   if (!term) {
     return NextResponse.json({ error: 'Glossary term not found.' }, { status: 404 });
   }

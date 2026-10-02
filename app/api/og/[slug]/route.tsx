@@ -42,8 +42,9 @@ async function loadIllustration(req: NextRequest, src?: string): Promise<string 
   }
 }
 
-export async function GET(req: NextRequest, { params }: { params: { slug: string } }) {
-  const id = GLOSSARY_DATA.some((t) => t.id === params.slug) ? params.slug : resolveSlugAlias(params.slug);
+export async function GET(req: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const id = GLOSSARY_DATA.some((t) => t.id === slug) ? slug : resolveSlugAlias(slug);
   const term = GLOSSARY_DATA.find((t) => t.id === id);
   if (!term) return new Response('Not found', { status: 404 });
 

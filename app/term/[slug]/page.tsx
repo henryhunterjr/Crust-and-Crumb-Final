@@ -5,6 +5,9 @@ import { GLOSSARY_DATA, LEARNING_PATHS, resolveSlugAlias, SOURCE_LABELS, GRAIN_P
 import { GrainFeature, HomeMillingFeature } from '../../../src/components/BrandFeatures';
 import { GlossaryItem } from '../../../src/types';
 import { SITE_URL, SITE_NAME, AUTHOR_NAME, SAME_AS, clip, jsonLd } from '../../../src/seo';
+import BackToGlossary from '../../../src/components/BackToGlossary';
+import TermEvidence from '../../../src/components/TermEvidence';
+import { aliasSlug } from '../../../src/search';
 import VideoEmbed from '../../../src/components/VideoEmbed';
 import TERM_DATES from '../../../src/data/term-dates.json';
 
@@ -16,7 +19,7 @@ import { ArrowLeft, BookOpen, Lightbulb, ExternalLink, Volume2, ChevronDown, Ale
 // Helper functions
 function getTermBySlug(slug: string): GlossaryItem | undefined {
   const direct = GLOSSARY_DATA.find(item =>
-    item.id === slug || (item.aliases || []).some(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug)
+    item.id === slug || (item.aliases || []).some(alias => aliasSlug(alias) === slug)
   );
   if (direct) return direct;
   const aliasId = resolveSlugAlias(slug);
@@ -26,7 +29,7 @@ function getTermBySlug(slug: string): GlossaryItem | undefined {
 function getAllSlugs(): string[] {
   return GLOSSARY_DATA.flatMap(item => [
     item.id,
-    ...(item.aliases || []).map(alias => alias.toLowerCase().replace(/[^a-z0-9]+/g, '-')),
+    ...(item.aliases || []).map(alias => aliasSlug(alias)),
   ]).filter((slug, index, slugs) => slugs.indexOf(slug) === index);
 }
 
@@ -111,7 +114,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
   }
 
   // Pantry and legacy alias slugs redirect to the canonical term URL
-  if (resolveSlugAlias(slug) === term.id && term.id !== slug) {
+  if (term.id !== slug) {
     permanentRedirect(`/term/${term.id}`);
   }
 
@@ -188,11 +191,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             <img src="/brand/academy.png" alt="Crust & Crumb Academy" width="1280" height="720" className="w-11 h-11 rounded-full object-cover ring-1 ring-white/25 shrink-0" />
             <span className="font-display text-[18px] sm:text-[20px] font-semibold text-[#fff8ec] truncate">Crust &amp; Crumb</span>
           </Link>
-          <Link href="/#dictionary" className="btn-gold inline-flex items-center gap-2 h-11 px-5 rounded-full font-bold text-sm shrink-0">
-            <ArrowLeft size={17} />
-            <span className="sm:hidden">All terms</span>
-            <span className="hidden sm:inline">All {GLOSSARY_DATA.length} terms</span>
-          </Link>
+          <BackToGlossary />
         </div>
       </header>
 
@@ -257,6 +256,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
               </p>
             )}
 
+            <TermEvidence term={term} />
             {term.henrysTips && term.henrysTips.length > 0 && (
               <section className="flex gap-4 sm:gap-5 rounded-[26px] p-5 sm:p-6 bg-[rgba(240,200,120,0.1)] border border-[rgba(240,200,120,0.32)] shadow-[inset_0_1px_0_rgba(255,236,190,0.22)]" aria-labelledby="tips-h">
                 <img src="/brand/academy.png" alt="" width="1280" height="720" className="w-12 h-12 rounded-full object-cover shrink-0 hidden sm:block" />
@@ -341,11 +341,12 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
               </section>
             )}
 
+            <a className="text-[#f0c878] underline" href={`mailto:bakinggreatbreadathome@gmail.com?subject=${encodeURIComponent('Glossary correction: ' + term.term)}&body=${encodeURIComponent('Term: ' + termUrl + '\n\nSuggested correction and supporting reference:\n')}`}>Report a correction for this term</a>
             {readings.length > 0 && (
               <section aria-labelledby="deeper-h" className="flex flex-col gap-3">
                 <h2 id="deeper-h" className="font-display font-medium text-[28px] sm:text-[32px] tracking-[-0.02em] text-[#fff8ec]">Go deeper</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {readings.map((resource, index) => (
+                  {readings.slice(0, 1).map((resource, index) => (
                     <div key={`${resource.sourceSystem}-${resource.title}-${index}`} className="glass rounded-[20px] p-4">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
                         <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#f0c878]">{resource.sourceSystem}</span>
@@ -361,6 +362,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                     </div>
                   ))}
                 </div>
+                {readings.length > 1 && <details className="glass rounded-[20px] p-4"><summary className="cursor-pointer min-h-11 flex items-center text-[#f0c878]">More related reading ({readings.length - 1})</summary><ul className="space-y-3 pt-3">{readings.slice(1).map((resource, index) => <li key={`${resource.url}-${index}`}><a className="text-[#fff8ec] underline" href={resource.url} target="_blank" rel="noopener noreferrer">{resource.title}</a><p className="text-sm text-[rgba(246,236,220,0.7)]">{resource.sourceSystem}</p></li>)}</ul></details>}
               </section>
             )}
 

@@ -482,7 +482,7 @@
   {
     "id": "ash-content",
     "term": "Ash Content",
-    "definition": "A measure of how much mineral content remains in flour after milling. High ash content (like in whole wheat or Type 85 flour) means more bran/germ, darker color, and higher enzyme activity.",
+    "definition": "The mineral residue measured after a flour sample is burned in a controlled laboratory test, usually expressed as a percentage. Ash helps describe flour refinement and regional flour types. It is not a direct measure of protein quality, gluten strength, or enzyme activity.",
     "category": "Scientific/Technical",
     "difficulty": "Advanced",
     "sources": [
@@ -490,8 +490,10 @@
       "The Perfect Loaf"
     ],
     "relatedTermIds": [
+      "extraction-rate",
+      "type-flour",
       "whole-wheat-flour",
-      "fermentation"
+      "protein-content"
     ],
     "aliases": [
       "ash content"
@@ -549,7 +551,22 @@
         "evidence": "derived",
         "wordCount": null
       }
-    ]
+    ],
+    "references": [
+      {
+        "title": "Bakery & Food Service Products",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/pro/products",
+        "supports": "Flour ash and protein specifications; these describe different properties."
+      },
+      {
+        "title": "Methods and tests used to measure wheat quality",
+        "publisher": "Canadian Grain Commission",
+        "url": "https://www.grainscanada.gc.ca/en/grain-research/export-quality/cereals/wheat/methods-tests.html",
+        "supports": "Laboratory determination of ash by incineration; ash, protein, and enzyme testing are distinct."
+      }
+    ],
+    "contentCheckedOn": "2026-10-02"
   },
   {
     "id": "autolyse",
@@ -1340,7 +1357,9 @@
     ],
     "youtubeQuery": "how to use banneton proofing basket",
     "aliases": [
-      "banneton"
+      "banneton",
+      "brotform",
+      "proofing basket"
     ],
     "definitionStatus": "verified",
     "clusterPlan": {
@@ -2425,14 +2444,17 @@
   {
     "id": "bulk-fermentation",
     "term": "Bulk Fermentation",
-    "definition": "The first rise of bread dough after mixing, where the entire mass of dough ferments together in one container before being divided and shaped. This is when most of the flavor and structure development happens.",
-    "shortDefinition": "The first rise before shaping, where flavor develops.",
+    "definition": "The fermentation stage after mixing and before dividing or shaping, when the dough rests as one mass. Gas builds while dough handling and fermentation develop its structure and flavor.",
+    "shortDefinition": "The fermentation stage between mixing and shaping.",
     "category": "Process",
     "difficulty": "Intermediate",
     "relatedTermIds": [
       "fermentation",
       "stretch-and-fold",
-      "coil-fold"
+      "coil-fold",
+      "bulk-rise-target",
+      "underfermented",
+      "proofing"
     ],
     "henrysTips": [
       "Watch the dough, not the clock. A 4-hour bulk fermentation at 78°F is not the same as 4 hours at 68°F."
@@ -2650,7 +2672,37 @@
         "evidence": "inventory",
         "wordCount": null
       }
-    ]
+    ],
+    "whyItMatters": "How far bulk goes affects how the dough handles shaping and how much room it has left to rise during final proof.",
+    "practicalExample": "Mark the starting level in a straight-sided container. When your recipe calls for a particular rise, compare the mark with the new level and check the dough itself before shaping.",
+    "sensoryCues": "Look for aeration, some rise, and a dough that feels lighter while retaining enough strength to shape. Read several cues together.",
+    "nuance": "The useful stopping point depends on the formula, dough temperature, and proofing plan. A long refrigerated final proof calls for a different plan than baking soon after shaping.",
+    "commonMistakes": [
+      "Treating elapsed time or a fixed doubling rule as sufficient for every recipe.",
+      "Confusing bulk fermentation with final proof after shaping."
+    ],
+    "references": [
+      {
+        "title": "Bulk Fermentation vs. Cold Retard: What Each Phase Actually Does",
+        "publisher": "Baking Great Bread at Home",
+        "url": "https://bakinggreatbread.blog/2026/04/01/bulk-fermentation-vs-cold-retard/",
+        "supports": "Bulk, cold fermentation, and reading dough in context.",
+        "author": "Henry Hunter"
+      },
+      {
+        "title": "How to produce an open crumb in sourdough bread",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/blog/2020/11/05/how-to-produce-an-open-crumb-in-sourdough-bread",
+        "supports": "Fermentation, folding, temperature, and dough handling.",
+        "author": "Maurizio Leo"
+      }
+    ],
+    "nextResource": {
+      "label": "Bulk Fermentation vs. Cold Retard: What Each Phase Actually Does",
+      "url": "https://bakinggreatbread.blog/2026/04/01/bulk-fermentation-vs-cold-retard/"
+    },
+    "contentCheckedOn": "2026-10-02",
+    "entryRole": "major"
   },
   {
     "id": "bulk-rise-target",
@@ -5145,8 +5197,8 @@
   {
     "id": "fresh-milled-flour",
     "term": "Fresh-Milled Flour",
-    "definition": "Flour ground from whole grain shortly before you bake with it, so it still carries all of the bran, germ, and endosperm and their natural oils and enzymes. It tastes noticeably fuller than bagged flour, but it behaves differently: it often takes up water more slowly, can need more of it, and may ferment faster because of its higher enzyme activity. Expect to adjust hydration and timing rather than follow a white-flour recipe as written.",
-    "shortDefinition": "Whole-grain flour ground at or near the time of baking.",
+    "definition": "Flour ground shortly before use. Fresh-milled describes when the grain was milled; whole-grain describes what remains in the flour. Unsifted flour retains the bran, germ, and endosperm, while sifting removes some of those parts.",
+    "shortDefinition": "Flour ground shortly before use, whether unsifted or sifted.",
     "category": "Grain & Milling",
     "difficulty": "Beginner",
     "relatedTermIds": [
@@ -5154,12 +5206,10 @@
       "wheat-berry",
       "flour-freshness",
       "hydration",
-      "whole-wheat-flour"
+      "whole-wheat-flour",
+      "bolting"
     ],
-    "henrysTips": [
-      "When I switch a recipe to fresh-milled flour, I hold back some of the water, give the dough a rest, and then add more as it absorbs. It drinks slower than you'd think.",
-      "Watch the dough, not the clock. Fresh-milled doughs often move faster in bulk than the same recipe made with store-bought flour."
-    ],
+    "henrysTips": [],
     "alternateQuestions": [
       "freshly milled flour",
       "fresh ground flour",
@@ -5195,7 +5245,43 @@
         "evidence": "direct",
         "wordCount": 1480
       }
-    ]
+    ],
+    "whyItMatters": "Grain variety, milling texture, sifting, and storage all affect baking. Milling recently does not guarantee a particular hydration, fermentation speed, or nutritional advantage over every bagged flour.",
+    "practicalExample": "For a 500 g flour recipe, try replacing 100 g with your newly milled flour. Keep the remaining water available and adjust after the dough has rested. Record the grain, grind, and water used so the next bake teaches you something.",
+    "sensoryCues": "Check the dough after its rest: does it stretch without tearing, hold its shape, or still feel stiff? Use those cues to decide whether to add water.",
+    "nuance": "Freshly milled flour can also be sifted. Compare similar grain varieties and extraction levels when judging flavor or handling; milling date alone does not explain the difference.",
+    "commonMistakes": [
+      "Treating fresh-milled and whole-grain as interchangeable labels.",
+      "Adding water automatically before seeing how this flour handles it."
+    ],
+    "references": [
+      {
+        "title": "Mill your own flour",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/blog/2017/04/24/mill-your-own-flour",
+        "supports": "Home milling and grain-specific baking adjustments.",
+        "author": "Martin Philip"
+      },
+      {
+        "title": "Whole Grain Flour: Sifting True from False",
+        "publisher": "Whole Grains Council",
+        "url": "https://wholegrainscouncil.org/blog/2017/01/whole-grain-flour-sifting-true-false",
+        "supports": "Whole-grain composition and the effect of sifting."
+      },
+      {
+        "title": "The best way to store whole grains",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/blog/2019/04/11/best-way-store-whole-grains",
+        "supports": "Airtight, cool storage and flour freshness.",
+        "author": "PJ Hamel"
+      }
+    ],
+    "nextResource": {
+      "label": "Ancient Grain Flour Baking, by Henry Hunter",
+      "url": "https://bakinggreatbread.blog/2025/04/17/ancient-grain-flour-baking-guide/"
+    },
+    "contentCheckedOn": "2026-10-02",
+    "entryRole": "major"
   },
   {
     "id": "friction-factor",
@@ -11832,18 +11918,19 @@
   {
     "id": "underproofed",
     "term": "Underproofed",
-    "definition": "When dough hasn't fermented long enough. The yeast hasn't produced enough gas, resulting in dense bread with poor oven spring. When you do the poke test, the dough springs back very quickly.",
-    "shortDefinition": "Dough that needs more time to rise.",
+    "definition": "Shaped dough that has not had enough final proof before baking. It can bake up tight or burst where the surface offers the least resistance. In this glossary, underfermented refers specifically to bulk ending too soon.",
+    "shortDefinition": "Shaped dough that needs more final proof before baking.",
     "category": "Troubleshooting",
     "difficulty": "Intermediate",
     "relatedTermIds": [
       "proofing",
       "poke-test",
-      "overproofed"
+      "overproofed",
+      "underfermented",
+      "bulk-fermentation",
+      "dense-crumb"
     ],
-    "henrysTips": [
-      "Underproofing is better than overproofing. You can always give it 30 more minutes, but you can't undo overproofing."
-    ],
+    "henrysTips": [],
     "troubleshooting": [
       {
         "problem": "Bread is dense with small holes",
@@ -11916,7 +12003,37 @@
         "evidence": "derived",
         "wordCount": null
       }
-    ]
+    ],
+    "whyItMatters": "Separating bulk from final proof helps you decide which stage to adjust on the next bake.",
+    "practicalExample": "If a shaped loaf still feels tight and scarcely expanded, allow more proofing time within the recipe's conditions and check it again before baking.",
+    "sensoryCues": "A quick spring-back from a gentle poke can be a clue in suitable doughs, but temperature and flour change that response. Combine it with expansion and feel.",
+    "nuance": "Bakers sometimes use underproofed for insufficient fermentation anywhere in the process. The narrower use here distinguishes the two stages; crumb alone cannot settle a diagnosis.",
+    "commonMistakes": [
+      "Changing final proof when bulk was the stage that ended too soon.",
+      "Treating one poke response or photograph as proof of a single cause."
+    ],
+    "references": [
+      {
+        "title": "Bulk Fermentation vs. Cold Retard: What Each Phase Actually Does",
+        "publisher": "Baking Great Bread at Home",
+        "url": "https://bakinggreatbread.blog/2026/04/01/bulk-fermentation-vs-cold-retard/",
+        "supports": "Bulk, cold fermentation, and reading dough in context.",
+        "author": "Henry Hunter"
+      },
+      {
+        "title": "How to produce an open crumb in sourdough bread",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/blog/2020/11/05/how-to-produce-an-open-crumb-in-sourdough-bread",
+        "supports": "Fermentation, folding, temperature, and dough handling.",
+        "author": "Maurizio Leo"
+      }
+    ],
+    "nextResource": {
+      "label": "Bulk Fermentation vs. Cold Retard: What Each Phase Actually Does",
+      "url": "https://bakinggreatbread.blog/2026/04/01/bulk-fermentation-vs-cold-retard/"
+    },
+    "contentCheckedOn": "2026-10-02",
+    "entryRole": "major"
   },
   {
     "id": "vital-wheat-gluten",
@@ -12066,7 +12183,7 @@
   {
     "id": "whole-wheat-flour",
     "term": "Whole Wheat Flour",
-    "definition": "Flour milled from the entire wheat kernel, including the bran, germ, and endosperm. Because it contains the sharp bran and oily germ, it absorbs more water and ferments faster than white flour, often producing a denser but more flavorful loaf.",
+    "definition": "Flour containing the wheat kernel's bran, germ, and endosperm in their original proportions. Whole-wheat describes composition, not milling date. Its handling depends on the wheat, grind, and recipe; adjust water and timing from the dough rather than assuming it always needs more water or ferments faster.",
     "category": "Ingredient",
     "difficulty": "Intermediate",
     "sources": [
@@ -12078,9 +12195,7 @@
       "fermentation",
       "autolyse"
     ],
-    "henrysTips": [
-      "Whole wheat is 'thirsty'! You'll almost always need to add a splash more water than the recipe calls for if you're swapping this in."
-    ],
+    "henrysTips": [],
     "troubleshooting": [
       {
         "problem": "Loaf is dense and heavy",
@@ -12253,7 +12368,23 @@
         "evidence": "inventory",
         "wordCount": null
       }
-    ]
+    ],
+    "references": [
+      {
+        "title": "Whole Grain Flour: Sifting True from False",
+        "publisher": "Whole Grains Council",
+        "url": "https://wholegrainscouncil.org/blog/2017/01/whole-grain-flour-sifting-true-false",
+        "supports": "Whole-grain composition and the effect of sifting."
+      },
+      {
+        "title": "Mill your own flour",
+        "publisher": "King Arthur Baking",
+        "url": "https://www.kingarthurbaking.com/blog/2017/04/24/mill-your-own-flour",
+        "supports": "Home milling and grain-specific baking adjustments.",
+        "author": "Martin Philip"
+      }
+    ],
+    "contentCheckedOn": "2026-10-02"
   },
   {
     "id": "wholesale-pricing",
