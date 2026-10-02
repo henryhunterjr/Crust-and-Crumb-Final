@@ -1,0 +1,46 @@
+name: Add Starter Studio thumbnail
+
+on:
+  push:
+    branches:
+      - featured-starter-studio
+    paths:
+      - '.github/workflows/add-starter-studio-thumbnail.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  add-thumbnail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: featured-starter-studio
+          fetch-depth: 0
+
+      - name: Download thumbnail
+        run: |
+          curl -L --fail --retry 3 "https://at.adobe.com/3CoMSl9D5LTqwHAy" -o /tmp/starter-studio.png
+          test -s /tmp/starter-studio.png
+
+      - name: Optimize thumbnail for web
+        run: |
+          npm install --no-save sharp
+          node <<'NODE'
+          const sharp = require('sharp');
+          sharp('/tmp/starter-studio.png')
+            .resize({ width: 1600, withoutEnlargement: true })
+            .webp({ quality: 88 })
+            .toFile('public/brand/starter-levain-studio.webp')
+            .then(info => console.log(info))
+            .catch(err => { console.error(err); process.exit(1); });
+          NODE
+
+      - name: Commit thumbnail
+        run: |
+          git config user.name "Crust & Crumb release bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/brand/starter-levain-studio.webp
+          git commit -m "Add Starter & Levain Studio featured thumbnail"
+          git push origin HEAD:featured-starter-studio
