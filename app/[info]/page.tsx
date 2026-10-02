@@ -27,6 +27,7 @@ const pages: Record<string, { title: string; paragraphs: string[] }> = {
     'October 2, 2026: added editorial standards, methodology, references, and this update log. Expanded Bulk Fermentation, Fresh-Milled Flour, and Underproofed; corrected Whole Wheat Flour and Ash Content; added a term-specific correction email link.',
     'October 2, 2026: deduplicated the public resource library, kept private drafts and internal plans outside browser data, introduced smaller card batches, and changed decorative wheat motion to play on request. Existing grain photos and click-to-play teaching videos are retained.',
     'The roadmap still includes wider technical and cultural source review, more reviewed learning paths and demonstrations, and a reproducible competitor benchmark. No exact competitive rank is claimed.',
+    'October 2, 2026: pronunciation audio checked successfully. AI conversation currently falls back to matching glossary entries when the connected AI service is unavailable. AI bake analysis is temporarily paused; troubleshooting guides remain available.',
   ] },
 };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ClipboardList, ChevronRight, ChevronLeft, Loader2, RotateCcw, Award, Camera, X, ImageIcon, Printer, Share2, Check } from 'lucide-react';
 
 interface AnalysisReport {
@@ -227,6 +227,12 @@ function fermentationLabel(status: string): { label: string; color: string } {
 }
 
 export default function BreadAnalyzer() {
+  const [available, setAvailable] = useState<boolean | null>(null);
+  useEffect(() => {
+    let active = true;
+    fetch('/api/analyze').then(response => response.json()).then(result => { if (active) setAvailable(result.available === true); }).catch(() => { if (active) setAvailable(false); });
+    return () => { active = false; };
+  }, []);
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [loading, setLoading] = useState(false);
@@ -242,6 +248,8 @@ export default function BreadAnalyzer() {
   const currentStep = STEPS[step];
   const isLastStep = step === STEPS.length - 1;
   const progress = (step / STEPS.length) * 100;
+
+  if (available !== true) return <section className="rounded-2xl bg-white p-6 text-slate-800" aria-label="Bread Analyzer availability"><h2 className="text-xl font-bold mb-3">Bread Analyzer</h2><p className="mb-4">{available === null ? 'Checking availability…' : 'AI bake analysis is temporarily unavailable. Start with the symptom you can see; these glossary guides will help you decide what to check next.'}</p><nav className="flex flex-wrap gap-3" aria-label="Troubleshooting guides"><a className="underline text-amber-800 min-h-11 inline-flex items-center" href="/term/underproofed">Underproofed</a><a className="underline text-amber-800 min-h-11 inline-flex items-center" href="/term/gummy-crumb">Gummy crumb</a><a className="underline text-amber-800 min-h-11 inline-flex items-center" href="/term/flat-loaf">Flat loaf</a></nav></section>;
 
   const handleChange = (key: string, value: string) => {
     setForm(prev => ({ ...prev, [key]: value }));
