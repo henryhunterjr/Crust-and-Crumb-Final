@@ -8,7 +8,7 @@ const pages: Record<string, { title: string; paragraphs: string[] }> = {
     'Crust & Crumb is Henry Hunter’s bread glossary for home bakers. Definitions come first; practical explanations should help you decide what to do with the dough in front of you.',
     'Technical claims need references that support the specific claim. A publisher name in an older entry is a source label, not a verified citation. Regional terms and flour behavior need context rather than universal rules.',
     'This glossary receives AI-assisted editing. A source-check date records that the listed references were checked for that entry. It does not mean Henry tested that example or an independent scientist reviewed it. Examples added with AI assistance are labeled through the entry’s source-check note.',
-    'Report a correction from the relevant term page, including what needs changing and a supporting source. This opens an email to Baking Great Bread at Home for editorial follow-up; no message is sent automatically. Unresolved drafts remain outside the public catalog.',
+    'Report a correction from the relevant term page, including what needs changing and a supporting source. This opens the glossary correction inbox at Baking Great Bread at Home; no message is sent automatically. Henry Hunter owns this inbox. Every correction receives a reply within 7 days, even if the review itself takes longer. Unresolved drafts remain outside the public catalog.',
     'Some equipment and partner links are affiliate links. Henry may earn a commission from qualifying purchases. They are separate from technical references and do not establish the accuracy of a definition.',
   ] },
   methodology: { title: 'How this glossary is built', paragraphs: [
@@ -23,6 +23,10 @@ const pages: Record<string, { title: string; paragraphs: string[] }> = {
     'Henry’s articles, videos, and recipes are learning resources. Older publisher labels and inventory-derived related resources are separate from claim-specific references. Source checks do not imply endorsement by the named publishers.',
   ] },
   updates: { title: 'Glossary updates', paragraphs: [
+    'October 2, 2026: removed the NEW badge from Bread Analyzer while AI bake analysis is paused; the troubleshooting guides remain available and the pause stays documented here until analysis returns.',
+    'October 2, 2026: launched Starter & Levain Studio as the first featured Baker’s Tool and connected relevant starter, levain, fermentation, yeast, milling, hydration, and baker’s-percentage entries to the tools that help put those definitions into practice.',
+    'October 2, 2026: formalized the glossary correction inbox under Henry Hunter. Every correction receives a reply within 7 days, with the term URL and supporting reference requested in the message.',
+    'October 2, 2026: began the credibility and ranking review. No competitive rank claim will be published until the crawl/index audit, target-search tracking method, and reproducible competitor benchmark are complete.',
     'October 2, 2026: repaired normalized search and relevance ordering; added shareable filter state and a return link; made related-term navigation ordinary links; and fixed alphabet availability within filtered views.',
     'October 2, 2026: added editorial standards, methodology, references, and this update log. Expanded Bulk Fermentation, Fresh-Milled Flour, and Underproofed; corrected Whole Wheat Flour and Ash Content; added a term-specific correction email link.',
     'October 2, 2026: deduplicated the public resource library, kept private drafts and internal plans outside browser data, introduced smaller card batches, and changed decorative wheat motion to play on request. Existing grain photos and click-to-play teaching videos are retained.',
