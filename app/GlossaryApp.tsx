@@ -371,6 +371,26 @@ export default function GlossaryApp() {
                     <ExternalLink size={18} />
                     Henry&apos;s tools and resources
                   </h3>
+                  <p className="text-xs leading-relaxed text-slate-500">
+                    Some gear links are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.
+                  </p>
+                  <a
+                    href="https://wiremonkey.com/henryhunter"
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="block overflow-hidden rounded-2xl border border-amber-200 bg-white shadow-sm hover:shadow-md transition-shadow"
+                    aria-label="Shop Wire Monkey scoring lames through Henry Hunter's affiliate link"
+                  >
+                    <img
+                      src="/partners/wiremonkey-promo-banner.png"
+                      alt="Wire Monkey handcrafted wood scoring lames"
+                      width="1200"
+                      height="300"
+                      loading="lazy"
+                      decoding="async"
+                      className="block w-full h-auto"
+                    />
+                  </a>
                   {TOOL_GROUPS.map(group => (
                     <section key={group.id} aria-labelledby={`tools-${group.id}`} className="space-y-2">
                       <div className="flex items-baseline gap-2">
@@ -383,7 +403,7 @@ export default function GlossaryApp() {
                             key={link.url}
                             href={link.url}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel={link.url.includes('nutrimill.com/Academy26') ? 'sponsored noopener noreferrer' : 'noopener noreferrer'}
                             className="block bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 hover:bg-amber-100 transition-colors min-h-[44px]"
                           >
                             <div className="flex items-center gap-2">
