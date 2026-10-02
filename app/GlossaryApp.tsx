@@ -63,12 +63,13 @@ export default function GlossaryApp() {
   const totalHydration = flour > 0 ? ((waterNeeded + starterWater) / (flour + starterFlour)) * 100 : 0;
   const totalDoughWeight = flour + waterNeeded + saltNeeded + starterNeeded;
 
-  // Auto-open Bread Analyzer if ?tool=analyzer is in the URL
+  // Auto-open a specific Baker's Tool when linked from a glossary definition.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('tool') === 'analyzer') {
+    const requestedTool = params.get('tool');
+    if (requestedTool === 'analyzer' || requestedTool === 'calculator') {
       setIsToolsOpen(true);
-      setActiveToolTab('analyzer');
+      setActiveToolTab(requestedTool);
     }
   }, []);
 
@@ -226,6 +227,46 @@ export default function GlossaryApp() {
                 </button>
               </div>
 
+              {/* Starter & Levain Studio is the #1 Baker's Tool */}
+              <div className="px-6 pt-5 pb-4 bg-white/40 border-b border-[#eee3cf]">
+                <a
+                  href={FEATURED_TOOL.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-2xl border border-amber-300 bg-white shadow-sm hover:shadow-md transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+                  aria-label={`${FEATURED_TOOL.cta}: ${FEATURED_TOOL.name}`}
+                >
+                  <div className="relative bg-black">
+                    <img
+                      src={FEATURED_TOOL.image}
+                      alt={FEATURED_TOOL.imageAlt}
+                      width="1600"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                      className="block w-full h-auto"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full border border-amber-200/60 bg-black/75 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-200 backdrop-blur-sm">
+                      {FEATURED_TOOL.eyebrow}
+                    </span>
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <h4 className="font-display text-xl sm:text-2xl font-semibold text-slate-900">{FEATURED_TOOL.name}</h4>
+                        <p className="mt-1 font-semibold text-amber-800">{FEATURED_TOOL.headline}</p>
+                      </div>
+                      <span className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-amber-600 px-4 py-2 text-sm font-bold text-white group-hover:bg-amber-700 transition-colors">
+                        {FEATURED_TOOL.cta}
+                        <ExternalLink size={14} aria-hidden="true" />
+                      </span>
+                    </div>
+                    <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">{FEATURED_TOOL.blurb}</p>
+                  </div>
+                </a>
+
+              </div>
+
               {/* Tabs */}
               <div className="flex border-b border-[#eee3cf] px-6 bg-white/60">
                 <button
@@ -239,7 +280,6 @@ export default function GlossaryApp() {
                   className={`py-3 px-4 text-sm font-medium border-b-2 transition-colors flex items-center gap-1.5 ${activeToolTab === 'analyzer' ? 'border-amber-500 text-amber-700' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
                 >
                   Bread Analyzer
-                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full font-bold">NEW</span>
                 </button>
               </div>
 
@@ -331,42 +371,6 @@ export default function GlossaryApp() {
                     <ExternalLink size={18} />
                     Henry&apos;s tools and resources
                   </h3>
-                  <a
-                    href={FEATURED_TOOL.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block overflow-hidden rounded-2xl border border-amber-300 bg-white shadow-sm hover:shadow-md transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
-                    aria-label={`${FEATURED_TOOL.cta}: ${FEATURED_TOOL.name}`}
-                  >
-                    <div className="relative bg-black">
-                      <img
-                        src={FEATURED_TOOL.image}
-                        alt={FEATURED_TOOL.imageAlt}
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                        className="block w-full h-auto"
-                      />
-                      <span className="absolute left-3 top-3 rounded-full border border-amber-200/60 bg-black/75 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-200 backdrop-blur-sm">
-                        {FEATURED_TOOL.eyebrow}
-                      </span>
-                    </div>
-                    <div className="p-4 sm:p-5">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <div>
-                          <h4 className="font-display text-xl sm:text-2xl font-semibold text-slate-900">{FEATURED_TOOL.name}</h4>
-                          <p className="mt-1 font-semibold text-amber-800">{FEATURED_TOOL.headline}</p>
-                        </div>
-                        <span className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-amber-600 px-4 py-2 text-sm font-bold text-white group-hover:bg-amber-700 transition-colors">
-                          {FEATURED_TOOL.cta}
-                          <ExternalLink size={14} aria-hidden="true" />
-                        </span>
-                      </div>
-                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">{FEATURED_TOOL.blurb}</p>
-                    </div>
-                  </a>
-
                   {TOOL_GROUPS.map(group => (
                     <section key={group.id} aria-labelledby={`tools-${group.id}`} className="space-y-2">
                       <div className="flex items-baseline gap-2">
