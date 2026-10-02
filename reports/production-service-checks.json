@@ -1,0 +1,23 @@
+{
+  "site": "https://crust-and-crumb-tawny.vercel.app",
+  "date": "2026-10-02",
+  "analyzer": {
+    "available": false,
+    "message": "AI bake analysis is temporarily unavailable. Use the troubleshooting glossary to work through the symptoms of your loaf."
+  },
+  "pronunciation": {
+    "contentType": [
+      "audio/mpeg"
+    ],
+    "bytes": 26793,
+    "status": 200
+  },
+  "chat": {
+    "response": "AI conversation is temporarily unavailable. Here are the glossary entries that match your question:\n\nBulk Fermentation: The fermentation stage after mixing and before dividing or shaping, when the dough rests as one mass. Gas builds while dough handling and fermentation develop its structure and flavor.\nhttps://crust-and-crumb-tawny.vercel.app/term/bulk-fermentation\n\nFermentation: The biological process where yeast and bacteria consume sugars in the dough and produce carbon dioxide (which makes the bread rise), alcohol, and organic acids (which create flavor).\nhttps://crust-and-crumb-tawny.vercel.app/term/fermentation",
+    "terms": [
+      "https://crust-and-crumb-tawny.vercel.app/term/bulk-fermentation",
+      "https://crust-and-crumb-tawny.vercel.app/term/fermentation"
+    ],
+    "mode": "glossary-reference"
+  }
+}

@@ -1,0 +1,1968 @@
+{
+  "date": "2026-10-02",
+  "base": "https://crust-and-crumb-tawny.vercel.app",
+  "publishedRoutesChecked": 279,
+  "failures": [],
+  "homepageBytes": 349344,
+  "baselineHomepageBytes": 1620814,
+  "allCanonicalLinksInInitialHtml": 279,
+  "editorialPagesChecked": 4,
+  "aliasesChecked": 3,
+  "missingTermStatus": 404,
+  "labCoreWebVitals": "not measured; HTML byte reduction is not a CWV score",
+  "checks": [
+    {
+      "id": "amaranth",
+      "status": 200,
+      "bytes": 37086,
+      "heading": "Amaranth",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/amaranth"
+    },
+    {
+      "id": "active-dry-yeast",
+      "status": 200,
+      "bytes": 40345,
+      "heading": "Active Dry Yeast",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/active-dry-yeast"
+    },
+    {
+      "id": "aged-flour",
+      "status": 200,
+      "bytes": 40581,
+      "heading": "Aged Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/aged-flour"
+    },
+    {
+      "id": "aliquot-jar",
+      "status": 200,
+      "bytes": 39803,
+      "heading": "Aliquot Jar",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/aliquot-jar"
+    },
+    {
+      "id": "aleurone-layer",
+      "status": 200,
+      "bytes": 40242,
+      "heading": "Aleurone Layer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/aleurone-layer"
+    },
+    {
+      "id": "all-purpose-flour",
+      "status": 200,
+      "bytes": 39814,
+      "heading": "All-Purpose Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/all-purpose-flour"
+    },
+    {
+      "id": "acetic-acid",
+      "status": 200,
+      "bytes": 38440,
+      "heading": "Acetic Acid",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/acetic-acid"
+    },
+    {
+      "id": "amylase",
+      "status": 200,
+      "bytes": 36655,
+      "heading": "Amylase",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/amylase"
+    },
+    {
+      "id": "ash-content",
+      "status": 200,
+      "bytes": 47605,
+      "heading": "Ash Content",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ash-content"
+    },
+    {
+      "id": "autolyse",
+      "status": 200,
+      "bytes": 56980,
+      "heading": "Autolyse",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/autolyse"
+    },
+    {
+      "id": "babka",
+      "status": 200,
+      "bytes": 41219,
+      "heading": "Babka",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/babka"
+    },
+    {
+      "id": "ascorbic-acid",
+      "status": 200,
+      "bytes": 35197,
+      "heading": "Ascorbic Acid",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ascorbic-acid"
+    },
+    {
+      "id": "ancient-grain",
+      "status": 200,
+      "bytes": 54490,
+      "heading": "Ancient Grain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ancient-grain"
+    },
+    {
+      "id": "baguette",
+      "status": 200,
+      "bytes": 45154,
+      "heading": "Baguette",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/baguette"
+    },
+    {
+      "id": "bagel",
+      "status": 200,
+      "bytes": 38291,
+      "heading": "Bagel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bagel"
+    },
+    {
+      "id": "bakers-couche",
+      "status": 200,
+      "bytes": 52368,
+      "heading": "Baker's Couche",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bakers-couche"
+    },
+    {
+      "id": "baking-powder",
+      "status": 200,
+      "bytes": 39102,
+      "heading": "Baking Powder",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/baking-powder"
+    },
+    {
+      "id": "baking-stone",
+      "status": 200,
+      "bytes": 36103,
+      "heading": "Baking Stone",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/baking-stone"
+    },
+    {
+      "id": "baking-soda",
+      "status": 200,
+      "bytes": 39496,
+      "heading": "Baking Soda",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/baking-soda"
+    },
+    {
+      "id": "baking-steel",
+      "status": 200,
+      "bytes": 42985,
+      "heading": "Baking Steel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/baking-steel"
+    },
+    {
+      "id": "banneton-liner",
+      "status": 200,
+      "bytes": 36086,
+      "heading": "Banneton Liner",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/banneton-liner"
+    },
+    {
+      "id": "banneton",
+      "status": 200,
+      "bytes": 58503,
+      "heading": "Banneton",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/banneton"
+    },
+    {
+      "id": "bakers-percentage",
+      "status": 200,
+      "bytes": 43594,
+      "heading": "Baker's Percentage",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bakers-percentage"
+    },
+    {
+      "id": "banneton-sticking",
+      "status": 200,
+      "bytes": 47585,
+      "heading": "Banneton Sticking",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/banneton-sticking"
+    },
+    {
+      "id": "barley",
+      "status": 200,
+      "bytes": 39223,
+      "heading": "Barley",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/barley"
+    },
+    {
+      "id": "bassinage",
+      "status": 200,
+      "bytes": 35632,
+      "heading": "Bassinage",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bassinage"
+    },
+    {
+      "id": "batard",
+      "status": 200,
+      "bytes": 42683,
+      "heading": "Batard",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/batard"
+    },
+    {
+      "id": "bench-rest",
+      "status": 200,
+      "bytes": 35678,
+      "heading": "Bench Rest",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bench-rest"
+    },
+    {
+      "id": "bench-scraper",
+      "status": 200,
+      "bytes": 50073,
+      "heading": "Bench Scraper",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bench-scraper"
+    },
+    {
+      "id": "bialy",
+      "status": 200,
+      "bytes": 34651,
+      "heading": "Bialy",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bialy"
+    },
+    {
+      "id": "belly",
+      "status": 200,
+      "bytes": 35404,
+      "heading": "Belly",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/belly"
+    },
+    {
+      "id": "biga",
+      "status": 200,
+      "bytes": 49584,
+      "heading": "Biga",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/biga"
+    },
+    {
+      "id": "bolted-flour",
+      "status": 200,
+      "bytes": 40418,
+      "heading": "Bolted Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bolted-flour"
+    },
+    {
+      "id": "blowout",
+      "status": 200,
+      "bytes": 45139,
+      "heading": "Blowout",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/blowout"
+    },
+    {
+      "id": "blisters",
+      "status": 200,
+      "bytes": 35663,
+      "heading": "Blisters",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/blisters"
+    },
+    {
+      "id": "bolting",
+      "status": 200,
+      "bytes": 41895,
+      "heading": "Bolting",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bolting"
+    },
+    {
+      "id": "boule",
+      "status": 200,
+      "bytes": 41821,
+      "heading": "Boule",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/boule"
+    },
+    {
+      "id": "bowl-scraper",
+      "status": 200,
+      "bytes": 38393,
+      "heading": "Bowl Scraper",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bowl-scraper"
+    },
+    {
+      "id": "bran",
+      "status": 200,
+      "bytes": 42875,
+      "heading": "Bran",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bran"
+    },
+    {
+      "id": "braiding",
+      "status": 200,
+      "bytes": 39530,
+      "heading": "Braiding",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/braiding"
+    },
+    {
+      "id": "bran-soaker",
+      "status": 200,
+      "bytes": 40795,
+      "heading": "Bran Soaker",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bran-soaker"
+    },
+    {
+      "id": "bran-sharpness",
+      "status": 200,
+      "bytes": 39882,
+      "heading": "Bran Sharpness",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bran-sharpness"
+    },
+    {
+      "id": "bread-flour",
+      "status": 200,
+      "bytes": 43575,
+      "heading": "Bread Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bread-flour"
+    },
+    {
+      "id": "bread-knife",
+      "status": 200,
+      "bytes": 38377,
+      "heading": "Bread Knife",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bread-knife"
+    },
+    {
+      "id": "bread-wheat",
+      "status": 200,
+      "bytes": 41629,
+      "heading": "Bread Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bread-wheat"
+    },
+    {
+      "id": "brine",
+      "status": 200,
+      "bytes": 38168,
+      "heading": "Brine",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/brine"
+    },
+    {
+      "id": "bruhstuck",
+      "status": 200,
+      "bytes": 40641,
+      "heading": "Brühstück",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bruhstuck"
+    },
+    {
+      "id": "brioche",
+      "status": 200,
+      "bytes": 43800,
+      "heading": "Brioche",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/brioche"
+    },
+    {
+      "id": "buckwheat",
+      "status": 200,
+      "bytes": 38615,
+      "heading": "Buckwheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/buckwheat"
+    },
+    {
+      "id": "bulk-fermentation",
+      "status": 200,
+      "bytes": 72857,
+      "heading": "Bulk Fermentation",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bulk-fermentation"
+    },
+    {
+      "id": "cast-iron-skillet",
+      "status": 200,
+      "bytes": 39438,
+      "heading": "Cast Iron Skillet",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cast-iron-skillet"
+    },
+    {
+      "id": "bulk-rise-target",
+      "status": 200,
+      "bytes": 40829,
+      "heading": "Bulk Rise Target",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/bulk-rise-target"
+    },
+    {
+      "id": "caramelization",
+      "status": 200,
+      "bytes": 41024,
+      "heading": "Caramelization",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/caramelization"
+    },
+    {
+      "id": "buttermilk",
+      "status": 200,
+      "bytes": 38556,
+      "heading": "Buttermilk",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/buttermilk"
+    },
+    {
+      "id": "challah",
+      "status": 200,
+      "bytes": 42992,
+      "heading": "Challah",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/challah"
+    },
+    {
+      "id": "ciabatta",
+      "status": 200,
+      "bytes": 46224,
+      "heading": "Ciabatta",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ciabatta"
+    },
+    {
+      "id": "clear-flour",
+      "status": 200,
+      "bytes": 40388,
+      "heading": "Clear Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/clear-flour"
+    },
+    {
+      "id": "cloche",
+      "status": 200,
+      "bytes": 35258,
+      "heading": "Cloche",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cloche"
+    },
+    {
+      "id": "coil-fold",
+      "status": 200,
+      "bytes": 53227,
+      "heading": "Coil Fold",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/coil-fold"
+    },
+    {
+      "id": "cold-proof",
+      "status": 200,
+      "bytes": 54587,
+      "heading": "Cold Proof",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cold-proof"
+    },
+    {
+      "id": "colomba",
+      "status": 200,
+      "bytes": 41877,
+      "heading": "Colomba",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/colomba"
+    },
+    {
+      "id": "cornmeal",
+      "status": 200,
+      "bytes": 39072,
+      "heading": "Cornmeal",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cornmeal"
+    },
+    {
+      "id": "cooling-rack",
+      "status": 200,
+      "bytes": 35204,
+      "heading": "Cooling Rack",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cooling-rack"
+    },
+    {
+      "id": "cold-bulk",
+      "status": 200,
+      "bytes": 38437,
+      "heading": "Cold Bulk",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cold-bulk"
+    },
+    {
+      "id": "combo-cooker",
+      "status": 200,
+      "bytes": 38880,
+      "heading": "Combo Cooker",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/combo-cooker"
+    },
+    {
+      "id": "cracked-grain",
+      "status": 200,
+      "bytes": 38978,
+      "heading": "Cracked Grain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cracked-grain"
+    },
+    {
+      "id": "crumb",
+      "status": 200,
+      "bytes": 48290,
+      "heading": "Crumb",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/crumb"
+    },
+    {
+      "id": "damaged-starch",
+      "status": 200,
+      "bytes": 40363,
+      "heading": "Damaged Starch",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/damaged-starch"
+    },
+    {
+      "id": "croissant",
+      "status": 200,
+      "bytes": 41973,
+      "heading": "Croissant",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/croissant"
+    },
+    {
+      "id": "crust",
+      "status": 200,
+      "bytes": 34908,
+      "heading": "Crust",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/crust"
+    },
+    {
+      "id": "cross-score",
+      "status": 200,
+      "bytes": 38667,
+      "heading": "Cross Score",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/cross-score"
+    },
+    {
+      "id": "degassing",
+      "status": 200,
+      "bytes": 39253,
+      "heading": "Degassing",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/degassing"
+    },
+    {
+      "id": "danish-dough-whisk",
+      "status": 200,
+      "bytes": 37004,
+      "heading": "Danish Dough Whisk",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/danish-dough-whisk"
+    },
+    {
+      "id": "desired-dough-temperature",
+      "status": 200,
+      "bytes": 42212,
+      "heading": "Desired Dough Temperature (DDT)",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/desired-dough-temperature"
+    },
+    {
+      "id": "dense-crumb",
+      "status": 200,
+      "bytes": 46538,
+      "heading": "Dense Crumb",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/dense-crumb"
+    },
+    {
+      "id": "docking",
+      "status": 200,
+      "bytes": 35555,
+      "heading": "Docking",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/docking"
+    },
+    {
+      "id": "diastatic-malt",
+      "status": 200,
+      "bytes": 39405,
+      "heading": "Diastatic Malt Powder",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/diastatic-malt"
+    },
+    {
+      "id": "discard",
+      "status": 200,
+      "bytes": 49220,
+      "heading": "Discard",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/discard"
+    },
+    {
+      "id": "digital-scale",
+      "status": 200,
+      "bytes": 45565,
+      "heading": "Digital Scale",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/digital-scale"
+    },
+    {
+      "id": "detroit-style-pizza",
+      "status": 200,
+      "bytes": 39662,
+      "heading": "Detroit Style Pizza",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/detroit-style-pizza"
+    },
+    {
+      "id": "dough-container",
+      "status": 200,
+      "bytes": 38801,
+      "heading": "Dough Container",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/dough-container"
+    },
+    {
+      "id": "ear",
+      "status": 200,
+      "bytes": 37989,
+      "heading": "Ear",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ear"
+    },
+    {
+      "id": "dutch-oven",
+      "status": 200,
+      "bytes": 53174,
+      "heading": "Dutch Oven",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/dutch-oven"
+    },
+    {
+      "id": "durum-wheat",
+      "status": 200,
+      "bytes": 42441,
+      "heading": "Durum Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/durum-wheat"
+    },
+    {
+      "id": "dough-sheeter",
+      "status": 200,
+      "bytes": 38703,
+      "heading": "Dough Sheeter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/dough-sheeter"
+    },
+    {
+      "id": "emmer",
+      "status": 200,
+      "bytes": 39985,
+      "heading": "Emmer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/emmer"
+    },
+    {
+      "id": "elasticity",
+      "status": 200,
+      "bytes": 38813,
+      "heading": "Elasticity",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/elasticity"
+    },
+    {
+      "id": "einkorn",
+      "status": 200,
+      "bytes": 55281,
+      "heading": "Einkorn",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/einkorn"
+    },
+    {
+      "id": "egg-wash",
+      "status": 200,
+      "bytes": 40919,
+      "heading": "Egg Wash",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/egg-wash"
+    },
+    {
+      "id": "english-muffin",
+      "status": 200,
+      "bytes": 38051,
+      "heading": "English Muffin",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/english-muffin"
+    },
+    {
+      "id": "enriched-dough",
+      "status": 200,
+      "bytes": 39408,
+      "heading": "Enriched Dough",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/enriched-dough"
+    },
+    {
+      "id": "extensibility",
+      "status": 200,
+      "bytes": 38924,
+      "heading": "Extensibility",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/extensibility"
+    },
+    {
+      "id": "extraction-rate",
+      "status": 200,
+      "bytes": 43913,
+      "heading": "Extraction Rate",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/extraction-rate"
+    },
+    {
+      "id": "falling-number",
+      "status": 200,
+      "bytes": 41645,
+      "heading": "Falling Number",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/falling-number"
+    },
+    {
+      "id": "endosperm",
+      "status": 200,
+      "bytes": 39958,
+      "heading": "Endosperm",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/endosperm"
+    },
+    {
+      "id": "farro",
+      "status": 200,
+      "bytes": 45501,
+      "heading": "Farro",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/farro"
+    },
+    {
+      "id": "feeding-ratio",
+      "status": 200,
+      "bytes": 40522,
+      "heading": "Feeding Ratio",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/feeding-ratio"
+    },
+    {
+      "id": "fermentolyse",
+      "status": 200,
+      "bytes": 40485,
+      "heading": "Fermentolyse",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fermentolyse"
+    },
+    {
+      "id": "feeding",
+      "status": 200,
+      "bytes": 38360,
+      "heading": "Feeding",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/feeding"
+    },
+    {
+      "id": "flour-freshness",
+      "status": 200,
+      "bytes": 41858,
+      "heading": "Flour Freshness",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/flour-freshness"
+    },
+    {
+      "id": "float-test",
+      "status": 200,
+      "bytes": 39207,
+      "heading": "Float Test",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/float-test"
+    },
+    {
+      "id": "flying-crust",
+      "status": 200,
+      "bytes": 45088,
+      "heading": "Flying Crust",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/flying-crust"
+    },
+    {
+      "id": "flour-strength",
+      "status": 200,
+      "bytes": 41097,
+      "heading": "Flour Strength",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/flour-strength"
+    },
+    {
+      "id": "fonio",
+      "status": 200,
+      "bytes": 37084,
+      "heading": "Fonio",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fonio"
+    },
+    {
+      "id": "fougasse",
+      "status": 200,
+      "bytes": 39790,
+      "heading": "Fougasse",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fougasse"
+    },
+    {
+      "id": "focaccia",
+      "status": 200,
+      "bytes": 46677,
+      "heading": "Focaccia",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/focaccia"
+    },
+    {
+      "id": "fermentation",
+      "status": 200,
+      "bytes": 45150,
+      "heading": "Fermentation",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fermentation"
+    },
+    {
+      "id": "fools-crumb",
+      "status": 200,
+      "bytes": 48457,
+      "heading": "Fool's Crumb",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fools-crumb"
+    },
+    {
+      "id": "fresh-yeast",
+      "status": 200,
+      "bytes": 41049,
+      "heading": "Fresh Yeast",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fresh-yeast"
+    },
+    {
+      "id": "fresh-milled-flour",
+      "status": 200,
+      "bytes": 53259,
+      "heading": "Fresh-Milled Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/fresh-milled-flour"
+    },
+    {
+      "id": "friction-factor",
+      "status": 200,
+      "bytes": 36252,
+      "heading": "Friction Factor",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/friction-factor"
+    },
+    {
+      "id": "gelatinization",
+      "status": 200,
+      "bytes": 44838,
+      "heading": "Gelatinization",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/gelatinization"
+    },
+    {
+      "id": "gluten-quality",
+      "status": 200,
+      "bytes": 41166,
+      "heading": "Gluten Quality",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/gluten-quality"
+    },
+    {
+      "id": "gluten",
+      "status": 200,
+      "bytes": 54119,
+      "heading": "Gluten",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/gluten"
+    },
+    {
+      "id": "grain-mill",
+      "status": 200,
+      "bytes": 38564,
+      "heading": "Grain Mill",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/grain-mill"
+    },
+    {
+      "id": "germ",
+      "status": 200,
+      "bytes": 39592,
+      "heading": "Germ",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/germ"
+    },
+    {
+      "id": "gummy-crumb",
+      "status": 200,
+      "bytes": 49762,
+      "heading": "Gummy Crumb",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/gummy-crumb"
+    },
+    {
+      "id": "hard-red-spring-wheat",
+      "status": 200,
+      "bytes": 43190,
+      "heading": "Hard Red Spring Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hard-red-spring-wheat"
+    },
+    {
+      "id": "hard-red-winter-wheat",
+      "status": 200,
+      "bytes": 43125,
+      "heading": "Hard Red Winter Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hard-red-winter-wheat"
+    },
+    {
+      "id": "hard-wheat",
+      "status": 200,
+      "bytes": 42853,
+      "heading": "Hard Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hard-wheat"
+    },
+    {
+      "id": "heritage-grain",
+      "status": 200,
+      "bytes": 41875,
+      "heading": "Heritage Grain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/heritage-grain"
+    },
+    {
+      "id": "high-extraction-flour",
+      "status": 200,
+      "bytes": 40894,
+      "heading": "High-Extraction Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/high-extraction-flour"
+    },
+    {
+      "id": "hard-white-wheat",
+      "status": 200,
+      "bytes": 45590,
+      "heading": "Hard White Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hard-white-wheat"
+    },
+    {
+      "id": "hoagie-roll",
+      "status": 200,
+      "bytes": 37570,
+      "heading": "Hoagie Roll",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hoagie-roll"
+    },
+    {
+      "id": "home-milling",
+      "status": 200,
+      "bytes": 42888,
+      "heading": "Home Milling",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/home-milling"
+    },
+    {
+      "id": "hearth-loaf",
+      "status": 200,
+      "bytes": 35628,
+      "heading": "Hearth Loaf",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hearth-loaf"
+    },
+    {
+      "id": "hooch",
+      "status": 200,
+      "bytes": 49798,
+      "heading": "Hooch",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hooch"
+    },
+    {
+      "id": "hydration",
+      "status": 200,
+      "bytes": 59170,
+      "heading": "Hydration",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/hydration"
+    },
+    {
+      "id": "identity-preserved-grain",
+      "status": 200,
+      "bytes": 36995,
+      "heading": "Identity-Preserved Grain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/identity-preserved-grain"
+    },
+    {
+      "id": "impact-mill",
+      "status": 200,
+      "bytes": 41202,
+      "heading": "Impact Mill",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/impact-mill"
+    },
+    {
+      "id": "infrared-thermometer",
+      "status": 200,
+      "bytes": 35821,
+      "heading": "Infrared Thermometer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/infrared-thermometer"
+    },
+    {
+      "id": "inclusions",
+      "status": 200,
+      "bytes": 36613,
+      "heading": "Inclusions",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/inclusions"
+    },
+    {
+      "id": "injera",
+      "status": 200,
+      "bytes": 40199,
+      "heading": "Injera",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/injera"
+    },
+    {
+      "id": "instant-yeast",
+      "status": 200,
+      "bytes": 42271,
+      "heading": "Instant Yeast",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/instant-yeast"
+    },
+    {
+      "id": "intensive-mix",
+      "status": 200,
+      "bytes": 36152,
+      "heading": "Intensive Mix",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/intensive-mix"
+    },
+    {
+      "id": "khorasan-wheat",
+      "status": 200,
+      "bytes": 46169,
+      "heading": "Khorasan Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/khorasan-wheat"
+    },
+    {
+      "id": "kaiser-roll",
+      "status": 200,
+      "bytes": 35840,
+      "heading": "Kaiser Roll",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/kaiser-roll"
+    },
+    {
+      "id": "kneading",
+      "status": 200,
+      "bytes": 41413,
+      "heading": "Kneading",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/kneading"
+    },
+    {
+      "id": "lactic-acid",
+      "status": 200,
+      "bytes": 38375,
+      "heading": "Lactic Acid",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lactic-acid"
+    },
+    {
+      "id": "kochstuck",
+      "status": 200,
+      "bytes": 39637,
+      "heading": "Kochstück",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/kochstuck"
+    },
+    {
+      "id": "lactic-acid-bacteria",
+      "status": 200,
+      "bytes": 41088,
+      "heading": "Lactic Acid Bacteria",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lactic-acid-bacteria"
+    },
+    {
+      "id": "lame",
+      "status": 200,
+      "bytes": 54799,
+      "heading": "Lame",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lame"
+    },
+    {
+      "id": "landrace-grain",
+      "status": 200,
+      "bytes": 36597,
+      "heading": "Landrace Grain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/landrace-grain"
+    },
+    {
+      "id": "lamination",
+      "status": 200,
+      "bytes": 51012,
+      "heading": "Lamination",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lamination"
+    },
+    {
+      "id": "laminated-dough",
+      "status": 200,
+      "bytes": 41182,
+      "heading": "Laminated Dough",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/laminated-dough"
+    },
+    {
+      "id": "lava-rocks",
+      "status": 200,
+      "bytes": 35773,
+      "heading": "Lava Rocks",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lava-rocks"
+    },
+    {
+      "id": "leaf-score",
+      "status": 200,
+      "bytes": 35978,
+      "heading": "Leaf Score",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/leaf-score"
+    },
+    {
+      "id": "lean-dough",
+      "status": 200,
+      "bytes": 35612,
+      "heading": "Lean Dough",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lean-dough"
+    },
+    {
+      "id": "letter-fold",
+      "status": 200,
+      "bytes": 39239,
+      "heading": "Letter Fold",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/letter-fold"
+    },
+    {
+      "id": "levain",
+      "status": 200,
+      "bytes": 51330,
+      "heading": "Levain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/levain"
+    },
+    {
+      "id": "lievito-madre",
+      "status": 200,
+      "bytes": 38369,
+      "heading": "Lievito Madre",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lievito-madre"
+    },
+    {
+      "id": "maillard-reaction",
+      "status": 200,
+      "bytes": 47496,
+      "heading": "Maillard Reaction",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/maillard-reaction"
+    },
+    {
+      "id": "maltose",
+      "status": 200,
+      "bytes": 40486,
+      "heading": "Maltose",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/maltose"
+    },
+    {
+      "id": "lye",
+      "status": 200,
+      "bytes": 38689,
+      "heading": "Lye (Sodium Hydroxide)",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/lye"
+    },
+    {
+      "id": "marquis-wheat",
+      "status": 200,
+      "bytes": 37509,
+      "heading": "Marquis Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/marquis-wheat"
+    },
+    {
+      "id": "inoculation",
+      "status": 200,
+      "bytes": 36192,
+      "heading": "Inoculation",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/inoculation"
+    },
+    {
+      "id": "middlings",
+      "status": 200,
+      "bytes": 36434,
+      "heading": "Middlings",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/middlings"
+    },
+    {
+      "id": "miche",
+      "status": 200,
+      "bytes": 39532,
+      "heading": "Miche",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/miche"
+    },
+    {
+      "id": "milk-bread",
+      "status": 200,
+      "bytes": 38765,
+      "heading": "Milk Bread (Shokupan)",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/milk-bread"
+    },
+    {
+      "id": "millet",
+      "status": 200,
+      "bytes": 38799,
+      "heading": "Millet",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/millet"
+    },
+    {
+      "id": "milling-temperature",
+      "status": 200,
+      "bytes": 40330,
+      "heading": "Milling Temperature",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/milling-temperature"
+    },
+    {
+      "id": "modern-wheat",
+      "status": 200,
+      "bytes": 38094,
+      "heading": "Modern Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/modern-wheat"
+    },
+    {
+      "id": "naan",
+      "status": 200,
+      "bytes": 40302,
+      "heading": "Naan",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/naan"
+    },
+    {
+      "id": "mother",
+      "status": 200,
+      "bytes": 35318,
+      "heading": "Mother",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/mother"
+    },
+    {
+      "id": "new-york-style-pizza",
+      "status": 200,
+      "bytes": 39675,
+      "heading": "New York Style Pizza",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/new-york-style-pizza"
+    },
+    {
+      "id": "neapolitan-pizza",
+      "status": 200,
+      "bytes": 39965,
+      "heading": "Neapolitan Pizza",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/neapolitan-pizza"
+    },
+    {
+      "id": "oats",
+      "status": 200,
+      "bytes": 38337,
+      "heading": "Oats",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/oats"
+    },
+    {
+      "id": "osmotolerant-yeast",
+      "status": 200,
+      "bytes": 39925,
+      "heading": "Osmotolerant Yeast",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/osmotolerant-yeast"
+    },
+    {
+      "id": "non-diastatic-malt",
+      "status": 200,
+      "bytes": 40987,
+      "heading": "Non-Diastatic Malt",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/non-diastatic-malt"
+    },
+    {
+      "id": "oven-thermometer",
+      "status": 200,
+      "bytes": 38777,
+      "heading": "Oven Thermometer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/oven-thermometer"
+    },
+    {
+      "id": "oven-spring",
+      "status": 200,
+      "bytes": 54521,
+      "heading": "Oven Spring",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/oven-spring"
+    },
+    {
+      "id": "overproofed",
+      "status": 200,
+      "bytes": 49151,
+      "heading": "Overproofed",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/overproofed"
+    },
+    {
+      "id": "overmixing",
+      "status": 200,
+      "bytes": 45790,
+      "heading": "Overmixing",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/overmixing"
+    },
+    {
+      "id": "overripe-starter",
+      "status": 200,
+      "bytes": 39140,
+      "heading": "Overripe Starter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/overripe-starter"
+    },
+    {
+      "id": "pain-de-campagne",
+      "status": 200,
+      "bytes": 41832,
+      "heading": "Pain de Campagne",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pain-de-campagne"
+    },
+    {
+      "id": "p-l-ratio",
+      "status": 200,
+      "bytes": 40561,
+      "heading": "P/L Ratio",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/p-l-ratio"
+    },
+    {
+      "id": "pancaking",
+      "status": 200,
+      "bytes": 48070,
+      "heading": "Pancaking",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pancaking"
+    },
+    {
+      "id": "pale-crust",
+      "status": 200,
+      "bytes": 46930,
+      "heading": "Pale Crust",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pale-crust"
+    },
+    {
+      "id": "pain-de-mie",
+      "status": 200,
+      "bytes": 36697,
+      "heading": "Pain de Mie",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pain-de-mie"
+    },
+    {
+      "id": "pate-fermentee",
+      "status": 200,
+      "bytes": 40385,
+      "heading": "Pâte Fermentée",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pate-fermentee"
+    },
+    {
+      "id": "panettone",
+      "status": 200,
+      "bytes": 43675,
+      "heading": "Panettone",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/panettone"
+    },
+    {
+      "id": "par-baking",
+      "status": 200,
+      "bytes": 39073,
+      "heading": "Par-Baking",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/par-baking"
+    },
+    {
+      "id": "patent-flour",
+      "status": 200,
+      "bytes": 41014,
+      "heading": "Patent Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/patent-flour"
+    },
+    {
+      "id": "particle-size",
+      "status": 200,
+      "bytes": 40445,
+      "heading": "Particle Size",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/particle-size"
+    },
+    {
+      "id": "peak",
+      "status": 200,
+      "bytes": 38746,
+      "heading": "Peak",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/peak"
+    },
+    {
+      "id": "ph",
+      "status": 200,
+      "bytes": 38274,
+      "heading": "pH",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ph"
+    },
+    {
+      "id": "pizza-dough-balls",
+      "status": 200,
+      "bytes": 37219,
+      "heading": "Pizza Dough Balls",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pizza-dough-balls"
+    },
+    {
+      "id": "pizza-peel",
+      "status": 200,
+      "bytes": 36691,
+      "heading": "Pizza Peel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pizza-peel"
+    },
+    {
+      "id": "pizza-stone-steel",
+      "status": 200,
+      "bytes": 37226,
+      "heading": "Pizza Stone / Steel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pizza-stone-steel"
+    },
+    {
+      "id": "poke-test",
+      "status": 200,
+      "bytes": 52058,
+      "heading": "Poke Test",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/poke-test"
+    },
+    {
+      "id": "pita",
+      "status": 200,
+      "bytes": 38831,
+      "heading": "Pita",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pita"
+    },
+    {
+      "id": "pentosans",
+      "status": 200,
+      "bytes": 41987,
+      "heading": "Pentosans",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pentosans"
+    },
+    {
+      "id": "pre-shape",
+      "status": 200,
+      "bytes": 39589,
+      "heading": "Pre-Shape",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pre-shape"
+    },
+    {
+      "id": "proofing",
+      "status": 200,
+      "bytes": 39994,
+      "heading": "Proofing",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/proofing"
+    },
+    {
+      "id": "poolish",
+      "status": 200,
+      "bytes": 55004,
+      "heading": "Poolish",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/poolish"
+    },
+    {
+      "id": "proofing-box",
+      "status": 200,
+      "bytes": 35837,
+      "heading": "Proofing Box",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/proofing-box"
+    },
+    {
+      "id": "probe-thermometer",
+      "status": 200,
+      "bytes": 41421,
+      "heading": "Probe Thermometer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/probe-thermometer"
+    },
+    {
+      "id": "protein-content",
+      "status": 200,
+      "bytes": 52247,
+      "heading": "Protein Content",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/protein-content"
+    },
+    {
+      "id": "pseudocereal",
+      "status": 200,
+      "bytes": 37528,
+      "heading": "Pseudocereal",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pseudocereal"
+    },
+    {
+      "id": "preferment",
+      "status": 200,
+      "bytes": 45109,
+      "heading": "Preferment",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/preferment"
+    },
+    {
+      "id": "protease",
+      "status": 200,
+      "bytes": 36140,
+      "heading": "Protease",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/protease"
+    },
+    {
+      "id": "pullman-pan",
+      "status": 200,
+      "bytes": 34660,
+      "heading": "Pullman Pan",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pullman-pan"
+    },
+    {
+      "id": "quellstuck",
+      "status": 200,
+      "bytes": 36938,
+      "heading": "Quellstück",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/quellstuck"
+    },
+    {
+      "id": "red-fife",
+      "status": 200,
+      "bytes": 38582,
+      "heading": "Red Fife",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/red-fife"
+    },
+    {
+      "id": "quick-bread",
+      "status": 200,
+      "bytes": 42250,
+      "heading": "Quick Bread",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/quick-bread"
+    },
+    {
+      "id": "quinoa",
+      "status": 200,
+      "bytes": 37770,
+      "heading": "Quinoa",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/quinoa"
+    },
+    {
+      "id": "retarding",
+      "status": 200,
+      "bytes": 35781,
+      "heading": "Retarding",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/retarding"
+    },
+    {
+      "id": "pumpernickel",
+      "status": 200,
+      "bytes": 41138,
+      "heading": "Pumpernickel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pumpernickel"
+    },
+    {
+      "id": "retrogradation",
+      "status": 200,
+      "bytes": 38518,
+      "heading": "Retrogradation",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/retrogradation"
+    },
+    {
+      "id": "rice-flour",
+      "status": 200,
+      "bytes": 38664,
+      "heading": "Rice Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rice-flour"
+    },
+    {
+      "id": "rope",
+      "status": 200,
+      "bytes": 45550,
+      "heading": "Rope",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rope"
+    },
+    {
+      "id": "ripe-starter",
+      "status": 200,
+      "bytes": 39000,
+      "heading": "Ripe Starter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/ripe-starter"
+    },
+    {
+      "id": "rolling-pin",
+      "status": 200,
+      "bytes": 39193,
+      "heading": "Rolling Pin",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rolling-pin"
+    },
+    {
+      "id": "rouge-de-bordeaux",
+      "status": 200,
+      "bytes": 37740,
+      "heading": "Rouge de Bordeaux",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rouge-de-bordeaux"
+    },
+    {
+      "id": "roasted-garlic",
+      "status": 200,
+      "bytes": 41063,
+      "heading": "Roasted Garlic",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/roasted-garlic"
+    },
+    {
+      "id": "rye-flour",
+      "status": 200,
+      "bytes": 58810,
+      "heading": "Rye Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rye-flour"
+    },
+    {
+      "id": "rubaud-method",
+      "status": 200,
+      "bytes": 40846,
+      "heading": "Rubaud Method",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/rubaud-method"
+    },
+    {
+      "id": "scalding",
+      "status": 200,
+      "bytes": 38987,
+      "heading": "Scalding (Milk)",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/scalding"
+    },
+    {
+      "id": "scald",
+      "status": 200,
+      "bytes": 35608,
+      "heading": "Scald",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/scald"
+    },
+    {
+      "id": "scoring",
+      "status": 200,
+      "bytes": 59664,
+      "heading": "Scoring",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/scoring"
+    },
+    {
+      "id": "salt",
+      "status": 200,
+      "bytes": 39388,
+      "heading": "Salt",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/salt"
+    },
+    {
+      "id": "semolina-flour",
+      "status": 200,
+      "bytes": 37643,
+      "heading": "Semolina Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/semolina-flour"
+    },
+    {
+      "id": "shaggy-mass",
+      "status": 200,
+      "bytes": 37925,
+      "heading": "Shaggy Mass",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/shaggy-mass"
+    },
+    {
+      "id": "seam",
+      "status": 200,
+      "bytes": 35158,
+      "heading": "Seam",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/seam"
+    },
+    {
+      "id": "shaping",
+      "status": 200,
+      "bytes": 45027,
+      "heading": "Shaping",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/shaping"
+    },
+    {
+      "id": "sifter",
+      "status": 200,
+      "bytes": 35942,
+      "heading": "Sifter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sifter"
+    },
+    {
+      "id": "pretzels",
+      "status": 200,
+      "bytes": 35759,
+      "heading": "Soft Pretzels",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/pretzels"
+    },
+    {
+      "id": "soaker",
+      "status": 200,
+      "bytes": 35528,
+      "heading": "Soaker",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/soaker"
+    },
+    {
+      "id": "soft-wheat",
+      "status": 200,
+      "bytes": 42335,
+      "heading": "Soft Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/soft-wheat"
+    },
+    {
+      "id": "soft-white-wheat",
+      "status": 200,
+      "bytes": 44532,
+      "heading": "Soft White Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/soft-white-wheat"
+    },
+    {
+      "id": "slap-and-fold",
+      "status": 200,
+      "bytes": 40965,
+      "heading": "Slap and Fold",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/slap-and-fold"
+    },
+    {
+      "id": "sonora-wheat",
+      "status": 200,
+      "bytes": 38844,
+      "heading": "Sonora Wheat",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sonora-wheat"
+    },
+    {
+      "id": "sourdough",
+      "status": 200,
+      "bytes": 41365,
+      "heading": "Sourdough",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sourdough"
+    },
+    {
+      "id": "spelt-flour",
+      "status": 200,
+      "bytes": 53122,
+      "heading": "Spelt Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/spelt-flour"
+    },
+    {
+      "id": "spiral-mixer",
+      "status": 200,
+      "bytes": 38606,
+      "heading": "Spiral Mixer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/spiral-mixer"
+    },
+    {
+      "id": "sourdough-discard",
+      "status": 200,
+      "bytes": 44535,
+      "heading": "Sourdough Discard",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sourdough-discard"
+    },
+    {
+      "id": "sourdough-starter",
+      "status": 200,
+      "bytes": 63116,
+      "heading": "Sourdough Starter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sourdough-starter"
+    },
+    {
+      "id": "sorghum",
+      "status": 200,
+      "bytes": 39097,
+      "heading": "Sorghum",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sorghum"
+    },
+    {
+      "id": "sponge",
+      "status": 200,
+      "bytes": 35609,
+      "heading": "Sponge",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sponge"
+    },
+    {
+      "id": "stand-mixer",
+      "status": 200,
+      "bytes": 39226,
+      "heading": "Stand Mixer",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/stand-mixer"
+    },
+    {
+      "id": "sprouted-flour",
+      "status": 200,
+      "bytes": 40536,
+      "heading": "Sprouted Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sprouted-flour"
+    },
+    {
+      "id": "sprout-damage",
+      "status": 200,
+      "bytes": 41018,
+      "heading": "Sprout Damage",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/sprout-damage"
+    },
+    {
+      "id": "starter-jar",
+      "status": 200,
+      "bytes": 38753,
+      "heading": "Starter Jar",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/starter-jar"
+    },
+    {
+      "id": "starch-attack",
+      "status": 200,
+      "bytes": 43448,
+      "heading": "Starch Attack",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/starch-attack"
+    },
+    {
+      "id": "oven-steam",
+      "status": 200,
+      "bytes": 37618,
+      "heading": "Steam (Baking)",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/oven-steam"
+    },
+    {
+      "id": "stiff-starter",
+      "status": 200,
+      "bytes": 39237,
+      "heading": "Stiff Starter",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/stiff-starter"
+    },
+    {
+      "id": "stitching",
+      "status": 200,
+      "bytes": 39200,
+      "heading": "Stitching",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/stitching"
+    },
+    {
+      "id": "stone-mill",
+      "status": 200,
+      "bytes": 40741,
+      "heading": "Stone Mill",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/stone-mill"
+    },
+    {
+      "id": "tangzhong",
+      "status": 200,
+      "bytes": 54925,
+      "heading": "Tangzhong",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/tangzhong"
+    },
+    {
+      "id": "stretch-and-fold",
+      "status": 200,
+      "bytes": 52813,
+      "heading": "Stretch and Fold",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/stretch-and-fold"
+    },
+    {
+      "id": "straight-grade-flour",
+      "status": 200,
+      "bytes": 37853,
+      "heading": "Straight Grade Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/straight-grade-flour"
+    },
+    {
+      "id": "surface-tension",
+      "status": 200,
+      "bytes": 39075,
+      "heading": "Surface Tension",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/surface-tension"
+    },
+    {
+      "id": "teff",
+      "status": 200,
+      "bytes": 36176,
+      "heading": "Teff",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/teff"
+    },
+    {
+      "id": "tempering",
+      "status": 200,
+      "bytes": 39228,
+      "heading": "Tempering",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/tempering"
+    },
+    {
+      "id": "tension-pull",
+      "status": 200,
+      "bytes": 36002,
+      "heading": "Tension Pull",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/tension-pull"
+    },
+    {
+      "id": "tenacity",
+      "status": 200,
+      "bytes": 35740,
+      "heading": "Tenacity",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/tenacity"
+    },
+    {
+      "id": "terroir",
+      "status": 200,
+      "bytes": 40238,
+      "heading": "Terroir",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/terroir"
+    },
+    {
+      "id": "tunneling",
+      "status": 200,
+      "bytes": 43126,
+      "heading": "Tunneling",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/tunneling"
+    },
+    {
+      "id": "titratable-acidity",
+      "status": 200,
+      "bytes": 37321,
+      "heading": "Titratable Acidity",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/titratable-acidity"
+    },
+    {
+      "id": "turkey-red",
+      "status": 200,
+      "bytes": 35868,
+      "heading": "Turkey Red",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/turkey-red"
+    },
+    {
+      "id": "turning-peel",
+      "status": 200,
+      "bytes": 35148,
+      "heading": "Turning Peel",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/turning-peel"
+    },
+    {
+      "id": "type-00-flour",
+      "status": 200,
+      "bytes": 40791,
+      "heading": "Type 00 Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/type-00-flour"
+    },
+    {
+      "id": "triticale",
+      "status": 200,
+      "bytes": 39670,
+      "heading": "Triticale",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/triticale"
+    },
+    {
+      "id": "type-flour",
+      "status": 200,
+      "bytes": 41975,
+      "heading": "Type Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/type-flour"
+    },
+    {
+      "id": "underfermented",
+      "status": 200,
+      "bytes": 48441,
+      "heading": "Underfermented",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/underfermented"
+    },
+    {
+      "id": "underproofed",
+      "status": 200,
+      "bytes": 57723,
+      "heading": "Underproofed",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/underproofed"
+    },
+    {
+      "id": "vital-wheat-gluten",
+      "status": 200,
+      "bytes": 38787,
+      "heading": "Vital Wheat Gluten",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/vital-wheat-gluten"
+    },
+    {
+      "id": "vollkornbrot",
+      "status": 200,
+      "bytes": 40526,
+      "heading": "Vollkornbrot",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/vollkornbrot"
+    },
+    {
+      "id": "wheat-berry",
+      "status": 200,
+      "bytes": 44109,
+      "heading": "Wheat Berry",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/wheat-berry"
+    },
+    {
+      "id": "w-value",
+      "status": 200,
+      "bytes": 40766,
+      "heading": "W Value",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/w-value"
+    },
+    {
+      "id": "wheat-class",
+      "status": 200,
+      "bytes": 41045,
+      "heading": "Wheat Class",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/wheat-class"
+    },
+    {
+      "id": "wheat-stalk-score",
+      "status": 200,
+      "bytes": 35990,
+      "heading": "Wheat Stalk Score",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/wheat-stalk-score"
+    },
+    {
+      "id": "whole-wheat-flour",
+      "status": 200,
+      "bytes": 59282,
+      "heading": "Whole Wheat Flour",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/whole-wheat-flour"
+    },
+    {
+      "id": "windowpane-test",
+      "status": 200,
+      "bytes": 53845,
+      "heading": "Windowpane Test",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/windowpane-test"
+    },
+    {
+      "id": "young-levain",
+      "status": 200,
+      "bytes": 38596,
+      "heading": "Young Levain",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/young-levain"
+    },
+    {
+      "id": "yeast-water",
+      "status": 200,
+      "bytes": 50947,
+      "heading": "Yeast Water",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/yeast-water"
+    },
+    {
+      "id": "yeast",
+      "status": 200,
+      "bytes": 40802,
+      "heading": "Yeast",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/yeast"
+    },
+    {
+      "id": "yudane",
+      "status": 200,
+      "bytes": 46928,
+      "heading": "Yudane",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/yudane"
+    },
+    {
+      "id": "zest",
+      "status": 200,
+      "bytes": 38204,
+      "heading": "Zest",
+      "canonical": "https://crust-and-crumb-tawny.vercel.app/term/zest"
+    }
+  ]
+}

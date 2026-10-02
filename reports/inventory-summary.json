@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-02",
+  "baseCommit": "acbc902545fd3d821b59e2e8fec81a5970b30fc5",
+  "suppliedBuild": "https://crust-and-crumb-km00v74ia-henryhunterjrs-projects.vercel.app/",
+  "records": 292,
+  "publishedCanonical": 279,
+  "drafts": 13,
+  "standaloneAliasRecords": 0,
+  "archivedRecords": 0,
+  "aliasLabels": 68,
+  "aliasCollisions": 6,
+  "publicAliasCollisions": 0,
+  "danglingPublishedRelations": 0,
+  "fewerThanThreeRelated": 103,
+  "entriesWithClaimReferences": 5,
+  "corrected": [
+    "ash-content",
+    "bulk-fermentation",
+    "fresh-milled-flour",
+    "underproofed",
+    "whole-wheat-flour"
+  ],
+  "majorUpgrades": 3,
+  "newEntries": 0,
+  "removedEntries": 0,
+  "mergedEntries": 0,
+  "competitiveRank": "undetermined; no comparable benchmark",
+  "baselineHtmlBytes": 1620814,
+  "fieldPerformance": "unverified"
+}

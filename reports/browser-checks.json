@@ -1,0 +1,22 @@
+{
+  "manualBrowserChecks": [
+    "bakers percentage ranks first",
+    "term visit returns to filtered view",
+    "empty search and clear recovery",
+    "36 to 72 cards",
+    "Beginner Basics teaching order",
+    "320/375/390 no horizontal document overflow",
+    "Tools initial focus, Shift+Tab loop, Escape and focus restoration",
+    "500 flour 350 water 100 starter shows 72.7 percent hydration",
+    "decorative motion starts paused",
+    "production assistant fallback rendered with canonical links",
+    "production analyzer pause notice and valid destinations",
+    "1440 desktop corrected Fresh-Milled Flour rendered"
+  ],
+  "date": "2026-10-02",
+  "limits": [
+    "screen-reader and contrast audit pending",
+    "field CWV and competitive assessment unmeasured"
+  ],
+  "download": "Attempted JSON download; in-app event timed out; saved artifact unverified"
+}
