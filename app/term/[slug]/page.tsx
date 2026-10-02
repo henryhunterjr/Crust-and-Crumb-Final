@@ -281,6 +281,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             {dates && (
               <p className="-mt-4 text-[13px] text-[rgba(246,236,220,0.55)]">
                 By {AUTHOR_NAME} · Updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time>
+                {term.contentCheckedOn && <> · Sources last checked <time dateTime={term.contentCheckedOn}>{formatDate(term.contentCheckedOn)}</time></>}
               </p>
             )}
 
