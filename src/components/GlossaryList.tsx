@@ -717,6 +717,10 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         </div>
       </nav>
 
+      <p className="mb-4 text-[12px] leading-relaxed text-[rgba(246,236,220,0.55)]">
+        Some gear links are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.
+      </p>
+
       {/* Grid */}
       <div className={`grid grid-cols-1 ${quickMode ? 'md:grid-cols-2' : 'lg:grid-cols-1 xl:grid-cols-2'} gap-5 print:block print:space-y-6`}>
         {filteredData.length > 0 ? (
