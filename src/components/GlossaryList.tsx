@@ -12,7 +12,7 @@ import {
   Wheat, Sprout, Wrench, Croissant, GraduationCap, Stethoscope
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS, SYMPTOMS, GRAIN_PHOTOS, MILLING_TERM_IDS } from '../constants';
+import { GLOSSARY_DATA, LEARNING_PATHS, EXTERNAL_URLS, BAKING_TOOLS_PATH_ID, SOURCE_LABELS, SYMPTOMS, GRAIN_PHOTOS, MILLING_TERM_IDS, RELATED_TOOLS_BY_TERM } from '../constants';
 
 // Affiliate product mappings - keywords to products
 const AFFILIATE_MAPPINGS: { keywords: string[]; product: { name: string; url: string } }[] = [
@@ -730,6 +730,7 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                 !(item.affiliateTools || []).some(at => at.url === ap.url)
               )
             ];
+            const relatedTools = RELATED_TOOLS_BY_TERM[item.id] || [];
             // Filter related terms to only valid ones
             const validRelatedTerms = (item.relatedTermIds || []).filter(tid => VALID_TERM_IDS.has(tid));
             const isOpen = expandedId === item.id;
@@ -794,6 +795,32 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                           <img src={item.illustration.src} alt={item.illustration.alt} width="400" height="260" loading="lazy" decoding="async" className="w-full h-auto rounded-[12px]" />
                         </figure>
                       )}
+                    </div>
+                  )}
+
+                  {!quickMode && relatedTools.length > 0 && (
+                    <div className="mt-4 rounded-[18px] border border-[rgba(240,200,120,0.28)] bg-[rgba(240,200,120,0.07)] p-4">
+                      <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#f0c878] mb-2">Related Tool</div>
+                      <div className="flex flex-wrap gap-2">
+                        {relatedTools.map(tool => {
+                          const external = tool.url.startsWith('http');
+                          return (
+                            <a
+                              key={tool.url}
+                              href={tool.url}
+                              target={external ? '_blank' : undefined}
+                              rel={external ? 'noreferrer' : undefined}
+                              onClick={(e) => e.stopPropagation()}
+                              className="btn-glass inline-flex min-h-[44px] items-center gap-2 rounded-full px-4 text-sm font-semibold"
+                              title={tool.blurb}
+                            >
+                              <Calculator size={15} className="text-[#f0c878]" aria-hidden="true" />
+                              {tool.name}
+                              <ExternalLink size={13} aria-hidden="true" />
+                            </a>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
 
