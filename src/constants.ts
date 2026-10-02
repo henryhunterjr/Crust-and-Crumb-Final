@@ -62,7 +62,7 @@ export function resolveSlugAlias(rawSlug: string): string | undefined {
 export const AFFILIATE_LINKS = {
   // Proofing/Fermentation
   brodTaylorProofer: { name: 'Brød & Taylor Folding Proofer & Slow Cooker', url: 'https://collabs.shop/vutgu8' },
-  sourhouseGoldie: { name: 'Sourhouse Goldie (code HBK26)', url: 'https://sourhouse.co/products/goldie-by-sourhouse-cooling-puck-white?ref=BAKINGGREATBREAD' },
+  sourhouseGoldie: { name: 'Sourhouse Goldie (code HBK26 · 10% off)', url: 'https://sourhouse.co?ref=BAKINGGREATBREAD' },
   // Scoring
   wireMonkeyLame: { name: 'Wire Monkey Lame', url: 'https://wiremonkey.com/henryhunter' },
   // Baking/Dutch Oven
