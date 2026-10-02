@@ -401,9 +401,12 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             {affiliateLinks.length > 0 && (
               <section aria-labelledby="tools-h" className="flex flex-col gap-3">
                 <h2 id="tools-h" className="font-display font-medium text-[24px] text-[#fff8ec]">Recommended tools</h2>
+                <p className="text-[12px] leading-relaxed text-[rgba(246,236,220,0.55)]">
+                  Some gear links are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {affiliateLinks.map((link, index) => (
-                    <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="btn-glass inline-flex items-center gap-2 h-11 px-4 rounded-full text-sm font-semibold" data-affiliate-link={link.name}>
+                    <a key={index} href={link.url} target="_blank" rel="sponsored noopener noreferrer" className="btn-glass inline-flex items-center gap-2 h-11 px-4 rounded-full text-sm font-semibold" data-affiliate-link={link.name}>
                       {link.name}
                       <ExternalLink size={14} className="text-[#f0c878]" />
                     </a>
