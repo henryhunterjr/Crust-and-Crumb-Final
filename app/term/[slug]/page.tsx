@@ -369,7 +369,10 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
               </section>
             )}
 
-            <a className="text-[#f0c878] underline" href={`mailto:bakinggreatbreadathome@gmail.com?subject=${encodeURIComponent('Glossary correction: ' + term.term)}&body=${encodeURIComponent('Term: ' + termUrl + '\n\nSuggested correction and supporting reference:\n')}`}>Report a correction for this term</a>
+            <div className="flex flex-col gap-1">
+              <a className="text-[#f0c878] underline" href={`mailto:bakinggreatbreadathome@gmail.com?subject=${encodeURIComponent('Glossary correction: ' + term.term)}&body=${encodeURIComponent('Term: ' + termUrl + '\n\nSuggested correction and supporting reference:\n')}`}>Report a correction for this term</a>
+              <span className="text-xs text-[rgba(246,236,220,0.55)]">Correction inbox owner: Henry Hunter · Reply within 7 days</span>
+            </div>
             {readings.length > 0 && (
               <section aria-labelledby="deeper-h" className="flex flex-col gap-3">
                 <h2 id="deeper-h" className="font-display font-medium text-[28px] sm:text-[32px] tracking-[-0.02em] text-[#fff8ec]">Go deeper</h2>
