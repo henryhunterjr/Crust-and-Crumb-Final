@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { WheatFilm, StorefrontFeature, BrandShelf, HomeMillingFeature, GrainFeature } from './BrandFeatures';
+import { WheatFilm, StorefrontFeature, BrandShelf, HomeMillingFeature, GrainFeature, WireMonkeyFeature, AffiliateDisclosure } from './BrandFeatures';
 import PronunciationButton from './PronunciationButton';
 import { normalizeSearch, searchScore } from '../search';
 import TermEvidence from './TermEvidence';
@@ -583,6 +583,8 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
         <WheatFilm />
       </section>
 
+      <WireMonkeyFeature />
+
       <section id="paths" className="mb-10 print:hidden scroll-mt-28" aria-labelledby="path-heading">
         <div className="flex items-end justify-between gap-4 mb-5">
           <div>
@@ -833,12 +835,13 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                   {/* Show affiliate products in collapsed view too */}
                   {!quickMode && allAffiliateTools.length > 0 && !isOpen && (
                     <div className="mt-5 flex flex-wrap gap-2">
+                      <AffiliateDisclosure className="w-full text-[rgba(246,236,220,0.74)]" />
                       {allAffiliateTools.slice(0, 2).map((tool, idx) => (
                         <a
                           key={idx}
                           href={tool.url}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="sponsored noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
                           className="btn-glass inline-flex items-center gap-1.5 px-3.5 h-9 rounded-full text-xs font-semibold"
                         >
@@ -996,9 +999,10 @@ const GlossaryList: React.FC<GlossaryListProps> = ({ onAskKrusty, onTermClick, o
                           {allAffiliateTools.length > 0 && (
                             <div className="pt-4 border-t border-white/10">
                               <h4 className="flex items-center gap-2 font-semibold text-[#fff8ec] mb-3"><ShoppingBag size={16} className="text-[#f0c878]" /> Recommended Gear</h4>
+                              <AffiliateDisclosure className="mb-3 text-[rgba(246,236,220,0.74)]" />
                               <div className="flex flex-wrap gap-2">
                                 {allAffiliateTools.map((tool, idx) => (
-                                  <a key={idx} href={tool.url} target="_blank" rel="noreferrer" className="btn-glass px-4 rounded-full text-sm font-semibold min-h-[44px] inline-flex items-center">
+                                  <a key={idx} href={tool.url} target="_blank" rel="sponsored noopener noreferrer" className="btn-glass px-4 rounded-full text-sm font-semibold min-h-[44px] inline-flex items-center">
                                     {tool.name}
                                   </a>
                                 ))}

@@ -9,6 +9,7 @@ import ChatBot from '@/src/components/ChatBot';
 import BreadAnalyzer from '@/src/components/BreadAnalyzer';
 import { ChatMessage } from '@/src/types';
 import { FEATURED_TOOL, TOOL_GROUPS } from '@/src/constants';
+import { AffiliateDisclosure } from '@/src/components/BrandFeatures';
 
 // TikTok icon component (not in Lucide)
 const TikTokIcon = ({ size = 20 }: { size?: number }) => (
@@ -366,6 +367,7 @@ export default function GlossaryApp() {
                 </div>
 
                 {/* Henry's tools and resources */}
+                <AffiliateDisclosure className="mt-5 text-slate-600" />
                 <div className="space-y-5">
                   <h3 className="font-bold text-slate-700 flex items-center gap-2">
                     <ExternalLink size={18} />
