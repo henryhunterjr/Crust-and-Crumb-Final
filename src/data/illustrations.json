@@ -200,8 +200,8 @@
     "caption": "A living culture of flour, water, wild yeast and bacteria that leavens bread."
   },
   "hydration": {
-    "src": "/illustrations/hydration.svg",
-    "alt": "Line drawing illustrating hydration",
+    "src": "/photos/glossary/bread-dough-hydration-comparison.jpg",
+    "alt": "Lower- and higher-hydration bread dough shown side by side",
     "caption": "Water as a percentage of flour weight. 750 g water on 1,000 g flour is 75%."
   },
   "bakers-percentage": {
@@ -408,5 +408,15 @@
     "src": "/photos/glossary/vollkornbrot-whole-rye-bread.jpg",
     "alt": "Vollkornbrot: vollkornbrot whole rye loaf",
     "caption": "Vollkornbrot whole rye loaf."
+  },
+  "particle-size": {
+    "src": "/photos/glossary/fresh-milled-flour-particle-size.jpg",
+    "alt": "Coarse, medium, and fine fresh-milled flour particle sizes shown side by side",
+    "caption": "Coarse, medium, and fine fresh-milled flour. Finer flour takes up water faster; coarser flour adds texture."
+  },
+  "bran-soaker": {
+    "src": "/photos/glossary/bran-soaker-bread-baking.jpg",
+    "alt": "Dry wheat bran beside hydrated bran after soaking",
+    "caption": "Dry bran next to bran after soaking. Pre-hydrated bran softens and competes less with gluten."
   }
 }
