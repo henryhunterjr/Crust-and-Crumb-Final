@@ -25,7 +25,7 @@ export function WheatFilm() {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const applyPreference = () => {
       if (preference.matches) video.current?.pause();
-      else video.current?.pause();
+      else void video.current?.play().catch(() => {});
     };
     applyPreference();
     preference.addEventListener('change', applyPreference);
