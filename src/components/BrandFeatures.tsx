@@ -11,7 +11,7 @@ export function WireMonkeyFeature() {
   return (
     <aside className="mb-10 print:hidden" aria-label="Wire Monkey scoring tools">
       <a href={AFFILIATE_LINKS.wireMonkeyLame.url} target="_blank" rel="sponsored noopener noreferrer" data-affiliate-link="Wire Monkey" className="block rounded-2xl overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f0c878]">
-        <img src="/partners/wire-monkey-scoring-lames-banner.png" alt="Wire Monkey handcrafted wood scoring lames, with several lame designs and a scored loaf" width="1200" height="300" loading="lazy" decoding="async" className="w-full h-auto" />
+        <img src="/partners/wire-monkey-handcrafted-bread-lames-banner.webp" alt="Wire Monkey handcrafted bread lames in real wood, with several lame designs and a scored loaf — Shop Wire Monkey" width="2048" height="682" loading="lazy" decoding="async" className="w-full h-auto" />
       </a>
       <AffiliateDisclosure className="mt-3 text-[rgba(246,236,220,0.74)]" />
     </aside>
