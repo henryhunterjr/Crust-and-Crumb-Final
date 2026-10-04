@@ -1,93 +1,158 @@
 {
-  "windowpane-test": {
-    "src": "/photos/glossary/windowpane-test-bread-dough.jpg",
-    "alt": "Windowpane Test: dough stretched thin and translucent between fingers",
-    "caption": "Stretch a piece of dough thin. If light shows through without it tearing, the gluten is developed."
+  "aleurone-layer": {
+    "src": "/photos/glossary/wheat-kernel-aleurone-layer.jpg",
+    "alt": "Aleurone Layer: close macro of a wheat kernel showing its layers",
+    "caption": "Close macro of a wheat kernel showing its layers."
   },
-  "stretch-and-fold": {
-    "src": "/photos/glossary/stretch-and-fold-sourdough.jpg",
-    "alt": "Stretch and Fold: hands performing a stretch and fold",
-    "caption": "Grab one side, stretch it up, and fold it over the top. Turn the bowl and repeat."
+  "aliquot-jar": {
+    "src": "/photos/glossary/aliquot-jar-bulk-fermentation.jpg",
+    "alt": "Aliquot Jar: dough sample in a straight-sided jar beside the bulk dough",
+    "caption": "A small straight-sided sample of dough that shows the true percentage rise."
   },
-  "coil-fold": {
-    "src": "/photos/glossary/coil-fold-sourdough-dough.jpg",
-    "alt": "Coil Fold: hands performing a coil fold on dough",
-    "caption": "Lift from the middle so both ends hang, then let them tuck under as you set it down."
+  "ancient-grain": {
+    "src": "/photos/glossary/ancient-grains-wheat-varieties.jpg",
+    "alt": "Ancient Grain: several actual grain varieties side by side (einkorn, emmer, spelt, rye)",
+    "caption": "Several actual grain varieties side by side (einkorn, emmer, spelt, rye)."
   },
-  "slap-and-fold": {
-    "src": "/photos/glossary/slap-and-fold-bread-dough.jpg",
-    "alt": "Slap and Fold: dough in the slap-and-fold motion",
-    "caption": "Lift, slap the far end down, fold the rest over. Wet dough tightens fast this way."
-  },
-  "scoring": {
-    "src": "/photos/glossary/scoring-sourdough-bread.jpg",
-    "alt": "Scoring: hands scoring sourdough dough with a lame",
-    "caption": "A shallow cut at a low angle tells the loaf where to open."
-  },
-  "ear": {
-    "src": "/photos/glossary/sourdough-bread-ear.jpg",
-    "alt": "Ear: close-up of a sourdough ear, the raised crispy flap along the score",
-    "caption": "The raised flap of crust along the score, lifted by oven spring."
-  },
-  "shaping": {
-    "src": "/photos/glossary/shaping-sourdough-bread.jpg",
-    "alt": "Shaping: hands shaping a boule",
-    "caption": "Tension on the surface, seam on the bottom. That skin is what holds the rise."
-  },
-  "pre-shape": {
-    "src": "/photos/glossary/preshaping-sourdough-bread.jpg",
-    "alt": "Pre-Shape: dough being pre-shaped into a round",
-    "caption": "A loose round first lets the dough relax before the final shape."
-  },
-  "poke-test": {
-    "src": "/photos/glossary/sourdough-poke-test.jpg",
-    "alt": "Poke Test: finger pressing proofed dough leaving a visible indentation",
-    "caption": "A floured finger dent that fills back slowly is a loaf ready to bake."
-  },
-  "lamination": {
-    "src": "/photos/glossary/sourdough-lamination-technique.jpg",
-    "alt": "Lamination: dough stretched thin across a work surface",
-    "caption": "Alternating layers of dough and butter, folded over and over."
-  },
-  "braiding": {
-    "src": "/photos/glossary/braiding-challah-bread-dough.jpg",
-    "alt": "Braiding: hands braiding challah dough strands",
-    "caption": "Outside strand over the middle, alternating sides."
+  "ascorbic-acid": {
+    "src": "/photos/glossary/ascorbic-acid-vitamin-c-bread-baking.jpg",
+    "alt": "A bottle labeled Ascorbic Acid (Vitamin C), a dough-strengthening ingredient used in small amounts in bread baking",
+    "caption": "Ascorbic acid is vitamin C; in bread formulas it is used in very small amounts as a dough strengthener."
   },
   "autolyse": {
     "src": "/photos/glossary/autolyse-flour-water-dough.jpg",
     "alt": "Autolyse: flour and water just mixed into a rough shaggy dough, unkneaded",
     "caption": "Flour and water, rested before salt and leaven go in."
   },
-  "tangzhong": {
-    "src": "/photos/glossary/tangzhong-bread-technique.jpg",
-    "alt": "Tangzhong: cooked tangzhong paste showing a pudding-like consistency",
-    "caption": "A cooked flour paste that holds extra water for a softer, longer-lasting crumb."
+  "babka": {
+    "src": "/photos/glossary/chocolate-babka-bread.jpg",
+    "alt": "Babka: chocolate babka, sliced to show the swirl",
+    "caption": "Chocolate babka, sliced to show the swirl."
+  },
+  "bagel": {
+    "src": "/photos/glossary/homemade-artisan-bagels.jpg",
+    "alt": "Bagel: homemade bagels",
+    "caption": "Homemade bagels."
+  },
+  "baguette": {
+    "src": "/photos/glossary/artisan-sourdough-baguette.jpg",
+    "alt": "Baguette: finished baguette, cut to show the crumb",
+    "caption": "A long, thin loaf with a crackly crust, scored on the diagonal."
+  },
+  "bakers-couche": {
+    "src": "/photos/glossary/bakers-couche-baguette-proofing.jpg",
+    "alt": "Long bread dough pieces proofing in the folds of a baker's couche",
+    "caption": "A baker's couche supports long loaves in fabric folds so they hold their shape while proofing."
+  },
+  "bakers-percentage": {
+    "src": "/photos/glossary/bakers-percentage-bread-formula.jpg",
+    "alt": "Baker's Percentage: kitchen scale with flour and water, simple weights visible",
+    "caption": "Every ingredient expressed as a percent of the flour, which is always 100%."
+  },
+  "baking-steel": {
+    "src": "/photos/glossary/baking-steel-plate-bread-baking.jpg",
+    "alt": "A baker holding a rectangular Baking Steel plate above a wooden work surface",
+    "caption": "A solid steel plate provides a preheated baking surface for bread."
+  },
+  "banneton": {
+    "src": "/photos/glossary/banneton-proofing-bread-dough.jpg",
+    "alt": "Banneton: dough proofing in a rattan banneton basket",
+    "caption": "The coiled basket that supports the dough during its final rise."
+  },
+  "bassinage": {
+    "src": "/photos/glossary/bassinage-bread-dough.jpg",
+    "alt": "Bassinage: held-back water being worked into dough",
+    "caption": "Held-back water being worked into dough."
+  },
+  "batard": {
+    "src": "/photos/glossary/sourdough-batard-bread.jpg",
+    "alt": "Batard: Finished oval batard",
+    "caption": "An oval loaf, shorter and fatter than a baguette."
+  },
+  "bench-rest": {
+    "src": "/photos/glossary/sourdough-bench-rest.jpg",
+    "alt": "Bench Rest: pre-shaped dough rounds resting uncovered on a bench",
+    "caption": "Pre-shaped dough rounds resting uncovered on a bench."
+  },
+  "bench-scraper": {
+    "src": "/photos/glossary/bench-scraper-bread-dough.jpg",
+    "alt": "Bench Scraper: metal bench scraper being used with bread dough",
+    "caption": "A flat blade for dividing, lifting and shaping dough on the counter."
+  },
+  "bialy": {
+    "src": "/photos/glossary/bialy-onion-poppy-seed.jpg",
+    "alt": "Bialy: bialy with onion and poppy seed topping",
+    "caption": "Bialy with onion and poppy seed topping."
+  },
+  "biga": {
+    "src": "/photos/glossary/biga-preferment.jpg",
+    "alt": "Biga: mature stiff biga preferment showing structure",
+    "caption": "Mature stiff biga preferment showing structure."
+  },
+  "blowout": {
+    "src": "/photos/glossary/sourdough-bread-blowout.jpg",
+    "alt": "Blowout: loaf showing a side or bottom blowout burst",
+    "caption": "The crust bursts where it was not scored, because the gas found its own exit."
+  },
+  "bolted-flour": {
+    "src": "/photos/glossary/bolted-fresh-milled-flour.jpg",
+    "alt": "Bolted Flour: whole flour beside sifted/bolted flour for comparison",
+    "caption": "Whole flour beside sifted/bolted flour for comparison."
+  },
+  "bolting": {
+    "src": "/photos/glossary/bolting-sifting-fresh-milled-flour.jpg",
+    "alt": "Bolting: hands sifting fresh-milled flour through a sieve",
+    "caption": "Hands sifting fresh-milled flour through a sieve."
+  },
+  "boule": {
+    "src": "/photos/glossary/sourdough-boule.jpg",
+    "alt": "Boule: round sourdough boule, scored",
+    "caption": "A round loaf, from the French word for ball."
+  },
+  "braiding": {
+    "src": "/photos/glossary/braiding-challah-bread-dough.jpg",
+    "alt": "Braiding: hands braiding challah dough strands",
+    "caption": "Outside strand over the middle, alternating sides."
+  },
+  "bran": {
+    "src": "/photos/glossary/wheat-bran-fresh-milled-flour.jpg",
+    "alt": "Bran: fresh wheat bran",
+    "caption": "Fresh wheat bran."
+  },
+  "bran-soaker": {
+    "src": "/photos/glossary/bran-soaker-bread-baking.jpg",
+    "alt": "Dry wheat bran beside hydrated bran after soaking",
+    "caption": "Dry bran next to bran after soaking. Pre-hydrated bran softens and competes less with gluten."
+  },
+  "brioche": {
+    "src": "/photos/glossary/brioche-bread.jpg",
+    "alt": "Brioche: brioche loaf or buns",
+    "caption": "Brioche loaf or buns."
   },
   "bulk-fermentation": {
     "src": "/photos/glossary/sourdough-bulk-fermentation.jpg",
     "alt": "Bulk Fermentation: dough fermenting in a clear container with visible bubbles",
     "caption": "The first rise, measured by how much the whole mass grows."
   },
-  "oven-spring": {
-    "src": "/photos/glossary/sourdough-oven-spring.jpg",
-    "alt": "Oven Spring: baked loaf showing strong oven-spring rise",
-    "caption": "The fast rise in the first minutes of baking, before the crust sets."
+  "challah": {
+    "src": "/photos/glossary/braided-challah-bread.jpg",
+    "alt": "Challah: braided challah loaf",
+    "caption": "Braided challah loaf."
   },
-  "oven-steam": {
-    "src": "/photos/glossary/steam-bread-baking.jpg",
-    "alt": "Steam (Baking): steam in the oven or a steaming setup for bread baking",
-    "caption": "Steam keeps the crust soft long enough for the loaf to finish expanding."
+  "ciabatta": {
+    "src": "/photos/glossary/ciabatta-open-crumb.jpg",
+    "alt": "Ciabatta: ciabatta CUT OPEN showing the open crumb (interior shot required)",
+    "caption": "Ciabatta CUT OPEN showing the open crumb (interior shot required)."
+  },
+  "coil-fold": {
+    "src": "/photos/glossary/coil-fold-sourdough-dough.jpg",
+    "alt": "Coil Fold: hands performing a coil fold on dough",
+    "caption": "Lift from the middle so both ends hang, then let them tuck under as you set it down."
   },
   "cold-proof": {
     "src": "/photos/glossary/cold-proof-sourdough-refrigerator.jpg",
     "alt": "Cold Proof: shaped dough in a banneton going into a refrigerator",
     "caption": "A long, cold final rise in the fridge builds flavor and makes scoring easier."
-  },
-  "float-test": {
-    "src": "/photos/glossary/sourdough-starter-float-test.jpg",
-    "alt": "Float Test: spoonful of starter floating in a glass of water",
-    "caption": "A spoonful that floats is full of gas. One that sinks may still be ready."
   },
   "crumb": {
     "src": "/photos/glossary/sourdough-bread-crumb-structure.jpg",
@@ -99,180 +164,65 @@
     "alt": "Dense Crumb: sliced loaf with a dense tight crumb",
     "caption": "Tight and heavy, usually from too little fermentation or weak gluten."
   },
-  "gummy-crumb": {
-    "src": "/photos/glossary/gummy-sourdough-crumb.jpg",
-    "alt": "Gummy Crumb: close-up of a gummy wet crumb interior",
-    "caption": "A wet, sticky band, often from cutting too soon or underbaking."
-  },
-  "fools-crumb": {
-    "src": "/photos/glossary/fools-crumb-underfermented-sourdough.jpg",
-    "alt": "Fool's Crumb: sliced loaf with large tunnels surrounded by dense crumb (underfermented)",
-    "caption": "A few giant holes with dense crumb around them: underfermented, not open."
-  },
-  "tunneling": {
-    "src": "/photos/glossary/bread-crumb-tunneling.jpg",
-    "alt": "Tunneling: sliced loaf clearly showing tunnels in the crumb",
-    "caption": "A long cavity under the crust, usually from trapped gas during shaping."
-  },
-  "flying-crust": {
-    "src": "/photos/glossary/flying-crust-bread-defect.jpg",
-    "alt": "Flying Crust: sliced loaf with the crust separated from the crumb (the flying-crust defect)",
-    "caption": "The top crust separates and lifts away from the crumb below it."
-  },
-  "pancaking": {
-    "src": "/photos/glossary/sourdough-pancaking-flat-loaf.jpg",
-    "alt": "Pancaking: loaf spreading flat after being turned out of the banneton",
-    "caption": "The loaf spreads sideways in the oven instead of rising up."
-  },
-  "blowout": {
-    "src": "/photos/glossary/sourdough-bread-blowout.jpg",
-    "alt": "Blowout: loaf showing a side or bottom blowout burst",
-    "caption": "The crust bursts where it was not scored, because the gas found its own exit."
-  },
-  "overproofed": {
-    "src": "/photos/glossary/overproofed-sourdough.jpg",
-    "alt": "Overproofed: overproofed dough or a flat overproofed loaf",
-    "caption": "Risen past its peak. The gluten is tired and the loaf will sink or spread."
-  },
-  "underproofed": {
-    "src": "/photos/glossary/underproofed-sourdough-bread.jpg",
-    "alt": "Underproofed: loaf showing underproofing symptoms",
-    "caption": "Not enough rise yet. Bake it now and you get a tight, dense crumb."
-  },
-  "boule": {
-    "src": "/photos/glossary/sourdough-boule.jpg",
-    "alt": "Boule: round sourdough boule, scored",
-    "caption": "A round loaf, from the French word for ball."
-  },
-  "batard": {
-    "src": "/photos/glossary/sourdough-batard-bread.jpg",
-    "alt": "Batard: Finished oval batard",
-    "caption": "An oval loaf, shorter and fatter than a baguette."
-  },
-  "baguette": {
-    "src": "/photos/glossary/artisan-sourdough-baguette.jpg",
-    "alt": "Baguette: finished baguette, cut to show the crumb",
-    "caption": "A long, thin loaf with a crackly crust, scored on the diagonal."
-  },
-  "banneton": {
-    "src": "/photos/glossary/banneton-proofing-bread-dough.jpg",
-    "alt": "Banneton: dough proofing in a rattan banneton basket",
-    "caption": "The coiled basket that supports the dough during its final rise."
-  },
-  "lame": {
-    "src": "/illustrations/lame.svg",
-    "alt": "Line drawing illustrating lame",
-    "caption": "A razor blade on a handle, made for scoring dough."
+  "digital-scale": {
+    "src": "/photos/glossary/digital-scale-bread-baking.jpg",
+    "alt": "Digital Scale: bread ingredients being weighed in grams on a digital scale",
+    "caption": "Weigh everything in grams. Cups are a guess."
   },
   "dutch-oven": {
     "src": "/photos/glossary/dutch-oven-sourdough-bread.jpg",
     "alt": "Dutch Oven: loaf baking inside a Dutch oven with the lid off",
     "caption": "A heavy lidded pot that traps steam from the dough itself."
   },
-  "bench-scraper": {
-    "src": "/photos/glossary/bench-scraper-bread-dough.jpg",
-    "alt": "Bench Scraper: metal bench scraper being used with bread dough",
-    "caption": "A flat blade for dividing, lifting and shaping dough on the counter."
+  "ear": {
+    "src": "/photos/glossary/sourdough-bread-ear.jpg",
+    "alt": "Ear: close-up of a sourdough ear, the raised crispy flap along the score",
+    "caption": "The raised flap of crust along the score, lifted by oven spring."
   },
-  "digital-scale": {
-    "src": "/photos/glossary/digital-scale-bread-baking.jpg",
-    "alt": "Digital Scale: bread ingredients being weighed in grams on a digital scale",
-    "caption": "Weigh everything in grams. Cups are a guess."
+  "endosperm": {
+    "src": "/photos/glossary/wheat-kernel-endosperm.jpg",
+    "alt": "Endosperm: wheat kernel cross-section showing the endosperm",
+    "caption": "Wheat kernel cross-section showing the endosperm."
   },
-  "probe-thermometer": {
-    "src": "/photos/glossary/bread-internal-temperature-thermometer.jpg",
-    "alt": "Probe Thermometer: instant-read thermometer inserted into a finished loaf",
-    "caption": "Read the inside temperature to know the loaf is actually done."
+  "english-muffin": {
+    "src": "/photos/glossary/homemade-english-muffin-crumb.jpg",
+    "alt": "English Muffin: English muffin split showing the crumb",
+    "caption": "English muffin split showing the crumb."
   },
-  "grain-mill": {
-    "src": "/illustrations/grain-mill.svg",
-    "alt": "Line drawing illustrating grain mill",
-    "caption": "Turns whole wheat berries into fresh flour at home."
+  "float-test": {
+    "src": "/photos/glossary/sourdough-starter-float-test.jpg",
+    "alt": "Float Test: spoonful of starter floating in a glass of water",
+    "caption": "A spoonful that floats is full of gas. One that sinks may still be ready."
   },
-  "aliquot-jar": {
-    "src": "/photos/glossary/aliquot-jar-bulk-fermentation.jpg",
-    "alt": "Aliquot Jar: dough sample in a straight-sided jar beside the bulk dough",
-    "caption": "A small straight-sided sample of dough that shows the true percentage rise."
+  "flying-crust": {
+    "src": "/photos/glossary/flying-crust-bread-defect.jpg",
+    "alt": "Flying Crust: sliced loaf with the crust separated from the crumb (the flying-crust defect)",
+    "caption": "The top crust separates and lifts away from the crumb below it."
   },
-  "sourdough-starter": {
-    "src": "/illustrations/sourdough-starter.svg",
-    "alt": "Line drawing illustrating sourdough starter",
-    "caption": "A living culture of flour, water, wild yeast and bacteria that leavens bread."
+  "focaccia": {
+    "src": "/photos/glossary/artisan-focaccia-bread.jpg",
+    "alt": "Focaccia: artisan focaccia bread",
+    "caption": "Artisan focaccia bread."
   },
-  "hydration": {
-    "src": "/photos/glossary/bread-dough-hydration-comparison.jpg",
-    "alt": "Lower- and higher-hydration bread dough shown side by side",
-    "caption": "Water as a percentage of flour weight. 750 g water on 1,000 g flour is 75%."
-  },
-  "bakers-percentage": {
-    "src": "/photos/glossary/bakers-percentage-bread-formula.jpg",
-    "alt": "Baker's Percentage: kitchen scale with flour and water, simple weights visible",
-    "caption": "Every ingredient expressed as a percent of the flour, which is always 100%."
+  "fools-crumb": {
+    "src": "/photos/glossary/fools-crumb-underfermented-sourdough.jpg",
+    "alt": "Fool's Crumb: sliced loaf with large tunnels surrounded by dense crumb (underfermented)",
+    "caption": "A few giant holes with dense crumb around them: underfermented, not open."
   },
   "gluten": {
     "src": "/photos/glossary/gluten-development-bread-dough.jpg",
     "alt": "Gluten: dough stretched to show a developed gluten network",
     "caption": "The stretchy protein network that traps gas and gives bread its structure."
   },
-  "wheat-berry": {
-    "src": "/illustrations/wheat-berry.svg",
-    "alt": "Line drawing illustrating wheat berry",
-    "caption": "The whole kernel: bran outside, endosperm inside, germ at the base."
+  "grain-mill": {
+    "src": "/illustrations/grain-mill.svg",
+    "alt": "Line drawing illustrating grain mill",
+    "caption": "Turns whole wheat berries into fresh flour at home."
   },
-  "proofing": {
-    "src": "/photos/glossary/bread-dough-final-proof.jpg",
-    "alt": "Proofing: shaped dough visibly risen in a banneton, final proof",
-    "caption": "The final rise after shaping, right before the oven."
-  },
-  "kneading": {
-    "src": "/illustrations/kneading.svg",
-    "alt": "Line drawing illustrating kneading",
-    "caption": "Working the dough by hand to build gluten strength."
-  },
-  "biga": {
-    "src": "/photos/glossary/biga-preferment.jpg",
-    "alt": "Biga: mature stiff biga preferment showing structure",
-    "caption": "Mature stiff biga preferment showing structure."
-  },
-  "poolish": {
-    "src": "/photos/glossary/poolish-preferment.jpg",
-    "alt": "Poolish: mature bubbly poolish preferment",
-    "caption": "Mature bubbly poolish preferment."
-  },
-  "levain": {
-    "src": "/photos/glossary/sourdough-levain-at-peak.jpg",
-    "alt": "Levain: mature levain at peak, risen in its container",
-    "caption": "Mature levain at peak, risen in its container."
-  },
-  "ancient-grain": {
-    "src": "/photos/glossary/ancient-grains-wheat-varieties.jpg",
-    "alt": "Ancient Grain: several actual grain varieties side by side (einkorn, emmer, spelt, rye)",
-    "caption": "Several actual grain varieties side by side (einkorn, emmer, spelt, rye)."
-  },
-  "bran": {
-    "src": "/photos/glossary/wheat-bran-fresh-milled-flour.jpg",
-    "alt": "Bran: fresh wheat bran",
-    "caption": "Fresh wheat bran."
-  },
-  "bolting": {
-    "src": "/photos/glossary/bolting-sifting-fresh-milled-flour.jpg",
-    "alt": "Bolting: hands sifting fresh-milled flour through a sieve",
-    "caption": "Hands sifting fresh-milled flour through a sieve."
-  },
-  "aleurone-layer": {
-    "src": "/photos/glossary/wheat-kernel-aleurone-layer.jpg",
-    "alt": "Aleurone Layer: close macro of a wheat kernel showing its layers",
-    "caption": "Close macro of a wheat kernel showing its layers."
-  },
-  "bolted-flour": {
-    "src": "/photos/glossary/bolted-fresh-milled-flour.jpg",
-    "alt": "Bolted Flour: whole flour beside sifted/bolted flour for comparison",
-    "caption": "Whole flour beside sifted/bolted flour for comparison."
-  },
-  "stone-mill": {
-    "src": "/photos/glossary/stone-grain-mill.jpg",
-    "alt": "Stone Mill: an actual stone grain mill",
-    "caption": "An actual stone grain mill."
+  "gummy-crumb": {
+    "src": "/photos/glossary/gummy-sourdough-crumb.jpg",
+    "alt": "Gummy Crumb: close-up of a gummy wet crumb interior",
+    "caption": "A wet, sticky band, often from cutting too soon or underbaking."
   },
   "hard-red-spring-wheat": {
     "src": "/photos/glossary/hard-red-wheat-berries-flour.jpg",
@@ -284,144 +234,204 @@
     "alt": "Hard Red Winter Wheat: red wheat berries plus flour",
     "caption": "Red wheat berries plus flour."
   },
-  "rye-flour": {
-    "src": "/photos/glossary/rye-berries-fresh-milled-flour.jpg",
-    "alt": "Rye Flour: rye berries and freshly milled rye flour",
-    "caption": "Rye berries and freshly milled rye flour."
-  },
   "hard-white-wheat": {
     "src": "/photos/glossary/hard-white-wheat-berries-flour.jpg",
     "alt": "Hard White Wheat: white wheat berries plus flour",
     "caption": "White wheat berries plus flour."
   },
-  "sifter": {
-    "src": "/photos/glossary/fresh-milled-flour-sifter.jpg",
-    "alt": "Sifter: flour sieve/sifter with flour and retained bran",
-    "caption": "Flour sieve/sifter with flour and retained bran."
+  "hydration": {
+    "src": "/photos/glossary/bread-dough-hydration-comparison.jpg",
+    "alt": "Lower- and higher-hydration bread dough shown side by side",
+    "caption": "Water as a percentage of flour weight. 750 g water on 1,000 g flour is 75%."
   },
-  "bench-rest": {
-    "src": "/photos/glossary/sourdough-bench-rest.jpg",
-    "alt": "Bench Rest: pre-shaped dough rounds resting uncovered on a bench",
-    "caption": "Pre-shaped dough rounds resting uncovered on a bench."
+  "kneading": {
+    "src": "/illustrations/kneading.svg",
+    "alt": "Line drawing illustrating kneading",
+    "caption": "Working the dough by hand to build gluten strength."
   },
-  "rubaud-method": {
-    "src": "/photos/glossary/rubaud-method-sourdough.jpg",
-    "alt": "Rubaud Method: hand doing Rubaud mixing in a bowl",
-    "caption": "Hand doing Rubaud mixing in a bowl."
+  "lame": {
+    "src": "/illustrations/lame.svg",
+    "alt": "Line drawing illustrating lame",
+    "caption": "A razor blade on a handle, made for scoring dough."
   },
-  "stiff-starter": {
-    "src": "/photos/glossary/stiff-sourdough-starter.jpg",
-    "alt": "Stiff Starter: firm stiff starter beside a regular liquid starter",
-    "caption": "Firm stiff starter beside a regular liquid starter."
+  "lamination": {
+    "src": "/photos/glossary/sourdough-lamination-technique.jpg",
+    "alt": "Lamination: dough stretched thin across a work surface",
+    "caption": "Alternating layers of dough and butter, folded over and over."
   },
   "letter-fold": {
     "src": "/photos/glossary/letter-fold-bread-dough.jpg",
     "alt": "Letter Fold: dough at the letter-fold stage",
     "caption": "Dough at the letter-fold stage."
   },
-  "stitching": {
-    "src": "/photos/glossary/sourdough-stitching-technique.jpg",
-    "alt": "Stitching: a batard being stitched while in the banneton",
-    "caption": "A batard being stitched while in the banneton."
-  },
-  "surface-tension": {
-    "src": "/photos/glossary/surface-tension-sourdough-shaping.jpg",
-    "alt": "Surface Tension: a properly shaped tight smooth boule",
-    "caption": "A properly shaped tight smooth boule."
-  },
-  "bassinage": {
-    "src": "/photos/glossary/bassinage-bread-dough.jpg",
-    "alt": "Bassinage: held-back water being worked into dough",
-    "caption": "Held-back water being worked into dough."
-  },
-  "endosperm": {
-    "src": "/photos/glossary/wheat-kernel-endosperm.jpg",
-    "alt": "Endosperm: wheat kernel cross-section showing the endosperm",
-    "caption": "Wheat kernel cross-section showing the endosperm."
-  },
-  "bagel": {
-    "src": "/photos/glossary/homemade-artisan-bagels.jpg",
-    "alt": "Bagel: homemade bagels",
-    "caption": "Homemade bagels."
-  },
-  "babka": {
-    "src": "/photos/glossary/chocolate-babka-bread.jpg",
-    "alt": "Babka: chocolate babka, sliced to show the swirl",
-    "caption": "Chocolate babka, sliced to show the swirl."
-  },
-  "bialy": {
-    "src": "/photos/glossary/bialy-onion-poppy-seed.jpg",
-    "alt": "Bialy: bialy with onion and poppy seed topping",
-    "caption": "Bialy with onion and poppy seed topping."
-  },
-  "brioche": {
-    "src": "/photos/glossary/brioche-bread.jpg",
-    "alt": "Brioche: brioche loaf or buns",
-    "caption": "Brioche loaf or buns."
-  },
-  "ciabatta": {
-    "src": "/photos/glossary/ciabatta-open-crumb.jpg",
-    "alt": "Ciabatta: ciabatta CUT OPEN showing the open crumb (interior shot required)",
-    "caption": "Ciabatta CUT OPEN showing the open crumb (interior shot required)."
-  },
-  "challah": {
-    "src": "/photos/glossary/braided-challah-bread.jpg",
-    "alt": "Challah: braided challah loaf",
-    "caption": "Braided challah loaf."
-  },
-  "focaccia": {
-    "src": "/photos/glossary/artisan-focaccia-bread.jpg",
-    "alt": "Focaccia: artisan focaccia bread",
-    "caption": "Artisan focaccia bread."
-  },
-  "english-muffin": {
-    "src": "/photos/glossary/homemade-english-muffin-crumb.jpg",
-    "alt": "English Muffin: English muffin split showing the crumb",
-    "caption": "English muffin split showing the crumb."
-  },
-  "pita": {
-    "src": "/photos/glossary/pita-bread-pocket.jpg",
-    "alt": "Pita: pita bread showing the pocket",
-    "caption": "Pita bread showing the pocket."
-  },
-  "naan": {
-    "src": "/photos/glossary/homemade-naan-bread.jpg",
-    "alt": "Naan: homemade naan bread",
-    "caption": "Homemade naan bread."
-  },
-  "pretzels": {
-    "src": "/photos/glossary/soft-pretzel-bread.jpg",
-    "alt": "Soft Pretzels: soft pretzels",
-    "caption": "Soft pretzels."
+  "levain": {
+    "src": "/photos/glossary/sourdough-levain-at-peak.jpg",
+    "alt": "Levain: mature levain at peak, risen in its container",
+    "caption": "Mature levain at peak, risen in its container."
   },
   "milk-bread": {
     "src": "/photos/glossary/japanese-milk-bread-shokupan.jpg",
     "alt": "Milk Bread (Shokupan): Japanese milk bread loaf",
     "caption": "Japanese milk bread loaf."
   },
-  "pumpernickel": {
-    "src": "/photos/glossary/pumpernickel-rye-bread.jpg",
-    "alt": "Pumpernickel: dark pumpernickel rye loaf",
-    "caption": "Dark pumpernickel rye loaf."
+  "naan": {
+    "src": "/photos/glossary/homemade-naan-bread.jpg",
+    "alt": "Naan: homemade naan bread",
+    "caption": "Homemade naan bread."
   },
-  "vollkornbrot": {
-    "src": "/photos/glossary/vollkornbrot-whole-rye-bread.jpg",
-    "alt": "Vollkornbrot: vollkornbrot whole rye loaf",
-    "caption": "Vollkornbrot whole rye loaf."
+  "oven-spring": {
+    "src": "/photos/glossary/sourdough-oven-spring.jpg",
+    "alt": "Oven Spring: baked loaf showing strong oven-spring rise",
+    "caption": "The fast rise in the first minutes of baking, before the crust sets."
+  },
+  "oven-steam": {
+    "src": "/photos/glossary/steam-bread-baking.jpg",
+    "alt": "Steam (Baking): steam in the oven or a steaming setup for bread baking",
+    "caption": "Steam keeps the crust soft long enough for the loaf to finish expanding."
+  },
+  "overproofed": {
+    "src": "/photos/glossary/overproofed-sourdough.jpg",
+    "alt": "Overproofed: overproofed dough or a flat overproofed loaf",
+    "caption": "Risen past its peak. The gluten is tired and the loaf will sink or spread."
+  },
+  "pancaking": {
+    "src": "/photos/glossary/sourdough-pancaking-flat-loaf.jpg",
+    "alt": "Pancaking: loaf spreading flat after being turned out of the banneton",
+    "caption": "The loaf spreads sideways in the oven instead of rising up."
   },
   "particle-size": {
     "src": "/photos/glossary/fresh-milled-flour-particle-size.jpg",
     "alt": "Coarse, medium, and fine fresh-milled flour particle sizes shown side by side",
     "caption": "Coarse, medium, and fine fresh-milled flour. Finer flour takes up water faster; coarser flour adds texture."
   },
-  "baking-steel": {
-    "src": "/photos/glossary/baking-steel-plate-bread-baking.jpg",
-    "alt": "A baker holding a rectangular Baking Steel plate above a wooden work surface",
-    "caption": "A solid steel plate provides a preheated baking surface for bread."
+  "pita": {
+    "src": "/photos/glossary/pita-bread-pocket.jpg",
+    "alt": "Pita: pita bread showing the pocket",
+    "caption": "Pita bread showing the pocket."
   },
-  "bran-soaker": {
-    "src": "/photos/glossary/bran-soaker-bread-baking.jpg",
-    "alt": "Dry wheat bran beside hydrated bran after soaking",
-    "caption": "Dry bran next to bran after soaking. Pre-hydrated bran softens and competes less with gluten."
+  "poke-test": {
+    "src": "/photos/glossary/sourdough-poke-test.jpg",
+    "alt": "Poke Test: finger pressing proofed dough leaving a visible indentation",
+    "caption": "A floured finger dent that fills back slowly is a loaf ready to bake."
+  },
+  "poolish": {
+    "src": "/photos/glossary/poolish-preferment.jpg",
+    "alt": "Poolish: mature bubbly poolish preferment",
+    "caption": "Mature bubbly poolish preferment."
+  },
+  "pre-shape": {
+    "src": "/photos/glossary/preshaping-sourdough-bread.jpg",
+    "alt": "Pre-Shape: dough being pre-shaped into a round",
+    "caption": "A loose round first lets the dough relax before the final shape."
+  },
+  "pretzels": {
+    "src": "/photos/glossary/soft-pretzel-bread.jpg",
+    "alt": "Soft Pretzels: soft pretzels",
+    "caption": "Soft pretzels."
+  },
+  "probe-thermometer": {
+    "src": "/photos/glossary/bread-internal-temperature-thermometer.jpg",
+    "alt": "Probe Thermometer: instant-read thermometer inserted into a finished loaf",
+    "caption": "Read the inside temperature to know the loaf is actually done."
+  },
+  "proofing": {
+    "src": "/photos/glossary/bread-dough-final-proof.jpg",
+    "alt": "Proofing: shaped dough visibly risen in a banneton, final proof",
+    "caption": "The final rise after shaping, right before the oven."
+  },
+  "pumpernickel": {
+    "src": "/photos/glossary/pumpernickel-rye-bread.jpg",
+    "alt": "Pumpernickel: dark pumpernickel rye loaf",
+    "caption": "Dark pumpernickel rye loaf."
+  },
+  "rubaud-method": {
+    "src": "/photos/glossary/rubaud-method-sourdough.jpg",
+    "alt": "Rubaud Method: hand doing Rubaud mixing in a bowl",
+    "caption": "Hand doing Rubaud mixing in a bowl."
+  },
+  "rye-flour": {
+    "src": "/photos/glossary/rye-berries-fresh-milled-flour.jpg",
+    "alt": "Rye Flour: rye berries and freshly milled rye flour",
+    "caption": "Rye berries and freshly milled rye flour."
+  },
+  "scoring": {
+    "src": "/photos/glossary/scoring-sourdough-bread.jpg",
+    "alt": "Scoring: hands scoring sourdough dough with a lame",
+    "caption": "A shallow cut at a low angle tells the loaf where to open."
+  },
+  "shaping": {
+    "src": "/photos/glossary/shaping-sourdough-bread.jpg",
+    "alt": "Shaping: hands shaping a boule",
+    "caption": "Tension on the surface, seam on the bottom. That skin is what holds the rise."
+  },
+  "sifter": {
+    "src": "/photos/glossary/fresh-milled-flour-sifter.jpg",
+    "alt": "Sifter: flour sieve/sifter with flour and retained bran",
+    "caption": "Flour sieve/sifter with flour and retained bran."
+  },
+  "slap-and-fold": {
+    "src": "/photos/glossary/slap-and-fold-bread-dough.jpg",
+    "alt": "Slap and Fold: dough in the slap-and-fold motion",
+    "caption": "Lift, slap the far end down, fold the rest over. Wet dough tightens fast this way."
+  },
+  "sourdough-starter": {
+    "src": "/illustrations/sourdough-starter.svg",
+    "alt": "Line drawing illustrating sourdough starter",
+    "caption": "A living culture of flour, water, wild yeast and bacteria that leavens bread."
+  },
+  "stiff-starter": {
+    "src": "/photos/glossary/stiff-sourdough-starter.jpg",
+    "alt": "Stiff Starter: firm stiff starter beside a regular liquid starter",
+    "caption": "Firm stiff starter beside a regular liquid starter."
+  },
+  "stitching": {
+    "src": "/photos/glossary/sourdough-stitching-technique.jpg",
+    "alt": "Stitching: a batard being stitched while in the banneton",
+    "caption": "A batard being stitched while in the banneton."
+  },
+  "stone-mill": {
+    "src": "/photos/glossary/stone-grain-mill.jpg",
+    "alt": "Stone Mill: an actual stone grain mill",
+    "caption": "An actual stone grain mill."
+  },
+  "stretch-and-fold": {
+    "src": "/photos/glossary/stretch-and-fold-sourdough.jpg",
+    "alt": "Stretch and Fold: hands performing a stretch and fold",
+    "caption": "Grab one side, stretch it up, and fold it over the top. Turn the bowl and repeat."
+  },
+  "surface-tension": {
+    "src": "/photos/glossary/surface-tension-sourdough-shaping.jpg",
+    "alt": "Surface Tension: a properly shaped tight smooth boule",
+    "caption": "A properly shaped tight smooth boule."
+  },
+  "tangzhong": {
+    "src": "/photos/glossary/tangzhong-bread-technique.jpg",
+    "alt": "Tangzhong: cooked tangzhong paste showing a pudding-like consistency",
+    "caption": "A cooked flour paste that holds extra water for a softer, longer-lasting crumb."
+  },
+  "tunneling": {
+    "src": "/photos/glossary/bread-crumb-tunneling.jpg",
+    "alt": "Tunneling: sliced loaf clearly showing tunnels in the crumb",
+    "caption": "A long cavity under the crust, usually from trapped gas during shaping."
+  },
+  "underproofed": {
+    "src": "/photos/glossary/underproofed-sourdough-bread.jpg",
+    "alt": "Underproofed: loaf showing underproofing symptoms",
+    "caption": "Not enough rise yet. Bake it now and you get a tight, dense crumb."
+  },
+  "vollkornbrot": {
+    "src": "/photos/glossary/vollkornbrot-whole-rye-bread.jpg",
+    "alt": "Vollkornbrot: vollkornbrot whole rye loaf",
+    "caption": "Vollkornbrot whole rye loaf."
+  },
+  "wheat-berry": {
+    "src": "/illustrations/wheat-berry.svg",
+    "alt": "Line drawing illustrating wheat berry",
+    "caption": "The whole kernel: bran outside, endosperm inside, germ at the base."
+  },
+  "windowpane-test": {
+    "src": "/photos/glossary/windowpane-test-bread-dough.jpg",
+    "alt": "Windowpane Test: dough stretched thin and translucent between fingers",
+    "caption": "Stretch a piece of dough thin. If light shows through without it tearing, the gluten is developed."
   }
 }
